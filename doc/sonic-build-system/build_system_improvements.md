@@ -17,6 +17,11 @@ As long as we are using ```--no-cache --squash``` to build docker images there i
 e.g. SNMP docker image:
 
 ```Dockerfile
+{\% if docker_snmp_sv2_debs.strip() \-%}
+# Copy locally-built Debian package dependencies
+{\%- for deb in docker_snmp_sv2_debs.split(' ') \%}
+COPY debs/{{ deb }} /debs/
+{\%- endfor \%}
 
 ```
 Renders to:
@@ -176,4 +181,3 @@ It is hard to measure the total improvement, because since last time it was test
 Few month ago on our build server with 12 CPUs sonic took around ~6h.
 Right now on the same server it is around 2.5h. Enabling ```SONIC_USE_BUILD_KIT=y``` I was able to build the image in 1.5h.
 The test included linux kernel built from scratch and not downloaded pre-built package.
-

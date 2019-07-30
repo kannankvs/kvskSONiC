@@ -52,15 +52,15 @@ RUN dpkg_apt() { [ -f $1 ] && { dpkg -i $1 || apt-get -y install -f; } || return
 
 ### Suggestion to improve:
 
-Dockerfile
-{\% if docker_snmp_sv2_debs.strip() -\%}
+```Dockerfile
+{% if docker_snmp_sv2_debs.strip() -%}
 # Copy locally-built Debian package dependencies
 COPY
 {\%- for deb in docker_snmp_sv2_debs.split(' ') \%}
 debs/{{ deb }} \
 {\%- endfor \%}
 /debs/
-
+```
 
 This will generate single COPY instruction:
 ```Dockerfile

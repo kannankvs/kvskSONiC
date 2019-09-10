@@ -1,4 +1,10 @@
-| Vendor        | Throughput | Platform        | ASIC Vendoer | Switch ASIC | Port   Configuration      |
+<script src="assets\sortable-0.8.0\sortable-0.8.0\js\sortable.min.js"></script>
+<link rel="stylesheet" href="assets\sortable-0.8.0\sortable-0.8.0\css\sortable-theme-finder.css" />
+
+<table class="sortable-theme-finder" data-sortable>
+
+
+| Vendor        | Throughput | Platform        | ASIC Vendor | Switch ASIC | Port   Configuration      |
 | ------------- | ---------- | --------------- | ------------ | ----------- | ------------------------- |
 | Accton        | 348 Gbps   | AS4630-54PE     | Broadcom     | Helix 5     | 48x1G + 4x25G +   2x100G  |
 | Accton        | 1.28 Tbps  | AS5812-54X      | Broadcom     | Trident 2   | 72x10G                    |
@@ -94,3 +100,4 @@
 | quanta        | 3.2 Tbps   | T3032-IX7       | Broadcom     | Trident 3   | 32x100G                   |
 | quanta        | 12.8 Tbps  | T9032-IX9       | Broadcom     | Tomahawk 3  | 32x400G                   |
 | wnc           | 1.8 Tbps   | OSW1800         | Barefoot     | Tofino      | 48x25G + 6x100G           |
+</table>

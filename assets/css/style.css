@@ -59,11 +59,13 @@ a {
   color: #333333;
 }
 
-a:hover,
+a:hover {
+	color: red
+}
+
 a:focus {
   outline: none;
   text-decoration: none;
-  color: red
 }
 
 /* visited link */

@@ -63,6 +63,7 @@ a:hover,
 a:focus {
   outline: none;
   text-decoration: none;
+  color: red
 }
 
 /* visited link */

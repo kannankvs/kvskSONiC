@@ -364,7 +364,7 @@ ipv6 protocol bgp route-map RM_SET_SRC6
 
 Acl redirect action supports vrf, so we need specify the outgoing interface of the nexthop explicitly, the acl redirect configuration template is as following:
 
-```jason
+<code>
 {
     "ACL_TABLE": {
         "VRF_ACL_REDIRECT_V4": {
@@ -383,17 +383,17 @@ Acl redirect action supports vrf, so we need specify the outgoing interface of t
         "VRF_ACL_REDIRECT_V4|rule1": {
             "priority": "55",
             "SRC_IP": "10.0.0.1",
-            "packet_action": "redirect:{\% for intf, ip in redirect_dst_ipv6s \%}{{ ip ~ "|" ~ intf }}{{ "," if not loop.last else "" }}{\% endfor \%}"
+            "packet_action": "redirect:{% for intf, ip in redirect_dst_ipv6s %}{{ ip ~ "|" ~ intf }}{{ "," if not loop.last else "" }}{% endfor %}"
         },
         "VRF_ACL_REDIRECT_V6|rule1": {
             "priority": "55",
             "SRC_IPV6": "2000::1",
-            "packet_action": "redirect:{\% for intf, ip in redirect_dst_ipv6s \%}{{ ip ~ "|" ~ intf }}{{ "," if not loop.last else "" }}{\% endfor \%}"
+            "packet_action": "redirect:{% for intf, ip in redirect_dst_ipv6s %}{{ ip ~ "|" ~ intf }}{{ "," if not loop.last else "" }}{% endfor %}"
         }
     }
 }
 
-```
+</code>
 
 #### teardown operation after each test case
 

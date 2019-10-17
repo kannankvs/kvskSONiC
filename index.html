@@ -34,6 +34,29 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+<style>
+.buttonh {
+  background-color: transparent;
+  color: blue;
+  border: 0px solid #0366d6; /* Green */
+   -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 2px;
+  font-size: 16px;
+  
+}
+
+.buttonh:hover {
+  background-color: #0366d6; /* Green */
+  color: white;
+}
+
+.buttonh:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
 
   </head>
   <body> 
@@ -284,10 +307,12 @@
               <div class="col-lg-6 col-md-6">
                 <div class="mu-about-us-right">
 				<h3 style="color: #01BAFD; margin-top: 1px; font-weight: bold">More Presentations</h3>
-			        <p> <a href="https://www.youtube.com/watch?v=YUr8EKFQZeY">OCP Amsterdam 2019 Regional Summit - Going SONiC Together</a></p>
-					<p> <a href="https://www.youtube.com/watch?v=TjD7PEB3jvg">OCP Amsterdam 2019 Regional Summit - SONiC – Reliability, Manageability and Extensibility</a></p>
-					<p> <a href="https://www.youtube.com/watch?v=Di6njI_gUKM">OCP Amsterdam 2019 Regional Summit - SONiC Ansible Test Automation</a></p>
-                                        <p><a href="https://www.youtube.com/watch?v=655Mg1dHkwo" >Enabling PIM card hot swapping in SONiC for Minipack </a></p>
+			        <p> OCP Amsterdam 2019 Regional Summit - Going SONiC Together<a href="https://www.youtube.com/watch?v=YUr8EKFQZeY"><span style=" text-align: center; font-family: Verdana, sans-serif; font-size: 11px; "><i><button class="buttonh">Video</button><i></span></a></p>
+					<p>OCP Amsterdam 2019 Regional Summit - SONiC – Reliability, Manageability and Extensibilit  <a href="https://146a55aca6f00848c565-a7635525d40ac1c70300198708936b4e.ssl.cf1.rackcdn.com/images/8d4432a8667ae61df4a99343ee81f0881fc44ead.pdf"> <span style=" text-align: center; font-family: Verdana, sans-serif; font-size: 11px; "><i><button class="buttonh">Slide</button></i></span></a>
+
+                                <a href="https://www.youtube.com/watch?v=TjD7PEB3jvg"> <span style=" text-align: center; font-family: Verdana, sans-serif; font-size: 11px; "><i><button class="buttonh">Video</button><i></span></a></p>
+					<p>OCP Amsterdam 2019 Regional Summit - <a href="https://www.youtube.com/watch?v=Di6njI_gUKM">SONiC Ansible Test Automation</a></p>
+                                        <p>OCP Amsterdam 2019 Regional Summit - <a href="https://www.youtube.com/watch?v=655Mg1dHkwo">Enabling PIM card hot swapping in SONiC for Minipack </a></p>
 					<p> <a href="https://www.youtube.com/embed/JVztj3u13yo"> OCP Japan 2019 Summit - Innovating the Cloud Network</a></p>
 				    <p> <a href="https://www.youtube.com/watch?v=9QosRTupTek&feature=youtu.be"> OCP China 2019 Summit - SONiC Enable Fast Evolution Of Cloud Networking (Microsoft Video)</a></p>
 				    <p>	<a href="https://www.youtube.com/watch?v=jPiEDzZBPic&feature=youtu.be"> OCP China 2019 Summit - Network Innovation - Collaboration With SONiC (Alibaba Video in Chinese)</a></p>

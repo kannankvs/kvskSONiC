@@ -508,7 +508,7 @@ The actioner script receives the JSON output from the swagger client API and inv
 Example: "show acl"
 
 
-    {\% set acl_sets = acl_out['openconfig_aclacl']['acl_sets']['acl_set'] \%}  
+    {% set acl_sets = acl_out['openconfig_aclacl']['acl_sets']['acl_set'] %}  
        {\% for acl_set in acl_sets \%}  
            Name:  {{ acl_set['state']['description'] }}  
        {\% endfor \%}  

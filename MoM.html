@@ -6,38 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <title>SONiC | Home</title>
 <style>
+* {box-sizing: border-box}
 body {font-family: "Lato", sans-serif;}
 
-.tablink {
-  background-color: #555;
-  color: white;
+/* Style the tab */
+.tab {
   float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 20%;
+  height: 300px;
 }
 
-.tablink:hover {
-  background-color: #777;
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
 }
 
 /* Style the tab content */
 .tabcontent {
-  color: white;
-  display: none;
-  padding: 50px;
-  text-align: center;
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 80%;
+  border-left: none;
+ 
 }
+</style>
 
-#London {background-color:red;}
-#Paris {background-color:green;}
-#Tokyo {background-color:blue;}
-#Oslo {background-color:orange;}
-</style>
-</style>
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/logo_on_tab.png" type="image/x-icon">
 
@@ -161,7 +177,7 @@ body {font-family: "Lato", sans-serif;}
      <div class="row">
        <div class="col-md-12">
          <div class="mu-page-breadcrumb-area">
-           <h2>PREVIOUS PRESENTATIONS</h2>
+           <h2>SONiC group weekly minutes of the meeting [MoM] </h2>
          </div>
        </div>
      </div>
@@ -178,44 +194,158 @@ body {font-family: "Lato", sans-serif;}
           <!-- start title -->
           <div class="mu-title">
 
-<h3>Click on the corresponding date to view the minutes of the meeting.</h3>
-<br>
 
-
-	
-<!-- Tab links -->
-<!------ sub tab links ----->
 <div class="tab">
-<button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">London</button>
-<button class="tablink" onclick="openCity('Paris', this, 'green')">Paris</button>
-<button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
-<button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
-
-
+  <button class="tablinks" onclick="MoM(event, 'Home')" id="defaultOpen">Home</button>
+  <button class="tablinks" onclick="MoM(event, '03SEP19')">03 September 2019</button>
+  <button class="tablinks" onclick="MoM(event, '10SEP19')">10 September 2019</button>
+  <button class="tablinks" onclick="MoM(event, '17SEP19')">17 September 2019</button>
+  <button class="tablinks" onclick="MoM(event, '24SEP19')">24 September 2019</button>
 </div>
 
-<div id="London" class="tabcontent">
-  <h1>London</h1>
-  <p>London is the capital city of England.</p>
+<div id="Home" class="tabcontent">
+  <h3>Click on the corresponding date to view the minutes of the meeting.</h3>
+  </div>
+
+<div id="03SEP19" class="tabcontent">
+  <h3>Agenda and minutes of the meeting of 3<sup>rd</sup> September 2019</h3>
+ 
+<div align="left">
+<div><strong>Topics discussed</strong></div>
+<div>
+<ul>
+<li><a href=" https://github.com/Azure/SONiC/pull/424">BGP Error handling &nbsp;- BRCM &nbsp;</a></li>
+<li><a href=" https://github.com/Azure/SONiC/pull/391">Error Handling - BRCM</a></li>
+</ul>
+</div>
+<br>
+<div><strong>BGP Error handling &nbsp;- BRCM &nbsp;</strong></div>
+<div><strong>Review (Q &amp; A):</strong></div>
+<div>
+<ul>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">Is there any perf impact on&nbsp;disable this feature: No</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">Data shows the RIB-in convergence performance&nbsp;degradation is 44%, it should be linear, but why is 44%? can it be&nbsp;improved?&nbsp;</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">What is the scope of the QuickTests? Is it&nbsp;covered only happy paths alone? do you have numbers&nbsp;with non-happy path scenarios?&nbsp;</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">does&nbsp;the QuickTest covers both Ipv4 or Ipv6 ? QuickTest supports mix scenario of ipv4 &amp; ipv6 ? not yet done for pure Ipv6 routes, will be explored.</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">do you have any special handling for default route ? No</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">Does it supports&nbsp;any debug commands check the failed route ? yes</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">What is the reconciliation on daemon crashes (Ex: BGP)- how to reconcile the routes? Please list out the&nbsp;scenarios in HLD.</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">Can this feature turn-off on demand ? is&nbsp;yes, can this affect the&nbsp;system stability?&nbsp;</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">PR -&nbsp;</span><a href="https://github.com/Azure/SONiC/pull/424#pullrequestreview-283110975" target="_blank" rel="nofollow noopener">https://github.com/Azure/<wbr />SONiC/pull/424#<wbr />pullrequestreview-283110975</a></li>
+</ul>
+<div><span style="color: #500050; font-family: Helvetica, sans-serif;"><strong>&nbsp;</strong></span></div>
+</div>
+<div><strong>Error Handling - BRCM</strong></div>
+<div><span style="color: #000000; font-family: Helvetica, sans-serif;">&nbsp;</span></div>
+<div><strong>Review (Q &amp; A):</strong><span style="color: #000000; font-family: Helvetica, sans-serif;"><br /></span></div>
+<div>
+<ul>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">Overall framework is&nbsp;thinking about two approaches -<br> 1) Introduce Opaque ID to track the add-delete-add kind of error handling scenarios <br>2) Introduce an Sync SAI API in&nbsp;addition to current Async SAI API.</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">HLD is out for the community review.&nbsp;</span><a href="https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2FAzure%2FSONiC%2Fpull%2F391&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFI4wVmjZMjuvieYdfFpqnuDoIdag" target="_blank" rel="nofollow noopener">https://github.com/<wbr />Azure/SONiC/pull/391</a></li>
+</ul>
+<br><br>
+</div>
+</div>
 </div>
 
-<div id="Paris" class="tabcontent">
-  <h1>Paris</h1>
-  <p>Paris is the capital of France.</p> 
+<div id="10SEP19" class="tabcontent">
+  <h3>Agenda and minutes of the meeting of 10<sup>th</sup> September 2019</h3>
+ 
+<div align="left">
+<div><strong>Topics discussed</strong></div>
+<div>
+<ul>
+<li>Drop Counters HLD &nbsp;- MSFT</li>
+</ul>
+</div>
+<div><strong>Review (Q &amp; A):</strong></div>
+<div>
+<ul>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">Does the design preserve the counters on warm reboots? No</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">Can the design reports the user if the drop counter is not supported with platforms? yes</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">List out the&nbsp;caveats with warm reboot cases. Ex: if the device went wrong after warm reboots, does the drop counters distinguish the failure reasons?</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">Do we have default settings&nbsp;for the debug counters with the device? No</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">Can the design provide any templates for the debug counters to configure it?&nbsp;</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">Can the lifecycle (ex:&nbsp;clear)of these counters will not effect the existing counters? No</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">Can the design support logical/aggregate debug counters?&nbsp;</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">Does these&nbsp;counters are ASIC independent? what platforms do you guys cover it?</span></li>
+<li><span style="color: #500050; font-family: Helvetica, sans-serif;">Can this integrate with mgmt&nbsp;framework?</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="17SEP19" class="tabcontent">
+  <h3>Agenda and minutes of the meeting of 17<sup>th</sup> September 2019</h3>
+ <div align="left">
+ <div><strong><span style="color: #000000;">Topics discussed</span></strong></div>
+<div>
+<ul>
+<li><span style="color: #000000;">Firmware Utils &nbsp;- MLNX</span></li>
+</ul>
+</div>
+<div><strong><span style="color: #000000;">Review (Q &amp; A):</span></strong></div>
+<div>
+<ul>
+<li><span style="color: #000000; font-family: Helvetica, sans-serif;">Why don't leverage ONIE updater, what is the design rational behind the fwUtils?&nbsp;</span></li>
+<li><span style="color: #000000; font-family: Helvetica, sans-serif;">What is the significance of chassis? Does Sonic supports multiple chassis?</span></li>
+<li><span style="color: #000000; font-family: Helvetica, sans-serif;">Can the&nbsp;design supports module level installations?&nbsp;</span></li>
+<li><span style="color: #000000; font-family: Helvetica, sans-serif;">Is the design support remote image path? yes</span></li>
+<li><span style="color: #000000; font-family: Helvetica, sans-serif;">What are the supported methods to download images? remote url&nbsp;http/https</span></li>
+<li><span style="color: #000000; font-family: Helvetica, sans-serif;">What about the image validations ? ex: compatibility between CPLD/BIOS etc..</span></li>
+<li><span style="color: #000000; font-family: Helvetica, sans-serif;">Can user skip/install specific image version using the fwUtils? - you should use it manually&nbsp;[skip the fwUpgrade]</span></li>
+<li><span style="color: #000000; font-family: Helvetica, sans-serif;">Can fwUtils supports scheduling of reloads after component updates?&nbsp;</span></li>
+</ul>
+<div><span style="color: #000000;">&nbsp;</span></div>
+<div><span style="color: #000000;">2019 Oct Release&nbsp;</span></div>
+<div><span style="color: #000000;">Checkout below for release&nbsp;tracking&nbsp;</span></div>
+<div><span style="color: #000000;"><a href="https://github.com/Azure/SONiC/wiki/Release-Progress-Tracking-201908" target="_blank" rel="nofollow noopener">https://github.com/Azure/<wbr />SONiC/wiki/Release-Progress-<wbr />Tracking-201908</a></span></div>
+</div>
+ </div>
 </div>
 
-<div id="Tokyo" class="tabcontent">
-  <h1>Tokyo</h1>
-  <p>Tokyo is the capital of Japan.</p>
+<div id="24SEP19" class="tabcontent">
+   <h3>Agenda and minutes of the meeting of 24<sup>th</sup> September 2019</h3>
+ 
+<div align="left">
+<div><strong><span style="color: #000000;">Topics discussed</span></strong></div>
+<div>
+<ul>
+<li><span style="color: #000000;">Dynamic Port BreakOut&nbsp; - LKND&nbsp;</span></li>
+<li><span style="color: #000000;">This talk is extension of previous discussion.</span></li>
+</ul>
+</div>
+<div><strong><span style="color: #000000;">Review (Q &amp; A):</span></strong></div>
+<div>
+<ul>
+<li>Can the design incorporate port groups ? offline discussion with Dell, LKND.</li>
+<li>Can the design support to add port persona ex: FC/FCoE or Ethernet?&nbsp;</li>
+<li>What is the default admin status of fanned out ports ? admin staus is DOWN by default.</li>
+<li>How does the design guarantee&nbsp;the sequencing of delete/add configurations?&nbsp;</li>
+</ul>
+<div>&nbsp;</div>
 </div>
 
-<div id="Oslo" class="tabcontent">
-  <h1>Oslo</h1>
-  <p>Oslo is the capital of Norway.</p>
+</div>
 </div>
 
-	
-	
+<script>
+function MoM(evt, MoMdate) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(MoMdate).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>		
 		  </div>
           <!-- end title -->
          </div>

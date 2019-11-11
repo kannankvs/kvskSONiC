@@ -1,11 +1,110 @@
 <html>
+<style>
+    a:link {
+        color: blue;
+        background-color: transparent;
+        text-decoration: none;
+    }
+    
+    a:visited {
+        color: Gray;
+        background-color: transparent;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        color: red;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+    
+    a:active {
+        color: yellow;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+    
+    .button {
+        background-color: white;
+        color: red;
+        border: 2px solid white;
+        /* Green */
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+        border-radius: 5px;
+        /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+        font-size: 16px;
+    }
+    
+    .button:hover {
+        background-color: #0366d6;
+        /* Green */
+        color: white;
+		border-radius: 5px;
+        border: 2px solid #0366d6;
+    }
+    
+    .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    
+    .buttonh {
+        background-color: transparent;
+        color: blue;
+        border: 0px solid #0366d6;
+        /* Green */
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+        border-radius: 7px;
+        font-size: 18px;
+    }
+    
+    .buttonh:hover {
+        background-color: #0366d6;
+        /* Green */
+        color: white;
+    }
+    
+    .buttonh:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+	    .buttonw {
+        background-color: transparent;
+        color: blue;
+        border: 0px solid #0366d6;
+        /* Green */
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+        border-radius: 10px;
+        font-size: 17px;
+    }
+    
+    .buttonw:hover {
+        background-color: #0366d6;
+        /* Green */
+        color: white;
+    }
+    
+    .buttonw:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+</style>
 
 <body>
     <table style="width: 95%; background-color: #ffffff;" align="center">
         <tbody>
             <tr>
                 <td>
-                    <center><img src="https://kannankvs.github.io/kvskSONiC/images/sonic-logo.png" style="max-width: 100%; height: auto;" alt="logo" width="290" height="120" /></center>
+                    <center><img src="https://kannankvs.github.io/kvskSONiC/images/sonic-logo.png" style="max-width: 100%; height: auto;" alt="logo" width="300" height="100" /></center>
                 </td>
                 <td style="text-align: center; font-family: Verdana, sans-serif; font-size: 44px;" colspan="2">October 2019 Newsletter</td>
             </tr>
@@ -17,64 +116,66 @@
                 </td>
             </tr>
             <tr>
-                <td style="vertical-align: top; height: 1px; background-color: #3aa6dd; padding: 1em;" rowspan="3">
-                    <p style="text-align: center; font-size: 18px; font-family: Verdana, sans-serif; color: #ffffff;"><a style="color: #0000ff;" href="https://www.opencompute.org/events/past-summits">2019 OCP Regional Summit</a></p>
+                <td style="vertical-align: top; height: 1px; background-color: #3aa6dd; padding: 1em; " rowspan="3">
+				 
+                    <p style="text-align: center; font-size: 18px; font-family: Verdana, sans-serif; color: #ffffff;"><a style="color: #0000ff;" href="https://www.opencompute.org/events/past-summits"><button class="buttonh">2019 OCP Regional Summit</button></a></p>
                     <p style="text-align: center; font-family: Verdana, sans-serif; color: #ffffff; margin: 3px;">SONiC Together</p>
                     <center>
                         <p>
-                            <a href="https://www.youtube.com/watch?v=YUr8EKFQZeY"> <span style="background-color: #ffffff; color: #ff0000; text-align: center; font-family: Verdana, sans-serif; font-size: 14px; font-stretch: extra-expanded;"><em>&nbsp;&nbsp;<button>Video</button>&nbsp;&nbsp;</em></span></a>
+                            <a href="https://www.youtube.com/watch?v=YUr8EKFQZeY"> <span style="background-color: #ffffff; color: #ff0000; text-align: center; font-family: Verdana, sans-serif; font-size: 14px; font-stretch: extra-expanded;"><em><button class="button">Video</button></em></span></a>
                         </p>
                         <center>
                             <p style="text-align: center; font-family: Verdana, sans-serif; color: #ffffff; margin: 3px;">SONiC - Reliability, Manageability and Extensibility</p>
                             <center>
                                 <p>
-                                    <a href="https://146a55aca6f00848c565-a7635525d40ac1c70300198708936b4e.ssl.cf1.rackcdn.com/images/8d4432a8667ae61df4a99343ee81f0881fc44ead.pdf"> <span style="background-color: #ffffff; text-align: center; color: #ff0000; font-family: Verdana, sans-serif; font-size: 14px; font-stretch: extra-expanded;"><em>&nbsp;&nbsp;<button>Slides</button>&nbsp;&nbsp;</em></span></a>&nbsp;&nbsp;
-                                    <a href="https://www.youtube.com/watch?v=TjD7PEB3jvg"> <span style="background-color: #ffffff; color: #ff0000; text-align: center; font-family: Verdana, sans-serif; font-size: 14px; font-stretch: extra-expanded;"><em>&nbsp;&nbsp;<button>Video</button>&nbsp;&nbsp;</em></span></a>
+                                    <a href="https://146a55aca6f00848c565-a7635525d40ac1c70300198708936b4e.ssl.cf1.rackcdn.com/images/8d4432a8667ae61df4a99343ee81f0881fc44ead.pdf"> <span style="background-color: #ffffff; text-align: center; color: #ff0000; font-family: Verdana, sans-serif; font-size: 14px; font-stretch: extra-expanded;"><em><button class="button">Slides</button></em></span></a>&nbsp;&nbsp;
+                                    <a href="https://www.youtube.com/watch?v=TjD7PEB3jvg"> <span style="background-color: #ffffff; color: #ff0000; text-align: center; font-family: Verdana, sans-serif; font-size: 14px; font-stretch: extra-expanded;"><em><button class="button">Video</button></em></span></a>
                                 </p>
                                 <center>
                                     <p style="text-align: center; font-family: Verdana, sans-serif; color: #ffffff; margin: 3px;">SONiC Ansible Test Automation</p>
                                     <center>
                                         <p>
-                                            <a href="https://146a55aca6f00848c565-a7635525d40ac1c70300198708936b4e.ssl.cf1.rackcdn.com/images/50ef9313e4066a442c367631af24220e72c95606.pdf"> <span style="background-color: #ffffff; text-align: center; font-family: Verdana, sans-serif; color: #ff0000; font-size: 14px; font-stretch: extra-expanded;"><em>&nbsp;&nbsp;<button>Slides</button>&nbsp;&nbsp;</em></span></a>&nbsp;&nbsp;
-                                            <a href="https://www.youtube.com/watch?v=Di6njI_gUKM"> <span style="background-color: #ffffff; text-align: center; font-family: Verdana, sans-serif; font-size: 14px; color: #ff0000; font-stretch: extra-expanded;"><em>&nbsp;&nbsp;<button>Video</button>&nbsp;&nbsp;</em></span></a>
+                                            <a href="https://146a55aca6f00848c565-a7635525d40ac1c70300198708936b4e.ssl.cf1.rackcdn.com/images/50ef9313e4066a442c367631af24220e72c95606.pdf"> <span style="background-color: #ffffff; text-align: center; font-family: Verdana, sans-serif; color: #ff0000; font-size: 14px; font-stretch: extra-expanded;"><em><button class="button">Slides</button></em></span></a>&nbsp;&nbsp;
+                                            <a href="https://www.youtube.com/watch?v=Di6njI_gUKM"> <span style="background-color: #ffffff; text-align: center; font-family: Verdana, sans-serif; font-size: 14px; color: #ff0000; font-stretch: extra-expanded;"><em><button class="button">Video</button></em></span></a>
                                         </p>
                                         <center>
                                             <p style="text-align: center; font-family: Verdana, sans-serif; color: #ffffff; margin: 3px;">Enabling PIM card hot swapping in SONiC for Minipack</p>
                                             <center>
                                                 <p>
-                                                    <a href="https://146a55aca6f00848c565-a7635525d40ac1c70300198708936b4e.ssl.cf1.rackcdn.com/images/ea7532e4840895378f3403e8646ced9fd6d81919.pdf"> <span style="background-color: #ffffff; text-align: center; color: #ff0000; font-family: Verdana, sans-serif; font-size: 14px; font-stretch: extra-expanded;"><em>&nbsp;&nbsp;<button>Slides</button>&nbsp;&nbsp;</em></span></a>&nbsp;&nbsp;
-                                                    <a href="https://www.youtube.com/watch?v=655Mg1dHkwo"> <span style="background-color: #ffffff; text-align: center; font-family: Verdana, sans-serif; font-size: 14px; color: #ff0000; font-stretch: extra-expanded;"><em>&nbsp;&nbsp;<button>Video</button>&nbsp;&nbsp;</em></span></a>
+                                                    <a href="https://146a55aca6f00848c565-a7635525d40ac1c70300198708936b4e.ssl.cf1.rackcdn.com/images/ea7532e4840895378f3403e8646ced9fd6d81919.pdf"> <span style="background-color: #ffffff; text-align: center; color: #ff0000; font-family: Verdana, sans-serif; font-size: 14px; font-stretch: extra-expanded;"><em><button class="button">Slides</button></em></span></a>&nbsp;&nbsp;
+                                                    <a href="https://www.youtube.com/watch?v=655Mg1dHkwo"> <span style="background-color: #ffffff; text-align: center; font-family: Verdana, sans-serif; font-size: 14px; color: #ff0000; font-stretch: extra-expanded;"><em><button class="button">Video</button></em></span></a>
                                                 </p>
                                                 <center>
                                                     <br />
-                                                    <p style="text-align: center; font-size: 18px; font-family: Verdana, sans-serif; color: #ffffff;"><a style="color: #0000ff;" href="https://www.nanog.org/meetings/nanog-77/">NANOG 77</a></p>
+                                                    <p style="text-align: center; font-size: 18px; font-family: Verdana, sans-serif; color: #ffffff;"><a style="color: #0000ff;" href="https://www.nanog.org/meetings/nanog-77/"><button class="buttonh">NANOG 77</button></a></p>
                                                     <p style="text-align: center; font-family: Verdana, sans-serif; color: #ffffff; margin: 3px;">SONiC at Comcast Datacenters</p>
                                                     <center>
                                                         <p>
-                                                            <a href="https://pc.nanog.org/static/published/meetings/NANOG77/2065/20191028_Celindro_Sonic_Open_Source_v1.pdf"> <span style="background-color: #ffffff; text-align: center; color: #ff0000; font-family: Verdana, sans-serif; font-size: 14px; font-stretch: extra-expanded;"><em>&nbsp;&nbsp;<button>Slides</button>&nbsp;&nbsp;</em></span></a>&nbsp;&nbsp; <a href="https://www.youtube.com/watch?v=irexCkw6ApM&amp;feature=youtu.be "><span style="background-color: #ffffff; text-align: center; color: #ff0000; font-family: Verdana, sans-serif; font-size: 14px; font-stretch: extra-expanded;"><button>&nbsp;&nbsp; Videos&nbsp;&nbsp; </button></span></a></p>
+                                                            <a href="https://pc.nanog.org/static/published/meetings/NANOG77/2065/20191028_Celindro_Sonic_Open_Source_v1.pdf"> <span style="background-color: #ffffff; text-align: center; color: #ff0000; font-family: Verdana, sans-serif; font-size: 14px; font-stretch: extra-expanded;"><em><button class="button">Slides</button></em></span></a>&nbsp;&nbsp; <a href="https://www.youtube.com/watch?v=irexCkw6ApM&amp;feature=youtu.be "><span style="background-color: #ffffff; text-align: center; color: #ff0000; font-family: Verdana, sans-serif; font-size: 14px; font-stretch: extra-expanded;"><button class="button">Videos </button></span></a></p>
                                                         <br>
                 </td>
-                <td style="font-family: Verdana, sans-serif; font-size: 16px; padding: 0.5em; border:2px; border-style:solid; border-color:#0366d6; padding: 1em;  line-height: 1.5" colspan="2">
-                    <p><strong>SONiC is expanding outside Cloud - Comcast is deploying SONiC in their datacenter and building an AI based network monitoring on top of SONiC with Augtera Networks !!! </strong>&nbsp;&nbsp;
+                <td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;  line-height: 1.5" colspan="2"><p style="font-family: Verdana, sans-serif; font-size: 16px; ">
+                    <strong>SONiC is expanding outside Cloud - Comcast is deploying SONiC in their datacenter and building an AI based network monitoring on top of SONiC with Augtera Networks !!! </strong>&nbsp;
                         <a href="https://pc.nanog.org/static/published/meetings/NANOG77/2065/20191028_Celindro_Sonic_Open_Source_v1.pdf">
-                            <button>Slides</button>
-                        </a> &nbsp;&nbsp;
+                            <button class="buttonh">Slides</button>
+                        </a> &nbsp;
                         <a href="https://www.youtube.com/watch?v=irexCkw6ApM&amp;feature=youtu.be ">
-                            <button>Videos</button>
+                            <button class="buttonh">Videos</button>
                         </a>
                         <br>
-                        <br>Mellanox Announces Support Solutions for SONiC Open Source Network Operating System. &nbsp; &nbsp;
+                        <br>Mellanox Announces Support Solutions for SONiC Open Source Network Operating System. &nbsp;
                         <a href="https://www.mellanox.com/page/press_release_item?id=2203">
-                            <button>Press Release</button>
+                            <button class="buttonh">Press Release</button>
                         </a>
                     </p>
+					
                 </td>
             </tr>
             <tr>
                 <td style="width: 60%; background-color: #0366d6; height: 50px;" colspan="2"><span style="font-size: 18px; font-family: Verdana, sans-serif; text-align: center; color: #ffffff;"> &nbsp;&nbsp;&nbsp;SONiC RELEASE UPDATES</span></td>
             </tr>
             <tr>
-                <td style="background-color: #ffffff; height: 1px; border:2px; padding: 0.5em; border-style:solid; border-color:#0366d6; line-height: 1.5" colspan="2">
+                <td style="background-color: #ffffff; height: 1px; border:1px; padding: 0.5em; border-style:solid; border-color:#0366d6; line-height: 1.5" colspan="2">
                     <p style="font-family: Verdana, sans-serif; font-size: 16px; "><strong>SONiC community is excited to announce the upcoming SONiC release 201910 that is planned for October 2019 !!! </strong>
                         <br />
                         <br /> The community has been focusing on multiple major changes in the recent months and happy to share the status.
@@ -99,109 +200,95 @@
             <tr style="">
                 <td rowspan="16" style=" height: 1px; background-color: #3aa6dd; padding: 1em;">
                     <p style="text-align: center; font-size: 18px; font-family: Verdana, sans-serif; color: #ffffff;">
-                        <stng><span style="color: #0000ff;"><a style="color: #0000ff;" href="https://www.opencompute.org/summit/global-summit" target="_blank " rel="noopener ">2020 OCP Global Summit</a></span></strong>
+                        <stng><span style="color: #0000ff;"><a style="color: #0000ff;" href="https://www.opencompute.org/summit/global-summit" target="_blank " rel="noopener "><button class="buttonh">2020 OCP Global Summit</button></a></span></strong>
                     </p>
                     <p style="text-align: center; font-size: 16px;font-family: Verdana, sans-serif; color: #ffffff;">4-5 March, 2020</p>
                     <p style="text-align: center; font-size: 16px;font-family: Verdana, sans-serif; color: #ffffff;">San Jose Convention Center</p>
 
                     <p style="text-align: center; font-size: 18px;font-family: Verdana, sans-serif; color: #ffffff;">
                         <br>
-                        <strg><span style="color: #0000ff; "><a style="color: #0000ff;" href="https://www.opencompute.org/summit/regional-summit/registration">2020 OCP Regional Summit<a></strong></p>
+                        <strg><span style="color: #0000ff; "><a style="color: #0000ff;" href="https://www.opencompute.org/summit/regional-summit/registration"><button class="buttonh">2020 OCP Regional Summit</button><a></strong></p>
 <p style="text-align: center; font-size: 16px;font-family: Verdana, sans-serif; color: #ffffff;">30 Sep - 1 Oct, 2020</p>
 <p style="text-align: center; font-size: 16px;font-family: Verdana, sans-serif; color: #ffffff;">Prague, Czech Republic</p>
 					<br><br><br><br> <br><br><br><br><br><br><br><br> <br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br>
 </td>
-<td style="width: 25%; text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6;padding: 1em;"> 03 SEP</td>
-<td style="width: 75%; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 1em;"> <a href="https://github.com/Azure/SONiC/pull/424" target="_blank " rel="noopener ">[PR424]</a> &nbsp;&nbsp; Changes in BGP error handling&nbsp;&nbsp;&nbsp;</td>
+<td style="width: 20%; border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">03 SEP </p></td>
+<td style="width: 80%; border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  "> <a href="https://github.com/Azure/SONiC/pull/424" target="_blank " rel="noopener "><button class="buttonh">[PR424]</button></a> &nbsp;&nbsp; Changes in BGP error handling&nbsp;&nbsp;&nbsp;</p></td>
 </tr>
 <tr>
-<td style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 1em;">03 SEP</td>
-<td style="font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 1em;">
-<p><a href="https://github.com/Azure/SONiC/pull/391" target="_blank " rel="noopener ">[PR391]</a>&nbsp;&nbsp;Error handling framework&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">03 SEP</p></td>
+<td style=" border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  "><a href="https://github.com/Azure/SONiC/pull/391" target="_blank " rel="noopener "><button class="buttonh">[PR391]</button></a>&nbsp;&nbsp;Error handling framework&nbsp;&nbsp;&nbsp;&nbsp;</p></td>
 </tr>
 <tr>
-<td style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 1em;" >10 SEP</td>
-<td style="font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 1em;">
-<p><a href="https://github.com/Azure/SONiC/blob/11959b204f2ca2d06dff1d7e3ba204900e7b5013/doc/drop_counters/drop_counters_HLD.md" target="_blank " rel="noopener "> [MD]</a>&nbsp;&nbsp;Configurable Drop Counters in SONiC&nbsp;&nbsp;</td>
+<td style=" border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">10 SEP</p></td>
+<td style=" border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  ">
+<a href="https://github.com/Azure/SONiC/blob/11959b204f2ca2d06dff1d7e3ba204900e7b5013/doc/drop_counters/drop_counters_HLD.md" target="_blank " rel="noopener "><button class="buttonh"> [MD]</button></a>&nbsp;&nbsp;Configurable Drop Counters in SONiC&nbsp;&nbsp;</p></td>
 </tr>
 <tr>
-<td style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6;padding: 1em;" >17 SEP</td>
-<td style="font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6;padding: 1em;">
-<p><a href="https://github.com/Azure/SONiC/pull/463" target="_blank " rel="noopener ">[PR463]</a>&nbsp;&nbsp;High Level Design for fwutil&nbsp;&nbsp;&nbsp;</td>
+<td style=" border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">17 SEP</p></td>
+<td style=" border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  "><a href="https://github.com/Azure/SONiC/pull/463" target="_blank " rel="noopener "><button class="buttonh">[PR463]</button></a>&nbsp;&nbsp;High Level Design for fwutil&nbsp;&nbsp;&nbsp;</p></td>
 </tr>
 <tr>
-<td  style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 1em;">24 SEP</td>
-<td style="font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 1em;"><a href="https://github.com/Azure/SONiC/pull/450" target="_blank " rel="noopener ">[PR450]</a> &nbsp;&nbsp;Dynamic port breakout&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style=" border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">24 SEP</p></td>
+<td style=" border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  "><a href="https://github.com/Azure/SONiC/pull/450" target="_blank " rel="noopener "><button class="buttonh">[PR450]</button></a> &nbsp;&nbsp;Dynamic port breakout&nbsp;&nbsp;&nbsp;&nbsp;</p></td>
 </tr>
 <tr>
-<td style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 1em;" >15 OCT</td>
-<td style="font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 1em;"><a href="https://github.com/Azure/SONiC/pull/468" target="_blank " rel="noopener ">[PR468]</a> &nbsp;&nbsp;Tech support data export & core file manager&nbsp;</td>
+<td style=" border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">15 OCT</p></td>
+<td style=" border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  "><a href="https://github.com/Azure/SONiC/pull/468" target="_blank " rel="noopener "><button class="buttonh">[PR468]</button></a> &nbsp;&nbsp;Tech support data export & core file manager&nbsp;</td>
 </tr>
 <tr>
-<td style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 1em;" >22 OCT</td>
-<td style="font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 1em;"><a href="https://github.com/Azure/SONiC/pull/475" target="_blank " rel="noopener ">[PR475]</a>&nbsp;&nbsp;VRRP HLD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+<td style=" border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">22 OCT</p></td>
+<td style=" border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  "><a href="https://github.com/Azure/SONiC/pull/475" target="_blank " rel="noopener "><button class="buttonh">[PR475]</button></a>&nbsp;&nbsp;VRRP HLD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
 </tr>
 <tr>
-<td style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 1em;" >29 OCT</td>
-<td style="font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 1em;"><a href="https://github.com/Azure/SONiC/pull/500" target="_blank " rel="noopener ">[PR500]</a> &nbsp;&nbsp;RADIUS Management User Authentication HLD&nbsp;</td>
+<td style=" border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">29 OCT</p></td>
+<td style=" border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  "><a href="https://github.com/Azure/SONiC/pull/500" target="_blank " rel="noopener "><button class="buttonh">[PR500]</button></a> &nbsp;&nbsp;RADIUS Management User Authentication HLD&nbsp;</p></td>
 </tr>
 <tr>
 
 <td colspan="2" style=" background-color: #0366d6; height: 50px;"><span style="color: #ffffff; font-family: Verdana, sans-serif;  text-align: center; font-size: 18px;">&nbsp;&nbsp;&nbsp; NEW PLATFORMS</span></td>
             </tr>
             <tr>
-                <td style="width: 25%; text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 0.5em;">
-                    <p>&nbsp;Accton</td>
-                <td style="width: 75%; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 0.5em;">
-                    <p>&nbsp;AS5812-54T</td>
+                <td style="width: 20%; border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">&nbsp;Accton</p></td>
+                <td style="width: 80%; border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  ">
+                    &nbsp;AS5812-54T</p></td>
             </tr>
             <tr>
-                <td style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6;padding: 0.5em;">
-                    <p>&nbsp;Arista</td>
-                </p>
-                <td style="font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 0.5em;">
-                    <p>&nbsp;7280CR3-C40</td>
-                </p>
+                <td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">
+                    &nbsp;Arista</p></td>
+                
+                <td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  ">&nbsp;7280CR3-C40</p></td>
+                
             </tr>
             <tr>
-                <td height="25px" style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 0.5em;">
-                    <p>&nbsp;Celestica</td>
-                </p>
-                <td style="font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6;padding: 0.5em; ">
-                    <p>&nbsp;DX010-C32, DX010-D48C8, midstone-200i </td>
-                </p>
+                <td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">&nbsp;Celestica</p></td>
+            
+                <td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  ">&nbsp;DX010-C32, DX010-D48C8, midstone-200i </p></td>
+            
             </tr>
             <tr>
-                <td style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 0.5em;">
-                    <p>&nbsp;DellEMC</td>
+                <td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">&nbsp;DellEMC</p></td>
                 </p>
-                <td style="font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 0.5em;">
-                    <p>&nbsp;S5248f</td>
-                </p>
+                <td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  ">&nbsp;S5248f</p></td>
+               
             </tr>
             <tr>
-                <td height="15px" style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 0.5em;">
-                    <p>&nbsp;Delta</td>
-                </p>
-                <td style="font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 0.5em;">
-                    <p>&nbsp;ET-C032if</td>
-                </p>
+                <td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">&nbsp;Delta</p></td>
+             
+			 <td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  ">&nbsp;ET-C032if</p></td>
+             
             </tr>
             <tr>
-                <td style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 0.5em;">
-                    <p>&nbsp;Inventec</td>
-                </p>
-                <td style="font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 0.5em;">
-                    <p>&nbsp;D7332</td>
-                </p>
+                <td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">&nbsp;Inventec</p></td>
+                
+                <td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  ">&nbsp;D7332</p></td>
+               
             </tr>
             <tr>
-                <td style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 0.5em;">
-                    <p>&nbsp;Mellanox</td>
-                </p>
-                <td style="font-family: Verdana, sans-serif; font-size: 16px;  border:2px; border-style:solid; border-color:#0366d6; padding: 0.5em;">
-                    <p>&nbsp;SN3800</td>
-                </p>
+                <td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: center; font-family: Verdana, sans-serif; font-size: 16px;  ">&nbsp;Mellanox</p></td>
+                
+                <td style="border:1px; border-style:solid; border-color:#0366d6; padding: 1em;"> <p style="text-align: left; font-family: Verdana, sans-serif; font-size: 16px;  ">&nbsp;SN3800</p></td>
+           
             </tr>
         </tbody>
     </table>

@@ -24,7 +24,7 @@ The next release is planned for 202012.
 
 SONiC release follows the standard development cycle that includes Planning, Design, Coding, Testing and Release as given below.  
 
-![](https://github.com/pyuvarajan/Test-local/blob/master/release_train.png)
+![](https://github.com/kannankvs/kvskSONiC/blob/master/images/release_train.png)
 
 ## Planning 
 This phase includes the following activities.

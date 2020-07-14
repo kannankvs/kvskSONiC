@@ -1,12 +1,12 @@
 # How to Contribute to SONiC Community                                                   
                           
-# High Level Design Document                                   
+## High Level Design Document                                   
 #### Rev 0.1                                                   
 
-# About this Manual
+## About this Manual
 This document provides general information about the ways of contribution, to the SONiC Community.
 
-# Scope                                                                                  
+## Scope                                                                                  
 This document describes the scope of a SONiC Community member, and his/her contribution towards the community progress.
 
 # 1 Overview on Contribution towards SONiC
@@ -78,7 +78,6 @@ git push origin mvrf_ip_rule_priority_change_to_32765	 	 
 
 ```
 
-# How to Contribute
 ## Design Spec
 1. Create the file as MD (markdown) format;
 2. Send as a pull request to https://github.com/Azure/SONiC/pulls;

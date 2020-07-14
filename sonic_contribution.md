@@ -1,4 +1,4 @@
-# How to Contribute to SONiC                                                   
+# How to Contribute SONiC                                                   
                           
 ## About this Manual
 This document provides general information about the ways of contribution, to the SONiC Community.

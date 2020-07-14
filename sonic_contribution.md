@@ -1,5 +1,4 @@
-# Document Name                                                  
-How to Contrinute to SONiC Community  
+# How to Contribute to SONiC Community                                                   
                           
 # High Level Design Document                                   
 #### Rev 0.1                                                   

@@ -12,6 +12,11 @@ This document describes the scope of a SONiC Community member, and his/her contr
 
 # 1 Overview on Contribution towards SONiC
 
+## 1.0 Legal
+We welcome everyone to contribute to SONiC project. A [Contribution License Agreement](https://www.1eswiki.com/wiki/Automating_Contribution_License_Agreements) is required before you making a contribution to the open source project. 
+
+Please find and sign the CLA [here](https://cla.microsoft.com). Thanks for your support.
+
 ## 1.1 Joining the SONiC Community
  A member can contribute the community by signing in Github and can access the SONiC contribution. A member can join the various SONiC groups
  and can start attending actively over the weekly discssion on the ongoing activities. Following are the way of contributions and its process for the community
@@ -43,7 +48,6 @@ A member can be a part of issue triage team, where he/she can join the community
 ### 1.5.5 Documentation
 A member can also contribute to technical documentation. He/She can own up the Config guide, CLI  guide, use-cases documentation, deployment scenarios documentation, for the ongoing feature or the existing feture which needs an enhancement. The documentation would be reviewed with the community members to be published in the SONiC community.
 
-
 ## 1.3 Process on Contribution
 This section gives a detailed description on adhering the process for contributing to the community. 
 
@@ -74,3 +78,21 @@ git checkout -b mvrf_ip_rule_priority_change_to_32765	git checkout mvrf_ip_rule_
 git push origin mvrf_ip_rule_priority_change_to_32765	 	 
 
 ```
+
+# How to Contribute
+## Design Spec
+1. Create the file as MD (markdown) format;
+2. Send as a pull request to https://github.com/Azure/SONiC/pulls;
+3. Go through community design review;
+4. Once approved, the doc will be merged to https://github.com/Azure/SONiC repo;
+5. The doc will be published on SONiC WiKi;
+
+## File A Issue
+1. Issues should be filed under https://github.com/Azure/sonic-buildimage/issues;
+2. Please fill the template as 
+- Description
+- Steps to reproduce the issue:
+- Describe the results you received:
+- Describe the results you expected:
+- Attach debug file
+3. Submit

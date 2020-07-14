@@ -1,91 +1,91 @@
-# How to Contribute to SONiC Community                                                   
+# How to Contribute to SONiC                                                   
                           
-## High Level Design Document                                   
-#### Rev 0.1                                                   
-
 ## About this Manual
 This document provides general information about the ways of contribution, to the SONiC Community.
 
-## Scope                                                                                  
-This document describes the scope of a SONiC Community member, and his/her contribution towards the community progress.
-
-# 1 Overview on Contribution towards SONiC
-
-## 1.0 Legal
+# Legal
 We welcome everyone to contribute to SONiC project. A [Contribution License Agreement](https://www.1eswiki.com/wiki/Automating_Contribution_License_Agreements) is required before you making a contribution to the open source project. 
 
 Please find and sign the CLA [here](https://cla.microsoft.com). Thanks for your support.
 
-## 1.1 Joining the SONiC Community
+# Joining the SONiC Community
  A member can contribute the community by signing in Github and can access the SONiC contribution. A member can join the various SONiC groups
  and can start attending actively over the weekly discssion on the ongoing activities. Following are the way of contributions and its process for the community
  
- #### 1.2 Technical Contribution
- #### 1.3 Process on Contribution
- #### 1.4 Process on Pull Request
-	
-## 1.2 Technical Contribution
- A member can involve in following technical contribution to SONiC community
-##### 1.2.1 Development
-##### 1.2.2 Reviews
-##### 1.3.3 Testing 
-##### 1.4.4 BugFixing 
-##### 1.5.5 Documentation
+# Technical Contribution
+ Community members or the SONiC partners are welcome to contribute in all of the following development process. The ways in which the members can contribute are explained in detail in the following sub sections.
+ 1. Development
+ 2. Reviews
+ 3. Testing 
+ 4. BugFixing 
+ 5. Documentation
   
-### 1.2.1 Development                    
-A member can contribute by owning and develop a feature for SONiC or enhance an existing feature/sub-features. He/She has to inform the community about ownership of his/her feature development/enhancement and ensure that the feature is added to roadmap. He/She should develop the code in a private branch pulled from the master branch(explained in detail in process section). He/She should own the feature for completion upon the agreed schedule and should be in a position to give technical updates on the progress and status of it, inline to agreed schedule. He/She should be in a position to develop the code, review it across the community members during the review meeting and ensure to raise a Pull request(explained in below section) for the code to be merged to master branch after final review and approval from the community.
+## Development                    
+Members can contribute by owning and develop a feature for SONiC or enhance an existing feature/sub-features. Members have to inform the community about ownership of feature development/enhancement and ensure that the feature is added to the roadmap. Members should also provide a rough plan about the design document availablity date and code availability date in advance and also identify reviewer(s). Members shall do the design, coding & testing by following the process explained in this document and ensure that the feature is merged before the release. 
               
-### 1.2.2 Reviews
-A member shoud be able to review the owned feature with the community in periodic interval on the progress and its technical update should be presented to the community members during feature review. Any changes in the design/flow should be discussed, reviewed and changed. All the changes including cosmetic changes needs to be reviewed for approval.
+## Reviews
+Members can contribute by owning up the reviews for the design documents, code, test cases/scripts and any documents that are prepared for SONiC. Members can join the design review meetings and provide review comments during the discussion and/or provide the review comments on the pull request raised by the authors. Members are requested to complete the review cycle on time so that the features planned in the roadmap are completed before the release.
 
-### 1.3.3 Testing
-A member can also be part of testing the feature. He/She can able to review the existing test cases for the available features which can be enhanced. He/She can come up with new test cases to the existing feature list or to the ongoing features. He/She should review their written test cases with the community members in order to update the same in sonic-mgnt-repository. He/She should develop the test case in a private repository pulled from the master branch(explained in detail in process section) and ensure to raise a Pull request for the test cases to be merged to master branch after final review and approval from the community.                                  
+## Testing
+Members are requested to test SONiC in their own platforms and raise issues in the appropriate SONiC repositories. Members can also contribute by reviewing the existing test cases and adding new test cases to the sonic-mgmt repository.                                    
 
-### 1.4.4 BugFixing
-A member can be a part of issue triage team, where he/she can join the community to review the ongoing pull request and come up with the issues which can be fixed.
+## BugFixing
+Members are requested to fix the bugs present in SONiC. They are requested to join the issue triage sub group and contribute for root cause analysis as well as in review. 
 
-### 1.5.5 Documentation
-A member can also contribute to technical documentation. He/She can own up the Config guide, CLI  guide, use-cases documentation, deployment scenarios documentation, for the ongoing feature or the existing feture which needs an enhancement. The documentation would be reviewed with the community members to be published in the SONiC community.
+## Documentation
+Members are requested to review the existing documents in SONiC and also help in enhancing the existing technical documents like Config guide, CLI  guide, Wiki pages, etc., 
+Members are requested to capture the SONiC deployment scenarios as well as the use cases in a document and add it to the SONiC Wiki library.
 
-## 1.3 Process on Contribution
-This section gives a detailed description on adhering the process for contributing to the community. 
+# Development Process
 
-### 1.3.1 Process on Code Development
-As mentioned in previous section, a member should inform the community about ownership of his/her feature development/enhancement and ensure that the feature is added to roadmap. He/She has to pull a seperate private branch from the master branch in the corresponding community repository in order to develop their code.The High level design document should always be in markdown file format. Plan the workflow & provide a schedule for release to the community members. The plan should include requirements, design, design review with community, code & test, code review by community & PR merge, final testing, test-cases if applicable, CLI document update, config document update. This plan should be reviewed and approved by community members before the development/enhancement of owned feature. He/She should execute as per the plan and schedule community reviews in advance. He/She should ensure that the feature HLD review is completed and  HLD reveiw comments are addressed and merge the Pull Request(explained in below section). He/She should ensure that code checkin and Pull Request has been raised for the feature. And ensure code is reviewed by the community and merged as per the planned release.
-
-### 1.3.2 Process on Repositories
-As mentioned earlier, a seperate private branch has to be pulled from master branch in an appropriate repository. There are various code repository available such as sonic-buildimage, sonic-utilities, sonic-swss, sonic-build-system etc. He/She should ensure that the owned feature is updated in  the right repository to add the development code and its corresponding HLD document.
-
-### 1.3.3 Process on Release Cycle
-The community will follow the roadmap for release and would be updated periodically. The release tracking will be followed for all the ongoing feature on the release and its corresponding HLD discussion will be happening every week. A member should ensure that he/she actively involves his/her self in the discussion. The release tracking sheet should be updated periodically to ensure the status of the ongoing release. Release notes will be issued upon successful release for the completed features. 
-
-## 1.4 Process on Pull Request
-Find below the steps to raise a Pull Request for the HLD document as well as for the development Code.
--Fork the corresponding repository for the owned feature
--Clone your repository 
--Create a private branch for updating the HLD and code development.
--Do necessary changes upon review comments if any
--Push the HLD document code development 
--And raise a new pull request.
-Find the below example on raising a pull request
-
-```
-git clone https://github.com/kannankvs/sonic-buildimage.git	 	 
-git clone https://github.com/kannankvs/sonic-utilities.git	 	 
-git clone https://github.com/vharish02/sonic-utilities.git	 	 
-git checkout -b mvrf_ip_rule_priority_change_to_32765	git checkout mvrf_ip_rule_priority_change_to_32765	 
-git push origin mvrf_ip_rule_priority_change_to_32765	 	 
-
-```
-
-## Design Spec
+## Design
 1. Create the file as MD (markdown) format;
 2. Send as a pull request to https://github.com/Azure/SONiC/pulls;
 3. Go through community design review;
 4. Once approved, the doc will be merged to https://github.com/Azure/SONiC repo;
 5. The doc will be published on SONiC WiKi;
 
-## File A Issue
+##  Code
+1. Code the feature and raise a pull request
+2. Pull request for the code should be raised from appropriate repository.
+3. Available repository for code are sonic-buildimage, sonic-utilities, sonic-swss, sonic-build-system, etc.,
+4. Members should inform the community if a new repository is created the feature.
+5. Code has to be in file format such as python, C/C++, ruby, etc.,
+6. Go through community for code review.
+7. Once approved, the code will be merged to https://github.com/Azure/SONiC repo.
+
+Repositories  
+Members should pull a seperate private branch from the master branch in an appropriate repository. There are various code repository available such as sonic-buildimage, sonic-utilities, sonic-swss, sonic-build-system etc. Members should ensure that the owned feature is updated in  the right repository to add the development code and its corresponding HLD document.
+
+# Release Process 
+1. The community will follow the roadmap for release and would be updated periodically. 
+2. The release tracking will be followed for all the ongoing feature on the release and its corresponding HLD discussion will be happening every week. 
+3. A member should ensure the active involvment in the discussion. 
+4. The release tracking sheet should be updated periodically to ensure the status of the ongoing release. 
+5. Release notes will be issued upon successful release for the completed features.
+6. Any feature that is not completed before the branching will be considered for next release.
+
+# Pull Request Process
+Find below the steps to raise a Pull Request for the HLD document as well as for the development Code.
+1. Fork the corresponding repository for the owned feature
+2. Clone your repository 
+3. Create a private branch for updating the HLD and code development.
+4. Do necessary changes upon review comments if any
+5. Push the HLD document code development 
+6. Raise a new pull request.
+```
+Find the below example on raising a pull request
+
+git clone https://github.com/kannankvs/sonic-buildimage.git	 	 
+git clone https://github.com/kannankvs/sonic-utilities.git	 	 
+git clone https://github.com/vharish02/sonic-utilities.git	 	 
+git checkout -b mvrf_ip_rule_priority_change_to_32765	
+git checkout mvrf_ip_rule_priority_change_to_32765	 
+git push origin mvrf_ip_rule_priority_change_to_32765	 	 
+
+```
+
+## How to file an Issue ?
 1. Issues should be filed under https://github.com/Azure/sonic-buildimage/issues;
 2. Please fill the template as 
 - Description

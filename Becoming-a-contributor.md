@@ -1,16 +1,18 @@
 `This document provides general information about the ways of contribution to the SONiC Community.
 ## Joining the SONiC Community
- A member can contribute the community by signing in Github and can access the SONiC contribution. A member can join the various SONiC groups
- and can start attending actively over the weekly discussion on the ongoing activities. You can find SONiC mailing list [here](https://azure.github.io/SONiC/contact.html).
 
-1)Please get familiar with our [governance document](https://github.com/Azure/SONiC/blob/master/governance.md);
-
-2)Please get familiar with [code of conduct](https://github.com/Azure/SONiC/blob/master/CODE_OF_CONDUCT.md);
-
-3)Members are welcome to join the mailing list
-
-4)Members can opt to join the work groups and can contribute towards it.
-
+ SONiC community welcomes new members to join this open source community project and contribute for SONiC development.
+ 
+ 1)Please get familiar with our [governance document](https://github.com/Azure/SONiC/blob/master/governance.md)
+ 
+ 2) Members are expected to follow the [code of conduct](https://github.com/Azure/SONiC/blob/master/CODE_OF_CONDUCT.md) and agree.
+ 
+ 3) Members are welcome to join the [mailing list](https://azure.github.io/SONiC/contact.html) and start attending the weekly discussion on the ongoing activities to contribute. 
+ 
+ 4) Members are welcome to join the [sub work groups](https://azure.github.io/SONiC/workgroups.html) and contribute.
+ 
+ 5) Members shall go through the [SONiC webpage](https://azure.github.io/SONiC/) and [SONiC Wiki](https://github.com/Azure/SONiC/wiki) and familiarize themselves about the basics.
+ 
 
 # Legal
 We welcome everyone to contribute to SONiC project. A [Contribution License Agreement](https://www.1eswiki.com/wiki/Automating_Contribution_License_Agreements) is required before you making a contribution to the open source project. 
@@ -109,6 +111,7 @@ git push origin mvrf_ip_rule_priority_change_to_32765	 	 
 - Describe the results you expected:
 - Attach debug file
 3. Submit
+4. Members shall join the Biweekly [Issue Traige meeting](https://teams.microsoft.com/dl/launcher/launcher.html?type=meetup-join&deeplinkId=e9f53774-5339-4d6b-aaee-f5c9b1f40f3e&directDl=true&msLaunch=true&enableMobilePage=true&url=%2F_%23%2Fl%2Fmeetup-join%2F19%253ameeting_YmRjMTRiYmMtMTRmOC00Njk4LWJhZmEtMTg4NDQ4NTVmY2Q4%2540thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%252272f988bf-86f1-41af-91ab-2d7cd011db47%2522%252c%2522Oid%2522%253a%2522ce6b8852-7e4e-4884-b18a-0afa1017d956%2522%257d%26anon%3Dtrue&suppressPrompt=true) and contribute towards raising and resolving the issues. 
 
 
 ## Design Spec

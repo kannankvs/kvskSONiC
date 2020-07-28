@@ -7,6 +7,11 @@
 
 2)Please get familiar with [code of conduct](https://github.com/Azure/SONiC/blob/master/CODE_OF_CONDUCT.md);
 
+3)Members are welcome to join the mailing list
+
+4)Members can opt to join the work groups and can contribute towards it.
+
+
 # Legal
 We welcome everyone to contribute to SONiC project. A [Contribution License Agreement](https://www.1eswiki.com/wiki/Automating_Contribution_License_Agreements) is required before you making a contribution to the open source project. 
 
@@ -104,6 +109,7 @@ git push origin mvrf_ip_rule_priority_change_to_32765	 	 
 - Describe the results you expected:
 - Attach debug file
 3. Submit
+
 
 ## Design Spec
 1. Create the file as MD (markdown) format;

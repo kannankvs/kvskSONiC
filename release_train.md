@@ -82,4 +82,6 @@ Example Feature : Dynamic Port Breakout - developed for 202006 release
 3. Release notes will be prepared by the SONiC documentation team and will be released to the community.
 4. Any feature that is not completed before the branching shall catch the next train.
 
+## Process Flow
+
 ![](images/release_train.png)

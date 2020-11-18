@@ -175,6 +175,8 @@ b) Modified enum sai_next_hop_attr_t for sainexthop.h
 e) Added new enum sai_outseg_type_t, sai_outseg_ttl_mode_t and sai_outseg_exp_mode_t in saitypes.h
 
 
+## Additional SAI Changes
+
 ### Added bulk apis for fdb_entry in sai_fdb_api_t #1018
 (a) Bulk create FDB entry
 typedef sai_status_t (*sai_bulk_create_fdb_entry_fn)( _In_ uint32_t object_count,_In_ const sai_fdb_entry_t *fdb_entry,_In_ const uint32_t *attr_count,_In_ const sai_attribute_t **attr_list,_In_ sai_bulk_op_error_mode_t mode,_Out_ sai_status_t *object_statuses);

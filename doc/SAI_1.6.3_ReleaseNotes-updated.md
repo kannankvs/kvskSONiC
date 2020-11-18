@@ -16,13 +16,14 @@ Further details Please refer [Design Document](https://github.com/opencomputepro
 New SAI APIs for MACSEC feature are added for the following.
 
 ##### (i) Create/Delete a MACsec object, Set/Get MACsec attribute, 
-
+`````
 typedef sai_status_t (*sai_create_macsec_fn)(_Out_ sai_object_id_t *macsec_id,_In_ sai_object_id_t switch_id,_In_ uint32_t attr_count,_In_ const sai_attribute_t *attr_list);
 typedef sai_status_t (*sai_remove_macsec_fn)(_In_ sai_object_id_t macsec_id);
 typedef sai_status_t (*sai_set_macsec_attribute_fn)(_In_ sai_object_id_t macsec_id,_In_ const sai_attribute_t *attr);
 typedef sai_status_t (*sai_get_macsec_attribute_fn)(_In_ sai_object_id_t macsec_id,_In_ uint32_t attr_count,_Inout_ sai_attribute_t *attr_list);		
-
+`````
 ##### (ii) Create/Delete MACSec port, Get/Set MACSec port attribute, Get MACsec port counters, get MACsec port counters extended, clear MACsec port counters
+`````
 typedef sai_status_t (*sai_create_macsec_port_fn)(_Out_ sai_object_id_t *macsec_port_id,_In_ sai_object_id_t switch_id,_In_ uint32_t attr_count,_In_ const sai_attribute_t *attr_list);
 typedef sai_status_t (*sai_remove_macsec_port_fn)(_In_ sai_object_id_t macsec_port_id);
 typedef sai_status_t (*sai_set_macsec_port_attribute_fn)(_In_ sai_object_id_t macsec_port_id,_In_ const sai_attribute_t *attr);
@@ -30,14 +31,16 @@ typedef sai_status_t (*sai_get_macsec_port_attribute_fn)(_In_ sai_object_id_t ma
 typedef sai_status_t (*sai_get_macsec_port_stats_fn)(_In_ sai_object_id_t macsec_port_id,_In_ uint32_t number_of_counters,_In_ const sai_stat_id_t *counter_ids,_Out_ uint64_t *counters);
 typedef sai_status_t (*sai_get_macsec_port_stats_ext_fn)(_In_ sai_object_id_t macsec_port_id,_In_ uint32_t number_of_counters,_In_ const sai_stat_id_t *counter_ids,_In_ sai_stats_mode_t mode,_Out_ uint64_t *counters);
 typedef sai_status_t (*sai_create_macsec_flow_fn)(_Out_ sai_object_id_t *macsec_flow_id,_In_ sai_object_id_t switch_id,_In_ uint32_t attr_count,_In_ const sai_attribute_t *attr_list);
-
+`````
 ##### (iii)  Create/Delete a MACsec flow, Set/Get MACsec flow attributes
+`````
 typedef sai_status_t (*sai_create_macsec_flow_fn)(_Out_ sai_object_id_t *macsec_flow_id,_In_ sai_object_id_t switch_id,_In_ uint32_t attr_count,_In_ const sai_attribute_t *attr_list);
 typedef sai_status_t (*sai_remove_macsec_flow_fn)(_In_ sai_object_id_t macsec_flow_id);
 typedef sai_status_t (*sai_set_macsec_flow_attribute_fn)(_In_ sai_object_id_t macsec_flow_id,_In_ const sai_attribute_t *attr);
 typedef sai_status_t (*sai_get_macsec_flow_attribute_fn)(_In_ sai_object_id_t macsec_flow_id,_In_ uint32_t attr_count,_Inout_ sai_attribute_t *attr_list);
-
+`````
 ##### (iv) Create/Delete a MACsec Secure Channel, Set/Get MACsec secure channel attribute, Get MACsec Secure Channel counters & extended counters and clear counters
+`````
 typedef sai_status_t (*sai_create_macsec_sc_fn)(_Out_ sai_object_id_t *macsec_sc_id,_In_ sai_object_id_t switch_id,_In_ uint32_t attr_count,_In_ const sai_attribute_t *attr_list);
 typedef sai_status_t (*sai_remove_macsec_sc_fn)(_In_ sai_object_id_t macsec_sc_id);
 typedef sai_status_t (*sai_set_macsec_sc_attribute_fn)(_In_ sai_object_id_t macsec_sc_id,_In_ const sai_attribute_t *attr);
@@ -45,8 +48,9 @@ typedef sai_status_t (*sai_get_macsec_sc_attribute_fn)(_In_ sai_object_id_t macs
 typedef sai_status_t (*sai_get_macsec_sc_stats_fn)(_In_ sai_object_id_t macsec_sc_id,_In_ uint32_t number_of_counters,_In_ const sai_stat_id_t *counter_ids,_Out_ uint64_t *counters);
 typedef sai_status_t (*sai_get_macsec_sc_stats_ext_fn)(_In_ sai_object_id_t macsec_sc_id,_In_ uint32_t number_of_counters,_In_ const sai_stat_id_t *counter_ids,_In_ sai_stats_mode_t mode,_Out_ uint64_t *counters);
 typedef sai_status_t (*sai_clear_macsec_sc_stats_fn)(_In_ sai_object_id_t macsec_sc_id,_In_ uint32_t number_of_counters,_In_ const sai_stat_id_t *counter_ids);
-
+`````
 ##### (v) Create/Delete a MACsec Secure Association, Set/Get MACsec Secure Association attribute, Get Secure Association counters & extended counters and clear counters
+`````
 typedef sai_status_t (*sai_create_macsec_sa_fn)( _Out_ sai_object_id_t *macsec_sa_id,_In_ sai_object_id_t switch_id,_In_ uint32_t attr_count,_In_ const sai_attribute_t *attr_list);
 typedef sai_status_t (*sai_remove_macsec_sa_fn)(_In_ sai_object_id_t macsec_sa_id);
 typedef sai_status_t (*sai_set_macsec_sa_attribute_fn)(_In_ sai_object_id_t macsec_sa_id,_In_ const sai_attribute_t *attr);
@@ -54,13 +58,14 @@ typedef sai_status_t (*sai_get_macsec_sa_attribute_fn)(_In_ sai_object_id_t macs
 typedef sai_status_t (*sai_get_macsec_sa_stats_fn)( _In_ sai_object_id_t macsec_sa_id,_In_ uint32_t number_of_counters,_In_ const sai_stat_id_t *counter_ids,_Out_ uint64_t *counters);
 typedef sai_status_t (*sai_get_macsec_sa_stats_ext_fn)(_In_ sai_object_id_t macsec_sa_id,_In_ uint32_t number_of_counters,_In_ const sai_stat_id_t *counter_ids,_In_ sai_stats_mode_t mode,_Out_ uint64_t *counters);
 typedef sai_status_t (*sai_clear_macsec_sa_stats_fn)(_In_ sai_object_id_t macsec_sa_id,_In_ uint32_t number_of_counters,_In_ const sai_stat_id_t *counter_ids);
-		
+`````
 ##### (vi) MACsec flow counters functions for get/clear are added as below 
+`````
 typedef sai_status_t (*sai_get_macsec_flow_stats_fn)(_In_ sai_object_id_t macsec_flow_id, _In_ uint32_t number_of_counters, _In_ const sai_stat_id_t *counter_ids,
 _Out_ uint64_t *counters);
 typedef sai_status_t (*sai_get_macsec_flow_stats_ext_fn)(_In_ sai_object_id_t macsec_flow_id, _In_ uint32_t number_of_counters,_In_ const sai_stat_id_t *counter_ids, _In_ sai_stats_mode_t mode, _Out_ uint64_t *counters);
 typedef sai_status_t (*sai_clear_macsec_flow_stats_fn)(_In_ sai_object_id_t macsec_flow_id, _In_ uint32_t number_of_counters, _In_ const sai_stat_id_t *counter_ids);	
-
+`````
 #### (b) Additional Changes
 ##### (i) saiacl.h 
 SAI_ACL_ACTION_TYPE_MACSEC_FLOW added to sai_acl_action_type_t

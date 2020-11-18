@@ -61,16 +61,17 @@ typedef sai_status_t (*sai_clear_macsec_sa_stats_fn)(_In_ sai_object_id_t macsec
 `````
 ##### (vi) MACsec flow counters functions for get/clear are added as below 
 `````
-typedef sai_status_t (*sai_get_macsec_flow_stats_fn)(_In_ sai_object_id_t macsec_flow_id, _In_ uint32_t number_of_counters, _In_ const sai_stat_id_t *counter_ids,
-_Out_ uint64_t *counters);
+typedef sai_status_t (*sai_get_macsec_flow_stats_fn)(_In_ sai_object_id_t macsec_flow_id, _In_ uint32_t number_of_counters, _In_ const sai_stat_id_t *counter_ids, _Out_ uint64_t *counters);
 typedef sai_status_t (*sai_get_macsec_flow_stats_ext_fn)(_In_ sai_object_id_t macsec_flow_id, _In_ uint32_t number_of_counters,_In_ const sai_stat_id_t *counter_ids, _In_ sai_stats_mode_t mode, _Out_ uint64_t *counters);
 typedef sai_status_t (*sai_clear_macsec_flow_stats_fn)(_In_ sai_object_id_t macsec_flow_id, _In_ uint32_t number_of_counters, _In_ const sai_stat_id_t *counter_ids);	
 `````
 #### (b) Additional Changes
 ##### (i) saiacl.h 
+`````
 SAI_ACL_ACTION_TYPE_MACSEC_FLOW added to sai_acl_action_type_t
 SAI_ACL_TABLE_ATTR_FIELD_HAS_VLAN_TAG, SAI_ACL_TABLE_ATTR_FIELD_MACSEC_SCI added to sai_acl_table_attr_t
 SAI_ACL_ENTRY_ATTR_FIELD_HAS_VLAN_TAG, SAI_ACL_ENTRY_ATTR_FIELD_MACSEC_SCI, SAI_ACL_ENTRY_ATTR_ACTION_MACSEC_FLOW added to sai_acl_entry_attr_t
+`````
 ##### (ii) saiport.h Changes
 SAI_PORT_ATTR_INGRESS_MACSEC_ACL, SAI_PORT_ATTR_EGRESS_MACSEC_ACL, SAI_PORT_ATTR_MACSEC_PORT_LIST are added to enum sai_port_attr_t
 ##### (iii) saiswitch.h Changes
@@ -83,35 +84,43 @@ SAI_SWITCH_ATTR_MACSEC_OBJECT_ID added to sai_switch_attr_t
 Specific APIs are added as explained in the specification. Please refer the [Document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_Gearbox_API_Proposal-v1.0.docx) for more details.
 #### (a) saiport.h 
 ##### (i) This API is to create Port connector to define logical relation between system side port to line side port.
+`````
 typedef sai_status_t (*sai_create_port_connector_fn)( _Out_ sai_object_id_t *port_connector_id,_In_ sai_object_id_t switch_id,_In_ uint32_t attr_count,_In_ const sai_attribute_t *attr_list);
-
+`````
 ##### (ii) This API is to remove the same.
+`````
 typedef sai_status_t (*sai_remove_port_connector_fn)(_In_ sai_object_id_t port_connector_id);
-
+`````
 ##### (iii) This API is to set port connector attribute value
+`````
 typedef sai_status_t (*sai_set_port_connector_attribute_fn)(_In_ sai_object_id_t port_connector_id,_In_ const sai_attribute_t *attr);
-
+`````
 ##### (iv) This API is to get port connector attribute value
+`````
 typedef sai_status_t (*sai_get_port_connector_attribute_fn)( _In_ sai_object_id_t port_connector_id,_In_ uint32_t attr_count, _Inout_ sai_attribute_t *attr_list);
-
+`````
 The required enums like _sai_port_interface_type_t, _sai_port_connector_attr_t for the above APIs are also added in saiport.h
 
 #### (b) saiswitch.h
 
 ##### (i) This API provides platform adaption functionality to access device registers from driver. 
-This is mandatory to pass as attribute to sai_create_switch when driver implementation does not support register access by device file system directly.		
+This is mandatory to pass as attribute to sai_create_switch when driver implementation does not support register access by device file system directly.	
+`````	
 typedef sai_status_t (*sai_switch_register_read_fn)( _In_ uint64_t platform_context, _In_ uint32_t device_addr,_In_ uint32_t start_reg_addr,_In_ uint32_t number_of_registers,_Out_ uint32_t *reg_val);
-
+`````
 ##### (ii) This API provides platform adaption device write callback function passed to the adapter. 
 This is mandatory function for driver when device access not supported by file system.	
+`````
 typedef sai_status_t (*sai_switch_register_write_fn)(_In_ uint64_t platform_context,_In_ uint32_t device_addr,_In_ uint32_t start_reg_addr,_In_ uint32_t number_of_registers,_In_ const uint32_t *reg_val);
-
+`````
 ##### (iii) This API provides read access API for devices connected to MDIO from NPU SAI.
+`````
 typedef sai_status_t (*sai_switch_mdio_read_fn)(_In_ sai_object_id_t switch_id,_In_ uint32_t device_addr,_In_ uint32_t start_reg_addr,_In_ uint32_t number_of_registers,_Out_ uint32_t *reg_val);
-
+`````
 ##### (iv) This API provides write access API for devices connected to MDIO from NPU SAI
+`````
 typedef sai_status_t (*sai_switch_mdio_write_fn)(_In_ sai_object_id_t switch_id,_In_ uint32_t device_addr,_In_ uint32_t start_reg_addr,_In_ uint32_t number_of_registers,_In_ const uint32_t *reg_val);	
-	
+`````
 The required enums like _sai_switch_hardware_access_bus_t, _sai_switch_firmware_load_method_t, _sai_switch_firmware_load_type_t, _sai_switch_type_t for the above APIs are also added in saiswitch.h. 
 The enum "sai_switch_attr_t" is also updated to reflect these changes.
 
@@ -135,11 +144,12 @@ Fabric port is associated with one to three TX- Fabric-Queues,whose IDs are the 
 
 #### New SAI APIs:
 System port support - A new file saisystemport.h is added with following SAI APIs for create/remove, set/get system port.
+`````
 typedef sai_status_t (*sai_create_system_port_fn)(_Out_ sai_object_id_t *system_port_id, _In_ sai_object_id_t switch_id, _In_ uint32_t attr_count,  _In_ const sai_attribute_t *attr_list);
 typedef sai_status_t (*sai_remove_system_port_fn)(_In_ sai_object_id_t system_port_id);
 typedef sai_status_t (*sai_set_system_port_attribute_fn)(_In_ sai_object_id_t system_port_id,  _In_ const sai_attribute_t *attr);
 typedef sai_status_t (*sai_get_system_port_attribute_fn)(_In_ sai_object_id_t system_port_id, _In_ uint32_t attr_count, _Inout_ sai_attribute_t *attr_list);
-
+`````
 #### Corresponding changes required in following attrbutes are also added. 
 (a) Switch Configuration Info (SAI_SWITCH_ATTR_TYPE, SAI_SWITCH_ATTR_SWITCH_ID, SAI_SWITCH_ATTR_MAX_SYSTEM_CORES, SAI_SWITCH_ATTR_SYSTEM_PORT_CONFIG_LIST, SAI_SWITCH_ATTR_SYSTEM_PORT_LIST, SAI_SWITCH_ATTR_FABRIC_PORT_LIST),
 (b) Switch Statistics
@@ -184,23 +194,28 @@ e) Added new enum sai_outseg_type_t, sai_outseg_ttl_mode_t and sai_outseg_exp_mo
 
 ### Added bulk apis for fdb_entry in sai_fdb_api_t (#1018)
 (a) Bulk create FDB entry
+`````
 typedef sai_status_t (*sai_bulk_create_fdb_entry_fn)( _In_ uint32_t object_count,_In_ const sai_fdb_entry_t *fdb_entry,_In_ const uint32_t *attr_count,_In_ const sai_attribute_t **attr_list,_In_ sai_bulk_op_error_mode_t mode,_Out_ sai_status_t *object_statuses);
-
+`````
 (b) Bulk remove FDB entry
+`````
 typedef sai_status_t (*sai_bulk_remove_fdb_entry_fn)(_In_ uint32_t object_count,_In_ const sai_fdb_entry_t *fdb_entry,_In_ sai_bulk_op_error_mode_t mode,_Out_ sai_status_t *object_statuses);
-		
+`````		
 (c) Bulk set attribute on FDB entry		
+`````
 typedef sai_status_t (*sai_bulk_set_fdb_entry_attribute_fn)(_In_ uint32_t object_count,_In_ const sai_fdb_entry_t *fdb_entry,_In_ const sai_attribute_t *attr_list,_In_ sai_bulk_op_error_mode_t mode,_Out_ sai_status_t *object_statuses);
-
+`````
 (d)  Bulk get attribute on FDB entry
+`````
 typedef sai_status_t (*sai_bulk_get_fdb_entry_attribute_fn)(_In_ uint32_t object_count,_In_ const sai_fdb_entry_t *fdb_entry,_In_ const uint32_t *attr_count,_Inout_ sai_attribute_t **attr_list,_In_ sai_bulk_op_error_mode_t mode,_Out_ sai_status_t *object_statuses);
-
+`````
 
 ### Set/get bulk functions typedefs for oid objects (#1028) 
 Following new SAI APIs are added for bulk object set/get attributes. 
+`````
 sai_status_t (*sai_bulk_object_set_attribute_fn)(_In_ uint32_t object_count,_In_ const sai_object_id_t *object_id,_In_ const sai_attribute_t *attr_list, _In_ sai_bulk_op_error_mode_t mode, _Out_ sai_status_t *object_statuses);
 sai_status_t (*sai_bulk_object_get_attribute_fn)( _In_ uint32_t object_count, _In_ const sai_object_id_t *object_id, _In_ const uint32_t *attr_count,  _Inout_ sai_attribute_t **attr_list, _In_ sai_bulk_op_error_mode_t mode, _Out_ sai_status_t *object_statuses);
-
+`````
 
 ### RO Attr (switch obj) to get a list of supported obj types (#989)
 A new RO attribute to switch object that returns the list of supported object types that the underlying SAI adapter can support. This allows the clients of SAI to understand the abilities of the underlying silicon as well as the SAI adapter to support the SAI feature set.
@@ -217,11 +232,12 @@ SAI_SWITCH_ATTR_SUPPORTED_OBJECT_TYPE_LIST is added to the enum "sai_switch_attr
 Defined new Serdes attributes. The new serdes range is reserved so that in future the attributes can be extended to include new settings in the future.
 New object type SAI_OBJECT_TYPE_PORT_SERDES added to sai_object_type_t in saitypes.h
 Added SAI_PORT_ATTR_PORT_SERDES_ID to sai_port_attr_t in saiport.h, created typedef for enum sai_port_serdes_attr_t and following new SAI APIs are added.
+`````
 (a) typedef sai_status_t (*sai_create_port_serdes_fn)(_Out_ sai_object_id_t *port_serdes_id,_In_ sai_object_id_t switch_id,_In_ uint32_t attr_count,_In_ const sai_attribute_t *attr_list);
 (b) typedef sai_status_t (*sai_remove_port_serdes_fn)(_In_ sai_object_id_t port_serdes_id);
 (c) typedef sai_status_t (*sai_set_port_serdes_attribute_fn)(_In_ sai_object_id_t port_serdes_id,_In_ const sai_attribute_t *attr);
 (d) typedef sai_status_t (*sai_get_port_serdes_attribute_fn)(_In_ sai_object_id_t port_serdes_id,_In_ uint32_t attr_count,_Inout_ sai_attribute_t *attr_list);
-
+`````
 
 ### Introduce buffer pool type SAI_BUFFER_POOL_TYPE_BOTH (#986)
 SAI_BUFFER_POOL_TYPE_BOTH has been added to sai_buffer_pool_type_t in saibuffer.h. SAI_BUFFER_POOL_TYPE_BOTH indicates the buffer pool specification encompasses both ingress characterization and egress characterization.

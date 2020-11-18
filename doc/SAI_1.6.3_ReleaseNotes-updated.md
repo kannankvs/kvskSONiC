@@ -1,28 +1,32 @@
 
 # SAI 1.6.3 Release Notes
 
-The Switch Abstraction Interface defines the APIs to provide a vendor-independent way of controlling forwarding elements, such as a switching ASIC, an NPU or a software switch in a uniform manner. This release note covers the SAI API changes from SAI tag 1.5.0 to SAI tag 1.6.3. The previous release notes corresponding to SAI tag 1.5.0 is available at [SAI 1.5 release notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.5_ReleaseNotes.md) 
+The Switch Abstraction Interface defines the APIs to provide a vendor-independent way of controlling forwarding elements, such as a switching ASIC, an NPU or a software switch in a uniform manner. This release document covers the SAI API changes from SAI tag 1.5.0 to SAI tag 1.6.3. The previous release notes corresponding to SAI tag 1.5.0 is available at [SAI 1.5 release notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.5_ReleaseNotes.md) 
 
-This section describes the SAI changes done for features, and various bug fixes mentioned below.
+This document explains the new SAI features as well as the enhancements and the bug fixes on existing features. 
 
 
 ## 1. MACsec Feature (#1010)  
 
+MACsec is a new feature, that is added in this SAI tag 1.6.3. 
+
 The switching hardware consists of network interfaces connected to a forwarding element, such as a switching ASIC.  Some switching hardware also include Phy ASIC(s) that interconnect network interfaces and forwarding element interfaces.  Each Phy ASIC supports one or more network interfaces.  SAI is used for each such Phy ASIC.  A sai_switch object is used to interface to either a forwarding element or a Phy. This SAI MACsec API provides a software interface for 802.1ae MACSec Entities (SecY) associated with some or all ports of a sai_switch object.
 
-Further details Please refer [Design Document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_MACsec_API_Proposal-v1.3.docx) 
+The design related to this feature is available at [design document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_MACsec_API_Proposal-v1.3.docx) and Pull Request(PR) is available at [PR1010]() 
 
-#### (a) MACSEC SAI APIs - saimacsec.h
+Following sub-section explains the SAI changes related to this new MACsec feature.
+
+### (a) MACSec SAI APIs - saimacsec.h
 New SAI APIs for MACSEC feature are added for the following.
 
-##### (i) Create/Delete a MACsec object, Set/Get MACsec attribute, 
+#### (i) Create/Delete a MACsec object, Set/Get MACsec attribute, 
 `````
 typedef sai_status_t (*sai_create_macsec_fn)(_Out_ sai_object_id_t *macsec_id,_In_ sai_object_id_t switch_id,_In_ uint32_t attr_count,_In_ const sai_attribute_t *attr_list);
 typedef sai_status_t (*sai_remove_macsec_fn)(_In_ sai_object_id_t macsec_id);
 typedef sai_status_t (*sai_set_macsec_attribute_fn)(_In_ sai_object_id_t macsec_id,_In_ const sai_attribute_t *attr);
 typedef sai_status_t (*sai_get_macsec_attribute_fn)(_In_ sai_object_id_t macsec_id,_In_ uint32_t attr_count,_Inout_ sai_attribute_t *attr_list);		
 `````
-##### (ii) Create/Delete MACSec port, Get/Set MACSec port attribute, Get MACsec port counters, get MACsec port counters extended, clear MACsec port counters
+#### (ii) Create/Delete MACSec port, Get/Set MACSec port attribute, Get MACsec port counters, get MACsec port counters extended, clear MACsec port counters
 `````
 typedef sai_status_t (*sai_create_macsec_port_fn)(_Out_ sai_object_id_t *macsec_port_id,_In_ sai_object_id_t switch_id,_In_ uint32_t attr_count,_In_ const sai_attribute_t *attr_list);
 typedef sai_status_t (*sai_remove_macsec_port_fn)(_In_ sai_object_id_t macsec_port_id);
@@ -65,7 +69,7 @@ typedef sai_status_t (*sai_get_macsec_flow_stats_fn)(_In_ sai_object_id_t macsec
 typedef sai_status_t (*sai_get_macsec_flow_stats_ext_fn)(_In_ sai_object_id_t macsec_flow_id, _In_ uint32_t number_of_counters,_In_ const sai_stat_id_t *counter_ids, _In_ sai_stats_mode_t mode, _Out_ uint64_t *counters);
 typedef sai_status_t (*sai_clear_macsec_flow_stats_fn)(_In_ sai_object_id_t macsec_flow_id, _In_ uint32_t number_of_counters, _In_ const sai_stat_id_t *counter_ids);	
 `````
-#### (b) Additional Changes
+### (b) Additional MACsec SAI Changes
 ##### (i) saiacl.h 
 `````
 SAI_ACL_ACTION_TYPE_MACSEC_FLOW added to sai_acl_action_type_t

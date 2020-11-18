@@ -293,7 +293,7 @@ Attribute SAI_PORT_ATTR_TPID is added to enum sai_port_attr_t in saiport.h and S
 
 The PR related to this feature is available at [1089](https://github.com/opencomputeproject/SAI/pull/1089) and for more details refer [document](https://github.com/gechiang/SAI/blob/c5b6e1db63c7cc6dba283b31b29aff13b60dcf97/doc/TPID/TPID_SAI_proposal.md)
 
-### SERDES ATTRIBUTE APIs 
+### SERDES Attribute APIs 
 Defined new Serdes attributes. The new serdes range is reserved so that in future the attributes can be extended to include new settings in the future.
 New object type SAI_OBJECT_TYPE_PORT_SERDES added to sai_object_type_t in saitypes.h
 Added SAI_PORT_ATTR_PORT_SERDES_ID to sai_port_attr_t in saiport.h, created typedef for enum sai_port_serdes_attr_t and following new SAI APIs are added.

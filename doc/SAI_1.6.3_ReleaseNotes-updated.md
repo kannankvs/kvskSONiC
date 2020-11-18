@@ -6,7 +6,7 @@ The Switch Abstraction Interface defines the APIs to provide a vendor-independen
 This section describes the SAI changes done for features, and various bug fixes mentioned below.
 
 
-## 1. MACsec Feature(#1010)  
+## 1. MACsec Feature (#1010)  
 
 The switching hardware consists of network interfaces connected to a forwarding element, such as a switching ASIC.  Some switching hardware also include Phy ASIC(s) that interconnect network interfaces and forwarding element interfaces.  Each Phy ASIC supports one or more network interfaces.  SAI is used for each such Phy ASIC.  A sai_switch object is used to interface to either a forwarding element or a Phy. This SAI MACsec API provides a software interface for 802.1ae MACSec Entities (SecY) associated with some or all ports of a sai_switch object.
 
@@ -73,7 +73,7 @@ SAI_SWITCH_ATTR_MACSEC_OBJECT_ID added to sai_switch_attr_t
 ##### (iv) saitypes.h - few typedefs used in macsec are added.
 
 
-## Gearbox (#1014) 
+## 2. Gearbox (#1014) 
 
 Specific APIs are added as explained in the specification. Please refer the [Document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_Gearbox_API_Proposal-v1.0.docx) for more details.
 #### (a) saiport.h 
@@ -114,7 +114,7 @@ The enum "sai_switch_attr_t" is also updated to reflect these changes.
 Added SAI_OBJECT_TYPE_PORT_CONNECTOR to enum sai_object_type_t.
 
 
-## Virtual Output Queue(VOQ) Feature (#1081) 
+## 3. Virtual Output Queue(VOQ) Feature (#1081) 
 
 An Integrated VOQ Switch is a system consisting of several Line cards populated with Switch devices and Fabric Cards populated with Fabric devices. The Line Cards switches are connected to network ports on one side and to the Fabric devices on the other side. The Fabric device provides full connectivity between all switch devices. A Clos network is a typical example.
 SAI has been ehnaced to support this feature by doing the following changes
@@ -148,7 +148,7 @@ typedef sai_status_t (*sai_get_system_port_attribute_fn)(_In_ sai_object_id_t sy
 For further details refer https://github.com/opencomputeproject/SAI/blob/master/doc/VoQ/SAI-Proposal-VoQ-Switch.md
 
 
-## MPLS SAI Changes
+## 4. MPLS SAI Changes
 
 ### 1) MPLS Host-If traps for packets with expiring TTL and Router Alert Label (#1062) 
 Added MPLS SAI_HOSTIF_USER_DEFINED_TRAP_TYPE_INSEG_ENTRY in enum sai_hostif_trap_type_t for saihostif.h file.
@@ -175,9 +175,9 @@ b) Modified enum sai_next_hop_attr_t for sainexthop.h
 e) Added new enum sai_outseg_type_t, sai_outseg_ttl_mode_t and sai_outseg_exp_mode_t in saitypes.h
 
 
-## Additional SAI Changes
+## 5. Additional SAI Changes
 
-### Added bulk apis for fdb_entry in sai_fdb_api_t #1018
+### Added bulk apis for fdb_entry in sai_fdb_api_t (#1018)
 (a) Bulk create FDB entry
 typedef sai_status_t (*sai_bulk_create_fdb_entry_fn)( _In_ uint32_t object_count,_In_ const sai_fdb_entry_t *fdb_entry,_In_ const uint32_t *attr_count,_In_ const sai_attribute_t **attr_list,_In_ sai_bulk_op_error_mode_t mode,_Out_ sai_status_t *object_statuses);
 
@@ -197,18 +197,18 @@ sai_status_t (*sai_bulk_object_set_attribute_fn)(_In_ uint32_t object_count,_In_
 sai_status_t (*sai_bulk_object_get_attribute_fn)( _In_ uint32_t object_count, _In_ const sai_object_id_t *object_id, _In_ const uint32_t *attr_count,  _Inout_ sai_attribute_t **attr_list, _In_ sai_bulk_op_error_mode_t mode, _Out_ sai_status_t *object_statuses);
 
 
-### RO Attr (switch obj) to get a list of supported obj types #989
+### RO Attr (switch obj) to get a list of supported obj types (#989)
 A new RO attribute to switch object that returns the list of supported object types that the underlying SAI adapter can support. This allows the clients of SAI to understand the abilities of the underlying silicon as well as the SAI adapter to support the SAI feature set.
 SAI_SWITCH_ATTR_SUPPORTED_OBJECT_TYPE_LIST is added to the enum "sai_switch_attr_t" to specify the list of object types (sai_object_type_t) that the SAI adapter can support in saiswitch.h
 
 
-### Improve debug counter enums #1006
+### Improve debug counter enums (#1006)
  (a) Add START and END attributes for drop reason enums like SAI_IN_DROP_REASON_START & SAI_IN_DROP_REASON_END to enum sai_in_drop_reason_t in saidebugcounter.h
  (b) Add additional port stats for debug dropped packet counters like SAI_PORT_STAT_IN_CONFIGURED_DROP_REASONS_0_DROPPED_PKTS and SAI_PORT_STAT_OUT_CONFIGURED_DROP_REASONS_0_DROPPED_PKTS (index 0 to index 7) in sai_port_stat_t in saiport.h
  (c) Add additional switch stats for "in" and "out" debug counters like SAI_SWITCH_STAT_IN_CONFIGURED_DROP_REASONS_0_DROPPED_PKTS and SAI_SWITCH_STAT_OUT_CONFIGURED_DROP_REASONS_0_DROPPED_PKTS (index 0 to index 7) in sai_switch_stat_t.
 
 
-### SERDES ATTRIBUTE APIs #1002
+### SERDES ATTRIBUTE APIs (#1002)
 Defined new Serdes attributes. The new serdes range is reserved so that in future the attributes can be extended to include new settings in the future.
 New object type SAI_OBJECT_TYPE_PORT_SERDES added to sai_object_type_t in saitypes.h
 Added SAI_PORT_ATTR_PORT_SERDES_ID to sai_port_attr_t in saiport.h, created typedef for enum sai_port_serdes_attr_t and following new SAI APIs are added.
@@ -218,15 +218,15 @@ Added SAI_PORT_ATTR_PORT_SERDES_ID to sai_port_attr_t in saiport.h, created type
 (d) typedef sai_status_t (*sai_get_port_serdes_attribute_fn)(_In_ sai_object_id_t port_serdes_id,_In_ uint32_t attr_count,_Inout_ sai_attribute_t *attr_list);
 
 
-### Introduce buffer pool type SAI_BUFFER_POOL_TYPE_BOTH #986
+### Introduce buffer pool type SAI_BUFFER_POOL_TYPE_BOTH (#986)
 SAI_BUFFER_POOL_TYPE_BOTH has been added to sai_buffer_pool_type_t in saibuffer.h. SAI_BUFFER_POOL_TYPE_BOTH indicates the buffer pool specification encompasses both ingress characterization and egress characterization.
 
 
-### Add support for ACLs to match TAM/INT packets. #1011
+### Add support for ACLs to match TAM/INT packets. (#1011)
 SAI_ACL_TABLE_ATTR_FIELD_TAM_INT_TYPE is added to enum sai_acl_table_attr_t and SAI_ACL_ENTRY_ATTR_FIELD_TAM_INT_TYPE is added to enum sai_acl_entry_attr_t in saiacl.h
 
 
-### Add link training failure status, prbs config, an status in saiport.h
+### Add link training failure status, prbs config, an status in saiport.h (#1019)
 Enums sai_port_link_training_failure_status_t, sai_port_prbs_config_t added in saiport.h 
 Enum sai_port_attr_t is enhanced with new attributes SAI_PORT_ATTR_LINK_TRAINING_FAILURE_STATUS, SAI_PORT_ATTR_PRBS_CONFIG, SAI_PORT_ATTR_PRBS_LOCK_STATUS, SAI_PORT_ATTR_PRBS_LOCK_LOSS_STATUS & SAI_PORT_ATTR_AUTO_NEG_STATUS
 Enum sai_port_stat_t is enhanced to add new stat for SAI_PORT_STAT_PRBS_ERROR_COUNT
@@ -241,7 +241,7 @@ This change adds nat type in sai_nat_entry_t to distinguish between dnat pool an
 Added sai_nat_type_t to sai_nat_entry_t in sainat.h.
 
 
-### Improved support for p2p tunnels by adding destination IP(#1025)
+### Improved support for p2p tunnels by adding destination IP (#1025)
 As of SAI version 1.5 the “tunnel” has a p2mp connotation. It holds the VTEP SIP whereas there is no DIP. The DIP is specified as part of the FDB entry or as part of Next Hop entry.As part of this change DIP is added to the sai_tunnel_attr_t structure as an optional parameter. 
 Added SAI_TUNNEL_PEER_MODE_P2P, SAI_TUNNEL_PEER_MODE_P2MP in enum sai_tunnel_decap_ecn_mode_t and SAI_TUNNEL_ATTR_PEER_MODE and SAI_TUNNEL_ATTR_ENCAP_DST_IP in enum sai_tunnel_attr_t in saitunnel.h file.
 
@@ -284,6 +284,6 @@ Support for matching the GRE key in ACL is added. GRE key is dedicated for GRE p
 SAI_ACL_TABLE_ATTR_FIELD_GRE_KEY is added to enum _sai_acl_table_attr_t and SAI_ACL_ENTRY_ATTR_FIELD_GRE_KEY is added to enum _sai_acl_entry_attr_t in saiacl.h.
 
 
-### TPID Port Attribute Support #1089 
+### TPID Port Attribute Support (#1089) 
 Support to configure the TPID (Tag Protocol Identifier- vlan header) for matching it against the ingress packets and to add it for egress packets has been added. 
 Attribute SAI_PORT_ATTR_TPID is added to enum sai_port_attr_t in saiport.h and SAI_LAG_ATTR_TPID is added to enum _sai_lag_attr_t in sailag.h.

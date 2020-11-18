@@ -17,7 +17,7 @@ MACsec provides data security (confidentiality, integrity, authenticity) to Ethe
 2.	The ingress module decrypts the packet, checks the authentication and integrity (using ICV) and removes the SecTag.
 
 
-The design related to this feature is available at [design document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_MACsec_API_Proposal-v1.3.docx) and Pull Request(PR) is available at [PR1010](https://github.com/opencomputeproject/SAI/pull/1010) 
+The design related to this feature is available at [design document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_MACsec_API_Proposal-v1.3.docx) and Pull Request(PR) is available at [1010](https://github.com/opencomputeproject/SAI/pull/1010) 
 
 Following sub-section explains the SAI changes related to this new MACsec feature.
 
@@ -93,7 +93,7 @@ The purpose of this Pull Request to describe PHY functionality and common interf
 The PHY has interfaces to connect/communicate are peripherals such as MII interface, SPI interface, power supply, clock and reset, system side interface, and line side interface.
 Specific APIs are added as explained in the specification. 
 
-The design related to this feature is available at [Document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_Gearbox_API_Proposal-v1.0.docx) for more details and Pull Request(PR) is available at [1014](https://github.com/opencomputeproject/SAI/pull/1014)
+The design related to this feature is available at [document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_Gearbox_API_Proposal-v1.0.docx) for more details and Pull Request(PR) is available at [1014](https://github.com/opencomputeproject/SAI/pull/1014)
 
 ### (a) SAI changes for gearbox port connector 
 This API is to create/remove/set/get Port connector to define logical relation between system side port to line side port.
@@ -177,17 +177,17 @@ MPLS exp value sai_uint8_t mpls_exp has been added in struct sai_qos_map_params_
 The PR related to this feature is available at [1060](https://github.com/opencomputeproject/SAI/pull/1060)
 
 ### b) MPLS ACL filters  
-Packets can be filtered based on their contents. Added support to filter MPLS packets based on their contents. Each MPLS packet contains a list of one or more MPLS label. Following ACL table attributes and ACL table entries to filter MPLS packets are added. 
-a) SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL0_LABEL, SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL0_TTL, SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL0_BOS ( for Label 0 to 4) are added in enum sai_acl_table_attr_t 
+Packets can be filtered based on their contents. Added support to filter MPLS packets based on their contents. Each MPLS packet contains a list of one or more MPLS label. Following ACL table attributes and ACL table entries to filter MPLS packets are added. <br>
+a) SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL0_LABEL, SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL0_TTL, SAI_ACL_TABLE_ATTR_FIELD_MPLS_LABEL0_BOS ( for Label 0 to 4) are added in enum sai_acl_table_attr_t <br>
 b) SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_LABEL, SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_TTL, SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_EXP, SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_BOS ( for Label 0 to 4) are added in enum sai_acl_entry_attr_t in saiacl.h file. 
 
 The PR related to this feature is available at [1064](https://github.com/opencomputeproject/SAI/pull/1064)
 
 ### c)Provide TTL and QoS treatment during MPLS encap and decap  
-This change is to define TTL and its setting for PHP or POP and MPLS Outsegment TTL value for pipe/exp mode.Following changes are done to support the same. 
-a) Modified enum sai_inseg_entry_pop_ttl_mode_t, enum sai_inseg_entry_pop_qos_mode_t enum sai_inseg_entry_attr_t in saimpls.h
-b) Modified enum sai_next_hop_attr_t for sainexthop.h 
-e) Added new enum sai_outseg_type_t, sai_outseg_ttl_mode_t and sai_outseg_exp_mode_t in saitypes.h
+This change is to define TTL and its setting for PHP or POP and MPLS Outsegment TTL value for pipe/exp mode.Following changes are done to support the same. <br>
+a) Modified enum sai_inseg_entry_pop_ttl_mode_t, enum sai_inseg_entry_pop_qos_mode_t enum sai_inseg_entry_attr_t in saimpls.h <br>
+b) Modified enum sai_next_hop_attr_t for sainexthop.h <br>
+e) Added new enum sai_outseg_type_t, sai_outseg_ttl_mode_t and sai_outseg_exp_mode_t in saitypes.h <br>
 
 The PR related to this feature is available at [1079](https://github.com/opencomputeproject/SAI/pull/1079)
 
@@ -312,12 +312,12 @@ Enum sai_port_stat_t is enhanced to add new stat for SAI_PORT_STAT_PRBS_ERROR_CO
 
 The PR related to this feature is available at [1019](https://github.com/opencomputeproject/SAI/pull/1019)
 
-### SAI_PORT_ATTR_LINK_TRAINING_RX_STATUS attribute  
+### Attribute data used for receiver status for link training  
 Status to specify whether the receiver is trained or not trained to receive data has been added with object SAI_PORT_ATTR_LINK_TRAINING_RX_STATUS in saiport.h file
 
 The PR related to this feature is available at [1027](https://github.com/opencomputeproject/SAI/pull/1027)
 
-### Introduce buffer pool type SAI_BUFFER_POOL_TYPE_BOTH 
+### Introduce buffer pool type  
 SAI_BUFFER_POOL_TYPE_BOTH has been added to sai_buffer_pool_type_t in saibuffer.h. SAI_BUFFER_POOL_TYPE_BOTH indicates the buffer pool specification encompasses both ingress characterization and egress characterization.
 
 The PR related to this feature is available at [986](https://github.com/opencomputeproject/SAI/pull/986)

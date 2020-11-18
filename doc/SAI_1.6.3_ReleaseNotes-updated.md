@@ -201,7 +201,7 @@ new object ids for new hash field SAI_NATIVE_HASH_FIELD_MPLS_LABEL_ALL (with Lab
 
 The PR related to this feature is available at [1058](https://github.com/opencomputeproject/SAI/pull/1058)
 
-## 5. Other Feature Enhancements Changes
+## 5. Other Feature Enhancements 
 
 ### Improved support for p2p tunnels by adding destination IP 
 As of SAI version 1.5 the “tunnel” has a p2mp connotation. It holds the VTEP SIP whereas there is no DIP. The DIP is specified as part of the FDB entry or as part of Next Hop entry.As part of this change DIP is added to the sai_tunnel_attr_t structure as an optional parameter. 

@@ -62,7 +62,7 @@ typedef sai_status_t (*sai_get_macsec_flow_stats_ext_fn)(_In_ sai_object_id_t ma
 typedef sai_status_t (*sai_clear_macsec_flow_stats_fn)(_In_ sai_object_id_t macsec_flow_id, _In_ uint32_t number_of_counters, _In_ const sai_stat_id_t *counter_ids);	
 
 #### (b) Additional Changes
-#####(i) saiacl.h 
+##### (i) saiacl.h 
 SAI_ACL_ACTION_TYPE_MACSEC_FLOW added to sai_acl_action_type_t
 SAI_ACL_TABLE_ATTR_FIELD_HAS_VLAN_TAG, SAI_ACL_TABLE_ATTR_FIELD_MACSEC_SCI added to sai_acl_table_attr_t
 SAI_ACL_ENTRY_ATTR_FIELD_HAS_VLAN_TAG, SAI_ACL_ENTRY_ATTR_FIELD_MACSEC_SCI, SAI_ACL_ENTRY_ATTR_ACTION_MACSEC_FLOW added to sai_acl_entry_attr_t
@@ -73,51 +73,88 @@ SAI_SWITCH_ATTR_MACSEC_OBJECT_ID added to sai_switch_attr_t
 ##### (iv) saitypes.h - few typedefs used in macsec are added.
 
 
-### saisystemport.h
+## Gearbox (PR#1014) 
 
-System port creation can be accomplished by calling switch_create() with the list of system ports to be created using SAI_SWITCH_ATTR_SYSTEM_PORT_CONFIG_LIST or creating them individually using the create_system_port() function in the system port APIs. Although it is expected that all local ports be created in switch_create().
+Specific APIs are added as explained in the specification. Please refer the [Document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_Gearbox_API_Proposal-v1.0.docx) for more details.
+#### (a) saiport.h 
+##### (i) This API is to create Port connector to define logical relation between system side port to line side port.
+typedef sai_status_t (*sai_create_port_connector_fn)( _Out_ sai_object_id_t *port_connector_id,_In_ sai_object_id_t switch_id,_In_ uint32_t attr_count,_In_ const sai_attribute_t *attr_list);
 
-System port configuration can be retrieved by using the SAI_SYSTEM_PORT_ATTR_CONFIG_INFO attribute. There are also attributes to retrieve the mappings between system port objects and local port objects and retrieval of VoQs type object list associated with the system port. 
+ 
+##### (ii) This API is to remove the same.
+typedef sai_status_t (*sai_remove_port_connector_fn)(_In_ sai_object_id_t port_connector_id);
 
-```
-Create system port
 
-typedef sai_status_t (*sai_create_system_port_fn)(
-        _Out_ sai_object_id_t *system_port_id,
-        _In_ sai_object_id_t switch_id,
-        _In_ uint32_t attr_count,
-        _In_ const sai_attribute_t *attr_list);
+##### (iii) This API is to set port connector attribute value
+typedef sai_status_t (*sai_set_port_connector_attribute_fn)(_In_ sai_object_id_t port_connector_id,_In_ const sai_attribute_t *attr);
 
-Remove system port
 
-typedef sai_status_t (*sai_remove_system_port_fn)(
-        _In_ sai_object_id_t system_port_id);
+##### (iv) This API is to get port connector attribute value
+typedef sai_status_t (*sai_get_port_connector_attribute_fn)( _In_ sai_object_id_t port_connector_id,_In_ uint32_t attr_count, _Inout_ sai_attribute_t *attr_list);
 
-Set system port attribute value.
 
-typedef sai_status_t (*sai_set_system_port_attribute_fn)(
-        _In_ sai_object_id_t system_port_id,
-        _In_ const sai_attribute_t *attr);
+The required enums like _sai_port_interface_type_t, _sai_port_connector_attr_t for the above APIs are also added in saiport.h
 
-Get system port attribute value.
+#### (b) saiswitch.h
 
-typedef sai_status_t (*sai_get_system_port_attribute_fn)(
-        _In_ sai_object_id_t system_port_id,
-        _In_ uint32_t attr_count,
-        _Inout_ sai_attribute_t *attr_list);
+##### (i) This API provides platform adaption functionality to access device registers from driver. 
+This is mandatory to pass as attribute to sai_create_switch when driver implementation does not support register access by device file system directly.		
 
-Port methods table retrieved with sai_api_query()
+typedef sai_status_t (*sai_switch_register_read_fn)( _In_ uint64_t platform_context, _In_ uint32_t device_addr,_In_ uint32_t start_reg_addr,_In_ uint32_t number_of_registers,_Out_ uint32_t *reg_val);
 
-typedef struct _sai_system_port_api_t
-{
-    sai_create_system_port_fn                create_system_port;
-    sai_remove_system_port_fn                remove_system_port;
-    sai_set_system_port_attribute_fn         set_system_port_attribute;
-    sai_get_system_port_attribute_fn         get_system_port_attribute;
+	
+##### (ii) This API provides platform adaption device write callback function passed to the adapter. 
+This is mandatory function for driver when device access not supported by file system.	
+typedef sai_status_t (*sai_switch_register_write_fn)(_In_ uint64_t platform_context,_In_ uint32_t device_addr,_In_ uint32_t start_reg_addr,_In_ uint32_t number_of_registers,_In_ const uint32_t *reg_val);
 
-} sai_system_port_api_t;
 
-```
+##### (iii) This API provides read access API for devices connected to MDIO from NPU SAI.
+typedef sai_status_t (*sai_switch_mdio_read_fn)(_In_ sai_object_id_t switch_id,_In_ uint32_t device_addr,_In_ uint32_t start_reg_addr,_In_ uint32_t number_of_registers,_Out_ uint32_t *reg_val);
+
+
+##### (iv) This API provides write access API for devices connected to MDIO from NPU SAI
+typedef sai_status_t (*sai_switch_mdio_write_fn)(_In_ sai_object_id_t switch_id,_In_ uint32_t device_addr,_In_ uint32_t start_reg_addr,_In_ uint32_t number_of_registers,_In_ const uint32_t *reg_val);	
+	
+The required enums like _sai_switch_hardware_access_bus_t, _sai_switch_firmware_load_method_t, _sai_switch_firmware_load_type_t, _sai_switch_type_t for the above APIs are also added in saiswitch.h. 
+The enum "sai_switch_attr_t" is also updated to reflect these changes.
+
+#### (c) saitypes.h
+Added SAI_OBJECT_TYPE_PORT_CONNECTOR to enum sai_object_type_t.
+
+## Virtual Output Queue(VOQ) Feature (#1081) 
+
+An Integrated VOQ Switch is a system consisting of several Line cards populated with Switch devices and Fabric Cards populated with Fabric devices. The Line Cards switches are connected to network ports on one side and to the Fabric devices on the other side. The Fabric device provides full connectivity between all switch devices. A Clos network is a typical example.
+SAI has been ehnaced to support this feature by doing the following changes
+
+(1) Modifying SAI switch attributes to pass chassis specific information to provide a system identifier, the number of total cores in the chassis information
+(2) A new Port object subtype "Fabric-Port" for fabric facing ports of the Switch and the ports of the Fabric device.
+(3) A new SAI object "System-Ports",representing network or CPU ports in the switch . 
+(4) Supporting 3 separate lists of ports: Local Network ports, System-Ports(all NW ports, own ports & all CPU ports), and Fabric-Ports. 
+(5) In a VoQ Switch, the SAI_QUEUE_TYPE_UNICAST object refers to the Egress Queues. While the ingress VoQs use the sub-type SAI_QUEUE_TYPE_UNICAST_VOQ.
+(6) A System-Port comprises the identification of its location in the chassis – Device-ID, Core-Index, and Local-Core-Port-ID, and a list of VoQs, corresponding to the Traffic Classes.
+(7) Each VoQ is associated with a WRED-Profile. Typically Drop and Color statistics are applied to the VoQs (rather than the Egress Queues)
+Fabric port is associated with one to three TX- Fabric-Queues,whose IDs are the object handles for statistics collection.
+
+### New SAI APIs:
+System port support - A new file saisystemport.h is added with following SAI APIs for create/remove, set/get system port.
+typedef sai_status_t (*sai_create_system_port_fn)(_Out_ sai_object_id_t *system_port_id, _In_ sai_object_id_t switch_id, _In_ uint32_t attr_count,  _In_ const sai_attribute_t *attr_list);
+typedef sai_status_t (*sai_remove_system_port_fn)(_In_ sai_object_id_t system_port_id);
+typedef sai_status_t (*sai_set_system_port_attribute_fn)(_In_ sai_object_id_t system_port_id,  _In_ const sai_attribute_t *attr);
+typedef sai_status_t (*sai_get_system_port_attribute_fn)(_In_ sai_object_id_t system_port_id, _In_ uint32_t attr_count, _Inout_ sai_attribute_t *attr_list);
+
+#### Corresponding changes required in following attrbutes are also added. 
+(a) Switch Configuration Info (SAI_SWITCH_ATTR_TYPE, SAI_SWITCH_ATTR_SWITCH_ID, SAI_SWITCH_ATTR_MAX_SYSTEM_CORES, SAI_SWITCH_ATTR_SYSTEM_PORT_CONFIG_LIST, SAI_SWITCH_ATTR_SYSTEM_PORT_LIST, SAI_SWITCH_ATTR_FABRIC_PORT_LIST),
+(b) Switch Statistics
+(c) Port Attributes, New Port Type(SAI_PORT_TYPE_FABRIC), Port to System Port Mapping, Fabric Port Connectivity/Reachability/Error Status Attributes, SAI_OBJECT_TYPE_LAG, New Ports Stats.
+(d) Queue Attributes, New Queue Type, VoQ Attributes, Fabric Queue Attributes, Modification to queue stats.
+(e) New Router Interface Attribute
+(f) New Neighbor Entry Attributes
+(g) New ACL functionality
+(h) New Mirror Functionality
+
+For further details refer https://github.com/opencomputeproject/SAI/blob/master/doc/VoQ/SAI-Proposal-VoQ-Switch.md
+
+
 # 2. Feature Enhancements
 
 This section describes the SAI changes done for new features, enhancements on existing features/sub-features and various bug fixes mentioned below.

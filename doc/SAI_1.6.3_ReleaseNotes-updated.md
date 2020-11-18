@@ -189,7 +189,7 @@ a) Modified enum sai_inseg_entry_pop_ttl_mode_t, enum sai_inseg_entry_pop_qos_mo
 b) Modified enum sai_next_hop_attr_t for sainexthop.h <br>
 e) Added new enum sai_outseg_type_t, sai_outseg_ttl_mode_t and sai_outseg_exp_mode_t in saitypes.h <br>
 
-The PR related to this feature is available at [1079](https://github.com/opencomputeproject/SAI/pull/1079)
+The PR related to this feature is available at [1079](https://github.com/opencomputeproject/SAI/pull/1079) and for more details refer [document](https://github.com/phshaikh/SAI/blob/dca0c88bf9661bd0c45e8d6df1f3e838a1832875/doc/MPLS/SAI-Proposal-MPLS-Outsegment.md)
 
 ### d) MPLS Host-If traps for packets with expiring TTL and Router Alert Label  
 Added MPLS SAI_HOSTIF_USER_DEFINED_TRAP_TYPE_INSEG_ENTRY in enum sai_hostif_trap_type_t for saihostif.h file.
@@ -207,13 +207,13 @@ The PR related to this feature is available at [1058](https://github.com/opencom
 As of SAI version 1.5 the “tunnel” has a p2mp connotation. It holds the VTEP SIP whereas there is no DIP. The DIP is specified as part of the FDB entry or as part of Next Hop entry.As part of this change DIP is added to the sai_tunnel_attr_t structure as an optional parameter. 
 Added SAI_TUNNEL_PEER_MODE_P2P, SAI_TUNNEL_PEER_MODE_P2MP in enum sai_tunnel_decap_ecn_mode_t and SAI_TUNNEL_ATTR_PEER_MODE and SAI_TUNNEL_ATTR_ENCAP_DST_IP in enum sai_tunnel_attr_t in saitunnel.h file.
 
-The PR related to this feature is available at [1025](https://github.com/opencomputeproject/SAI/pull/1025)
+The PR related to this feature is available at [1025](https://github.com/opencomputeproject/SAI/pull/1025) and for more details refer [document](https://github.com/bandaru-viswanath/SAI/blob/f2037471c44be2982a5e762dc581d60e802b16dd/doc/tunnel/SAI-Proposal-ImprovedP2PTunnels.md)
 
 ### Enable/Disable decrement ttl support for port, rif and nexthop 
 This is to add attributes to port, RIF, nexthop and to ACL to support enabling and disabling ttl decrement to provide more granularity.
 Added SAI_NEXT_HOP_ATTR_DECREMENT_TTL in enum  sai_next_hop_attr_t and SAI_PORT_ATTR_DECREMENT_TTL in enum sai_port_attr_t and SAI_ROUTER_INTERFACE_ATTR_DECREMENT_TTL in enum sai_router_interface_attr_t in sairouterinterface.h file.
 
-The PR related to this feature is available at [1050](https://github.com/opencomputeproject/SAI/pull/1050)
+The PR related to this feature is available at [1050](https://github.com/opencomputeproject/SAI/pull/1050) 
 
 ### Add queue index to hostif packet attribute 
 This PR is to add an attribute to sai_hostif_packet_attr_t to set the egress queue index for callbacks and when the tx mode is set to TX_BYPASS.
@@ -225,7 +225,7 @@ The PR related to this feature is available at [1049](https://github.com/opencom
 Currently, SAI_NEXT_HOP_GROUP_ATTR_NEXT_HOP_COUNT is a READ_ONLY attribute. To support this, it is modified for the property of the attribute.  Added SAI_NEXT_HOP_GROUP_TYPE_ECMP was removed and SAI_NEXT_HOP_GROUP_TYPE_DYNAMIC_UNORDERED_ECMP, SAI_NEXT_HOP_GROUP_TYPE_ECMP = SAI_NEXT_HOP_GROUP_TYPE_DYNAMIC_UNORDERED_ECMP, SAI_NEXT_HOP_GROUP_TYPE_DYNAMIC_ORDERED_ECMP, and SAI_NEXT_HOP_GROUP_TYPE_FINE_GRAIN_ECMP in enum sai_next_hop_group_type_t
 SAI_NEXT_HOP_GROUP_ATTR_REAL_SIZE is added in enum sai_next_hop_group_attr_t and  SAI_NEXT_HOP_GROUP_MEMBER_ATTR_INDEX and SAI_NEXT_HOP_GROUP_MEMBER_ATTR_SEQUENCE_ID where added in enum sai_next_hop_group_member_attr_t for sainexthopgroup.h file.
 
-The PR related to this feature is available at [1070](https://github.com/opencomputeproject/SAI/pull/1070)
+The PR related to this feature is available at [1070](https://github.com/opencomputeproject/SAI/pull/1070) and for more details refer [document](https://github.com/marian-pritsak/SAI/blob/d65a97655c524a0fa0bd9b3794fff96ae3fd74ff/doc/ECMP/Ordered_and_Fine_Grained_ECMP.md)
 
 ### Create/Set for Tunnel Attributes  
 Prior to the change, tunnel attributes were "create only". But tunnel attribues can change at run time and hence "set" operation support is added. 
@@ -291,7 +291,7 @@ The PR related to this feature is available at [1024](https://github.com/opencom
 Support to configure the TPID (Tag Protocol Identifier- vlan header) for matching it against the ingress packets and to add it for egress packets has been added. 
 Attribute SAI_PORT_ATTR_TPID is added to enum sai_port_attr_t in saiport.h and SAI_LAG_ATTR_TPID is added to enum _sai_lag_attr_t in sailag.h.
 
-The PR related to this feature is available at [1089](https://github.com/opencomputeproject/SAI/pull/1089)
+The PR related to this feature is available at [1089](https://github.com/opencomputeproject/SAI/pull/1089) and for more details refer [document](https://github.com/gechiang/SAI/blob/c5b6e1db63c7cc6dba283b31b29aff13b60dcf97/doc/TPID/TPID_SAI_proposal.md)
 
 ### SERDES ATTRIBUTE APIs 
 Defined new Serdes attributes. The new serdes range is reserved so that in future the attributes can be extended to include new settings in the future.

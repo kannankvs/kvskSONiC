@@ -93,7 +93,7 @@ The purpose of this Pull Request to describe PHY functionality and common interf
 The PHY has interfaces to connect/communicate are peripherals such as MII interface, SPI interface, power supply, clock and reset, system side interface, and line side interface.
 Specific APIs are added as explained in the specification. 
 
-The design related to this feature is available at [document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_Gearbox_API_Proposal-v1.0.docx) for more details and Pull Request(PR) is available at [1014](https://github.com/opencomputeproject/SAI/pull/1014)
+The design related to this feature is available at [document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_Gearbox_API_Proposal-v1.0.docx) and Pull Request(PR) is available at [1014](https://github.com/opencomputeproject/SAI/pull/1014)
 
 ### (a) SAI changes for gearbox port connector 
 This API is to create/remove/set/get Port connector to define logical relation between system side port to line side port.
@@ -143,7 +143,7 @@ SAI has been ehnaced to support this feature by doing the following changes
 (7) Each VoQ is associated with a WRED-Profile. Typically Drop and Color statistics are applied to the VoQs (rather than the Egress Queues)<br>
 Fabric port is associated with one to three TX- Fabric-Queues,whose IDs are the object handles for statistics collection.<br>
 
-The design related to this feature is available at [design document](https://github.com/opencomputeproject/SAI/blob/master/doc/VoQ/SAI-Proposal-VoQ-Switch.md) for more details and Pull Request(PR) is available at [1081](https://github.com/opencomputeproject/SAI/pull/1081)
+The design related to this feature is available at [design document](https://github.com/opencomputeproject/SAI/blob/master/doc/VoQ/SAI-Proposal-VoQ-Switch.md) and Pull Request(PR) is available at [1081](https://github.com/opencomputeproject/SAI/pull/1081)
 
 #### New SAI APIs:
 System port support - A new file saisystemport.h is added with following SAI APIs for create/remove, set/get system port.

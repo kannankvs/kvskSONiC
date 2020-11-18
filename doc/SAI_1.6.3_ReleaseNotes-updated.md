@@ -91,7 +91,9 @@ SAI_SWITCH_ATTR_MACSEC_OBJECT_ID added to sai_switch_attr_t
 ## 2. Gearbox 
 The purpose of this Pull Request to describe PHY functionality and common interface to manage PHY. PHY support the physical layer functionality.  Which is connector between MAC(SerDes) to physical medium such as optical fiber or copper transceivers.  Necessity of PHY depends on platform/hardware design.  Some platforms may be supported without an PHY(PHY Less) or PHY supports as part of ASIC (Internal PHY) and some cases it might be External PHY. External PHY will be used to serve different purposes like gearbox, retimer, MACSEC  and multi gigabit ethernet phy transceivers etc. 
 The PHY has interfaces to connect/communicate are peripherals such as MII interface, SPI interface, power supply, clock and reset, system side interface, and line side interface.
-Specific APIs are added as explained in the specification. The design related to this feature is available at [Document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_Gearbox_API_Proposal-v1.0.docx) for more details and Pull Request(PR) is available at [1014](https://github.com/opencomputeproject/SAI/pull/1014)
+Specific APIs are added as explained in the specification. 
+
+The design related to this feature is available at [Document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_Gearbox_API_Proposal-v1.0.docx) for more details and Pull Request(PR) is available at [1014](https://github.com/opencomputeproject/SAI/pull/1014)
 
 ### (a) SAI changes for gearbox port connector 
 This API is to create/remove/set/get Port connector to define logical relation between system side port to line side port.

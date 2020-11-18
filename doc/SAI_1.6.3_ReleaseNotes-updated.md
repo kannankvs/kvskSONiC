@@ -1,7 +1,7 @@
 
 # SAI 1.6.3 Release Notes
 
-The Switch Abstraction Interface defines the APIs to provide a vendor-independent way of controlling forwarding elements, such as a switching ASIC, an NPU or a software switch in a uniform manner. This release notes covers the changes happened for SAI APIs after SAI 1.5 release. Please refer the previous changes in [SAI 1.5 release notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.5_ReleaseNotes.md) 
+The Switch Abstraction Interface defines the APIs to provide a vendor-independent way of controlling forwarding elements, such as a switching ASIC, an NPU or a software switch in a uniform manner. This release note covers the SAI API changes from SAI tag 1.5.0 to SAI tag 1.6.3. The previous release notes corresponding to SAI tag 1.5.0 is available at [SAI 1.5 release notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.5_ReleaseNotes.md) 
 
 This section describes the SAI changes done for features, and various bug fixes mentioned below.
 

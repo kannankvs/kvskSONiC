@@ -215,7 +215,7 @@ Added SAI_NEXT_HOP_ATTR_DECREMENT_TTL in enum  sai_next_hop_attr_t and SAI_PORT_
 
 The PR related to this feature is available at [1050](https://github.com/opencomputeproject/SAI/pull/1050) 
 
-### Add queue index to hostif packet attribute 
+### Add queue index to hostif packet Attribute 
 This PR is to add an attribute to sai_hostif_packet_attr_t to set the egress queue index for callbacks and when the tx mode is set to TX_BYPASS.
 Added SAI_HOSTIF_PACKET_ATTR_EGRESS_QUEUE_INDEX in enum sai_hostif_packet_attr_t in saihostif.h file.
 
@@ -281,7 +281,7 @@ sai_status_t (*sai_bulk_object_get_attribute_fn)( _In_ uint32_t object_count, _I
 
 The PR related to this feature is available at [1028](https://github.com/opencomputeproject/SAI/pull/1028)
 
-### Support for static FDB Entries to allow MAC Move 
+### Support for static FDB Entries to allow MAC move 
 This change is for the SAI attribute to allow the hardware to learn the MAC even though the MAC is programmed as static.
 Added SAI_FDB_ENTRY_ATTR_ALLOW_MAC_MOVE in enum sai_fdb_entry_attr_t in saifdb.h file.
 
@@ -305,7 +305,7 @@ Added SAI_PORT_ATTR_PORT_SERDES_ID to sai_port_attr_t in saiport.h, created type
 `````
 The PR related to this feature is available at [1002](https://github.com/opencomputeproject/SAI/pull/1002)
 
-### Add link training failure status, prbs config, an status in saiport.h 
+### Add link training failure status, prbs config, and status  
 Enums sai_port_link_training_failure_status_t, sai_port_prbs_config_t added in saiport.h 
 Enum sai_port_attr_t is enhanced with new attributes SAI_PORT_ATTR_LINK_TRAINING_FAILURE_STATUS, SAI_PORT_ATTR_PRBS_CONFIG, SAI_PORT_ATTR_PRBS_LOCK_STATUS, SAI_PORT_ATTR_PRBS_LOCK_LOSS_STATUS & SAI_PORT_ATTR_AUTO_NEG_STATUS
 Enum sai_port_stat_t is enhanced to add new stat for SAI_PORT_STAT_PRBS_ERROR_COUNT

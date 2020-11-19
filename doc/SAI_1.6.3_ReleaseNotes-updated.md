@@ -17,7 +17,7 @@ MACsec provides data security (confidentiality, integrity, authenticity) to Ethe
 2.	The ingress module decrypts the packet, checks the authentication and integrity (using ICV) and removes the SecTag.
 
 
-The design related to this feature is available at [design document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_MACsec_API_Proposal-v1.3.docx) and Pull Request(PR) is available at [PR1010](https://github.com/opencomputeproject/SAI/pull/1010) 
+The design related to this feature is available at [design document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_MACsec_API_Proposal-v1.3.docx) and Pull Request(PR) is available at [PR#1010](https://github.com/opencomputeproject/SAI/pull/1010) 
 
 Following sub-section explains the SAI changes related to this new MACsec feature.
 
@@ -93,7 +93,7 @@ The purpose of this feature is to describe PHY functionality and common interfac
 The PHY has interfaces to connect/communicate with peripherals such as MII interface, SPI interface, power supply, clock and reset, system side interface, and line side interface.
 Specific APIs are added as explained in the specification. 
 
-The design related to this feature is available at [document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_Gearbox_API_Proposal-v1.0.docx) and Pull Request(PR) is available at [PR1014](https://github.com/opencomputeproject/SAI/pull/1014)
+The design related to this feature is available at [document](https://github.com/opencomputeproject/SAI/blob/master/doc/macsec-gearbox/SAI_Gearbox_API_Proposal-v1.0.docx) and Pull Request(PR) is available at [PR#1014](https://github.com/opencomputeproject/SAI/pull/1014)
 
 ### (a) SAI changes for gearbox port connector 
 Port connector object is to create relation between the system side port object and line side port object in PHY driver. This Port connector object will be used to present or alter system side lane to line side lanes connection in PHY. PHY driver will make sure traffic from system side lanes going to line side lane numbers. Following new SAI APIs are added for this requirement. 

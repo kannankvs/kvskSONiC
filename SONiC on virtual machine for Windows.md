@@ -1,6 +1,12 @@
 
  
 ## SONIC on virtual machine for Windows
+
+This document describes the implementation of SONiC on virtual machine using windows machine and qemu. Please find the step by step on the implementation below,
+
+1. Download and install QEMU for windows
+2. Download SONiC image
+3. Initialize SONiC in QEMU
  
 #### 1. Download and install QEMU for windows 
 Go to: https://qemu.weilnetz.de/w64/ to download qemu-w64-setup-xxx.exe and install it to your windows machine.  

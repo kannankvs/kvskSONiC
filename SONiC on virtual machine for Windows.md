@@ -1,6 +1,6 @@
 
  
-## SONIC ON SIMULATOR 
+## SONIC on virtual machine for Windows
  
 #### 1. Download and install QEMU for windows 
 Go to: https://qemu.weilnetz.de/w64/ to download qemu-w64-setup-xxx.exe and install it to your windows machine.  

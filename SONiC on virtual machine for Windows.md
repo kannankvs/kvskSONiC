@@ -22,7 +22,7 @@ Extract sonic-vs-img.gz to a folder in your machine. Example: d:\sonic-vs.img
  
 #### 3. Start sonic image 
 Open a command line and run the command:  
-"c:\Program Files\qemu\qemu-system-x86_64.exe" -name sonic-simulator_1 -m 2048M -smp cpus=2 boot order=d -drive file=d:\sonic-vs.img,index=0,media=disk,id=drive0 -serial telnet:127.0.0.1:5001,server,nowait -monitor tcp:127.0.0.1:44001,server,nowait -device e1000,netdev=net0 -netdev user,id=net0 
+"c:\Program Files\qemu\qemu-system-x86_64.exe" -name sonic-simulator_1 -m 2048M -smp cpus=2 -drive file=d:\sonic-vs.img,index=0,media=disk,id=drive0 -serial telnet:127.0.0.1:5001,server,nowait -monitor tcp:127.0.0.1:44001,server,nowait -device e1000,netdev=net0 -netdev user,id=net0 
  
 ![](https://github.com/kannankvs/kvskSONiC/blob/master/images/VM_image3.png)
  

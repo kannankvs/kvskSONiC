@@ -54,7 +54,7 @@ This feature is an enhancement on sonic_db_config package for multi-asic to read
 
 
 #### Add FRR running configuration to tech support
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br>**Pull Requests** :  
 
 
@@ -71,12 +71,12 @@ Currently SONiC Testbed setup uses fanout switches to connect to the testbed ser
 
 
 #### Error handling (swss)
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br>**Pull Requests** :  
 
 
 #### Testcase/Testbed Infrastructure
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br>**Pull Requests** :
 
 

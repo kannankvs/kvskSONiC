@@ -53,6 +53,12 @@ This feature is an enhancement on sonic_db_config package for multi-asic to read
 <br>**Pull Requests** : [77](https://github.com/Azure/sonic-telemetry/pull/77)
 
 
+#### Dynamic policy based hashing
+
+<br> Refer [HLD document]
+<br>**Pull Requests** :
+
+
 #### Add FRR running configuration to tech support
 Refer [HLD document]() and below mentioned PR's for more details. 
 <br>**Pull Requests** :  
@@ -75,21 +81,10 @@ Refer [HLD document]() and below mentioned PR's for more details.
 <br>**Pull Requests** :  
 
 
-#### Testcase/Testbed Infrastructure
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br>**Pull Requests** :
-
-
 #### Inband mgmt VRF
 This feature design is intended to have a generic approach for in-band management via mgmt VRF feature. A user can set an attribute "in_band_mgmt_enabled" to the config_db for MGMT_VRF_CONFIG table entry. The default value if not specified would be "false"<br>
 <br> Refer [HLD document](https://github.com/venkatmahalingam/SONiC/blob/7781c097a92d9fbac3fc2fe2f8c6ce175839f473/doc/vrf/SONiC_in_band_mgmt_via_mgmt_Vrf_HLD.md) and below mentioned PR's for more details. 
 <br>**Pull Requests** : [1726](https://github.com/Azure/sonic-swss/pull/1726) 
-
-
-#### SRv6 support
-SRv6 has been widely adopted as an IPv6 based SDN solution, which provides programming ability, TE capabilities, and deployment simplicity to network administrators. We want to add SRv6 into SONIC to benefit users in DC as well as beyond DC. <br>
-<br> Refer [HLD document](https://github.com/Azure/SONiC/blob/faa432df6185f7c04d896285db61ac86300161c9/doc/srv6/srv6-hld-v19.md) and below mentioned PR's for more details. 
-<br>**Pull Requests** :  
 
 
 #### SONiC for MPLS Dataplane
@@ -98,10 +93,25 @@ This feature provides general information about the initial support for MPLS in 
 <br>**Pull Requests** :  [1537](https://github.com/Azure/sonic-utilities/pull/1537), [469](https://github.com/Azure/sonic-swss-common/pull/469), [824](https://github.com/Azure/sonic-sairedis/pull/824), [7195](https://github.com/Azure/sonic-buildimage/pull/7195), [1686](https://github.com/Azure/sonic-swss/pull/1686)
 
 
+#### IPv6 Link Local and BGP Unnumbered
+
+<br> Refer [HLD document]
+<br>**Pull Requests** : 
+
+
+#### MC-LAG (L2)
+This feature is an enhancements of SONiC ICCP MCLAG. This includes MCLAG configuration support, data structure changes, MAC event handling optimizations for scaling performance, support of static MAC address over MCLAG, support bridge-port isolation group for BUM control to MCLAG, and traffic recovery sequencing for traffic loop prevention.
+<br> **Pull Requests** :  [596](https://github.com/Azure/SONiC/pull/596), [885](https://github.com/Azure/sonic-swss/pull/885), [4819](https://github.com/Azure/sonic-buildimage/pull/4819), [1331](https://github.com/Azure/sonic-swss/pull/1331), [1349](https://github.com/Azure/sonic-swss/pull/1349), [529](https://github.com/Azure/sonic-utilities/pull/529), [405](https://github.com/Azure/sonic-swss-common/pull/405), [59](https://github.com/Azure/sonic-mgmt-framework/pull/59), [25](https://github.com/Azure/sonic-mgmt-common/pull/25)
+
+
 #### RADIUS AAA
 This implementation describes the high level design of RADIUS management user authentication feature in SONiC.<br>
 <br> Refer [HLD document](https://github.com/a-barboza/SONiC/blob/8d31c4014e27f422f4c522d2891fa9d9a4fff606/doc/aaa/radius_authentication.md) and below mentioned PR's for more details. 
 <br>**Pull Requests** :  [500](https://github.com/Azure/SONiC/pull/500), [1521](https://github.com/Azure/sonic-utilities/pull/1521), [7284](https://github.com/Azure/sonic-buildimage/pull/7284), [4220](https://github.com/Azure/sonic-buildimage/pull/4220)
+
+
+#### PDK - Platform Development Environment
+<br> **Pull Requests** : [3778](https://github.com/Azure/sonic-buildimage/pull/3778) [28](https://github.com/Azure/sonic-platform-pdk-pde/pull/28), [107](https://github.com/Azure/sonic-build-tools/pull/107).
 
 
 #### Broadcom silicon common config

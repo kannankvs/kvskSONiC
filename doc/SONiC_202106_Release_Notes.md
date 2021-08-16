@@ -54,14 +54,15 @@ This feature is an enhancement on sonic_db_config package for multi-asic to read
 
 
 #### Dynamic policy based hashing
-
-<br> Refer [HLD document]
-<br>**Pull Requests** :
+This feature will support the following functionality for NVGRE and VxLAN packets match with inner/outer IPv4/IPv6 frames, Custom hashing based on inner 5-tuple: IP proto, L4 dst/src port, IPv4/IPv6 dst/src, Hash configuration for Regular/FG ECMP and LAG and Warm/Fast reboot
+<br> Refer [HLD document](https://github.com/Azure/SONiC/blob/6af2959ee5829f801409fc833389e78802d5258a/doc/pbh/pbh-design.md)
+<br>**Pull Requests** : [7461](https://github.com/Azure/sonic-buildimage/pull/7461) , [773](https://github.com/Azure/sonic/pull/773)
 
 
 #### Add FRR running configuration to tech support
+
 Refer [HLD document]() and below mentioned PR's for more details. 
-<br>**Pull Requests** :  
+<br>**Pull Requests** :  [5067](https://github.com/Azure/sonic-buildimage/issues/5067)
 
 
 #### Enable/Disable auto negotiation and speed setting with number of lanes
@@ -94,9 +95,9 @@ This feature provides general information about the initial support for MPLS in 
 
 
 #### IPv6 Link Local and BGP Unnumbered
-
-<br> Refer [HLD document]
-<br>**Pull Requests** : 
+This feature provides the implementation of IPv6 link-local enhancements in SONiC.
+<br> Refer [HLD document](https://github.com/kirankella/SONiC/blob/d17a977f88ed623c8367eaac747040796d7a7c3f/doc/ipv6/ipv6_link_local.md)
+<br>**Pull Requests** : [5584](https://github.com/Azure/sonic-buildimage/pull/5584), [1463](https://github.com/Azure/sonic-swss/pull/1463), [1159](https://github.com/Azure/sonic-utilities/pull/1159)
 
 
 #### MC-LAG (L2)
@@ -111,6 +112,8 @@ This implementation describes the high level design of RADIUS management user au
 
 
 #### PDK - Platform Development Environment
+The SONiC PDE is part of the SONiC Platform Development Kit (PDK) which optimizes platform development. The SONiC PDK consists of PDDF (Platform Driver Development Framework) and PDE (Platform Development Environment)
+<br> Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/platform/pde.md)
 <br> **Pull Requests** : [3778](https://github.com/Azure/sonic-buildimage/pull/3778) [28](https://github.com/Azure/sonic-platform-pdk-pde/pull/28), [107](https://github.com/Azure/sonic-build-tools/pull/107).
 
 

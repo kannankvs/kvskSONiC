@@ -53,17 +53,16 @@ This feature is an enhancement on sonic_db_config package for multi-asic to read
 <br>**Pull Requests** : [77](https://github.com/Azure/sonic-telemetry/pull/77)
 
 
-#### Dynamic policy based hashing
-This feature will support the following functionality for NVGRE and VxLAN packets match with inner/outer IPv4/IPv6 frames, Custom hashing based on inner 5-tuple: IP proto, L4 dst/src port, IPv4/IPv6 dst/src, Hash configuration for Regular/FG ECMP and LAG and Warm/Fast reboot
-<br> Refer [HLD document](https://github.com/Azure/SONiC/blob/6af2959ee5829f801409fc833389e78802d5258a/doc/pbh/pbh-design.md)
-<br>**Pull Requests** : [7461](https://github.com/Azure/sonic-buildimage/pull/7461) , [773](https://github.com/Azure/sonic/pull/773)
-
-
 #### Add FRR running configuration to tech support
 
 Refer [HLD document]() and below mentioned PR's for more details. 
 <br>**Pull Requests** :  [5067](https://github.com/Azure/sonic-buildimage/issues/5067)
 
+
+#### App extension with warmboot awareness
+SONiC Application Extension Infrastructure is a SONiC infrastructure and framework for managing SONiC Application Packages which in this scope are SONiC compatible Docker images distributed individually from one another and from the base SONiC image.
+<br>Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/sonic-application-extention/sonic-application-extention-hld.md) and below mentioned PR's for more details. 
+<br>**Pull Requests** : [682](https://github.com/Azure/SONiC/pull/682), [6398](https://github.com/Azure/sonic-buildimage/issues/6398)
 
 #### Enable/Disable auto negotiation and speed setting with number of lanes
 This feature introduces a few new CLI commands which will fit in sonic-utilities. And this feature also requires to change the configuration flow for port auto negotiation attributes which will be covered in orchagent.<br>
@@ -102,6 +101,7 @@ This feature provides the implementation of IPv6 link-local enhancements in SONi
 
 #### MC-LAG (L2)
 This feature is an enhancements of SONiC ICCP MCLAG. This includes MCLAG configuration support, data structure changes, MAC event handling optimizations for scaling performance, support of static MAC address over MCLAG, support bridge-port isolation group for BUM control to MCLAG, and traffic recovery sequencing for traffic loop prevention.
+<br> Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/mclag/MCLAG_Enhancements_HLD.md)
 <br> **Pull Requests** :  [596](https://github.com/Azure/SONiC/pull/596), [885](https://github.com/Azure/sonic-swss/pull/885), [4819](https://github.com/Azure/sonic-buildimage/pull/4819), [1331](https://github.com/Azure/sonic-swss/pull/1331), [1349](https://github.com/Azure/sonic-swss/pull/1349), [529](https://github.com/Azure/sonic-utilities/pull/529), [405](https://github.com/Azure/sonic-swss-common/pull/405), [59](https://github.com/Azure/sonic-mgmt-framework/pull/59), [25](https://github.com/Azure/sonic-mgmt-common/pull/25)
 
 
@@ -143,7 +143,7 @@ The Entity MIB contains several groups of MIB objects: entityPhysical group, ent
 
 # SAI APIs
 
-Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.8.1 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.7.1_ReleaseNotes.md)
+Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.8.1 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.8.1_ReleaseNotes.md)
 
 
 # Contributors 

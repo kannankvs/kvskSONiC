@@ -54,9 +54,16 @@ This feature is an enhancement on sonic_db_config package for multi-asic to read
 
 
 #### Add FRR running configuration to tech support
+This implementation is an enhancement on tech support as mentioned below.
 
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br>**Pull Requests** :  [5067](https://github.com/Azure/sonic-buildimage/issues/5067)
+*	Adding a ‘--silent’ option to ‘show techsupport’ command. 
+*	Adding global and per-command timeouts. 
+*	Adding time profiling information for the commands in techsupport. Time profiling information would be part of the tarball and helps to analyse the time consumption per command
+*	Sometimes ‘syncd’ docker is down and bcmshell is unavailable. In such cases all the bcmcmd commands would timeout and result in tremendous increase in the total techsupport collection time. We provided an option to skip rest of the bcmcmd commands once one command times out.
+*	Added ‘show services’, ‘show reboot-cause’ and various BGP, BFD, bcm shell and other commands
+
+Refer [HLD document](https://github.com/Azure/sonic-utilities/pull/1249) and below mentioned PR's for more details. 
+<br>**Pull Requests** :  [5067](https://github.com/Azure/sonic-buildimage/issues/5067) , [1193](https://github.com/Azure/sonic-utilities/pull/1193)
 
 
 #### App extension with warmboot awareness
@@ -77,8 +84,15 @@ Currently SONiC Testbed setup uses fanout switches to connect to the testbed ser
 
 
 #### Error handling (swss)
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br>**Pull Requests** :  
+This feature impliments the orchagent in handling SAI failures. below are the failure handling functions in orchagent
+
+*	Allow different handling for Create/Set/Remove/Get operations.
+*	Allow each Orch to have its specific handling logic.
+*	Adapt handling logic based on SAI API type and SAI status.
+*	Escalate the failure to upper layers when the failure cannot be handled in orchagent.
+
+Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/SAI_failure_handling/SAI_failure_handling.md) and below mentioned PR's for more details. 
+<br>**Pull Requests** :  [1596](https://github.com/Azure/sonic-swss/pull/1596), [1815](https://github.com/Azure/sonic-swss/pull/1815), [1768](https://github.com/Azure/sonic-swss/pull/1768), [1786](https://github.com/Azure/sonic-swss/pull/1786), [1665](https://github.com/Azure/sonic-swss/pull/1665)
 
 
 #### Inband mgmt VRF

@@ -109,15 +109,23 @@ This feature provides general information about the initial support for MPLS in 
 
 #### IPv6 Link Local and BGP Unnumbered
 This feature provides the implementation of IPv6 link-local enhancements in SONiC.
-<br> Refer [HLD document](https://github.com/kirankella/SONiC/blob/d17a977f88ed623c8367eaac747040796d7a7c3f/doc/ipv6/ipv6_link_local.md)
+<br> Refer [HLD document](https://github.com/kirankella/SONiC/blob/d17a977f88ed623c8367eaac747040796d7a7c3f/doc/ipv6/ipv6_link_local.md) and below mentioned PR's for more details.
 <br>**Pull Requests** : [5584](https://github.com/Azure/sonic-buildimage/pull/5584), [1463](https://github.com/Azure/sonic-swss/pull/1463), [1159](https://github.com/Azure/sonic-utilities/pull/1159)
 
 
 #### MC-LAG (L2)
 This feature is an enhancements of SONiC ICCP MCLAG. This includes MCLAG configuration support, data structure changes, MAC event handling optimizations for scaling performance, support of static MAC address over MCLAG, support bridge-port isolation group for BUM control to MCLAG, and traffic recovery sequencing for traffic loop prevention.
-<br> Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/mclag/MCLAG_Enhancements_HLD.md)
+<br> Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/mclag/MCLAG_Enhancements_HLD.md) and below mentioned PR's for more details.
 <br> **Pull Requests** :  [596](https://github.com/Azure/SONiC/pull/596), [885](https://github.com/Azure/sonic-swss/pull/885), [4819](https://github.com/Azure/sonic-buildimage/pull/4819), [1331](https://github.com/Azure/sonic-swss/pull/1331), [1349](https://github.com/Azure/sonic-swss/pull/1349), [529](https://github.com/Azure/sonic-utilities/pull/529), [405](https://github.com/Azure/sonic-swss-common/pull/405), [59](https://github.com/Azure/sonic-mgmt-framework/pull/59), [25](https://github.com/Azure/sonic-mgmt-common/pull/25)
 
+#### DHCP relay IPv6 support
+This DHCP Relay for IPv6 feature in SONiC impliments the following functionalities, 
+
+*	To give the support for relaying DHCP packets from downstream networks to upstream networks using IPv6 addresses.
+*	To provide the functionality as a seperate process running on dhcp-relay docker container.
+*	To relay messages to multiple unicast and multicast addresses.
+<br> Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/DHCPv6_Relay/DHCPv6_Relay_HLD.md) and below mentioned PR's for more details.
+<br> **Pull Requests** : [7772](https://github.com/Azure/sonic-buildimage/pull/7772), [6531](https://github.com/Azure/sonic-buildimage/pull/6531), [7789](https://github.com/Azure/sonic-buildimage/pull/7789), [3565](https://github.com/Azure/sonic-mgmt/pull/3565)
 
 #### RADIUS AAA
 This implementation describes the high level design of RADIUS management user authentication feature in SONiC.<br>
@@ -127,7 +135,7 @@ This implementation describes the high level design of RADIUS management user au
 
 #### PDK - Platform Development Environment
 The SONiC PDE is part of the SONiC Platform Development Kit (PDK) which optimizes platform development. The SONiC PDK consists of PDDF (Platform Driver Development Framework) and PDE (Platform Development Environment)
-<br> Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/platform/pde.md)
+<br> Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/platform/pde.md) and below mentioned PR's for more details.
 <br> **Pull Requests** : [3778](https://github.com/Azure/sonic-buildimage/pull/3778) [28](https://github.com/Azure/sonic-platform-pdk-pde/pull/28), [107](https://github.com/Azure/sonic-build-tools/pull/107).
 
 

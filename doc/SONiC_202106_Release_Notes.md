@@ -125,7 +125,7 @@ This DHCP Relay for IPv6 feature in SONiC impliments the following functionaliti
 *	To provide the functionality as a seperate process running on dhcp-relay docker container.
 *	To relay messages to multiple unicast and multicast addresses.
 
-<br> Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/DHCPv6_Relay/DHCPv6_Relay_HLD.md) and below mentioned PR's for more details.
+Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/DHCPv6_Relay/DHCPv6_Relay_HLD.md) and below mentioned PR's for more details.
 <br> **Pull Requests** : [7772](https://github.com/Azure/sonic-buildimage/pull/7772), [6531](https://github.com/Azure/sonic-buildimage/pull/6531), [7789](https://github.com/Azure/sonic-buildimage/pull/7789), [3565](https://github.com/Azure/sonic-mgmt/pull/3565)
 
 #### RADIUS AAA

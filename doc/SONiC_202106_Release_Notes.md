@@ -80,7 +80,7 @@ This feature introduces a few new CLI commands which will fit in sonic-utilities
 #### TPID config support
 Currently SONiC Testbed setup uses fanout switches to connect to the testbed server and running the PTF test cases. The fanout switch ports connecting to the DUT are configured as access ports. The fanout switch is configured with 802.1Q tunnel on the DUT facing ports side so that tagged packets are not to be used for service delimiting purpose. With this TPID configuration capability, these fanout switches can be converted to run in SONiC.<br>
 <br> Refer [HLD document](https://github.com/gechiang/SONiC/blob/3f57d0304bda22222b01f2b90098e4d4d3b88f68/doc/tpid/SonicTPIDSettingHLD1.md) and below mentioned PR's for more details. 
-<br>**Pull Requests** : [681](https://github.com/Azure/SONiC/pull/681)
+<br>**Pull Requests** : [681](https://github.com/Azure/SONiC/pull/681), [7630](https://github.com/Azure/sonic-buildimage/pull/7630), [1747](https://github.com/Azure/sonic-swss/pull/1747), [1618](https://github.com/Azure/sonic-utilities/pull/1618)
 
 
 #### Error handling (swss)
@@ -176,4 +176,4 @@ SONiC community would like to thank all the contributors from various companies 
 <br>
 
 
-
+ù‘

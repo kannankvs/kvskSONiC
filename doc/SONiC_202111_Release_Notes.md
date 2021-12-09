@@ -55,104 +55,108 @@ Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/acl/ACL-Flex
 <br>  **Pull Requests** :  [533](https://github.com/Azure/sonic-swss-common/pull/533), [953](https://github.com/Azure/sonic-sairedis/pull/953), [1943](https://github.com/Azure/sonic-swss/pull/1943), [1858](https://github.com/Azure/sonic-utilities/pull/1858), [8908](https://github.com/Azure/sonic-buildimage/pull/8908) & [8909](https://github.com/Azure/sonic-buildimage/pull/8909)
 <br>
  
-#### App extension CLI generation tool      
-<br>  Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+#### App extension CLI generation tool 
+The SONiC CLI Auto-generation tool - is a utility for generating the command-line interface for third-party features, called application extensions, that provide their functionality as separate docker containers. The YANG model will be used to describe the CONFIG DB schema and CLI will be generated according to CONFIG DB schema. The YANG model will serve as an input parameter for the SONiC Auto-generation utility. The CLI should be a part of SONiC utilities and support - show, config operations.
+     
+Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/sonic-application-extention/sonic-application-extention-hld.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [780](https://github.com/Azure/SONiC/pull/780), [1644](https://github.com/Azure/sonic-utilities/pull/1644) & [1650](https://github.com/Azure/sonic-utilities/pull/1650)
           
-#### Automatic techsupport and core dump creation  
-<br>  Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+#### Automatic techsupport and core dump creation 
+Currently, techsupport is run by invoking show techsupport either by orchestration tools like Jenkins or manually. The techsupport dump also collects any core dump files available in the /var/core/ directory. However if the techsupport invocation can be made event-driven based on core dump generation, that would definitely improve the debuggability. 
+ 
+Refer [HLD document](https://github.com/Azure/SONiC/blob/61a07b416d0ecab85833337944928dca5d64150e/doc/auto_techsupport_and_coredump_mgmt.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [818](https://github.com/Azure/SONiC/pull/818), [8670](https://github.com/Azure/sonic-buildimage/pull/8670) & [1796](https://github.com/Azure/sonic-utilities/pull/1796)
                
 #### Better route scalability with multiple next-hops     
-<br>  Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### Class-Based Forwarding      
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
                     
 #### CLI level authorization      
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
                      
 #### DHCP support IPv6            
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
               
 #### Dynamic Policy Based Hashing       
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### Dynamic port breakout         
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
                 
 #### EXP to TC QoS maps          
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
                
 #### EVPN VXLAN  for platforms using P2MP tunnel based L2 forwarding  
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### Handle port config change on fly in xcvrd          
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### Host interface trap counter           
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### L2 functional and performance enhancements       
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### New branch creation for Debian11         
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### One line command to extract multiple DBs info of a SONiC component   
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### Overlay ECMP                
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### PDK - Platform Development Environment       
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### PINS (P4 Integrated Network Stack)              
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### Reclaim reserved buffer for unused ports       
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### Routed sub-interface naming convention           
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### SONiC for MPLS Dataplane             
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### SRv6 support (Cntd)           
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### Support for passing IS-IS, LDP and MicroBFD packets to CPU
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### Upgrade  SONiC init flow               
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 #### VXLAN src port configuration 
-<br> Refer [HLD document]() and below mentioned PR's for more details. 
+Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
 

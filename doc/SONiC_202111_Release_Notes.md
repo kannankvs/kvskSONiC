@@ -67,13 +67,17 @@ Currently, techsupport is run by invoking show techsupport either by orchestrati
 Refer [HLD document](https://github.com/Azure/SONiC/blob/61a07b416d0ecab85833337944928dca5d64150e/doc/auto_techsupport_and_coredump_mgmt.md) and below mentioned PR's for more details. 
 <br> **Pull Requests** : [818](https://github.com/Azure/SONiC/pull/818), [8670](https://github.com/Azure/sonic-buildimage/pull/8670) & [1796](https://github.com/Azure/sonic-utilities/pull/1796)
                
-#### Better route scalability with multiple next-hops     
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+#### Better route scalability with multiple next-hops 
+Currently the route table within APP_DB contains all next hop information for a route embedded in that route's entry in the table. At high scale (particularly when handling millions of routes all routed over multiple next hops) this is inefficient both in terms of performance and occupancy. A more efficient system would involve managing the next hop groups in use by the route table separately, and simply have the route table specify a reference to which next hop group to use. Since at scale many routes will use the same next hop groups, this requires much smaller occupancy per route, and so more efficient building, transmission and parsing of per-route information.
+    
+Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/ip/next_hop_group_hld.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [712](https://github.com/Azure/SONiC/pull/712), [475](https://github.com/Azure/sonic-swss-common/pull/475), [1702]https://github.com/Azure/sonic-swss/pull/1702)
           
 #### Class-Based Forwarding      
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+Class Based Forwarding which allows traffic to be steered through the network by policy, adding a layer of traffic engineering based on a Forwarding Class value which allows custom paths to be configured for a destination based on this value.
+
+Refer [HLD document](https://github.com/Azure/SONiC/blob/e65d05a32761ea1c50c170008b22410879dce300/doc/cbf/cbf_hld.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [796](https://github.com/Azure/SONiC/pull/796), [525](https://github.com/Azure/sonic-swss-common/pull/525), [909]https://github.com/Azure/sonic-sairedis/pull/909), [1963](https://github.com/Azure/sonic-swss/pull/1963), [8689](https://github.com/Azure/sonic-buildimage/pull/8689), [1799](https://github.com/Azure/sonic-utilities/pull/1799)
                     
 #### CLI level authorization      
 Refer [HLD document]() and below mentioned PR's for more details. 

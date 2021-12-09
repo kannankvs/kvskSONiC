@@ -50,6 +50,7 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 
 #### ACL orch redesign
 This feature covers ACL rule counters support and enhancements in that area. The current design of ACL rule counters implements polling at orchagent side at a constant hardcoded interval of 10 seconds. While it is a simpler approach comparing to Flex Counters infrastructure it comes at a cost of scalability and performance issues.Flex counters infrastructure on another hand already used for port, PG, queue, watermark counters solves this issue by delegating counter polling to a separate thread in syncd and allowing to configure polling interval as well.
+
 <br>  Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/acl/ACL-Flex-Counters.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** :  [533](https://github.com/Azure/sonic-swss-common/pull/533), [953](https://github.com/Azure/sonic-sairedis/pull/953), [1943](https://github.com/Azure/sonic-swss/pull/1943), [1858](https://github.com/Azure/sonic-utilities/pull/1858), [8908](https://github.com/Azure/sonic-buildimage/pull/8908) & [8909](https://github.com/Azure/sonic-buildimage/pull/8909)
 

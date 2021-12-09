@@ -53,7 +53,8 @@ This feature covers ACL rule counters support and enhancements in that area. The
 
 Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/acl/ACL-Flex-Counters.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** :  [533](https://github.com/Azure/sonic-swss-common/pull/533), [953](https://github.com/Azure/sonic-sairedis/pull/953), [1943](https://github.com/Azure/sonic-swss/pull/1943), [1858](https://github.com/Azure/sonic-utilities/pull/1858), [8908](https://github.com/Azure/sonic-buildimage/pull/8908) & [8909](https://github.com/Azure/sonic-buildimage/pull/8909)
-
+<br>
+ 
 #### App extension CLI generation tool      
 <br>  Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :

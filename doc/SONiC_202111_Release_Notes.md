@@ -84,16 +84,16 @@ This feature is based on TACACS+ Authentication, and provides a detailed descrip
 
 SONiC currently supported TACACS+ features:
 
-Authentication: 
+***Authentication:***
 
-User session authorization.
-User session accounting.
-User command authorization with local permission.
+	* 	User session authorization.
+	*	User session accounting.
+	*	User command authorization with local permission.
 
-New features:
+***New features:***
 
-User command authorization with TACACS+ server.
-User command accounting with TACACS+ server.
+	*	User command authorization with TACACS+ server.
+	*	User command accounting with TACACS+ server.
 
 Refer [HLD document](https://github.com/Azure/SONiC/blob/4d1660cc88002aff64e6228b63b5f2d6b59d6031/doc/aaa/TACACS%2B%20Design.md) and below mentioned PR's for more details. 
 <br> **Pull Requests** :

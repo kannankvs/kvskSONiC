@@ -96,19 +96,25 @@ SONiC currently supported TACACS+ features:
 	*	User command accounting with TACACS+ server.
 
 Refer [HLD document](https://github.com/Azure/SONiC/blob/4d1660cc88002aff64e6228b63b5f2d6b59d6031/doc/aaa/TACACS%2B%20Design.md) and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+<br> **Pull Requests** : [813](https://github.com/Azure/SONiC/pull/813), [8660](https://github.com/Azure/sonic-buildimage/pull/8660), [8659](https://github.com/Azure/sonic-buildimage/pull/8659), [8715](https://github.com/Azure/sonic-buildimage/pull/8715), [9029](https://github.com/Azure/sonic-buildimage/pull/9029), [1889](https://github.com/Azure/sonic-utilities/pull/1889), [4605](https://github.com/Azure/sonic-mgmt/pull/4605) & [8750](https://github.com/Azure/sonic-buildimage/pull/8750)
                      
-#### DHCP support IPv6            
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+#### DHCP support IPv6     
+SONiC currently supports DHCPv4 Relay via the use of open source ISC DHCP package. However, DHCPv6 specification does not define a way to communicate client link-layer address to the DHCP server where DHCP server is not connected to the same network link as DHCP client. DHCPv6 requires all clients prepare and send a DUID as the client identifier in all DHCPv6 message exchanges. 
+       
+Refer [HLD document](https://github.com/Azure/SONiC/blob/92acec6cc29165382e0b40d1ff528a6f409de572/doc/DHCPv6_relay/DHCPv6-relay-agent-High-Level-Design.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [787](https://github.com/Azure/SONiC/pull/787)
               
 #### Dynamic Policy Based Hashing       
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+This feature will support policy based hashing for NVGRE/VxLAN packets based on inner 5-tuple (IP proto, L4 dst/src port, IPv4/IPv6 dst/src)
+
+Refer [HLD document](https://github.com/Azure/SONiC/blob/91eee7f952b4ad4679ada1b5b5f3b95ad39e2431/doc/pbh/pbh-design.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [773](https://github.com/Azure/SONiC/pull/773), [7461](https://github.com/Azure/sonic-buildimage/pull/7461), [495](https://github.com/Azure/sonic-swss-common/pull/495), [1782](https://github.com/Azure/sonic-swss/pull/1782) & [1701](https://github.com/Azure/sonic-utilities/pull/1701)
           
 #### Dynamic port breakout         
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+This feature is to support port breakout dynamically. We should be able to change port breakout mode at run time without affecting the unrelated port activities. Configuration dependencies on the ports to be changed with breakout mode should be reported or removed automatically. Run time dependencies and resources should be cleared on the ports to be changed with breakout mode. Optionally, we provide a way to automatically add the configuration back to the port if operators can specify in advance.
+
+Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/dynamic-port-breakout/sonic-dynamic-port-breakout-HLD.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [4235](https://github.com/Azure/sonic-buildimage/pull/4235), [3910](https://github.com/Azure/sonic-buildimage/pull/3910), [1242](https://github.com/Azure/sonic-swss/pull/1242), [1219](https://github.com/Azure/sonic-swss/pull/1219), [1148](https://github.com/Azure/sonic-swss/pull/1148), [1112](https://github.com/Azure/sonic-swss/pull/1112), [766](https://github.com/Azure/sonic-utilities/pull/766), [72](https://github.com/Azure/sonic-platform-common/pull/72), [859](https://github.com/Azure/sonic-utilities/pull/859), [767](https://github.com/Azure/sonic-utilities/pull/767), [765](https://github.com/Azure/sonic-utilities/pull/765), [3912](https://github.com/Azure/sonic-buildimage/pull/3912), [3911](https://github.com/Azure/sonic-buildimage/pull/3911), [3909](https://github.com/Azure/sonic-buildimage/pull/3909), [3861](https://github.com/Azure/sonic-buildimage/pull/3861), [3730](https://github.com/Azure/sonic-buildimage/pull/3730), [3907](https://github.com/Azure/sonic-buildimage/pull/3907), [3891](https://github.com/Azure/sonic-buildimage/pull/3891), [3874](https://github.com/Azure/sonic-buildimage/pull/3874), [1085](https://github.com/Azure/sonic-swss/pull/1085), [1151](https://github.com/Azure/sonic-swss/pull/1151) & [1150](https://github.com/Azure/sonic-swss/pull/1150)
                 
 #### EXP to TC QoS maps          
 Refer [HLD document]() and below mentioned PR's for more details. 

@@ -117,20 +117,28 @@ Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/dynamic-port
 <br> **Pull Requests** : [4235](https://github.com/Azure/sonic-buildimage/pull/4235), [3910](https://github.com/Azure/sonic-buildimage/pull/3910), [1242](https://github.com/Azure/sonic-swss/pull/1242), [1219](https://github.com/Azure/sonic-swss/pull/1219), [1148](https://github.com/Azure/sonic-swss/pull/1148), [1112](https://github.com/Azure/sonic-swss/pull/1112), [766](https://github.com/Azure/sonic-utilities/pull/766), [72](https://github.com/Azure/sonic-platform-common/pull/72), [859](https://github.com/Azure/sonic-utilities/pull/859), [767](https://github.com/Azure/sonic-utilities/pull/767), [765](https://github.com/Azure/sonic-utilities/pull/765), [3912](https://github.com/Azure/sonic-buildimage/pull/3912), [3911](https://github.com/Azure/sonic-buildimage/pull/3911), [3909](https://github.com/Azure/sonic-buildimage/pull/3909), [3861](https://github.com/Azure/sonic-buildimage/pull/3861), [3730](https://github.com/Azure/sonic-buildimage/pull/3730), [3907](https://github.com/Azure/sonic-buildimage/pull/3907), [3891](https://github.com/Azure/sonic-buildimage/pull/3891), [3874](https://github.com/Azure/sonic-buildimage/pull/3874), [1085](https://github.com/Azure/sonic-swss/pull/1085), [1151](https://github.com/Azure/sonic-swss/pull/1151) & [1150](https://github.com/Azure/sonic-swss/pull/1150)
                 
 #### EXP to TC QoS maps          
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+This feature extends SONiC to support MPLS TC to TC mappings. This new enhancement adds support to SONiC for MPLS TC to TC map which allows QoS to work on MPLS packets. User can configure MPLS TC to TC map at start-of-day via configuration file. CLI support will exist to offer the same amount of support as for DSCP to TC map.
+
+Refer [HLD document](https://github.com/Azure/SONiC/blob/bb476c589a6ac5a7e3ea66a0a84caab6264dc7a9/doc/qos/mpls_tc_to_tc_map.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [844](https://github.com/Azure/SONiC/pull/844), [537](https://github.com/Azure/sonic-swss-common/pull/537), [1954](https://github.com/Azure/sonic-swss/pull/1954) & [1875](https://github.com/Azure/sonic-utilities/pull/1875)
                
 #### EVPN VXLAN  for platforms using P2MP tunnel based L2 forwarding  
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+The EVPN VXLAN feature implementation is based on RFC 7432 and 8365 in SONiC. This feature is incremental to the SONiC.201911 release.
+
+Refer [HLD document](https://github.com/Azure/SONiC/blob/17583e3eae8e06cf9e15df9806ab97ab4db76082/doc/vxlan/EVPN/EVPN_VXLAN_HLD.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [806](https://github.com/Azure/SONiC/pull/806), [1858](https://github.com/Azure/sonic-swss/pull/1858), [8685](https://github.com/Azure/sonic-buildimage/pull/8685), [920](https://github.com/Azure/sonic-sairedis/pull/920), [1859](https://github.com/Azure/sonic-swss/pull/1859), [886](https://github.com/Azure/sonic-sairedis/pull/886), [519](https://github.com/Azure/sonic-swss-common/pull/519), [1748](https://github.com/Azure/sonic-utilities/pull/1748) & [8369](https://github.com/Azure/sonic-buildimage/pull/8369)
           
-#### Handle port config change on fly in xcvrd          
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+#### Handle port config change on fly in xcvrd       
+The current xcvrd assumes that port mapping information is never changed, so it always read static port mapping information from platform.json/port_config.ini and save it to a global data structure. However, things changed since dynamic port breakout feature introduced. Port can be added/created on the fly, xcvrd cannot update transceiver information, DOM information and transceiver status information without knowing the ports change. This implementation introduces a way to handle port configuration change on fly in xcvrd.
+   
+Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/xrcvd/transceiver-monitor-hld.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [839](https://github.com/Azure/SONiC/pull/839) & [212](https://github.com/Azure/sonic-platform-daemons/pull/212)
           
 #### Host interface trap counter           
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+Flow counters are usually used for debugging, troubleshooting and performance enhancement processes. Flow counters could cover cases like, Host interface traps (number of received traps per Trap ID), Routes matching the configured prefix pattern (number of hits and number of bytes), FDB entries matching the configured VXLAN tunnel or using the VLAN ID as pattern, Next-Hop/Next-Hop Group/Next-Hop Group Member,  & This document focus on host interface traps counter.
+
+Refer [HLD document](https://github.com/Azure/SONiC/blob/434a5fcc8a5c7f0fe13e163d89ee9af61a06dbd1/doc/flow_counters/flow_counters.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [858](https://github.com/Azure/SONiC/pull/858), [8940](https://github.com/Azure/sonic-buildimage/pull/8940), [1951](https://github.com/Azure/sonic-swss/pull/1951), [4456](https://github.com/Azure/sonic-mgmt/pull/4456), [1868](https://github.com/Azure/sonic-utilities/pull/1868), [954](https://github.com/Azure/sonic-sairedis/pull/954), [534](https://github.com/Azure/sonic-swss-common/pull/534), [1876](https://github.com/Azure/sonic-utilities/pull/1876) &  [9353](https://github.com/Azure/sonic-buildimage/pull/9353)
           
 #### L2 functional and performance enhancements       
 Refer [HLD document]() and below mentioned PR's for more details. 

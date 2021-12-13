@@ -141,52 +141,75 @@ Refer [HLD document](https://github.com/Azure/SONiC/blob/434a5fcc8a5c7f0fe13e163
 <br> **Pull Requests** : [858](https://github.com/Azure/SONiC/pull/858), [8940](https://github.com/Azure/sonic-buildimage/pull/8940), [1951](https://github.com/Azure/sonic-swss/pull/1951), [4456](https://github.com/Azure/sonic-mgmt/pull/4456), [1868](https://github.com/Azure/sonic-utilities/pull/1868), [954](https://github.com/Azure/sonic-sairedis/pull/954), [534](https://github.com/Azure/sonic-swss-common/pull/534), [1876](https://github.com/Azure/sonic-utilities/pull/1876) &  [9353](https://github.com/Azure/sonic-buildimage/pull/9353)
           
 #### L2 functional and performance enhancements       
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+This implentation provides enhancements in SONiC layer 2 forwarding for FDB flush, MAC move, FDB aging time configuration, Static FDB configuration and VLAN Range configuration.
+
+Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/layer2-forwarding-enhancements/SONiC%20Layer%202%20Forwarding%20Enhancements%20HLD.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [379](https://github.com/Azure/SONiC/pull/379), [510](https://github.com/Azure/sonic-sairedis/pull/510), [303](https://github.com/Azure/sonic-swss-common/pull/303), [529](https://github.com/Azure/sonic-utilities/pull/529) & [1716](https://github.com/Azure/sonic-swss/pull/1716)
           
-#### New branch creation for Debian11         
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+#### New branch creation for Debian11    
+In preparation for Debian Bullseye, upgrade SONiC's base system to be based on Bullseye, which was released in August 2021.Kernel is now based on 5.10.x (currently, official Debian Bullseye is publishing the 5.10.70 kernel) Most Python 2 packages (as well as pip2.7) have been removed from Bullseye. The Python 2 interpreter is still available. The kernel has been upgraded to 5.10.46, and the base system is now based on Bullseye. Containers are still based on Buster.
+     
+Refer [PR#8191](https://github.com/Azure/sonic-buildimage/pull/8191) for more details. 
           
-#### One line command to extract multiple DBs info of a SONiC component   
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+#### One line command to extract multiple DBs info of a SONiC component  
+In SONiC, there usually exists a set of tables related/relevant to a particular module. All of these have to be looked at to confirm whether any configuration update is properly applied and propagated.The task of debugging quickly becomes tedious because currently, there is no utility which does print a unified view of the redis-state. This is the problem which is addressed by this dump utility.This utility provides the base infrastructure and guidelines to make is easy for the developers to extend and support the utility for different modules.
+ 
+Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/Dump-Utility.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [789](https://github.com/Azure/SONiC/pull/789), [1666](https://github.com/Azure/sonic-utilities/pull/1666), [1667](https://github.com/Azure/sonic-utilities/pull/1667), [1668](https://github.com/Azure/sonic-utilities/pull/1668), [1669](https://github.com/Azure/sonic-utilities/pull/1669), [1670](https://github.com/Azure/sonic-utilities/pull/1670), [1853](https://github.com/Azure/sonic-utilities/pull/1853), [1877](https://github.com/Azure/sonic-utilities/pull/1877), [1913](https://github.com/Azure/sonic-utilities/pull/1913) & [1892](https://github.com/Azure/sonic-utilities/pull/1892)
           
-#### Overlay ECMP                
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+#### Overlay ECMP        
+This feature provides Vxlan Overlay ECMP feature implementation in SONiC with BFD support. This is an extension to the existing VNET Vxlan support as defined in the Vxlan HLD. 
+        
+Refer [HLD document](https://github.com/Azure/SONiC/blob/b9f1e94235553c825de67d244c9e8836f369b965/doc/vxlan/Overlay%20ECMP%20with%20BFD.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [861](https://github.com/Azure/SONiC/pull/861), [1960](https://github.com/Azure/sonic-swss/pull/1960), [9197](https://github.com/Azure/sonic-uildimage/pull/9197), [96](https://github.com/Azure/sonic-restapi/pull/96), [1955](https://github.com/Azure/sonic-swss/pull/1955)[903](https://github.com/Azure/sonic-sairedis/pull/903), [1883](https://github.com/Azure/sonic-swss/pull/1883) & [1942](https://github.com/Azure/sonic-utilities/pull/1942)
           
-#### PDK - Platform Development Environment       
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+#### PDK - Platform Development Environment 
+SONiC OS is portable across different network devices with supported ASIC via Switch Abstraction Interface (SAI). These devices primarily differ in the way various device specific hardware components are accessed, and thus require custom device drivers and python plugins. Each platform vendor implements these custom device drivers and plugins. The feature requirement is to support a SONiC platform driver development framework to enable rapid development of custom device drivers and plugins.
+      
+Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/platform/brcm_pdk_pddf.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [3387](https://github.com/Azure/sonic-buildimage/pull/3387), [624](https://github.com/Azure/sonic-utilities/pull/624), [62](https://github.com/Azure/sonic-platform-common/pull/62)
           
-#### PINS (P4 Integrated Network Stack)              
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+#### PINS (P4 Integrated Network Stack)    
+This feature describes PINS (P4 Integrated Network Stack), a P4RT based SDN interface for SONiC. P4RT for SONiC is opt-in, has familiar interfaces, enables rapid innovation, provides automated validation, and serves as unambiguous documentation. A canonical family of P4 programs documents the packet forwarding pipeline of SAI. Remote SDN controllers will use these P4 programs to control the switch forwarding behavior over the P4RT API.
+          
+Refer [HLD document](https://github.com/pins/SONiC/blob/pins-hld/doc/pins/pins_hld.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : 
           
 #### Reclaim reserved buffer for unused ports       
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+Originally, the reserved buffer is reclaimed by removing buffer objects of the unused ports. However, this introduces inconsistency. To resolve this zero buffer profiles are introduced to indicate 0 reserved size of a buffer object. Removing a buffer object indicates setting the buffer object to SDK default value.
+
+Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/qos/reclaim-reserved-buffer-images/reclaim-reserved-buffer-sequence-flow.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [831](https://github.com/Azure/SONiC/pull/831)
           
-#### Routed sub-interface naming convention           
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+#### Routed sub-interface naming convention    
+A sub port interface is a logical interface that can be created on a physical port or a port channel. A sub port interface serves as an interface to either a .1D bridge or a VRF, but not both. This feature design focuses on the use case of creating a sub port interface on a physical port or a port channel and using it as a router interface to a VRF.
+       
+Refer [HLD document](https://github.com/Azure/SONiC/blob/d1b715a9cc762eff084d953581633e2a94115bac/doc/subport/sonic-sub-port-intf-hld.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [833](https://github.com/Azure/SONiC/pull/833), [2017](https://github.com/Azure/sonic-swss/pull/2017), [1907](https://github.com/Azure/sonic-swss/pull/1907), [8761](https://github.com/Azure/sonic-buildimage/pull/8761) & [1821](https://github.com/Azure/sonic-utilities/pull/1821)
           
-#### SONiC for MPLS Dataplane             
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+#### SONiC for MPLS Dataplane   
+This implementation is about the initial support for MPLS in SONiC infrastructure. The focus of this initial MPLS support is to expand existing SONiC infrastructure for IPv4/IPv6 routing to include equivalent MPLS functionality. The expected use case for this initial MPLS support is static LSP routing.
+          
+Refer [HLD document](https://github.com/Azure/SONiC/blob/dc4a7ae5be75e8e376f9e95692e678aee0fb5dac/doc/mpls/MPLS_hld.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [706](https://github.com/Azure/SONiC/pull/706), [1181](https://github.com/opencomputeproject/SAI/pull/1181), [815](https://github.com/Azure/sonic-sairedis/pull/815), [824](https://github.com/Azure/sonic-sairedis/pull/824), [469](https://github.com/Azure/sonic-swss-common/pull/469), [7195](https://github.com/Azure/sonic-buildimage/pull/7195), [1686](https://github.com/Azure/sonic-swss/pull/1686), [1537](https://github.com/Azure/sonic-utilities/pull/1537), [1871](https://github.com/Azure/sonic-swss/pull/1871), [7881](https://github.com/Azure/sonic-buildimage/pull/7881) & [3483](https://github.com/Azure/sonic-mgmt/pull/3483)
           
 #### SRv6 support (Cntd)           
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+SRv6 has been widely adopted as an IPv6 based SDN solution, which provides programming ability, TE capabilities, and deployment simplicity to network administrators. With current support from a rich ecosystem, including major ASIC manufactures, networking vendors and open source communities, the deployment of SRv6 is accelerating. This implentation adds SRv6 into SONIC to benefit users in DC as well as beyond DC.
+
+Refer [HLD document](https://github.com/Azure/SONiC/blob/faa432df6185f7c04d896285db61ac86300161c9/doc/srv6/srv6-hld-v19.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [795](https://github.com/Azure/SONiC/pull/795), [9238](https://github.com/Azure/sonic-buildimage/pull/9238), [538](https://github.com/Azure/sonic-swss-common/pull/538), [1964](https://github.com/Azure/sonic-swss/pull/1964) & [1883](https://github.com/Azure/sonic-utilities/pull/1883)
           
 #### Support for passing IS-IS, LDP and MicroBFD packets to CPU
+
+
 Refer [HLD document]() and below mentioned PR's for more details. 
 <br> **Pull Requests** :
           
-#### Upgrade  SONiC init flow               
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
+#### Upgrade  SONiC init flow          
+This implentation is to introduce a new API for query statistics capabilities of counters in a faster and more efficient way. Currently on SONiC, in order to get the counters capabilities, SONiC is iterating all port stats one by one, to understand the supported capabilities. This operation is time consuming and the new API can reduce the time for this operation in one call.
+     
+Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/Query_Stats_Capability/Query_Stats_Capability_HLD.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [871](https://github.com/Azure/SONiC/pull/871) & [952](https://github.com/Azure/sonic-sairedis/pull/952)
           
 #### VXLAN src port configuration 
 Refer [HLD document]() and below mentioned PR's for more details. 
@@ -196,7 +219,7 @@ Refer [HLD document]() and below mentioned PR's for more details.
 
 # SAI APIs
 
-Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.8.1 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.8.1%20Release%20notes.md)
+Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI]()
 
 
 # Contributors 

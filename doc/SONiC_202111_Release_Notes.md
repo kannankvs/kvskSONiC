@@ -173,7 +173,7 @@ Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/platform/brc
 This feature describes PINS (P4 Integrated Network Stack), a P4RT based SDN interface for SONiC. P4RT for SONiC is opt-in, has familiar interfaces, enables rapid innovation, provides automated validation, and serves as unambiguous documentation. A canonical family of P4 programs documents the packet forwarding pipeline of SAI. Remote SDN controllers will use these P4 programs to control the switch forwarding behavior over the P4RT API.
           
 Refer [HLD document](https://github.com/pins/SONiC/blob/pins-hld/doc/pins/pins_hld.md) and below mentioned PR's for more details. 
-<br> **Pull Requests** : 
+<br> **Pull Requests** : [841](https://github.com/Azure/SONiC/issues/841), [809](https://github.com/Azure/SONiC/pull/809), [826](https://github.com/Azure/SONiC/pull/826), [825](https://github.com/Azure/SONiC/pull/825), [840](https://github.com/Azure/SONiC/pull/840), [852](https://github.com/Azure/SONiC/pull/852), [846](https://github.com/Azure/SONiC/pull/846), [850](https://github.com/Azure/SONiC/pull/850) & [836](https://github.com/Azure/SONiC/pull/836)
           
 #### Reclaim reserved buffer for unused ports       
 Originally, the reserved buffer is reclaimed by removing buffer objects of the unused ports. However, this introduces inconsistency. To resolve this zero buffer profiles are introduced to indicate 0 reserved size of a buffer object. Removing a buffer object indicates setting the buffer object to SDK default value.

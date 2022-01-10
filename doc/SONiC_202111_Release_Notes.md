@@ -40,10 +40,10 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 
 # Security Updates
 
-1. Kernel upgraded from 4.19.152-1 to 5.10.46-4 for SONiC release. 
+1. Kernel upgraded from 4.19.152-1 to 5.10.46-4 for SONiC release.<br>
    Change log: https://tracker.debian.org/media/packages/l/linux/changelog-5.10.46-4
 
-2. Docker upgraded from 18.09.8\~3-0\~debian-stretch to 20.10.7\~3-0\~debian-stretch. 
+2. Docker upgraded from 18.09.8\~3-0\~debian-stretch to 20.10.7\~3-0\~debian-stretch.<br>
    Change log: https://docs.docker.com/engine/release-notes/#20107 
 
 

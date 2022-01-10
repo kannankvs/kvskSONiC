@@ -220,7 +220,7 @@ Refer [HLD document]() and below mentioned PR's for more details.
 
 # SAI APIs
 
-Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI]()
+Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.9.1 Release Notes]()
 
 
 # Contributors 

@@ -40,10 +40,9 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 
 # Security Updates
 
-1. Kernel upgraded from 4.9.168-1+deb9u5 (SONiC Release 202006) to 4.19.152-1 for SONiC release.
-   Change log: https://salsa.debian.org/kernel-team/linux/-/raw/buster-security/debian/changelog 
+1. Kernel upgraded from 4.19.152-1 to 5.10.46-4 for SONiC release. Change log: https://tracker.debian.org/media/packages/l/linux/changelog-5.10.46-4
 
-2. Plexus-utils fix: CVE-2017-1000487   
+2. Docker upgraded from 18.09.8~3-0~debian-stretch to 20.10.7~3-0~debian-stretch. Change log: https://docs.docker.com/engine/release-notes/#20107 
 
 
 # Feature List

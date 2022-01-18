@@ -193,6 +193,12 @@ This implementation is about the initial support for MPLS in SONiC infrastructur
           
 Refer [HLD document](https://github.com/Azure/SONiC/blob/dc4a7ae5be75e8e376f9e95692e678aee0fb5dac/doc/mpls/MPLS_hld.md) and below mentioned PR's for more details. 
 <br> **Pull Requests** : [706](https://github.com/Azure/SONiC/pull/706), [1181](https://github.com/opencomputeproject/SAI/pull/1181), [815](https://github.com/Azure/sonic-sairedis/pull/815), [824](https://github.com/Azure/sonic-sairedis/pull/824), [469](https://github.com/Azure/sonic-swss-common/pull/469), [7195](https://github.com/Azure/sonic-buildimage/pull/7195), [1686](https://github.com/Azure/sonic-swss/pull/1686), [1537](https://github.com/Azure/sonic-utilities/pull/1537), [1871](https://github.com/Azure/sonic-swss/pull/1871), [7881](https://github.com/Azure/sonic-buildimage/pull/7881) & [3483](https://github.com/Azure/sonic-mgmt/pull/3483)
+
+#### SONiC Generic Update and Rollback           
+The SONiC Generic Update and Rollback feature is to standardize the way to do partial updates, to take checkpoints and finally to rollback the configurations for SONiC.
+
+Refer [HLD document](https://github.com/ghooo/SONiC/blob/c1f3f3b5427d0cafb3defd93df8b906a26fcee8a/doc/config-generic-update-rollback/SONiC_Generic_Config_Update_and_Rollback_Design.md) and below mentioned PR's for more details. 
+<br> **Pull Requests** : [736](https://github.com/Azure/SONiC/pull/736)
           
 #### SRv6 support (Cntd)           
 SRv6 has been widely adopted as an IPv6 based SDN solution, which provides programming ability, TE capabilities, and deployment simplicity to network administrators. With current support from a rich ecosystem, including major ASIC manufactures, networking vendors and open source communities, the deployment of SRv6 is accelerating. This implentation adds SRv6 into SONIC to benefit users in DC as well as beyond DC.
@@ -200,11 +206,7 @@ SRv6 has been widely adopted as an IPv6 based SDN solution, which provides progr
 Refer [HLD document](https://github.com/Azure/SONiC/blob/faa432df6185f7c04d896285db61ac86300161c9/doc/srv6/srv6-hld-v19.md) and below mentioned PR's for more details. 
 <br> **Pull Requests** : [795](https://github.com/Azure/SONiC/pull/795), [9238](https://github.com/Azure/sonic-buildimage/pull/9238), [538](https://github.com/Azure/sonic-swss-common/pull/538), [1964](https://github.com/Azure/sonic-swss/pull/1964) & [1883](https://github.com/Azure/sonic-utilities/pull/1883)
           
-#### Support for passing IS-IS, LDP and MicroBFD packets to CPU
 
-
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
           
 #### Upgrade  SONiC init flow          
 This implentation is to introduce a new API for query statistics capabilities of counters in a faster and more efficient way. Currently on SONiC, in order to get the counters capabilities, SONiC is iterating all port stats one by one, to understand the supported capabilities. This operation is time consuming and the new API can reduce the time for this operation in one call.
@@ -212,15 +214,10 @@ This implentation is to introduce a new API for query statistics capabilities of
 Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/Query_Stats_Capability/Query_Stats_Capability_HLD.md) and below mentioned PR's for more details. 
 <br> **Pull Requests** : [871](https://github.com/Azure/SONiC/pull/871) & [952](https://github.com/Azure/sonic-sairedis/pull/952)
           
-#### VXLAN src port configuration 
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br> **Pull Requests** :
-          
-
 
 # SAI APIs
 
-Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.9.1 Release Notes]()
+Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.9.1 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.9.1%20Release%20notes.md)
 
 
 # Contributors 

@@ -54,7 +54,6 @@ This feature covers ACL rule counters support and enhancements in that area. The
 
 Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/acl/ACL-Flex-Counters.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** :  [533](https://github.com/Azure/sonic-swss-common/pull/533), [953](https://github.com/Azure/sonic-sairedis/pull/953), [1943](https://github.com/Azure/sonic-swss/pull/1943), [1858](https://github.com/Azure/sonic-utilities/pull/1858), [8908](https://github.com/Azure/sonic-buildimage/pull/8908) & [8909](https://github.com/Azure/sonic-buildimage/pull/8909)
-<br>
  
 #### App extension CLI generation tool 
 The SONiC CLI Auto-generation tool - is a utility for generating the command-line interface for third-party features, called application extensions, that provide their functionality as separate docker containers. The YANG model will be used to describe the CONFIG DB schema and CLI will be generated according to CONFIG DB schema. The YANG model will serve as an input parameter for the SONiC Auto-generation utility. The CLI should be a part of SONiC utilities and support - show, config operations.
@@ -205,8 +204,6 @@ SRv6 has been widely adopted as an IPv6 based SDN solution, which provides progr
 
 Refer [HLD document](https://github.com/Azure/SONiC/blob/faa432df6185f7c04d896285db61ac86300161c9/doc/srv6/srv6-hld-v19.md) and below mentioned PR's for more details. 
 <br> **Pull Requests** : [795](https://github.com/Azure/SONiC/pull/795), [9238](https://github.com/Azure/sonic-buildimage/pull/9238), [538](https://github.com/Azure/sonic-swss-common/pull/538), [1964](https://github.com/Azure/sonic-swss/pull/1964) & [1883](https://github.com/Azure/sonic-utilities/pull/1883)
-          
-
           
 #### Upgrade  SONiC init flow          
 This implentation is to introduce a new API for query statistics capabilities of counters in a faster and more efficient way. Currently on SONiC, in order to get the counters capabilities, SONiC is iterating all port stats one by one, to understand the supported capabilities. This operation is time consuming and the new API can reduce the time for this operation in one call.

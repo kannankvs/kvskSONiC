@@ -1,4 +1,4 @@
-# SONiC 202111 Release Notes
+# SONiC 202205 Release Notes
 
 This document captures the new features added and enhancements done on existing features/sub-features for the SONiC [202205](https://github.com/Azure/SONiC/wiki/Release-Progress-Tracking-202205) release.
 

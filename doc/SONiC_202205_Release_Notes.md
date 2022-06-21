@@ -23,13 +23,13 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 
 |Feature                    | Version  |
 | ------------------------- | --------------- |
-| Linux kernel version      | linux_5.10.0-8-2-$(5.10.46-4)  |
-| SAI   version             | SAI v1.9.1    |
-| FRR                       | 7.5.1   |
+| Linux kernel version      | linux_5.10.0-12-2-$(5.10.103-1)  |
+| SAI   version             | SAI v1.10.2    |
+| FRR                       | 8.2.2   |
 | LLDPD                     | 1.0.4-1    |
 | TeamD                     | 1.28-1    |
 | SNMPD                     | 5.9+dfsg-3+b1    |
-| Python                    | 3.6.0-1    |
+| Python                    | 3.9.2-1    |
 | syncd                     | 1.0.0    |
 | swss                      | 1.0.0    |
 | radvd                     | 2.17-2~bpo9+1    |
@@ -40,11 +40,11 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 
 # Security Updates
 
-1. Kernel upgraded from 4.19.152-1 to 5.10.46-4 for SONiC release.<br>
-   Change log: https://tracker.debian.org/media/packages/l/linux/changelog-5.10.46-4
+1. Kernel upgraded from 5.10.46-4 to 5.10.103-1 for SONiC release.<br>
+   Change log: https://tracker.debian.org/media/packages/l/linux/changelog-5.10.103-1
 
-2. Docker upgraded from 18.09.8\~3-0\~debian-stretch to 20.10.7\~3-0\~debian-stretch.<br>
-   Change log: https://docs.docker.com/engine/release-notes/#20107 
+2. Docker upgraded from  20.10.7~debian-stretch. to 20.10.17~debian-stretch.<br>
+   Change log: https://docs.docker.com/engine/release-notes/#201017
 
 
 # Feature List
@@ -197,7 +197,7 @@ Refer [HLD document] and below mentioned PR's for more details.
 
 # SAI APIs
 
-Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.9.1 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.9.1_ReleaseNotes.md)
+Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.10.2 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.9.1_ReleaseNotes.md)
 
 
 # Contributors 

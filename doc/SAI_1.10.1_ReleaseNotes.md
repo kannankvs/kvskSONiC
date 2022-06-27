@@ -385,3 +385,279 @@ saiobject.h
 ````````````````
 The PR related to this feature is available at PR#[1401](https://github.com/opencomputeproject/SAI/pull/1401)
 
+### Add sai_query_api_version() API
+
+New query types for the below files have been added. 
+
+````````````````
+saiversion.h
+
+#include <saitypes.h>
+
+/**
+ * @brief Retrieve a SAI API version this implementation is aligned to
+ *
+ * @param[out] version Version number
+ *
+ * @return #SAI_STATUS_SUCCESS on success, failure status code on error
+ */
+sai_status_t sai_query_api_version(
+        _Out_ sai_api_version_t *version);
+		
+````````````````
+The PR related to this feature is available at PR#[1404](https://github.com/opencomputeproject/SAI/pull/1404)
+
+### Add label attribute for counter 
+
+The attribute is considered as user data attached to the object. Counter does not have any mandatory attribute to identify object uniquely. Adding a label attribute that can be used to uniquely identify object during warmboot scenarios. This is similar to existing label attribute used by LAG and virtual router.
+
+````````````````
+saicounter.h
+
+    /**
+     * @brief Label attribute used to unique identify counter.
+     *
+     * @type char
+     * @flags CREATE_AND_SET
+     * @default ""
+     */
+    SAI_COUNTER_ATTR_LABEL,
+	
+````````````````
+The PR related to this feature is available at PR#[1407](https://github.com/opencomputeproject/SAI/pull/1407)
+
+### Tunnel Scoped TC MAP and Remarking	
+
+This PR adds the behavior to tunnel encap and decap. DSCP mode takes effect as configured for both cases.
+
+````````````````
+saiswitch.h
+
+    /**
+     * @brief Enable TC AND COLOR -> DSCP MAP on tunnel at encapsulation (access-to-network) node to remark the DSCP in tunnel header
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_QOS_MAP
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_SWITCH_TUNNEL_ATTR_ENCAP_QOS_TC_AND_COLOR_TO_DSCP_MAP,
+
+    /**
+     * @brief Enable TC -> Queue MAP on tunnel encap
+     *
+     * Map id = #SAI_NULL_OBJECT_ID to disable map on tunnel.
+     * Default no map, i.e. packets are queued with static mapping.
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_QOS_MAP
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_SWITCH_TUNNEL_ATTR_ENCAP_QOS_TC_TO_QUEUE_MAP,
+
+    /**
+     * @brief Enable DSCP -> TC MAP on tunnel at termination (Network-to-access) node.
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_QOS_MAP
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_SWITCH_TUNNEL_ATTR_DECAP_QOS_DSCP_TO_TC_MAP,
+
+    /**
+     * @brief Enable TC -> Priority Group MAP
+     *
+     * Map id = #SAI_NULL_OBJECT_ID to disable map on port.
+     * Default no map
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_QOS_MAP
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_SWITCH_TUNNEL_ATTR_DECAP_QOS_TC_TO_PRIORITY_GROUP_MAP,
+
+    /**
+	
+````````````````	
+````````````````	
+
+saitunnel.h
+
+    /**
+     * @brief Enable TC AND COLOR -> DSCP MAP on tunnel at encapsulation (access-to-network) node to remark the DSCP in tunnel header
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_QOS_MAP
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_TUNNEL_ATTR_ENCAP_QOS_TC_AND_COLOR_TO_DSCP_MAP,
+
+    /**
+     * @brief Enable TC -> Queue MAP on tunnel encap
+     *
+     * Map id = #SAI_NULL_OBJECT_ID to disable map on tunnel.
+     * Default no map, i.e. packets are queued with static mapping.
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_QOS_MAP
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_TUNNEL_ATTR_ENCAP_QOS_TC_TO_QUEUE_MAP,
+
+    /**
+     * @brief Enable DSCP -> TC MAP on tunnel at termination (Network-to-access) node. This map if configured overrides the port MAP
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_QOS_MAP
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_TUNNEL_ATTR_DECAP_QOS_DSCP_TO_TC_MAP,
+
+    /**
+     * @brief Enable TC -> Priority Group MAP. TC is derived from the tunnel MAP
+     *
+     * Map id = #SAI_NULL_OBJECT_ID to disable map on port.
+     * Default no map
+     *
+     * @type sai_object_id_t
+     * @flags CREATE_AND_SET
+     * @objects SAI_OBJECT_TYPE_QOS_MAP
+     * @allownull true
+     * @default SAI_NULL_OBJECT_ID
+     */
+    SAI_TUNNEL_ATTR_DECAP_QOS_TC_TO_PRIORITY_GROUP_MAP,
+
+    /**
+	sai_bulk_object_get_attribute_fn             get_tunnels_attribute;
+    sai_bulk_object_set_attribute_fn             set_tunnels_attribute;
+
+````````````````
+The PR related to this feature is available at PR#[1413](https://github.com/opencomputeproject/SAI/pull/1413)
+
+### Add attribute for number of available SAs per SC	
+
+New attribute types for the below files have been added.
+
+````````````````
+
+saimacsec.h
+
+	/**
+	* @brief Max number of secure associations for each secure channel
+	*
+	* An implementation may support either two or four associations
+	* depending on whether it stores the secure association
+	* number in one or two bits.
+	*/
+	typedef enum _sai_macsec_max_secure_associations_per_sc_t
+	{
+    SAI_MACSEC_MAX_SECURE_ASSOCIATIONS_PER_SC_TWO,
+    SAI_MACSEC_MAX_SECURE_ASSOCIATIONS_PER_SC_FOUR,
+	} sai_macsec_max_secure_associations_per_sc_t;
+
+    /**
+     * @brief MACsec Secure Associations Limit
+     *
+     * @type sai_macsec_max_secure_associations_per_sc_t
+     * @flags READ_ONLY
+     */
+    SAI_MACSEC_ATTR_MAX_SECURE_ASSOCIATIONS_PER_SC,
+
+    /**
+	
+````````````````
+The PR related to this feature is available at PR#[1420](https://github.com/opencomputeproject/SAI/pull/1420)
+
+
+### Add label attribute for ACL counter
+
+ACL counter does not have any mandatory attribute to identify object uniquely. Adding a label attribute that can be used to uniquely identify ACL counter object during warmboot. The attribute is considered as user data attached to the object. 
+	
+````````````````	
+saiacl.h
+
+    /**
+     * @brief Attribute used to uniquely identify ACL counter.
+     *
+     * @type char
+     * @flags CREATE_AND_SET
+     * @default ""
+     */
+    SAI_ACL_COUNTER_ATTR_LABEL,
+
+    /**
+````````````````
+The PR related to this feature is available at PR#[1430](https://github.com/opencomputeproject/SAI/pull/1430)
+
+### Bulk API for setting Port Attributes
+
+New query types for the below files have been added
+
+````````````````
+saiport.h
+
+    sai_bulk_object_create_fn              create_ports;
+    sai_bulk_object_remove_fn              remove_ports;
+    sai_bulk_object_set_attribute_fn       set_ports_attribute;
+    sai_bulk_object_get_attribute_fn       get_ports_attribute;
+	
+````````````````
+The PR related to this feature is available at PR#[1460](https://github.com/opencomputeproject/SAI/pull/1460)
+	
+### ECMP Member Capability and Configuration
+
+Two new Switch attributes are introduced.
+	* Read Only SAI_SWITCH_ATTR_MAX_ECMP_MEMBER_COUNT - This attribute is queried during switch init to find out device specific max number of ecmp members supported.
+
+	* CREATE_AND_SET (read/write) SAI_SWITCH_ATTR_ECMP_MEMBER_COUNT - This attribute is set based on the query for MAX_ECMP_MEMBER_COUNT and can be changed dynamically. If the SAI adapter doesn't support dynamic change of this attribute based on certain conditions like if ECMP groups are already configured then MUST return error.	
+	
+````````````````
+saiswitch.h
+
+
+    /**
+     * @brief Number of ECMP members supported across the all nexthop groups by switch
+     *
+     * @type sai_uint32_t
+     * @flags READ_ONLY
+     */
+    SAI_SWITCH_ATTR_MAX_ECMP_MEMBER_COUNT,
+
+    /**
+     * @brief Number of ECMP Members configured. SAI_SWITCH_ATTR_ECMP_MEMBER_COUNT takes precedence over SAI_KEY_NUM_ECMP_GROUPS string. Default value is same as SAI_SWITCH_ATTR_ECMP_MEMBERS.
+     *
+     * @type sai_uint32_t
+     * @flags CREATE_AND_SET
+     * @default 64
+     */
+    SAI_SWITCH_ATTR_ECMP_MEMBER_COUNT,
+
+````````````````
+The PR related to this feature is available at PR#[1461](https://github.com/opencomputeproject/SAI/pull/1461)
+
+### Updated header file path to fix sonic build issue 
+
+The below code has been rewritten to fix the sonic build issue.
+
+````````````````
+
+#include <saiexperimentalbmtor.h>	  <--- changed from		 include "../experimental/saiexperimentalbmtor.h"
+
+system("gcc $src -I. -I ../experimental -I '$dir' -o $bin") == 0 or die "gcc failed! $!";	<--- changed from	system("gcc $src -I. -I '$dir' -o $bin") == 0 or die "gcc failed! $!";  
+	
+````````````````
+The PR related to this feature is available at PR#[1465](https://github.com/opencomputeproject/SAI/pull/1465)
+	

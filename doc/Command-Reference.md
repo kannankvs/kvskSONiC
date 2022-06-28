@@ -4835,6 +4835,26 @@ last number of lines.
   [ 656.337476] gpio_ich(E) ahci(E) mlxsw_core(E) libahci(E) devlink(E) crc32c_intel(E) libata(E) i2c_i801(E) scsi_mod(E) lpc_ich(E) mfd_core(E) ehci_pci(E) ehci_hcd(E) usbcore(E) e1000e(E) usb_common(E) fan(E) thermal(E)
   [ 656.569590] CR2: 0000000000000000
   ```
+ 
+** config kdump **
+
+Administrative state of kdump is stored in ConfigDB.
+
+The variable USE_KDUMP in the file /etc/default/kdump-tools is set to 0 to disable kdump, and set to 1 to enable kdump.
+
+Since this command might require changing the kernel parameters to specify the amount of memory reserved for the capture kernel (the kernel parameters which are exported through /proc/cmdline), a reboot is necessary. The command displays a message showing that kdump functionality will be either enabled or disabled following the next reboot. 
+  
+- Usage:
+```
+	admin@sonic:~$ config kdump
+
+Commands:
+  disable    Disable the KDUMP mechanism
+  enable     Enable the KDUMP mechanism
+  memory     Configure the memory for KDUMP mechanism
+  num_dumps  Configure the maximum dump files of KDUMP mechanism
+  
+```
 Go Back To [Beginning of the document](#) or [Beginning of this section](#kdump)
 
 ## LLDP

@@ -140,6 +140,11 @@ Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/mgmt/SON
 Refer [HLD document] and below mentioned PR's for more details. 
 <br>  **Pull Requests** : 
 
+### SONiC Generic Update and Rollback
+The SONiC Generic Update and Rollback feature is an enhancement from previous release, to take checkpoints and finally to rollback the configurations for SONiC.
+Refer [HLD document](https://github.com/ghooo/SONiC/blob/c1f3f3b5427d0cafb3defd93df8b906a26fcee8a/doc/config-generic-update-rollback/SONiC_Generic_Config_Update_and_Rollback_Design.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** : [1991](https://github.com/Azure/sonic-utilities/pull/19910), [1998](https://github.com/Azure/sonic-utilities/pull/1998), [2044](https://github.com/Azure/sonic-utilities/pull/2044), [2092](https://github.com/Azure/sonic-utilities/pull/2092), [2103](https://github.com/Azure/sonic-utilities/pull/2103), [2104](https://github.com/Azure/sonic-utilities/pull/2104), [2120](https://github.com/Azure/sonic-utilities/pull/2120), [2145](https://github.com/Azure/sonic-utilities/pull/2145), [2171](https://github.com/Azure/sonic-utilities/pull/2171), [2174](https://github.com/Azure/sonic-utilities/pull/2174) & [2212](https://github.com/Azure/sonic-utilities/pull/2212)
+
 #### Storm Control (BUM)
 This feature supports configuration of Broadcast, Unknown-unicast and unknown-Multicast storm-control independently on physical interfaces. Also, supports threshold rate configuration in kilo bits per second (kbps) in the range of 0 kbps to 100,000,000 kbps (100Gbps).
 

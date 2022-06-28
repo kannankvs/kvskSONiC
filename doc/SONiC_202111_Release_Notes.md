@@ -24,7 +24,7 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 |Feature                    | Version  |
 | ------------------------- | --------------- |
 | Linux kernel version      | linux_5.10.0-8-2-$(5.10.46-4)  |
-| SAI   version             | SAI v1.9    |
+| SAI   version             | SAI v1.9.1    |
 | FRR                       | 7.5.1   |
 | LLDPD                     | 1.0.4-1    |
 | TeamD                     | 1.28-1    |
@@ -197,7 +197,7 @@ Refer [HLD document](https://github.com/Azure/SONiC/blob/dc4a7ae5be75e8e376f9e95
 The SONiC Generic Update and Rollback feature is to standardize the way to do partial updates, to take checkpoints and finally to rollback the configurations for SONiC.
 
 Refer [HLD document](https://github.com/ghooo/SONiC/blob/c1f3f3b5427d0cafb3defd93df8b906a26fcee8a/doc/config-generic-update-rollback/SONiC_Generic_Config_Update_and_Rollback_Design.md) and below mentioned PR's for more details. 
-<br> **Pull Requests** : [736](https://github.com/Azure/SONiC/pull/736)
+<br> **Pull Requests** : [736](https://github.com/Azure/SONiC/pull/736), [1536](https://github.com/Azure/sonic-utilities/pull/1536), [1599](https://github.com/Azure/sonic-utilities/pull/1599),  [1762](https://github.com/Azure/sonic-utilities/pull/1762),  [1794](https://github.com/Azure/sonic-utilities/pull/1794),  [1831](https://github.com/Azure/sonic-utilities/pull/1831),  [1856](https://github.com/Azure/sonic-utilities/pull/1856),  [1864](https://github.com/Azure/sonic-utilities/pull/1864),  [1885](https://github.com/Azure/sonic-utilities/pull/1885),  [1901](https://github.com/Azure/sonic-utilities/pull/1901),  [1919](https://github.com/Azure/sonic-utilities/pull/1919),  [1923](https://github.com/Azure/sonic-utilities/pull/1923),  [1929](https://github.com/Azure/sonic-utilities/pull/1929),  [1934](https://github.com/Azure/sonic-utilities/pull/1934),  [1969](https://github.com/Azure/sonic-utilities/pull/1969),  [1973](https://github.com/Azure/sonic-utilities/pull/1973),  [1977](https://github.com/Azure/sonic-utilities/pull/1977),  [1981](https://github.com/Azure/sonic-utilities/pll/1981),  [1983](https://github.com/Azure/sonic-utilities/pull/1983),  [1987](https://github.com/Azure/sonic-utilities/pull/1987),  [1988](https://github.com/Azure/sonic-utilities/pull/1988),  [2003](https://github.com/Azure/sonic-utilities/pull/2003),  [2006](https://github.com/Azure/sonic-utilities/pull/2006),  [2008](https://github.com/Azure/sonic-utilities/pull/2008),  [2015](https://github.com/Azure/sonic-utilities/pull/2015),  [2020](https://github.com/Azure/sonic-utilities/pull/2020) & [2028](https://github.com/Azure/sonic-utilities/pull/2028) 
           
 #### SRv6 support (Cntd)           
 SRv6 has been widely adopted as an IPv6 based SDN solution, which provides programming ability, TE capabilities, and deployment simplicity to network administrators. With current support from a rich ecosystem, including major ASIC manufactures, networking vendors and open source communities, the deployment of SRv6 is accelerating. This implentation adds SRv6 into SONIC to benefit users in DC as well as beyond DC.
@@ -214,11 +214,11 @@ Refer [HLD document](https://github.com/Azure/SONiC/blob/master/doc/Query_Stats_
 
 # SAI APIs
 
-Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.9.1 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.9.1%20Release%20notes.md)
+Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.9.1 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.9.1_ReleaseNotes.md)
 
 
 # Contributors 
 
-SONiC community would like to thank all the contributors from various companies and the individuals who has contributed for the release. Special thanks to the major contributors - Alibaba, Aviz, Broadcom, DellEMC, Google, Innovium, Intel, Juniper, LinkedIn, Metaswitch, Microsoft & Nvidia.  
+SONiC community would like to thank all the contributors from various companies and the individuals who has contributed for the release. Special thanks to the major contributors - Alibaba, Aviz, Broadcom, DellEMC, Google, Intel, Juniper, LinkedIn, Marvell, Metaswitch, Microsoft & Nvidia.  
 
 <br> 

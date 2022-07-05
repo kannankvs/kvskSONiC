@@ -127,8 +127,8 @@
     * [Buffer Pool](#buffer-pool)
   * [QoS config commands](#qos-config-commands)
 * [Radius](#radius)
-  * [radius show commands/sub-commands](#show-radius-commands/sub-commands)
-  * [radius config commands/sub-commands](#config-radius-commands/sub-commands)  
+  * [radius show commands](#show-radius-commands)
+  * [radius config commands](#config-radius-commands)  
 * [sFlow](#sflow)
   * [sFlow Show commands](#sflow-show-commands)
   * [sFlow Config commands](#sflow-config-commands)
@@ -7475,7 +7475,7 @@ Go Back To [Beginning of the document](#) or [Beginning of this section](#qos)
 
 ## Radius
 
-### show radius commands/sub-commands
+### show radius commands
 
 This command displays the global radius configuration that includes the auth_type, retransmit, timeout  and passkey.
 
@@ -7494,7 +7494,7 @@ This command displays the global radius configuration that includes the auth_typ
 admin@sonic:~$ 
  ```
  
-### Radius config commands/sub-commands
+### Radius config commands
 
 This command is to config the radius server for various parameter listed.
 

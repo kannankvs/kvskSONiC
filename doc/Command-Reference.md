@@ -126,6 +126,9 @@
     * [Queue And Priority-Group](#queue-and-priority-group)
     * [Buffer Pool](#buffer-pool)
   * [QoS config commands](#qos-config-commands)
+* [Radius](#radius)
+  * [radius show commands/sub-commands](#show-radius)
+  * [radius config commands/sub-commands](#config-radius)  
 * [sFlow](#sflow)
   * [sFlow Show commands](#sflow-show-commands)
   * [sFlow Config commands](#sflow-config-commands)
@@ -7467,6 +7470,54 @@ Some of the example QOS configurations that users can modify are given below.
 
 Go Back To [Beginning of the document](#) or [Beginning of this section](#qos)
 
+
+## Radius
+
+### show radius commands/sub-commands
+
+This command displays the global radius configuration that includes the auth_type, retransmit, timeout  and passkey.
+
+- Usage:
+  ```
+  show radius
+  ```
+- Example:
+  ```
+  admin@sonic:~$ show radius
+	RADIUS global auth_type pap (default)
+	RADIUS global retransmit 3 (default)
+	RADIUS global timeout 5 (default)
+	RADIUS global passkey <EMPTY_STRING> (default)
+
+admin@sonic:~$ 
+ ```
+ 
+### Radius config commands/sub-commands
+
+This command is to config the radius server for various parameter listed.
+
+ - Usage:
+  ```
+  config radius
+  ```
+- Example:
+  ```
+  admin@sonic:~$ config radius
+
+Commands:
+  add         Specify a RADIUS server
+  authtype    Specify RADIUS server global auth_type [chap | pap | mschapv2]
+  default     set its default configuration
+  delete      Delete a RADIUS server
+  nasip       Specify RADIUS server global NAS-IP|IPV6-Address <IPAddress>
+  passkey     Specify RADIUS server global passkey <STRING>
+  retransmit  Specify RADIUS server global retry attempts <0 - 10>
+  sourceip    Specify RADIUS server global source ip <IPAddress>
+  statistics  Specify RADIUS server global statistics [enable | disable |...
+  timeout     Specify RADIUS server global timeout <1 - 60>
+admin@sonic:~$
+ ```
+ 
 ## sFlow
 
 ### sFlow Show commands

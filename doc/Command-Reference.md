@@ -77,8 +77,8 @@
   * [Kubernetes show commands](#Kubernetes-show-commands)
   * [Kubernetes config commands](#Kubernetes-config-commands)
 * [Linux Kernel Dump](#kdump)
-  * [Linux Kernel Dump show commands](#kdump-show-commands)
-  * [Linux Kernel Dump config commands](#kdump-config-commands)
+  * [Linux Kernel Dump show commands](#show-kdump-config)
+  * [Linux Kernel Dump config commands](#config-kdump)
 * [LLDP](#lldp)
   * [LLDP show commands](#lldp-show-commands)
 * [Loading, Reloading And Saving Configuration](#loading-reloading-and-saving-configuration)
@@ -127,8 +127,8 @@
     * [Buffer Pool](#buffer-pool)
   * [QoS config commands](#qos-config-commands)
 * [Radius](#radius)
-  * [radius show commands/sub-commands](#show-radius)
-  * [radius config commands/sub-commands](#config-radius)  
+  * [radius show commands/sub-commands](#show-radius-commands/sub-commands)
+  * [radius config commands/sub-commands](#config-radius-commands/sub-commands)  
 * [sFlow](#sflow)
   * [sFlow Show commands](#sflow-show-commands)
   * [sFlow Config commands](#sflow-config-commands)
@@ -4838,8 +4838,10 @@ last number of lines.
   [ 656.337476] gpio_ich(E) ahci(E) mlxsw_core(E) libahci(E) devlink(E) crc32c_intel(E) libata(E) i2c_i801(E) scsi_mod(E) lpc_ich(E) mfd_core(E) ehci_pci(E) ehci_hcd(E) usbcore(E) e1000e(E) usb_common(E) fan(E) thermal(E)
   [ 656.569590] CR2: 0000000000000000
   ```
+
+### Linux Kernel Dump config command
  
-** config kdump **
+**config kdump**
 
 Administrative state of kdump is stored in ConfigDB.
 

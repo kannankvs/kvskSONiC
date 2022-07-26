@@ -7492,7 +7492,7 @@ This command displays the global radius configuration that includes the auth_typ
 	RADIUS global passkey <EMPTY_STRING> (default)
 
 admin@sonic:~$ 
- ```
+  ```
  
 ### Radius config commands
 

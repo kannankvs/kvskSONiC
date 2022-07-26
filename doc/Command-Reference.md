@@ -7505,8 +7505,7 @@ This command is to config the radius server for various parameter listed.
 - Example:
   ```
   admin@sonic:~$ config radius
-
-Commands:
+  
   add         Specify a RADIUS server
   authtype    Specify RADIUS server global auth_type [chap | pap | mschapv2]
   default     set its default configuration

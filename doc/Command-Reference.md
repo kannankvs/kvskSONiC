@@ -128,7 +128,7 @@
   * [QoS config commands](#qos-config-commands)
 * [Radius](#radius)
   * [radius show commands](#show-radius-commands)
-  * [radius config commands](#config-radius-commands)  
+  * [radius config commands](#Radius-config-commands)  
 * [sFlow](#sflow)
   * [sFlow Show commands](#sflow-show-commands)
   * [sFlow Config commands](#sflow-config-commands)

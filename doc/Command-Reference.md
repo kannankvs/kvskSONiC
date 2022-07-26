@@ -78,7 +78,7 @@
   * [Kubernetes config commands](#Kubernetes-config-commands)
 * [Linux Kernel Dump](#kdump)
   * [Linux Kernel Dump show commands](#show-kdump-config)
-  * [Linux Kernel Dump config commands](#config-kdump)
+  * [Linux Kernel Dump config commands](#Linux-Kernel-Dump-config-command)
 * [LLDP](#lldp)
   * [LLDP show commands](#lldp-show-commands)
 * [Loading, Reloading And Saving Configuration](#loading-reloading-and-saving-configuration)
@@ -4839,7 +4839,7 @@ last number of lines.
   [ 656.569590] CR2: 0000000000000000
   ```
 
-### Linux Kernel Dump config command
+### Linux Kernel Dump config command 
  
 **config kdump**
 

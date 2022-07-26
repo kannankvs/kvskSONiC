@@ -6,6 +6,7 @@
 * [Introduction](#introduction)
 * [Basic Tasks](#basic-tasks)
   * [SSH Login](#ssh-login)
+  * [Show Management Interface](#show-management-interface)
   * [Configuring Management Interface](#configuring-management-interface)
 * [Getting Help](#getting-help)
   * [Help for Config Commands](#help-for-config-commands)
@@ -56,6 +57,7 @@
 * [Flow Counters](#flow-counters)
   * [Flow Counters show commands](#flow-counters-show-commands)
   * [Flow Counters clear commands](#flow-counters-clear-commands)
+  * [Flow Counters config commands](#flow-counters-config-commands)
 * [Gearbox](#gearbox)
   * [Gearbox show commands](#gearbox-show-commands)
 * [Interfaces](#interfaces)
@@ -74,8 +76,8 @@
   * [IPv6 Link Local config commands](#ipv6-link-local-config-commands)
   * [IPv6 Link Local show commands](#ipv6-link-local-show-commands)
 * [Kubernetes](#Kubernetes)
-  * [Kubernetes show commands](#kdump-show-commands)
-  * [Kubernetes config commands](#kdump-config-commands)
+  * [Kubernetes show commands](#Kubernetes-show-commands)
+  * [Kubernetes config commands](#Kubernetes-config-commands)
 * [Linux Kernel Dump](#kdump)
   * [Linux Kernel Dump show commands](#Linux-Kernel-Dump-show-commands)
   * [Linux Kernel Dump config commands](#Linux-Kernel-Dump-config-command)
@@ -88,6 +90,7 @@
   * [Loading Management Configuration](#loading-management-configuration)
   * [Saving Configuration to a File for Persistence](saving-configuration-to-a-file-for-persistence)
  * [Loopback Interfaces](#loopback-interfaces)
+    * [Loopback show commands](#loopback-show-commands)
     * [Loopback config commands](#loopback-config-commands)
 * [VRF Configuration](#vrf-configuration)
     * [VRF show commands](#vrf-show-commands)
@@ -108,6 +111,9 @@
 * [NTP](#ntp)
   * [NTP show commands](#ntp-show-commands)
   * [NTP config commands](#ntp-config-commands)
+* [NVGRE](#nvgre)
+  * [NVGRE show commands](#nvgre-show-commands)
+  * [NVGRE config commands](#nvgre-config-commands)
 * [PBH](#pbh)
   * [PBH show commands](#pbh-show-commands)
   * [PBH config commands](#pbh-config-commands)
@@ -117,6 +123,8 @@
   * [Platform Component Firmware config commands](#platform-component-firmware-config-commands)
   * [Platform Component Firmware vendor specific behaviour](#platform-component-firmware-vendor-specific-behaviour)
 * [Platform Specific Commands](#platform-specific-commands)
+  * [Mellanox Platform Specific Commands](#mellanox-platform-specific-commands)
+  * [Barefoot Platform Specific Commands](#barefoot-platform-specific-commands)
 * [PortChannels](#portchannels)
   * [PortChannel Show commands](#portchannel-show-commands)
   * [PortChannel Config commands](#portchannel-config-commands)
@@ -143,6 +151,7 @@
   * [Subinterfaces Show Commands](#subinterfaces-show-commands)
   * [Subinterfaces Config Commands](#subinterfaces-config-commands)
 * [Syslog](#syslog)
+  * [Syslog show commands](#syslog-show-commands)
   * [Syslog config commands](#syslog-config-commands)
 * [System State](#system-state)
   * [Processes](#processes)
@@ -257,6 +266,10 @@ Refer the following section for configuring the IP address for management interf
 By default, login takes the user to the default prompt from which all the show commands can be executed.
 
 Go Back To [Beginning of the document](#) or [Beginning of this section](#basic-tasks)
+
+### Show Management Interface
+
+Please check [show ip interfaces](#show-ip-interfaces)
 
 ### Configuring Management Interface
 
@@ -379,7 +392,7 @@ This command displays the full list of show commands available in the software; 
     ipv6                  Show IPv6 commands
     kubernetes            Show kubernetes commands
     line                  Show all /dev/ttyUSB lines and their info
-    lldp                  LLDP (Link Layer Discovery Protocol)...
+    lldp                  Show LLDP information
     logging               Show system log
     mac                   Show MAC (FDB) entries
     mirror_session        Show existing everflow sessions
@@ -391,10 +404,10 @@ This command displays the full list of show commands available in the software; 
     pfc                   Show details of the priority-flow-control...
     platform              Show platform-specific hardware info
     priority-group        Show details of the PGs
-    processes             Display process information
+    processes             Show process information
     queue                 Show details of the queues
     reboot-cause          Show cause of most recent reboot
-    route-map             show route-map
+    route-map             Show route-map
     runningconfiguration  Show current running configuration...
     services              Show all daemon services
     startupconfiguration  Show startup configuration information
@@ -472,6 +485,7 @@ This command displays relevant information as the SONiC and Linux kernel version
   Model Number: MSN2700-CS2FO
   Hardware Rev: A1
   Uptime: 14:40:15 up 3 min,  1 user,  load average: 1.26, 1.45, 0.66
+  Date: Fri 22 Mar 2019 14:40:15
 
   Docker images:
   REPOSITORY                 TAG                 IMAGE ID            SIZE
@@ -3128,9 +3142,10 @@ Go Back To [Beginning of the document](#) or [Beginning of this section](#featur
 
 ## Flow Counters
 
-This section explains all the Flow Counters show commands and clear commands that are supported in SONiC. Flow counters are usually used for debugging, troubleshooting and performance enhancement processes. Flow counters supports case like:
+This section explains all the Flow Counters show commands, clear commands and config commands that are supported in SONiC. Flow counters are usually used for debugging, troubleshooting and performance enhancement processes. Flow counters supports case like:
 
   - Host interface traps (number of received traps per Trap ID)
+  - Routes matching the configured prefix pattern (number of hits and number of bytes)
 
 ### Flow Counters show commands
 
@@ -3160,6 +3175,50 @@ Because clear (see below) is handled on a per-user basis different users may see
     asic1         dhcp        200    3,000  45.25/s
   ```
 
+**show flowcnt-route stats**
+
+This command is used to show the current statistics for route flow patterns. 
+
+Because clear (see below) is handled on a per-user basis different users may see different counts.
+
+- Usage:
+  ```
+  show flowcnt-route stats
+  show flowcnt-route stats pattern <route_pattern> [--vrf <vrf>]
+  show flowcnt-route stats route <route_prefix> [--vrf <vrf>]
+  ```
+
+- Example:
+  ```
+  admin@sonic:~$ show flowcnt-route stats
+  Route pattern       VRF               Matched routes           Packets          Bytes
+  --------------------------------------------------------------------------------------
+  3.3.0.0/16          default           3.3.1.0/24               100              4543
+                                        3.3.2.3/32               3443             929229
+                                        3.3.0.0/16               0                0
+  2000::/64           default           2000::1/128              100              4543
+  ```
+
+The "pattern" subcommand is used to display the route flow counter statistics by route pattern.
+
+- Example:
+  ```
+  admin@sonic:~$ show flowcnt-route stats pattern 3.3.0.0/16
+  Route pattern       VRF               Matched routes           Packets          Bytes
+  --------------------------------------------------------------------------------------
+  3.3.0.0/16          default           3.3.1.0/24               100              4543
+                                        3.3.2.3/32               3443             929229
+                                        3.3.0.0/16               0                0
+  ```
+
+The "route" subcommand is used to display the route flow counter statistics by route prefix.
+  ```
+  admin@sonic:~$ show flowcnt-route stats route 3.3.3.2/32 --vrf Vrf_1
+  Route                     VRF              Route Pattern           Packets          Bytes
+  -----------------------------------------------------------------------------------------
+  3.3.3.2/32                Vrf_1            3.3.0.0/16              100              4543
+  ```
+
 ### Flow Counters clear commands
 
 **sonic-clear flowcnt-trap**
@@ -3176,6 +3235,70 @@ This command is used to clear the current statistics for the registered host int
   admin@sonic:~$ sonic-clear flowcnt-trap
   Trap Flow Counters were successfully cleared
   ```
+
+**sonic-clear flowcnt-route**
+
+This command is used to clear the current statistics for the route flow counter. This is done on a per-user basis.
+
+- Usage:
+  ```
+  sonic-clear flowcnt-route
+  sonic-clear flowcnt-route pattern <route_pattern> [--vrf <vrf>]
+  sonic-clear flowcnt-route route <prefix> [--vrf <vrf>]
+  ```
+
+- Example:
+  ```
+  admin@sonic:~$ sonic-clear flowcnt-route
+  Route Flow Counters were successfully cleared
+  ```
+
+The "pattern" subcommand is used to clear the route flow counter statistics by route pattern.
+
+- Example:
+  ```
+  admin@sonic:~$ sonic-clear flowcnt-route pattern 3.3.0.0/16 --vrf Vrf_1
+  Flow Counters of all routes matching the configured route pattern were successfully cleared
+  ```
+
+The "route" subcommand is used to clear the route flow counter statistics by route prefix.
+
+- Example:
+  ```
+  admin@sonic:~$ sonic-clear flowcnt-route route 3.3.3.2/32 --vrf Vrf_1
+  Flow Counters of the specified route were successfully cleared
+  ```
+
+### Flow Counters config commands
+
+**config flowcnt-route pattern add**
+
+This command is used to add or update the route pattern which is used by route flow counter to match route entries.
+
+- Usage:
+  ```
+  config flowcnt-route pattern add <prefix> [--vrf <vrf>] [--max <max_match_count>]
+  ```
+
+- Example:
+  ```
+  admin@sonic:~$ config flowcnt-route pattern add 2.2.0.0/16 --vrf Vrf_1 --max 50
+  ```
+
+**config flowcnt-route pattern remove**
+
+This command is used to remove the route pattern which is used by route flow counter to match route entries.
+
+- Usage:
+  ```
+  config flowcnt-route pattern remove <prefix> [--vrf <vrf>]
+  ```
+
+- Example:
+  ```
+  admin@sonic:~$ config flowcnt-route pattern remove 2.2.0.0/16 --vrf Vrf_1
+  ```
+
 
 Go Back To [Beginning of the document](#) or [Beginning of this section](#flow-counters)
 ## Gearbox
@@ -3538,6 +3661,25 @@ This command is used to display the configured MPLS state for the list of config
   Ethernet4    enable
   ```
 
+**show interfaces loopback-action**
+
+This command displays the configured loopback action
+
+- Usage:
+  ```
+  show ip interfaces loopback-action
+  ```
+
+- Example:
+  ```
+  root@sonic:~# show ip interfaces loopback-action
+  Interface     Action
+  ------------  ----------
+  Ethernet232   drop
+  Vlan100       forward
+  ```
+
+
 **show interfaces tpid**
 
 This command displays the key fields of the interfaces such as Operational Status, Administrative Status, Alias and TPID.
@@ -3684,6 +3826,7 @@ This sub-section explains the following list of configuration on the interfaces.
 9) advertised-types - to set interface advertised types
 10) type - to set interface type
 11) mpls - To add or remove MPLS operation for the interface
+12) loopback-action - to set action for packet that ingress and gets routed on the same IP interface
 
 From 201904 release onwards, the “config interface” command syntax is changed and the format is as follows:
 
@@ -4217,6 +4360,29 @@ MPLS operation for either physical, portchannel, or VLAN interface can be config
   admin@sonic:~$ sudo config interface mpls remove Ethernet4
   ```
 
+**config interface ip loopback-action <interface_name> <action> (Versions >= 202205)**
+
+This command is used for setting the action being taken on packets that ingress and get routed on the same IP interface.
+Loopback action can be set on IP interface from type physical, portchannel, VLAN interface and VLAN subinterface.
+Loopback action can be drop or forward.
+
+- Usage:
+  ```
+  config interface ip loopback-action --help
+  Usage: config interface ip loopback-action [OPTIONS] <interface_name> <action>
+
+    Set IP interface loopback action
+
+  Options:
+    -?, -h, --help  Show this message and exit.
+  ```
+
+- Example:
+  ```
+  admin@sonic:~$ config interface ip loopback-action Ethernet0 drop
+  admin@sonic:~$ config interface ip loopback-action Ethernet0 forward
+
+  ```
 Go Back To [Beginning of the document](#) or [Beginning of this section](#interfaces)
 
 ## Interface Naming Mode
@@ -4338,7 +4504,7 @@ This sub-section explains the various IP protocol specific show commands that ar
 4) prefix-list
 5) protocol
 
-**show ip route**
+#### show ip route
 
 This command displays either all the route entries from the routing table or a specific route.
 
@@ -4393,7 +4559,7 @@ This command displays either all the route entries from the routing table or a s
        * directly connected, Loopback11
    ```
 
-**show ip interfaces**
+#### show ip interfaces
 
 This command displays the details about all the Layer3 IP interfaces in the device for which IP address has been assigned.
 The type of interfaces include the following.
@@ -4428,7 +4594,7 @@ The type of interfaces include the following.
   lo                              127.0.0.1/8           up/up           N/A              N/A
   ```
 
-**show ip protocol**
+#### show ip protocol
 
 This command displays the route-map that is configured for the routing protocol.
 Refer the routing stack [Quagga Command Reference](https://www.quagga.net/docs/quagga.pdf) or [FRR Command Reference](https://buildmedia.readthedocs.org/media/pdf/frrouting/latest/frrouting.pdf) to know more about this command.
@@ -4838,7 +5004,6 @@ last number of lines.
   [ 656.337476] gpio_ich(E) ahci(E) mlxsw_core(E) libahci(E) devlink(E) crc32c_intel(E) libata(E) i2c_i801(E) scsi_mod(E) lpc_ich(E) mfd_core(E) ehci_pci(E) ehci_hcd(E) usbcore(E) e1000e(E) usb_common(E) fan(E) thermal(E)
   [ 656.569590] CR2: 0000000000000000
   ```
-
 ### Linux Kernel Dump config command 
  
 **config kdump**
@@ -5009,9 +5174,11 @@ When user specifies the optional argument "-n" or "--no-service-restart", this c
 running on the device. One use case for this option is during boot time when config-setup service loads minigraph configuration and there is no services
 running on the device.
 
+When user specifies the optional argument "-t" or "--traffic-shift-away", this command executes TSA command at the end to ensure the device remains in maintenance after loading minigraph.
+
 - Usage:
   ```
-  config load_minigraph [-y|--yes] [-n|--no-service-restart]
+  config load_minigraph [-y|--yes] [-n|--no-service-restart] [-t|--traffic-shift-away]
   ```
 
 - Example:
@@ -5095,7 +5262,7 @@ When user specifies the optional argument "-f" or "--force", this command ignore
 
 This command is used to reconfigure hostname and mgmt interface based on device description file.
 This command either uses the optional file specified as arguement or looks for the file "/etc/sonic/device_desc.xml".
-If the file does not exist or if the file does not have valid fields for "hostname" and "ManagementAddress", it fails.
+If the file does not exist or if the file does not have valid fields for "hostname" and "ManagementAddress" (or "ManagementAddressV6"), it fails.
 
 When user specifies the optional argument "-y" or "--yes", this command forces the loading without prompting the user for confirmation.
 If the argument is not specified, it prompts the user to confirm whether user really wants to load this configuration file.
@@ -5139,7 +5306,11 @@ Go Back To [Beginning of the document](#) or [Beginning of this section](#loadin
 
 ## Loopback Interfaces
 
-### Loopback Config commands
+### Loopback show commands
+
+Please check [show ip interfaces](#show-ip-interfaces)
+
+### Loopback config commands
 
 This sub-section explains how to create and delete loopback interfaces.
 
@@ -6240,8 +6411,8 @@ This command starts PFC Watchdog
 
 - Usage:
   ```
-  config pfcwd start --action drop ports all detection-time 400 --restoration-time 400
-  config pfcwd start --action forward ports Ethernet0 Ethernet8 detection-time 400
+  config pfcwd start --action drop all 400 --restoration-time 400
+  config pfcwd start --action forward Ethernet0 Ethernet8 400
   ```
 
 **config pfcwd stop**
@@ -6602,6 +6773,8 @@ Go Back To [Beginning of the document](#) or [Beginning of this section](#platfo
 
 ## Platform Specific Commands
 
+### Mellanox Platform Specific Commands
+
 There are few commands that are platform specific. Mellanox has used this feature and implemented Mellanox specific commands as follows.
 
 **show platform mlnx sniffer**
@@ -6669,6 +6842,41 @@ In order to avoid that confirmation the -y / --yes option should be used.
   admin@sonic:~$ config platform mlnx sniffer sdk
   To change SDK sniffer status, swss service will be restarted, continue? [y/N]: y
   NOTE: In order to avoid that confirmation the -y / --yes option should be used.
+  ```
+
+### Barefoot Platform Specific Commands
+
+**show platform barefoot profile**
+
+This command displays active P4 profile and lists available ones.
+
+- Usage:
+  ```
+  show platform barefoot profile
+  ```
+
+- Example:
+  ```
+  admin@sonic:~$ show platform barefoot profile
+  Current profile: x1
+  Available profile(s):
+  x1
+  x2
+  ```
+
+**config platform barefoot profile**
+
+This command sets P4 profile.
+
+- Usage:
+  ```
+  config platform barefoot profile <p4_profile> [-y|--yes]
+  ```
+
+- Example:
+  ```
+  admin@sonic:~$ sudo config platform barefoot profile x1
+  Swss service will be restarted, continue? [y/N]: y
   ```
 
 Go Back To [Beginning of the document](#) or [Beginning of this section](#platform-specific-commands)
@@ -6745,6 +6953,97 @@ This command adds or deletes a member port to/from the already created portchann
   ```
 
 Go Back To [Beginning of the document](#) or [Beginning of this section](#portchannels)
+
+## NVGRE
+
+This section explains the various show commands and configuration commands available for users.
+
+### NVGRE show commands
+
+This subsection explains how to display the NVGRE configuration.
+
+**show nvgre-tunnel**
+
+This command displays the NVGRE tunnel configuration.
+
+- Usage:
+```bash
+show nvgre-tunnel
+```
+
+- Example:
+```bash
+admin@sonic:~$ show nvgre-tunnel
+TUNNEL NAME    SRC IP
+-------------  --------
+tunnel_1       10.0.0.1
+```
+
+**show nvgre-tunnel-map**
+
+This command displays the NVGRE tunnel map configuration.
+
+- Usage:
+```bash
+show nvgre-tunnel-map
+```
+
+- Example:
+```bash
+admin@sonic:~$ show nvgre-tunnel-map
+TUNNEL NAME    TUNNEL MAP NAME    VLAN ID    VSID
+-------------  -----------------  ---------  ------
+tunnel_1       Vlan1000           1000       5000
+tunnel_1       Vlan2000           2000       6000
+```
+
+### NVGRE config commands
+
+This subsection explains how to configure the NVGRE.
+
+**config nvgre-tunnel**
+
+This command is used to manage the NVGRE tunnel objects.  
+It supports add/delete operations.
+
+- Usage:
+```bash
+config nvgre-tunnel add <tunnel-name> --src-ip <source ip address>
+config nvgre-tunnel delete <tunnel-name>
+```
+
+- Parameters:
+  - _tunnel-name_: the name of the NVGRE tunnel
+  - _src-ip_: source ip address
+
+- Examples:
+```bash
+config nvgre-tunnel add 'tunnel_1' --src-ip '10.0.0.1'
+config nvgre-tunnel delete 'tunnel_1'
+```
+
+**config nvgre-tunnel-map**
+
+This command is used to manage the NVGRE tunnel map objects.  
+It supports add/delete operations.
+
+- Usage:
+```bash
+config nvgre-tunnel-map add <tunnel-name> <tunnel-map-name> --vlan-id <vlan> --vsid <virtual subnet>
+config nvgre-tunnel-map delete <tunnel-name> <tunnel-map-name>
+```
+
+- Parameters:
+  - _tunnel-name_: the name of the NVGRE tunnel
+  - _tunnel-map-name_: the name of the NVGRE tunnel map
+  - _vlan-id_: VLAN identifier
+  - _vsid_: Virtual Subnet Identifier
+
+- Examples:
+```bash
+config nvgre-tunnel-map add 'tunnel_1' 'Vlan2000' --vlan-id '2000' --vsid '6000'
+config nvgre-tunnel-map delete 'tunnel_1' 'Vlan2000'
+```
 
 ## PBH
 
@@ -7470,8 +7769,37 @@ Some of the example QOS configurations that users can modify are given below.
   When there are no changes in the platform specific configutation files, they internally use the file "/usr/share/sonic/templates/buffers_config.j2" and "/usr/share/sonic/templates/qos_config.j2" to generate the configuration.
   ```
 
-Go Back To [Beginning of the document](#) or [Beginning of this section](#qos)
+**config qos reload --ports port_list**
 
+This command is used to reload the default QoS configuration on a group of ports.
+Typically, the default QoS configuration is in the following tables.
+1) PORT_QOS_MAP
+2) QUEUE
+3) BUFFER_PG
+4) BUFFER_QUEUE
+5) BUFFER_PORT_INGRESS_PROFILE_LIST
+6) BUFFER_PORT_EGRESS_PROFILE_LIST
+7) CABLE_LENGTH
+
+If there was QoS configuration in the above tables for the ports:
+
+  - if `--force` option is provied, the existing QoS configuration will be replaced by the default QoS configuration,
+  - otherwise, the command will exit with nothing updated.
+
+- Usage:
+  ```
+  config qos reload --ports <port>[,port]
+  ```
+
+- Example:
+  ```
+  admin@sonic:~$ sudo config qos reload --ports Ethernet0,Ethernet4
+
+  In this example, it updates the QoS configuration on port Ethernet0 and Ethernet4 to default.
+  If there was QoS configuration on the ports, the command will clear the existing QoS configuration on the port and reload to default.
+  ```
+
+Go Back To [Beginning of the document](#) or [Beginning of this section](#qos)
 
 ## Radius
 
@@ -7518,7 +7846,6 @@ This command is to config the radius server for various parameter listed.
   timeout     Specify RADIUS server global timeout <1 - 60>
 
   ```
- 
 ## sFlow
 
 ### sFlow Show commands
@@ -8219,6 +8546,7 @@ This command is used to add a static route. Note that prefix /nexthop vrf`s and 
 
   ```
   admin@sonic:~$ config route add prefix 2.2.3.4/32 nexthop 30.0.0.9
+  admin@sonic:~$ config route add prefix 4.0.0.0/24 nexthop dev Ethernet32.10
   ```
 
 It also supports ECMP, and adding a new nexthop to the existing prefix will complement it and not overwrite them.
@@ -8332,40 +8660,71 @@ Go Back To [Beginning of the document](#) or [Beginning of this section](#static
 
 ## Syslog
 
+### Syslog Show Commands
+
+This subsection explains how to display configured syslog servers.
+
+**show syslog**
+
+This command displays configured syslog servers.
+
+- Usage:
+  ```
+  show syslog
+  ```
+
+- Example:
+  ```
+  admin@sonic:~$ show syslog
+  SERVER IP    SOURCE IP    PORT    VRF
+  -----------  -----------  ------  -------
+  2.2.2.2      1.1.1.1      514     default
+  ```
+
 ### Syslog Config Commands
 
-This sub-section of commands is used to add or remove the configured syslog servers.
+This subsection explains how to configure syslog servers.
 
 **config syslog add**
 
-This command is used to add a SYSLOG server to the syslog server list.  Note that more that one syslog server can be added in the device.
+This command is used to add a syslog server to the syslog server list.  
+Note that more that one syslog server can be added in the device.
 
 - Usage:
   ```
-  config syslog add <ip_address>
+  config syslog add <server_address>
   ```
+
+- Parameters:
+  - _server_address_: syslog server IP address
+  - _source_: syslog source IP address
+  - _port_: syslog server UDP port
+  - _vrf_: syslog VRF device
 
 - Example:
   ```
-  admin@sonic:~$ sudo config syslog add 1.1.1.1
-  Syslog server 1.1.1.1 added to configuration
-  Restarting rsyslog-config service...
+  admin@sonic:~$ sudo config syslog add 2.2.2.2 --source 1.1.1.1 --port 514 --vrf default
+  Running command: systemctl reset-failed rsyslog-config
+  Running command: systemctl restart rsyslog-config
   ```
 
-**config syslog delete**
+**config syslog del**
 
-This command is used to delete the syslog server configured.
+This command is used to delete the configured syslog server.
 
 - Usage:
   ```
-  config syslog del <ip_address>
+  config syslog del <server_address>
   ```
+
+- Parameters:
+  - _server_address_: syslog server IP address
 
 - Example:
   ```
-  admin@sonic:~$ sudo config syslog del 1.1.1.1
-  Syslog server 1.1.1.1 removed from configuration
-  Restarting rsyslog-config service...
+  admin@sonic:~$ sudo config syslog del 2.2.2.2
+  Running command: systemctl reset-failed rsyslog-config
+  Running command: systemctl restart rsyslog-config
   ```
 
 Go Back To [Beginning of the document](#) or [Beginning of this section](#syslog)

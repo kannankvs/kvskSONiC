@@ -77,7 +77,7 @@
   * [Kubernetes show commands](#Kubernetes-show-commands)
   * [Kubernetes config commands](#Kubernetes-config-commands)
 * [Linux Kernel Dump](#kdump)
-  * [Linux Kernel Dump show commands](#show-kdump-config)
+  * [Linux Kernel Dump show commands](#Linux-Kernel-Dump-show-commands)
   * [Linux Kernel Dump config commands](#Linux-Kernel-Dump-config-command)
 * [LLDP](#lldp)
   * [LLDP show commands](#lldp-show-commands)

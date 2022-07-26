@@ -7484,6 +7484,7 @@ This command displays the global radius configuration that includes the auth_typ
   show radius
   ```
 - Example:
+
   ```
   admin@sonic:~$ show radius
 	RADIUS global auth_type pap (default)
@@ -7491,7 +7492,6 @@ This command displays the global radius configuration that includes the auth_typ
 	RADIUS global timeout 5 (default)
 	RADIUS global passkey <EMPTY_STRING> (default)
 
-admin@sonic:~$ 
   ```
  
 ### Radius config commands
@@ -7517,7 +7517,7 @@ Commands:
   sourceip    Specify RADIUS server global source ip <IPAddress>
   statistics  Specify RADIUS server global statistics [enable | disable |...
   timeout     Specify RADIUS server global timeout <1 - 60>
-admin@sonic:~$
+
  ```
  
 ## sFlow

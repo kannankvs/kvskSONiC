@@ -43,7 +43,7 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 1. Kernel upgraded from 5.10.46-4 to 5.10.103-1 for SONiC release.<br>
    Change log: https://tracker.debian.org/media/packages/l/linux/changelog-5.10.103-1
 
-2. Docker upgraded from  20.10.7~debian-stretch. to 20.10.17~debian-stretch.<br>
+2. Docker upgraded from  20.10.7-debian-stretch. to 20.10.17-debian-stretch.<br>
    Change log: https://docs.docker.com/engine/release-notes/#201017
 
 

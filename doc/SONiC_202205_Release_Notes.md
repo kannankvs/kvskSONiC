@@ -170,12 +170,12 @@ Refer below mentioned PR's for more details.
 #### NVGRE/GRE
 With the implementation of NVGRE/GRE feature, the following is supported:
 
--User should be able to create NVGRE tunnel (L2 over L3 tunnel)
--User should be able to create VLAN to VSID mapper entries for the NVGRE tunnel.
--Both VLAN and Bridge to VSID mappers should be supported by the NVGRE tunnel
--Only the decapsulation mappers supported
--YANG model should be created in order to auto-generate CLI by using the SONiC CLI Auto-generation tool.
--CLI for NVGRE tunnel
+- User should be able to create NVGRE tunnel (L2 over L3 tunnel)
+- User should be able to create VLAN to VSID mapper entries for the NVGRE tunnel.
+- Both VLAN and Bridge to VSID mappers should be supported by the NVGRE tunnel
+- Only the decapsulation mappers supported
+- YANG model should be created in order to auto-generate CLI by using the SONiC CLI Auto-generation tool.
+- CLI for NVGRE tunnel
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/nvgre_tunnel/nvgre_tunnel.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [869](https://github.com/sonic-net/SONiC/pull/869), [1953](https://github.com/sonic-net/sonic-swss/pull/1953), [9136](https://github.com/sonic-net/sonic-buildimage/pull/9136), [549](https://github.com/sonic-net/sonic-swss-common/pull/549), [1915](https://github.com/sonic-net/sonic-utilities/pull/1915)

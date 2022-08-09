@@ -103,9 +103,9 @@ Refer below mentioned PR's for more details.
 #### Deterministic interface Link bring-up
 This feature impliments the determistic approach for Interface link bring-up sequence for all interfaces types i.e. below sequence to be followed:
 
-	*	Initialize and enable NPU Tx and Rx path
-	*	For system with 'External' PHY: Initialize and enable PHY Tx and Rx on both line and host sides; ensure host side link is up
-	*	Then only perform optics data path initialization/activation/Tx enable (for CMIS complaint optical modules) and Tx enable (for SFF complaint optical modules)
+	*Initialize and enable NPU Tx and Rx path
+	*For system with 'External' PHY: Initialize and enable PHY Tx and Rx on both line and host sides; ensure host side link is up
+	*Then only perform optics data path initialization/activation/Tx enable (for CMIS complaint optical modules) and Tx enable (for SFF complaint optical modules)
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/sfp-cmis/Interface-Link-bring-up-sequence.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [916](https://github.com/sonic-net/SONiC/pull/916), [254](https://github.com/Azure/sonic-platform-daemons/pull/254) & [2277](https://github.com/Azure/sonic-swss/pull/2277)

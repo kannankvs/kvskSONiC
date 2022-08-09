@@ -49,6 +49,120 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 
 # Feature List
 
+
+#### Active Active ToRs
+The feature implements Link manager and warm reboot support for active-active dual ToRs. Active-active dual ToR link manager is an evolution of active-standby dual ToR link manager. Both ToRs are expected to handle traffic in normal scenarios. For consistency, we will keep using the term "standby" to refer inactive links or ToRs. 
+
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/dualtor/active_active_hld.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** : [1005](https://github.com/sonic-net/SONiC/pull/1005), [64](https://github.com/sonic-net/sonic-linkmgrd/pull/64), [248](https://github.com/sonic-net/sonic-platform-daemons/pull/248), [5413](https://github.com/sonic-net/sonic-mgmt/pull/5413) & [627](https://github.com/sonic-net/sonic-swss-common/pull/627)
+
+
+#### Add SAI version check to SONiC build system
+SONiC is not desinged to work in backward compatibility with older vendor SAI implementations. SAI headers that SONiC's synd daemon is compiled against are taken from OCP SAI repository. So is taken from sonic-buildimage vendor's directory. This leads to a conflict that sometimes SAI in sonic-sairedis repository is updated but vendor SAI in sonic-buildimage is not. This implementation sorts out this conflicts.
+
+Refer below mentioned PR for more details. 
+<br>  **Pull Requests** : [935](https://github.com/sonic-net/SONiC/pull/935)
+
+
+#### Add system date row to ‘show version’
+This change implements the addition of current date attribute to the "show version" output that includes the current date and hour on the switch.
+
+Refer below mentioned PR for more details. 
+<br>  **Pull Requests** :  [2086](https://github.com/sonic-net/sonic-utilities/pull/2086)
+
+
+#### Added fan_drawer class support in PDDF
+This enhancement impliments the changes to attach the PSU related thermal sensors in the PSU instance. This is acheieved by adding a common class pddf_fan_drawer.py. This class uses the PDDF JSON to fetch the platform specific data. previously, the fan_drawer support was missing in PDDF common platform APIs. This resulted in 'thermalctld' not working and 'show platform fan' and 'show platfomr temperature' commands not working. As _thermal_list array inside PSU class was not initialized. 
+
+Refer below mentioned PR for more details. 
+<br>  **Pull Requests** : [10213](https://github.com/sonic-net/sonic-buildimage/pull/10213)
+
+
+#### Align crmorch with sai_object_type_get_availability
+This feature Will not require a new SAI API, but vendors will have to implement this API for using this functionality
+
+
+Refer [HLD document]() and below mentioned PR's for more details. 
+<br>  **Pull Requests** : 
+
+
+#### CMIS Diagnostics
+This feature implements SONIC QSFPDD CMIS support to provide an unified common SFP parser for the QSFPDD transceivers. Enhance the pmon#xcvrd for the QSFPDD application initialization sequence and enhance the pmon#xcvrd for the QSFPDD diagnostics loopback controls
+
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/sfp-cmis/cmis-init.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** :  [876](https://github.com/sonic-net/SONiC/pull/876), [219](https://github.com/sonic-net/sonic-platform-common/pull/219) & [217](https://github.com/sonic-net/sonic-platform-daemons/pull/217)
+
+
+#### Command for showing specific MAC from DB
+This feature adds more options to filter output in show mac and fdbshow command. Introduced options for filter by address and filter by type.Added one more option to display only count.And also introduced show command to display fdb aging time in the switch.
+
+Refer below mentioned PR's for more details. 
+<br>  **Pull Requests** :  [1982](https://github.com/sonic-net/sonic-utilities/pull/1982)
+
+
+#### Deterministic interface Link bring-up
+This feature impliments the determistic approach for Interface link bring-up sequence for all interfaces types i.e. below sequence to be followed:
+
+	*	Initialize and enable NPU Tx and Rx path
+	*	For system with 'External' PHY: Initialize and enable PHY Tx and Rx on both line and host sides; ensure host side link is up
+	*	Then only perform optics data path initialization/activation/Tx enable (for CMIS complaint optical modules) and Tx enable (for SFF complaint optical modules)
+
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/sfp-cmis/Interface-Link-bring-up-sequence.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** : [916](https://github.com/sonic-net/SONiC/pull/916), [254](https://github.com/Azure/sonic-platform-daemons/pull/254) & [2277](https://github.com/Azure/sonic-swss/pull/2277)
+
+
+#### DSCP/TC remapping for tunnel traffic
+The current QoS map architecture allows for port-based selection of each QoS map. However, we are not able to override the port-based QoS map for tunnel traffic. This design proposes a method to remapping DSCP and TC for tunnel traffic.
+
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/qos/tunnel_dscp_remapping.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** : [950](https://github.com/sonic-net/SONiC/pull/950), [10176](https://github.com/sonic-net/sonic-buildimage/pull/10176), [2087](https://github.com/sonic-net/sonic-utilities/pull/2087), [1451](https://github.com/opencomputeproject/SAI/pull/1451), [1023](https://github.com/sonic-net/sonic-sairedis/pull/1023), [10417](https://github.com/sonic-net/sonic-buildimage/pull/10417), [10444](https://github.com/sonic-net/sonic-buildimage/pull/10444), [600](https://github.com/sonic-net/sonic-swss-common/pull/600), [2171](https://github.com/sonic-net/sonic-swss/pull/2171), [2190](https://github.com/sonic-net/sonic-swss/pull/2190), [10496](https://github.com/sonic-net/sonic-buildimage/pull/10496), [10565](https://github.com/sonic-net/sonic-buildimage/pull/10565) & [10936](https://github.com/sonic-net/sonic-buildimage/pull/10936)
+
+
+#### Dynamic policy based hashing (edit flow)
+This feature implements the PBH for NVGRE/VxLAN packets based on inner 5-tuple (IP proto, L4 dst/src port, IPv4/IPv6 dst/src)
+
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/pbh/pbh-design.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** : 
+
+
+#### Extend auto tech support for memory threshold
+
+
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/pbh/pbh-design.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** : 
+
+
+#### FRR version upgrade from 7.5 to 8.2
+
+Refer [HLD document] and below mentioned PR's for more details. 
+<br>  **Pull Requests** : 
+
+
+#### hostcfgd Redesign | split hostcfgd into multiple services
+
+Refer [HLD document] and below mentioned PR's for more details. 
+<br>  **Pull Requests** : 
+
+
+#### Klish CLI for show-tech support
+This feature is intended to cover the general approach and method for providing a flexible collection of diagnostic information items. It also considers the basic mechanisms to be used for obtaining the various types of information to be aggregated. It does not address specific details for collection of all supported classes of information.
+
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/mgmt/SONiC%20Management%20Framework%20Show%20Techsupport%20HLD.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** : 
+
+
+#### Migrated PDDF to Bullseye
+
+Refer [HLD document] and below mentioned PR's for more details. 
+<br>  **Pull Requests** :
+
+
+#### Move Nvidia syncd and pmon to Debian11- "Bullseye"
+
+Refer [HLD document] and below mentioned PR's for more details. 
+<br>  **Pull Requests** : 
+
+
 #### NVGRE/GRE
 With the implementation of NVGRE/GRE feature, the following is supported:
 
@@ -62,36 +176,32 @@ With the implementation of NVGRE/GRE feature, the following is supported:
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/nvgre_tunnel/nvgre_tunnel.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : 
 
-#### Align crmorch with sai_object_type_get_availability
 
-Refer [HLD document]() and below mentioned PR's for more details. 
+#### Password Hardening
+The password hardening feature implements the requirements, architecture and configuration details of password hardening feature in switches Sonic OS based.
+
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/passw_hardening/hld_password_hardening.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** : [874](https://github.com/sonic-net/SONiC/pull/874/), [2121](https://github.com/Azure/sonic-utilities/pull/2121), [5503](https://github.com/Azure/sonic-mgmt/pull/5503), [10322](https://github.com/Azure/sonic-buildimage/pull/10322) & [10323](https://github.com/Azure/sonic-buildimage/pull/10323)
+
+
+#### PINS - Batched programming requests for higher throughput
+This implements two new APIs will be introduced into the ProducerStateTable. There will be no change in the existing ProducerStateTable method implementations. There is also no change in the ConsumerStateTable implementation as it can already process batches. The entire change is backward compatible.
+
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/5a5922499b388acafa85dd3c9a64520514e01946/doc/pins/batch_requests_api_hld.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : 
 
-#### Move Nvidia syncd and pmon to Debian11- "Bullseye"
+
+#### Platform support for Edgecore AS4630/AS7326/AS7816/AS5835
 
 Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+<br>  **Pull Requests** : [10053](https://github.com/Azure/sonic-buildimage/pull/10053)
 
-#### Dynamic policy based hashing (edit flow)
-This feature implements the PBH for NVGRE/VxLAN packets based on inner 5-tuple (IP proto, L4 dst/src port, IPv4/IPv6 dst/src)
 
-Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/pbh/pbh-design.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+#### Queue statistics based on queue configurations and not max
 
-#### Counter delay via config_db and not via systemd 
-The below are the implementation on Fast reboot flow improvements,
+Refer [HLD document] and below mentioned PR's for more details. 
+<br>  **Pull Requests** :
 
-	*	Reboot the switch into a new SONiC software version using kexec - less than 5 seconds.
-	*	Upgrade the switch FW by the new SONiC image if needed.
-	*	Recover all application's state with the new image to the previous state prior the reboot.
-	*	Recover ASIC state after reset to the previous state prior the reboot.
-	*	Recover the Kernel internal DB state after reset to the previous state prior the reboot.
-	*	Sync the Kernel and ASIC with changes on the network which happen during fast-reboot.
-	*	Control plane downtime will not exceed 90 seconds.
-	*	Data plane downtime will not exceed 30 seconds.
-	
-Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/fast-reboot/Fast-reboot_Flow_Improvements_HLD.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
 
 #### Route Flow counters (based on generic counters)
 With the implementation of NVGRE/GRE feature, the following is supported:
@@ -106,44 +216,19 @@ With the implementation of NVGRE/GRE feature, the following is supported:
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/flow_counters/routes_flow_counters.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : 
 
-#### hostcfgd Redesign | split hostcfgd into multiple services
 
-
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
-
-#### Password Hardening
-The password hardening feature implements the requirements, architecture and configuration details of password hardening feature in switches Sonic OS based.
-
-Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/passw_hardening/hld_password_hardening.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : [874](https://github.com/sonic-net/SONiC/pull/874/), [2121](https://github.com/Azure/sonic-utilities/pull/2121), [5503](https://github.com/Azure/sonic-mgmt/pull/5503), [10322](https://github.com/Azure/sonic-buildimage/pull/10322) & [10323](https://github.com/Azure/sonic-buildimage/pull/10323)
-
-
-#### Add system date row to ‘show version’
+#### SONIC YANG Support for KDUMP, ACL, MCLAG, BUM Storm Control
 
 Refer [HLD document] and below mentioned PR's for more details. 
 <br>  **Pull Requests** : 
 
-#### Command for showing specific MAC from DB
 
-Refer [HLD document] and below mentioned PR's for more details. 
+#### Sorted next hop ECMP
+
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/bum_storm_control/bum_storm_control_hld.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : 
 
-#### Klish CLI for show-tech support
-This feature is intended to cover the general approach and method for providing a flexible collection of diagnostic information items. It also considers the basic mechanisms to be used for obtaining the various types of information to be aggregated. It does not address specific details for collection of all supported classes of information.
 
-Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/mgmt/SONiC%20Management%20Framework%20Show%20Techsupport%20HLD.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
-
-#### FRR version upgrade from 7.5 to 8.2
-
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
-
-### SONiC Generic Update and Rollback
-The SONiC Generic Update and Rollback feature is an enhancement from previous release, to take checkpoints and finally to rollback the configurations for SONiC.
-Refer [HLD document](https://github.com/ghooo/SONiC/blob/c1f3f3b5427d0cafb3defd93df8b906a26fcee8a/doc/config-generic-update-rollback/SONiC_Generic_Config_Update_and_Rollback_Design.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : [1991](https://github.com/Azure/sonic-utilities/pull/19910), [1998](https://github.com/Azure/sonic-utilities/pull/1998), [2044](https://github.com/Azure/sonic-utilities/pull/2044), [2092](https://github.com/Azure/sonic-utilities/pull/2092), [2103](https://github.com/Azure/sonic-utilities/pull/2103), [2104](https://github.com/Azure/sonic-utilities/pull/2104), [2120](https://github.com/Azure/sonic-utilities/pull/2120), [2145](https://github.com/Azure/sonic-utilities/pull/2145), [2171](https://github.com/Azure/sonic-utilities/pull/2171), [2174](https://github.com/Azure/sonic-utilities/pull/2174) & [2212](https://github.com/Azure/sonic-utilities/pull/2212)
 
 #### Storm Control (BUM)
 This feature supports configuration of Broadcast, Unknown-unicast and unknown-Multicast storm-control independently on physical interfaces. Also, supports threshold rate configuration in kilo bits per second (kbps) in the range of 0 kbps to 100,000,000 kbps (100Gbps).
@@ -151,10 +236,19 @@ This feature supports configuration of Broadcast, Unknown-unicast and unknown-Mu
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/bum_storm_control/bum_storm_control_hld.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : 
 
-#### Migrated PDDF to Bullseye
+
+#### Symcrypt integration with OpenSSL
+
+Refer [HLD document] and below mentioned PR's for more details. 
+<br>  **Pull Requests** :
+
+
+#### System Ready Enhancements
+This feature implements a new python based System monitor framework is introduced to monitor all the essential system host services including docker wrapper services on an event based model and declare the system is ready. This framework gives provision for docker and host apps to notify its closest up status. CLIs are provided to fetch the current system status and also service running status and its app ready status along with failure reason if any.
 
 Refer [HLD document] and below mentioned PR's for more details. 
 <br>  **Pull Requests** : 
+
 
 #### Updated PDDF kernel modules in compliance with kernel 5.10 APIs
 
@@ -166,43 +260,10 @@ Refer [HLD document] and below mentioned PR's for more details.
 Refer [HLD document] and below mentioned PR's for more details. 
 <br>  **Pull Requests** : 
 
-#### Added fan_drawer class support in PDDF
-
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
-
-#### CMIS Diagnostics
-This feature implements SONIC QSFPDD CMIS support to provide an unified common SFP parser for the QSFPDD transceivers. Enhance the pmon#xcvrd for the QSFPDD application initialization sequence and enhance the pmon#xcvrd for the QSFPDD diagnostics loopback controls
-
-Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/sfp-cmis/cmis-init.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
-
-#### System Ready Enhancements
-This feature implements a new python based System monitor framework is introduced to monitor all the essential system host services including docker wrapper services on an event based model and declare the system is ready. This framework gives provision for docker and host apps to notify its closest up status. CLIs are provided to fetch the current system status and also service running status and its app ready status along with failure reason if any.
-
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
-
-#### SONIC YANG Support for KDUMP, ACL, MCLAG, BUM Storm Control
-
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
-
-#### PINS - Batched programming requests for higher throughput
-This implements two new APIs will be introduced into the ProducerStateTable. There will be no change in the existing ProducerStateTable method implementations. There is also no change in the ConsumerStateTable implementation as it can already process batches. The entire change is backward compatible.
-
-Refer [HLD document](https://github.com/sonic-net/SONiC/blob/5a5922499b388acafa85dd3c9a64520514e01946/doc/pins/batch_requests_api_hld.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
-
-#### Platform support for Edgecore AS4630/AS7326/AS7816/AS5835
-
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : [10053](https://github.com/Azure/sonic-buildimage/pull/10053)
-
 
 # SAI APIs
 
-Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.10.2 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.9.1_ReleaseNotes.md)
+Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.10.2 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.10.2_ReleaseNotes.md)
 
 
 # Contributors 
@@ -210,3 +271,6 @@ Please find the list of API's classified along the newly added SAI features. For
 SONiC community would like to thank all the contributors from various companies and the individuals who has contributed for the release. Special thanks to the major contributors - Alibaba, Aviz, Broadcom, DellEMC, Google, Intel, Juniper, LinkedIn, Marvell, Metaswitch, Microsoft & Nvidia.  
 
 <br> 
+
+
+

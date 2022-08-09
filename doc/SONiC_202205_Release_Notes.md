@@ -119,62 +119,66 @@ Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/qos/tunn
 
 
 #### Dynamic policy based hashing (edit flow)
-This feature implements the PBH for NVGRE/VxLAN packets based on inner 5-tuple (IP proto, L4 dst/src port, IPv4/IPv6 dst/src)
+This feature implements the PBH to use ACL engine which match NVGRE/VxLAN packets and calculates hash based on user-defined rules. Hashing is configured based on inner 5-tuple: IP proto, L4 dst/src port, IPv4/IPv6 dst/src. A custom hashing can be configured for Regular/FG ECMP and LAG.
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/pbh/pbh-design.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+<br>  **Pull Requests** : [909](https://github.com/sonic-net/SONiC/pull/909), [586](https://github.com/sonic-net/sonic-swss-common/pull/586), [2169](https://github.com/sonic-net/sonic-swss/pull/2169), [2093](https://github.com/sonic-net/sonic-utilities/pull/2093) & [5263](https://github.com/sonic-net/sonic-mgmt/pull/5263)
 
 
 #### Extend auto tech support for memory threshold
+Currently, techsupport is run by invoking show techsupport either by orchestration tools or manually. The techsupport dump also collects any core dump files available in the /var/core/ directory. However upon the techsupport invocation be made event-driven based on core dump generation, that would improve the debuggability which is implimented on this enhancement.
 
-
-Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/pbh/pbh-design.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/auto_techsupport_and_coredump_mgmt.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** : [939](https://github.com/sonic-net/SONiC/pull/939), [2116](https://github.com/sonic-net/sonic-utilities/pull/2116) & [10433](https://github.com/sonic-net/sonic-buildimage/pull/10433)
 
 
 #### FRR version upgrade from 7.5 to 8.2
+Upgrade FRR to version 8.2.2. Build libyang2 required by FRR.
 
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+Refer below mentioned PR's for more details. 
+<br>  **Pull Requests** : [10691](https://github.com/sonic-net/sonic-buildimage/pull/10691)
 
 
 #### hostcfgd Redesign | split hostcfgd into multiple services
+This implements the replacement of SubscriberStateTable with ConfigDBConnector. In the past hostcfgd was refactored to use SubscriberStateTable instead of ConfigDBConnector for subscribing to CONFIG_DB updates due to a "blackout" period between hostcfgd pulling the table data down and running the initialization and actually calling listen() on ConfigDBConnector which starts the update handler.
 
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+Refer below mentioned PR's for more details. 
+<br>  **Pull Requests** : [10618](https://github.com/sonic-net/sonic-buildimage/pull/10168)
 
 
 #### Klish CLI for show-tech support
 This feature is intended to cover the general approach and method for providing a flexible collection of diagnostic information items. It also considers the basic mechanisms to be used for obtaining the various types of information to be aggregated. It does not address specific details for collection of all supported classes of information.
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/mgmt/SONiC%20Management%20Framework%20Show%20Techsupport%20HLD.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+<br>  **Pull Requests** : [49](https://github.com/Azure/sonic-mgmt-common/pull/49), [86](https://github.com/Azure/sonic-mgmt-framework/pull/86) & [7816](https://github.com/Azure/sonic-buildimage/pull/7816)
 
 
 #### Migrated PDDF to Bullseye
+This feature updates PDDF utils and common platform APIs for Debian Bullseye
 
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** :
+Refer below mentioned PR's for more details. 
+<br>  **Pull Requests** : [9585](https://github.com/sonic-net/sonic-buildimage/pull/9585)
 
 
 #### Move Nvidia syncd and pmon to Debian11- "Bullseye"
+This impliments the upgrade on nvidia platform for containers such as syncd / saiserver / syncd-rpc and pmon to bullseye 
 
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+Refer below mentioned PR's for more details. 
+<br>  **Pull Requests** : [10580](https://github.com/sonic-net/sonic-buildimage/pull/10580)
 
 
 #### NVGRE/GRE
 With the implementation of NVGRE/GRE feature, the following is supported:
 
-	*	User should be able to create NVGRE tunnel (L2 over L3 tunnel)
-	*	User should be able to create VLAN to VSID mapper entries for the NVGRE tunnel.
-	*	Both VLAN and Bridge to VSID mappers should be supported by the NVGRE tunnel
-	*	Only the decapsulation mappers supported
-	*	YANG model should be created in order to auto-generate CLI by using the SONiC CLI Auto-generation tool.
-	*	CLI for NVGRE tunnel
+-User should be able to create NVGRE tunnel (L2 over L3 tunnel)
+-User should be able to create VLAN to VSID mapper entries for the NVGRE tunnel.
+-Both VLAN and Bridge to VSID mappers should be supported by the NVGRE tunnel
+-Only the decapsulation mappers supported
+-YANG model should be created in order to auto-generate CLI by using the SONiC CLI Auto-generation tool.
+-CLI for NVGRE tunnel
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/nvgre_tunnel/nvgre_tunnel.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+<br>  **Pull Requests** : [869](https://github.com/sonic-net/SONiC/pull/869), [1953](https://github.com/sonic-net/sonic-swss/pull/1953), [9136](https://github.com/sonic-net/sonic-buildimage/pull/9136), [549](https://github.com/sonic-net/sonic-swss-common/pull/549), [1915](https://github.com/sonic-net/sonic-utilities/pull/1915)
 
 
 #### Password Hardening
@@ -188,77 +192,85 @@ Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/passw_ha
 This implements two new APIs will be introduced into the ProducerStateTable. There will be no change in the existing ProducerStateTable method implementations. There is also no change in the ConsumerStateTable implementation as it can already process batches. The entire change is backward compatible.
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/5a5922499b388acafa85dd3c9a64520514e01946/doc/pins/batch_requests_api_hld.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+<br>  **Pull Requests** : [959](https://github.com/sonic-net/SONiC/pull/959), [588](https://github.com/sonic-net/sonic-swss-common/pull/588), [7](https://github.com/sonic-net/sonic-pins/pull/7) & [10566](https://github.com/sonic-net/sonic-buildimage/pull/10566)
 
 
 #### Platform support for Edgecore AS4630/AS7326/AS7816/AS5835
+This feature impliments the sonic-buildimage changes needed to support in platform for AS4630-pe, AS5835-X, AS7326, AS7816 switch models (currently broken in master).
 
-Refer [HLD document] and below mentioned PR's for more details. 
+Refer below mentioned PR's for more details. 
 <br>  **Pull Requests** : [10053](https://github.com/Azure/sonic-buildimage/pull/10053)
 
 
 #### Queue statistics based on queue configurations and not max
+Currently in SONiC all ports queue and pg counters are created by default with the max possible amount of counters. This feature change this behavior to poll only configured counters provided by the config DB BUFFER_PG and BUFFER_QUEUE tables.It also improves performance by filtering unconfigured queue/pg counters on init.
 
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** :
+Refer below mentioned PR's for more details. 
+<br>  **Pull Requests** : [2143](https://github.com/sonic-net/sonic-swss/pull/2143), [2315](https://github.com/sonic-net/sonic-swss/pull/2315) & [2199](https://github.com/sonic-net/sonic-utilities/pull/2199)
 
 
 #### Route Flow counters (based on generic counters)
 With the implementation of NVGRE/GRE feature, the following is supported:
 
-	*	Generic Counters shall be used as Flow Counters introduced by the feature
-	*	Flow Counters for routes shall be configured using prefix patterns. 
-	*	Flow Counters shall be bound the matching routes regardless how these routes are added - manually (static) or via FRR
-	*	Adding route entry shall be automatically bound to counter if counter is enabled and pattern matches
-	*	Removing route entry shall be automatically unbound if the entry is previously bound
-	*	To support default route, pattern "0.0.0.0" and "::" shall be treated as exact match instead of pattern match
+- Generic Counters shall be used as Flow Counters introduced by the feature
+- Flow Counters for routes shall be configured using prefix patterns. 
+- Flow Counters shall be bound the matching routes regardless how these routes are added - manually (static) or via FRR
+- Adding route entry shall be automatically bound to counter if counter is enabled and pattern matches
+- Removing route entry shall be automatically unbound if the entry is previously bound
+- To support default route, pattern "0.0.0.0" and "::" shall be treated as exact match instead of pattern match
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/flow_counters/routes_flow_counters.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+<br>  **Pull Requests** : [908](https://github.com/sonic-net/SONiC/pull/908), [2094](https://github.com/sonic-net/sonic-swss/pull/2094), [2031](https://github.com/sonic-net/sonic-utilities/pull/2031), [2069](https://github.com/sonic-net/sonic-utilities/pull/2069), [9814](https://github.com/sonic-net/sonic-buildimage/pull/9814) & [5736](https://github.com/sonic-net/sonic-mgmt/pull/5736)
 
 
 #### SONIC YANG Support for KDUMP, ACL, MCLAG, BUM Storm Control
+This enhances the update on SONiC Yang model to add support for Source MAC, Destination MAC, Ethertype pattern update, VLAN_ID, PCP, DEI fields for SONiC MAC ACL. Also mclag sonic yang and support for Kdump have been added. Changes done on sonic yang for BUM storm control as part of this enhancement. 
 
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+Refer below mentioned PR's for more details. 
+<br>  **Pull Requests** : [7917](https://github.com/Azure/sonic-buildimage/pull/7917), [7622](https://github.com/Azure/sonic-buildimage/pull/7622), [7355](https://github.com/Azure/sonic-buildimage/pull/7355) & [10786](https://github.com/Azure/sonic-buildimage/pull/10786) 
 
 
 #### Sorted next hop ECMP
+Under the ToR (Tier0 device) there can be appliances (eg:Firewall/Software-Load Balancer) which maintain state of flows running through them. For better scaling/high-availaibility/fault-tolerance set of appliances are used and connected to differnt ToR's. Not all the flow state that are maintained by these appliances in a set are shared between them. Thus with flow state not being sync if the flow do not end up alawys on to same TOR/Appliance it can cause services (using that flow) degradation and also impact it's availability
+
+To make sure given flow (identidied by 5 tuple) always end up on to same TOR/Appliance we need ECMP ordered support/feature on T1 (Leaf Router). With this feature enable even if flow land's on different T1's (which is common to happen as some link/device in the flow path goes/come to/from maintainence) ECMP memeber being ordered will use same nexthop (T0) and thus same appliace.
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/bum_storm_control/bum_storm_control_hld.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
-
+<br>  **Pull Requests** : [896](https://github.com/sonic-net/SONiC/pull/896), [9651](https://github.com/sonic-net/sonic-buildimage/pull/9651), [2092](https://github.com/sonic-net/sonic-swss/pull/2092) & [989](https://github.com/sonic-net/sonic-sairedis/pull/989)
 
 
 #### Storm Control (BUM)
 This feature supports configuration of Broadcast, Unknown-unicast and unknown-Multicast storm-control independently on physical interfaces. Also, supports threshold rate configuration in kilo bits per second (kbps) in the range of 0 kbps to 100,000,000 kbps (100Gbps).
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/bum_storm_control/bum_storm_control_hld.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+<br>  **Pull Requests** : [441](https://github.com/sonic-net/SONiC/pull/441), [1306](https://github.com/sonic-net/sonic-swss/pull/1306), [928](https://github.com/sonic-net/sonic-utilities/pull/928), [346](https://github.com/sonic-net/sonic-swss-common/pull/346) & [565](https://github.com/sonic-net/sonic-swss-common/pull/565)
 
 
 #### Symcrypt integration with OpenSSL
+SONiC only uses cryptographic modules validated by FIPS 140-3, Make SONiC compliant with FIPS 140-3. OpenSSL supports engine cryptographic modules in the form of engine objects, and provides a reference-counted mechanism to allow them to be dynamically loaded in and out of the running application. An engine object can implement one or all cryptographic algorithms.
 
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** :
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/fips/SONiC-OpenSSL-FIPS-140-3.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** : [955](https://github.com/sonic-net/SONiC/pull/955), [9573](https://github.com/sonic-net/sonic-buildimage/pull/9573), [10729](https://github.com/sonic-net/sonic-buildimage/pull/10729) &  [2154](https://github.com/sonic-net/sonic-utilities/pull/2154)
 
 
 #### System Ready Enhancements
 This feature implements a new python based System monitor framework is introduced to monitor all the essential system host services including docker wrapper services on an event based model and declare the system is ready. This framework gives provision for docker and host apps to notify its closest up status. CLIs are provided to fetch the current system status and also service running status and its app ready status along with failure reason if any.
 
 Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+<br>  **Pull Requests** : [977](https://github.com/sonic-net/SONiC/pull/977), [10479](https://github.com/sonic-net/sonic-buildimage/pull/10479) & [1851](https://github.com/sonic-net/sonic-utilities/pull/1851)
 
 
 #### Updated PDDF kernel modules in compliance with kernel 5.10 APIs
+This enhancement is for modification of code with new kernel 5.10 APIs. And modification of the Makefiles to use 'obj-m' instead of 'subdir-y'
 
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+Refer below mentioned PR's for more details. 
+<br>  **Pull Requests** : [9582](https://github.com/sonic-net/sonic-buildimage/pull/9582)
 
 #### Updated PDDF SFP Class with refactored SFP framework
+This enchaces all the SFP platform API classes which needed to use SFP refactoring framework. The platforms which use PDDF, derive their SFP API class from a common pddf_sfp.py. Hence pddf_sfp.py needs to comply with SFP refactoring.
 
-Refer [HLD document] and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+Refer below mentioned PR's for more details. 
+<br>  **Pull Requests** : [10047](https://github.com/sonic-net/sonic-buildimage/pull/10047)
 
 
 # SAI APIs

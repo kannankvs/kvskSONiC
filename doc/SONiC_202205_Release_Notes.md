@@ -256,7 +256,7 @@ Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/fips/SON
 #### System Ready Enhancements
 This feature implements a new python based System monitor framework is introduced to monitor all the essential system host services including docker wrapper services on an event based model and declare the system is ready. This framework gives provision for docker and host apps to notify its closest up status. CLIs are provided to fetch the current system status and also service running status and its app ready status along with failure reason if any.
 
-Refer [HLD document] and below mentioned PR's for more details. 
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/system_health_monitoring/system-ready-HLD.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [977](https://github.com/sonic-net/SONiC/pull/977), [10479](https://github.com/sonic-net/sonic-buildimage/pull/10479) & [1851](https://github.com/sonic-net/sonic-utilities/pull/1851)
 
 
@@ -280,7 +280,7 @@ Please find the list of API's classified along the newly added SAI features. For
 
 # Contributors 
 
-SONiC community would like to thank all the contributors from various companies and the individuals who has contributed for the release. Special thanks to the major contributors - Alibaba, Aviz, Broadcom, DellEMC, Google, Intel, Juniper, LinkedIn, Marvell, Metaswitch, Microsoft & Nvidia.  
+SONiC community would like to thank all the contributors from various companies and the individuals who has contributed for the release. Special thanks to the major contributors - Aviz, Broadcom, Cisco, Dell, Edgecore, Google, Intel, Marvell, Microsoft, Nvidia & Target.  
 
 <br> 
 

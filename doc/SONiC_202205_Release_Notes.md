@@ -223,6 +223,13 @@ Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/flow_cou
 <br>  **Pull Requests** : [908](https://github.com/sonic-net/SONiC/pull/908), [2094](https://github.com/sonic-net/sonic-swss/pull/2094), [2031](https://github.com/sonic-net/sonic-utilities/pull/2031), [2069](https://github.com/sonic-net/sonic-utilities/pull/2069), [9814](https://github.com/sonic-net/sonic-buildimage/pull/9814) & [5736](https://github.com/sonic-net/sonic-mgmt/pull/5736)
 
 
+#### SONiC Generic Update and Rollback
+The SONiC Generic Update and Rollback feature is to standardize the way to do partial updates, to take checkpoints and finally to rollback the configurations for SONiC.
+
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/config-generic-update-rollback/SONiC_Generic_Config_Update_and_Rollback_Design.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** : [1536](https://github.com/sonic-net/sonic-utilities/pull/1536), [8187](https://github.com/sonic-net/sonic-buildimage/pull/8187), [1599]https://github.com/sonic-net/sonic-utilities/pull/1599), [8632](https://github.com/sonic-net/sonic-buildimage/pull/8632), [1794](https://github.com/sonic-net/sonic-utilities/pull/1794), [1762](https://github.com/sonic-net/sonic-utilities/pull/1762), [1831](https://github.com/sonic-net/sonic-utilities/pull/1831), [1864](https://github.com/sonic-net/sonic-utilities/pull/1864), [1856](https://github.com/sonic-net/sonic-utilities/pull/1856), [1901](https://github.com/sonic-net/sonic-utilities/pull/1901), [1885](https://github.com/sonic-net/sonic-utilities/pull/1885), [4485](https://github.com/sonic-net/sonic-mgmt/pull/4485), [4716](https://github.com/sonic-net/sonic-mgmt/pull/4716), [1923](https://github.com/sonic-net/sonic-utilities/pull/1923), [1934](https://github.com/sonic-net/sonic-utilities/pull/1934), [1919](https://github.com/sonic-net/sonic-utilities/pull/1919), [4736](htps://github.com/sonic-net/sonic-mgmt/pull/4736), [4775](https://github.com/sonic-net/sonic-mgmt/pull/4775), [4725](https://github.com/sonic-net/sonic-mgmt/pull/4725), [1929](https://github.com/sonic-net/sonic-utilities/pull/1929), [9295](https://github.com/sonic-net/sonic-buildimage/pull/9295)
+
+
 #### SONIC YANG Support for KDUMP, ACL, MCLAG, BUM Storm Control
 This enhances the update on SONiC Yang model to add support for Source MAC, Destination MAC, Ethertype pattern update, VLAN_ID, PCP, DEI fields for SONiC MAC ACL. Also mclag sonic yang and support for Kdump have been added. Changes done on sonic yang for BUM storm control as part of this enhancement. 
 

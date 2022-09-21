@@ -82,8 +82,8 @@ Refer below mentioned PR for more details.
 This feature Will not require a new SAI API, but vendors will have to implement this API for using this functionality
 
 
-Refer [HLD document]() and below mentioned PR's for more details. 
-<br>  **Pull Requests** : 
+Refer below mentioned PR's for more details. 
+<br>  **Pull Requests** : [2098](https://github.com/sonic-net/sonic-swss/pull/2098)
 
 
 #### CMIS Diagnostics
@@ -130,6 +130,12 @@ Currently, techsupport is run by invoking show techsupport either by orchestrati
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/auto_techsupport_and_coredump_mgmt.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [939](https://github.com/sonic-net/SONiC/pull/939), [2116](https://github.com/sonic-net/sonic-utilities/pull/2116) & [10433](https://github.com/sonic-net/sonic-buildimage/pull/10433)
+
+
+#### Fast-reboot flow improvements
+The feature SONiC fast-reboot is to be able to restart and upgrade SONiC software with a data plane disruption less than 30 seconds and control plane less than 90 seconds. 
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/fast-reboot/Fast-reboot_Flow_Improvements_HLD.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** : [980](https://github.com/sonic-net/SONiC/pull/980), [11594](https://github.com/sonic-net/sonic-buildimage/pull/11594), [1100](https://github.com/sonic-net/sonic-sairedis/pull/1100), [2286](https://github.com/sonic-net/sonic-utilities/pull/2286), [6348](https://github.com/sonic-net/sonic-mgmt/pull/6348), [12026](https://github.com/sonic-net/sonic-buildimage/pull/12026), [1121](https://github.com/sonic-net/sonic-sairedis/pull/1121) & [2365](https://github.com/sonic-net/sonic-utilities/pull/2365)
 
 
 #### FRR version upgrade from 7.5 to 8.2

@@ -134,6 +134,7 @@ Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/auto_tec
 
 #### Fast-reboot flow improvements
 The feature SONiC fast-reboot is to be able to restart and upgrade SONiC software with a data plane disruption less than 30 seconds and control plane less than 90 seconds. 
+
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/fast-reboot/Fast-reboot_Flow_Improvements_HLD.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [980](https://github.com/sonic-net/SONiC/pull/980), [11594](https://github.com/sonic-net/sonic-buildimage/pull/11594), [1100](https://github.com/sonic-net/sonic-sairedis/pull/1100), [2286](https://github.com/sonic-net/sonic-utilities/pull/2286), [6348](https://github.com/sonic-net/sonic-mgmt/pull/6348), [12026](https://github.com/sonic-net/sonic-buildimage/pull/12026), [1121](https://github.com/sonic-net/sonic-sairedis/pull/1121) & [2365](https://github.com/sonic-net/sonic-utilities/pull/2365)
 

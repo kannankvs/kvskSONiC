@@ -100,9 +100,9 @@
     * [Loopback show commands](#loopback-show-commands)
     * [Loopback config commands](#loopback-config-commands)
  * [MACsec Commands](#macsec-commands)
-  * [MACsec config command](#macsec-config-command)
-  * [MACsec show command](#macsec-show-command)
-  * [MACsec clear command](#macsec-clear-command)	
+    * [MACsec config command](#macsec-config-command)
+    * [MACsec show command](#macsec-show-command)
+    * [MACsec clear command](#macsec-clear-command)	
 * [VRF Configuration](#vrf-configuration)
     * [VRF show commands](#vrf-show-commands)
     * [VRF config commands](#vrf-config-commands)
@@ -7430,9 +7430,9 @@ config nvgre-tunnel-map add 'tunnel_1' 'Vlan2000' --vlan-id '2000' --vsid '6000'
 config nvgre-tunnel-map delete 'tunnel_1' 'Vlan2000'
 ```
 
-##### Password Hardening
+### Password Hardening
 
-#### PW enable
+**PW enable**
 
 Passwoed Hardening enable feature, set configuration:
 
@@ -7446,7 +7446,7 @@ Options:
   -?, -h, --help  Show this message and exit.
 ```
 
-#### PW Classes:
+**PW Classes**
 
 PW class is the type of characters the user is required to enter when setting/updating a PW.
 
@@ -7513,7 +7513,7 @@ Options:
 
 Note: Meaning: no must use of lower, no must use of upper, must use digit, must use special characters
 
-#### PW Length
+**PW Length**
 
 Set len-min configuration:
 ```
@@ -7530,7 +7530,7 @@ Note: Where length is a number between 0 and 32.
 
 Once the user changed the minimum password length - the settings will be applied to the config node and will be enforced on the next pw change
 
-#### PW Age
+**PW Age**
 
 * PW age expire
 
@@ -7562,7 +7562,7 @@ Options:
 Notes: The warning_days can be configured between 1 and 30 days (default 15).
 
 
-#### PW username-match
+**PW username-match**
 
 Set configuration:
 
@@ -7577,7 +7577,7 @@ Options:
   -h, -?, --help  Show this message and exit.
 ```
 
-#### PW Saving
+**PW Saving**
 Set configuration:
 
 ```
@@ -7589,7 +7589,7 @@ Usage: config passwh policies history [OPTIONS] HISTORY
 Options:
   -h, -?, --help  Show this message and exit.
 ```
-#### show passwh
+**show passwh**
 
 Show command should be extended in order to add "passwh" alias:
 

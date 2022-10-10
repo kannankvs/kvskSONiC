@@ -126,12 +126,8 @@
   * [NVGRE show commands](#nvgre-show-commands)
   * [NVGRE config commands](#nvgre-config-commands)
 * [Password Hardening](#Password-Hardening)
-  * [PW enable](#pw-enable)
-  * [PW Length](#pw-length)
-  * [PW Age](#pw-age)
-  * [PW username-match](#pw-username-match)
-  * [PW Saving](#pw-saving)
-  * [show passwh](#show-passwh)
+  * [PW config commands](#pw-config-commands)
+  * [PW show commands](#pw-show-commands)
 * [PBH](#pbh)
   * [PBH show commands](#pbh-show-commands)
   * [PBH config commands](#pbh-config-commands)
@@ -7430,7 +7426,9 @@ config nvgre-tunnel-map add 'tunnel_1' 'Vlan2000' --vlan-id '2000' --vsid '6000'
 config nvgre-tunnel-map delete 'tunnel_1' 'Vlan2000'
 ```
 
-### Password Hardening
+## Password Hardening
+
+### PW config commands
 
 **pw enable**
 
@@ -7589,6 +7587,9 @@ Usage: config passwh policies history [OPTIONS] HISTORY
 Options:
   -h, -?, --help  Show this message and exit.
 ```
+
+### PW show commands
+
 **show passwh**
 
 Show command should be extended in order to add "passwh" alias:

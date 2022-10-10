@@ -99,6 +99,10 @@
  * [Loopback Interfaces](#loopback-interfaces)
     * [Loopback show commands](#loopback-show-commands)
     * [Loopback config commands](#loopback-config-commands)
+ * [MACsec Commands](#macsec-commands)
+  * [MACsec config command](#macsec-config-command)
+  * [MACsec show command](#macsec-show-command)
+  * [MACsec clear command](#macsec-clear-command)	
 * [VRF Configuration](#vrf-configuration)
     * [VRF show commands](#vrf-show-commands)
     * [VRF config commands](#vrf-config-commands)
@@ -121,6 +125,13 @@
 * [NVGRE](#nvgre)
   * [NVGRE show commands](#nvgre-show-commands)
   * [NVGRE config commands](#nvgre-config-commands)
+* [Password Hardening](#Password-Hardening)
+  * [PW enable](#PW-enable)
+  * [PW Length](#PW-Length)
+  * [PW Age](#PW-Age)
+  * [PW username-match(#PW-username-match)
+  * [PW Saving](#PW-Saving)
+  * [show passwh](#show-passwh-policies)
 * [PBH](#pbh)
   * [PBH show commands](#pbh-show-commands)
   * [PBH config commands](#pbh-config-commands)
@@ -141,6 +152,9 @@
     * [Queue And Priority-Group](#queue-and-priority-group)
     * [Buffer Pool](#buffer-pool)
   * [QoS config commands](#qos-config-commands)
+* [Radius](#radius)
+  * [radius show commands](#show-radius-commands)
+  * [radius config commands](#Radius-config-commands)  
 * [sFlow](#sflow)
   * [sFlow Show commands](#sflow-show-commands)
   * [sFlow Config commands](#sflow-config-commands)
@@ -5455,6 +5469,251 @@ It is recommended to use loopback names in the format "Loopbackxxx", where "xxx"
   admin@sonic:~$ sudo config loopback add Loopback11
   ```
 
+# MACsec Commands
+
+This sub-section explains the list of the configuration options available for MACsec. MACsec feature is as a plugin to SONiC, So please install MACsec package before using MACsec commands.
+
+## MACsec config command
+
+- Add MACsec profile
+```
+admin@sonic:~$ sudo config macsec profile add --help
+Usage: config macsec profile add [OPTIONS] <profile_name>
+
+  Add MACsec profile
+
+Options:
+  --priority <priority>           For Key server election. In 0-255 range with
+                                  0 being the highest priority.  [default:
+                                  255]
+  --cipher_suite <cipher_suite>   The cipher suite for MACsec.  [default: GCM-
+                                  AES-128]
+  --primary_cak <primary_cak>     Primary Connectivity Association Key.
+                                  [required]
+  --primary_ckn <primary_cak>     Primary CAK Name.  [required]
+  --policy <policy>               MACsec policy. INTEGRITY_ONLY: All traffic,
+                                  except EAPOL, will be converted to MACsec
+                                  packets without encryption.  SECURITY: All
+                                  traffic, except EAPOL, will be encrypted by
+                                  SecY.  [default: security]
+  --enable_replay_protect / --disable_replay_protect
+                                  Whether enable replay protect.  [default:
+                                  False]
+  --replay_window <enable_replay_protect>
+                                  Replay window size that is the number of
+                                  packets that could be out of order. This
+                                  field works only if ENABLE_REPLAY_PROTECT is
+                                  true.  [default: 0]
+  --send_sci / --no_send_sci      Send SCI in SecTAG field of MACsec header.
+                                  [default: True]
+  --rekey_period <rekey_period>   The period of proactively refresh (Unit
+                                  second).  [default: 0]
+  -?, -h, --help                  Show this message and exit.
+```
+
+- Delete MACsec profile
+```
+admin@sonic:~$ sudo config macsec profile del --help
+Usage: config macsec profile del [OPTIONS] <profile_name>
+
+  Delete MACsec profile
+
+Options:
+  -?, -h, --help  Show this message and exit.
+```
+
+- Enable MACsec on the port
+```
+admin@sonic:~$ sudo config macsec port add --help
+Usage: config macsec port add [OPTIONS] <port_name> <profile_name>
+
+  Add MACsec port
+
+Options:
+  -?, -h, --help  Show this message and exit.
+```
+
+
+- Disable MACsec on the port
+```
+admin@sonic:~$ sudo config macsec port del --help
+Usage: config macsec port del [OPTIONS] <port_name>
+
+  Delete MACsec port
+
+Options:
+  -?, -h, --help  Show this message and exit.
+
+```
+
+
+## MACsec show command
+
+- Show MACsec
+
+```
+admin@vlab-02:~$ show macsec --help
+Usage: show macsec [OPTIONS] [INTERFACE_NAME]
+
+Options:
+  -d, --display [all]  Show internal interfaces  [default: all]
+  -n, --namespace []   Namespace name or all
+  -h, -?, --help       Show this message and exit.
+
+```
+
+```
+admin@vlab-02:~$ show macsec
+MACsec port(Ethernet0)
+---------------------  -----------
+cipher_suite           GCM-AES-256
+enable                 true
+enable_encrypt         true
+enable_protect         true
+enable_replay_protect  false
+replay_window          0
+send_sci               true
+---------------------  -----------
+	MACsec Egress SC (5254008f4f1c0001)
+	-----------  -
+	encoding_an  2
+	-----------  -
+		MACsec Egress SA (1)
+		-------------------------------------  ----------------------------------------------------------------
+		auth_key                               849B69D363E2B0AA154BEBBD7C1D9487
+		next_pn                                1
+		sak                                    AE8C9BB36EA44B60375E84BC8E778596289E79240FDFA6D7BA33D3518E705A5E
+		salt                                   000000000000000000000000
+		ssci                                   0
+		SAI_MACSEC_SA_ATTR_CURRENT_XPN         179
+		SAI_MACSEC_SA_STAT_OCTETS_ENCRYPTED    0
+		SAI_MACSEC_SA_STAT_OCTETS_PROTECTED    0
+		SAI_MACSEC_SA_STAT_OUT_PKTS_ENCRYPTED  0
+		SAI_MACSEC_SA_STAT_OUT_PKTS_PROTECTED  0
+		-------------------------------------  ----------------------------------------------------------------
+		MACsec Egress SA (2)
+		-------------------------------------  ----------------------------------------------------------------
+		auth_key                               5A8B8912139551D3678B43DD0F10FFA5
+		next_pn                                1
+		sak                                    7F2651140F12C434F782EF9AD7791EE2CFE2BF315A568A48785E35FC803C9DB6
+		salt                                   000000000000000000000000
+		ssci                                   0
+		SAI_MACSEC_SA_ATTR_CURRENT_XPN         87185
+		SAI_MACSEC_SA_STAT_OCTETS_ENCRYPTED    0
+		SAI_MACSEC_SA_STAT_OCTETS_PROTECTED    0
+		SAI_MACSEC_SA_STAT_OUT_PKTS_ENCRYPTED  0
+		SAI_MACSEC_SA_STAT_OUT_PKTS_PROTECTED  0
+		-------------------------------------  ----------------------------------------------------------------
+	MACsec Ingress SC (525400edac5b0001)
+		MACsec Ingress SA (1)
+		---------------------------------------  ----------------------------------------------------------------
+		active                                   true
+		auth_key                                 849B69D363E2B0AA154BEBBD7C1D9487
+		lowest_acceptable_pn                     1
+		sak                                      AE8C9BB36EA44B60375E84BC8E778596289E79240FDFA6D7BA33D3518E705A5E
+		salt                                     000000000000000000000000
+		ssci                                     0
+		SAI_MACSEC_SA_ATTR_CURRENT_XPN           103
+		SAI_MACSEC_SA_STAT_IN_PKTS_DELAYED       0
+		SAI_MACSEC_SA_STAT_IN_PKTS_INVALID       0
+		SAI_MACSEC_SA_STAT_IN_PKTS_LATE          0
+		SAI_MACSEC_SA_STAT_IN_PKTS_NOT_USING_SA  0
+		SAI_MACSEC_SA_STAT_IN_PKTS_NOT_VALID     0
+		SAI_MACSEC_SA_STAT_IN_PKTS_OK            0
+		SAI_MACSEC_SA_STAT_IN_PKTS_UNCHECKED     0
+		SAI_MACSEC_SA_STAT_IN_PKTS_UNUSED_SA     0
+		SAI_MACSEC_SA_STAT_OCTETS_ENCRYPTED      0
+		SAI_MACSEC_SA_STAT_OCTETS_PROTECTED      0
+		---------------------------------------  ----------------------------------------------------------------
+		MACsec Ingress SA (2)
+		---------------------------------------  ----------------------------------------------------------------
+		active                                   true
+		auth_key                                 5A8B8912139551D3678B43DD0F10FFA5
+		lowest_acceptable_pn                     1
+		sak                                      7F2651140F12C434F782EF9AD7791EE2CFE2BF315A568A48785E35FC803C9DB6
+		salt                                     000000000000000000000000
+		ssci                                     0
+		SAI_MACSEC_SA_ATTR_CURRENT_XPN           91824
+		SAI_MACSEC_SA_STAT_IN_PKTS_DELAYED       0
+		SAI_MACSEC_SA_STAT_IN_PKTS_INVALID       0
+		SAI_MACSEC_SA_STAT_IN_PKTS_LATE          0
+		SAI_MACSEC_SA_STAT_IN_PKTS_NOT_USING_SA  0
+		SAI_MACSEC_SA_STAT_IN_PKTS_NOT_VALID     0
+		SAI_MACSEC_SA_STAT_IN_PKTS_OK            0
+		SAI_MACSEC_SA_STAT_IN_PKTS_UNCHECKED     0
+		SAI_MACSEC_SA_STAT_IN_PKTS_UNUSED_SA     0
+		SAI_MACSEC_SA_STAT_OCTETS_ENCRYPTED      0
+		SAI_MACSEC_SA_STAT_OCTETS_PROTECTED      0
+		---------------------------------------  ----------------------------------------------------------------
+MACsec port(Ethernet1)
+---------------------  -----------
+cipher_suite           GCM-AES-256
+enable                 true
+enable_encrypt         true
+enable_protect         true
+enable_replay_protect  false
+replay_window          0
+send_sci               true
+---------------------  -----------
+	MACsec Egress SC (5254008f4f1c0001)
+	-----------  -
+	encoding_an  1
+	-----------  -
+		MACsec Egress SA (1)
+		-------------------------------------  ----------------------------------------------------------------
+		auth_key                               35FC8F2C81BCA28A95845A4D2A1EE6EF
+		next_pn                                1
+		sak                                    1EC8572B75A840BA6B3833DC550C620D2C65BBDDAD372D27A1DFEB0CD786671B
+		salt                                   000000000000000000000000
+		ssci                                   0
+		SAI_MACSEC_SA_ATTR_CURRENT_XPN         4809
+		SAI_MACSEC_SA_STAT_OCTETS_ENCRYPTED    0
+		SAI_MACSEC_SA_STAT_OCTETS_PROTECTED    0
+		SAI_MACSEC_SA_STAT_OUT_PKTS_ENCRYPTED  0
+		SAI_MACSEC_SA_STAT_OUT_PKTS_PROTECTED  0
+		-------------------------------------  ----------------------------------------------------------------
+	MACsec Ingress SC (525400edac5b0001)
+		MACsec Ingress SA (1)
+		---------------------------------------  ----------------------------------------------------------------
+		active                                   true
+		auth_key                                 35FC8F2C81BCA28A95845A4D2A1EE6EF
+		lowest_acceptable_pn                     1
+		sak                                      1EC8572B75A840BA6B3833DC550C620D2C65BBDDAD372D27A1DFEB0CD786671B
+		salt                                     000000000000000000000000
+		ssci                                     0
+		SAI_MACSEC_SA_ATTR_CURRENT_XPN           5033
+		SAI_MACSEC_SA_STAT_IN_PKTS_DELAYED       0
+		SAI_MACSEC_SA_STAT_IN_PKTS_INVALID       0
+		SAI_MACSEC_SA_STAT_IN_PKTS_LATE          0
+		SAI_MACSEC_SA_STAT_IN_PKTS_NOT_USING_SA  0
+		SAI_MACSEC_SA_STAT_IN_PKTS_NOT_VALID     0
+		SAI_MACSEC_SA_STAT_IN_PKTS_OK            0
+		SAI_MACSEC_SA_STAT_IN_PKTS_UNCHECKED     0
+		SAI_MACSEC_SA_STAT_IN_PKTS_UNUSED_SA     0
+		SAI_MACSEC_SA_STAT_OCTETS_ENCRYPTED      0
+		SAI_MACSEC_SA_STAT_OCTETS_PROTECTED      0
+		---------------------------------------  ----------------------------------------------------------------
+```
+
+## MACsec clear command
+
+Clear MACsec counters which is to reset all MACsec counters to ZERO.
+
+```
+admin@sonic:~$ sonic-clear macsec --help
+Usage: sonic-clear macsec [OPTIONS]
+
+  Clear MACsec counts. This clear command will generated a cache for next
+  show commands which will base on this cache as the zero baseline to show
+  the increment of counters.
+
+Options:
+  --clean-cache BOOLEAN  If the option of clean cache is true, next show
+                         commands will show the raw counters which based on
+                         the service booted instead of the last clear command.
+  -h, -?, --help         Show this message and exit.
+```  
+
 ## VRF Configuration
 
 ### VRF show commands
@@ -7171,6 +7430,176 @@ config nvgre-tunnel-map add 'tunnel_1' 'Vlan2000' --vlan-id '2000' --vsid '6000'
 config nvgre-tunnel-map delete 'tunnel_1' 'Vlan2000'
 ```
 
+##### Password Hardening
+
+#### PW enable
+
+Passwoed Hardening enable feature, set configuration:
+
+```
+root@r-panther-13:/home/admin# config passwh policies state --help
+Usage: config passwh policies state [OPTIONS] STATE
+
+  state of the feature
+
+Options:
+  -?, -h, --help  Show this message and exit.
+```
+
+#### PW Classes:
+
+PW class is the type of characters the user is required to enter when setting/updating a PW.
+
+There are 4 classes. (see description in arc section)
+
+The user will be able to choose whether to enforce all PW class characters in the PW or only a subset of the characters.
+
+A CLI command will be available to the user for this configuration. Once a user has selected the class types he wants to enforce (from a pre-defined options list), this will enforce the PW selected by the user to have at least 1 character from each class in the selected option.
+
+The CLI classes options will be as follows:
+
+None - Meaning no required classes.
+
+lower- lowerLowercase Characters
+
+upper - Uppercase
+
+digit - Numbers
+
+special - Special symbols (seen in requirement chapter)
+
+multiple char enforcement
+
+There will be no enforcement of multiple characters from a specific class or a specific character (be either letter or symbol) to appear in the PW.
+
+The CLI command to configure the PW class type will be along the following lines:
+
+Set classes configuration:
+```
+==============================================================================
+root@r-panther-13:/home/admin# config passwh policies lower-class --help
+Usage: config passwh policies lower-class [OPTIONS] LOWER_CLASS
+
+  password lower chars policy
+
+Options:
+  -?, -h, --help  Show this message and exit.
+==============================================================================
+root@r-panther-13:/home/admin# config passwh policies upper-class --help
+Usage: config passwh policies upper-class [OPTIONS] UPPER_CLASS
+
+  password upper chars policy
+
+Options:
+  -h, -?, --help  Show this message and exit.
+==============================================================================
+root@r-panther-13:/home/admin# config passwh policies digits-class --help
+Usage: config passwh policies digits-class [OPTIONS] DIGITS_CLASS
+
+  password digits chars policy
+
+Options:
+  -h, -?, --help  Show this message and exit.
+==============================================================================
+root@r-panther-13:/home/admin# config passwh policies special-class --help
+Usage: config passwh policies special-class [OPTIONS] SPECIAL_CLASS
+
+  password special chars policy
+
+Options:
+  -?, -h, --help  Show this message and exit.
+==============================================================================
+```
+
+Note: Meaning: no must use of lower, no must use of upper, must use digit, must use special characters
+
+#### PW Length
+
+Set len-min configuration:
+```
+root@r-panther-13:/home/admin# config passwh policies len-min --help
+Usage: config passwh policies len-min [OPTIONS] LEN_MIN
+
+  password min length
+
+Options:
+  -?, -h, --help  Show this message and exit.
+```
+
+Note: Where length is a number between 0 and 32.
+
+Once the user changed the minimum password length - the settings will be applied to the config node and will be enforced on the next pw change
+
+#### PW Age
+
+* PW age expire
+
+Set configuration:
+```
+root@r-panther-13:/home/admin# config passwh policies expiration --help
+Usage: config passwh policies expiration [OPTIONS] EXPIRATION
+
+  expiration time (days unit)
+
+Options:
+  -h, -?, --help  Show this message and exit.
+```
+
+Notes: Where age is in days and between 1 and 365 days (default 180).
+* PW Age Change Warning
+
+Set configuration:
+```
+root@r-panther-13:/home/admin# config passwh policies expiration-warning --help
+Usage: config passwh policies expiration-warning [OPTIONS] EXPIRATION_WARNING
+
+  expiration warning time (days unit)
+
+Options:
+  -?, -h, --help  Show this message and exit.
+```
+
+Notes: The warning_days can be configured between 1 and 30 days (default 15).
+
+
+#### PW username-match
+
+Set configuration:
+
+```
+root@r-panther-13:/home/admin# config passwh policies username-passw-match --help
+Usage: config passwh policies username-passw-match [OPTIONS]
+                                                   USERNAME_PASSW_MATCH
+
+  username password match
+
+Options:
+  -h, -?, --help  Show this message and exit.
+```
+
+#### PW Saving
+Set configuration:
+
+```
+root@r-panther-13:/home/admin# config passwh policies history --help
+Usage: config passwh policies history [OPTIONS] HISTORY
+
+  num of old password that the system will recorded
+
+Options:
+  -h, -?, --help  Show this message and exit.
+```
+#### show passwh
+
+Show command should be extended in order to add "passwh" alias:
+
+```
+root@r-panther-13:/home/admin# show passwh policies
+STATE    EXPIRATION    EXPIRATION WARNING    HISTORY    LEN MAX    LEN MIN    USERNAME PASSW MATCH    LOWER CLASS    UPPER CLASS    DIGITS CLASS    SPECIAL CLASS
+-------  ------------  --------------------  ---------  ---------  ---------  ----------------------  -------------  -------------  --------------  ---------------
+enabled      30           10                   4         100        30               false                 true            true            true          true
+```
+
 ## PBH
 
 This section explains the various show commands and configuration commands available for users.
@@ -7926,6 +8355,52 @@ If there was QoS configuration in the above tables for the ports:
   ```
 
 Go Back To [Beginning of the document](#) or [Beginning of this section](#qos)
+
+## Radius
+
+### show radius commands
+
+This command displays the global radius configuration that includes the auth_type, retransmit, timeout  and passkey.
+
+- Usage:
+  ```
+  show radius
+  ```
+- Example:
+
+  ```
+  admin@sonic:~$ show radius
+	RADIUS global auth_type pap (default)
+	RADIUS global retransmit 3 (default)
+	RADIUS global timeout 5 (default)
+	RADIUS global passkey <EMPTY_STRING> (default)
+
+  ```
+ 
+### Radius config commands
+
+This command is to config the radius server for various parameter listed.
+
+ - Usage:
+  ```
+  config radius
+  ```
+- Example:
+  ```
+  admin@sonic:~$ config radius
+  
+  add         Specify a RADIUS server
+  authtype    Specify RADIUS server global auth_type [chap | pap | mschapv2]
+  default     set its default configuration
+  delete      Delete a RADIUS server
+  nasip       Specify RADIUS server global NAS-IP|IPV6-Address <IPAddress>
+  passkey     Specify RADIUS server global passkey <STRING>
+  retransmit  Specify RADIUS server global retry attempts <0 - 10>
+  sourceip    Specify RADIUS server global source ip <IPAddress>
+  statistics  Specify RADIUS server global statistics [enable | disable |...
+  timeout     Specify RADIUS server global timeout <1 - 60>
+
+  ```
 
 ## sFlow
 

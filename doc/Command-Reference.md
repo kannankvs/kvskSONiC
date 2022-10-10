@@ -131,7 +131,7 @@
   * [PW Age](#pw-age)
   * [PW username-match](#pw-username-match)
   * [PW Saving](#pw-saving)
-  * [show passwh](#show-passwh-policies)
+  * [show passwh](#show-passwh)
 * [PBH](#pbh)
   * [PBH show commands](#pbh-show-commands)
   * [PBH config commands](#pbh-config-commands)

@@ -7432,7 +7432,7 @@ config nvgre-tunnel-map delete 'tunnel_1' 'Vlan2000'
 
 ### Password Hardening
 
-**PW enable**
+**pw enable**
 
 Passwoed Hardening enable feature, set configuration:
 
@@ -7446,7 +7446,7 @@ Options:
   -?, -h, --help  Show this message and exit.
 ```
 
-**PW Classes**
+**pw classes**
 
 PW class is the type of characters the user is required to enter when setting/updating a PW.
 
@@ -7513,7 +7513,7 @@ Options:
 
 Note: Meaning: no must use of lower, no must use of upper, must use digit, must use special characters
 
-**PW Length**
+**pw length**
 
 Set len-min configuration:
 ```
@@ -7530,7 +7530,7 @@ Note: Where length is a number between 0 and 32.
 
 Once the user changed the minimum password length - the settings will be applied to the config node and will be enforced on the next pw change
 
-**PW Age**
+**pw age**
 
 * PW age expire
 
@@ -7562,7 +7562,7 @@ Options:
 Notes: The warning_days can be configured between 1 and 30 days (default 15).
 
 
-**PW username-match**
+**pw username-match**
 
 Set configuration:
 
@@ -7577,7 +7577,7 @@ Options:
   -h, -?, --help  Show this message and exit.
 ```
 
-**PW Saving**
+**pw saving**
 Set configuration:
 
 ```

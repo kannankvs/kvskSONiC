@@ -129,7 +129,7 @@
   * [PW enable](#PW-enable)
   * [PW Length](#PW-Length)
   * [PW Age](#PW-Age)
-  * [PW username-match(#PW-username-match)
+  * [PW username-match](#PW-username-match)
   * [PW Saving](#PW-Saving)
   * [show passwh](#show-passwh-policies)
 * [PBH](#pbh)

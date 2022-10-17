@@ -6532,10 +6532,7 @@ When configuring the Static NAPT entry, user has to specify the following fields
 4. NAT type (snat / dnat) to be applied on the Global IP address + Port. Default value is dnat. This is optional argument.
 5. Twicw NAT Id. This is optional argument used in case of twice nat configuration.
 
-- Usage:
-  ```
-  config nat add static {{basic (global-ip) (local-ip)} | {{tcp | udp} (global-ip) (global-port) (local-ip) (local-port)}} [-nat_type {snat | dnat}] [-twice_nat_id (value)]
-  ```
+
 
 To delete a static NAT or NAPT entry, use the command below. Giving the all argument deletes all the configured static NAT and NAPT entries.
 ```

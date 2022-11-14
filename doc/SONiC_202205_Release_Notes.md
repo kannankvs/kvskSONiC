@@ -36,6 +36,8 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 | isc-dhcp                  | 4.4.1-2   |
 | sonic-telemetry           | 0.1    |
 | redis-server/ redis-tools | 5.0.3-3~bpo9+2    |
+| Docker Buster version		| 20.10.17	    |
+| Debian version			| 11			|
 
 
 # Security Updates

@@ -144,7 +144,7 @@ $SystemLogRateLimitBurst {{ rate_limit_burst }}
 {% if SYSLOG_CONFIG_FEATURE is defined %}
 {% if container_name in SYSLOG_CONFIG_FEATURE %}
 {% if 'rate_limit_interval' in SYSLOG_CONFIG_FEATURE[container_name]%}
-{% set rate_limit_interval = SYSLOG_CONFIG_FEATURE[container_name]['rate_limit_interval'] %}
+{\% set rate_limit_interval = SYSLOG_CONFIG_FEATURE[container_name]['rate_limit_interval'] \%}
 {% endif %}
 {% if 'rate_limit_burst' in SYSLOG_CONFIG_FEATURE[container_name]%}
 {% set rate_limit_burst = SYSLOG_CONFIG_FEATURE[container_name]['rate_limit_burst'] %}

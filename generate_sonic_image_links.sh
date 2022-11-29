@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 git checkout -b sonic_latest_images_links
 git config --global user.email "y.prasanna@gmail.com"
-git config --global user.name "y.prasanna"
+git config --global user.name "y.prasanna1"
 git reset --hard
 git pull origin sonic_latest_images_links
 

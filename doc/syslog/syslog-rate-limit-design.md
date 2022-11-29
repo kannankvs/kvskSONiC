@@ -121,43 +121,43 @@ New tables shall be added to CONFIG DB to store the rate limit configuration. in
 ```
 {\% if SYSLOG_CONFIG is defined \%}
 {\% if 'GLOBAL' in SYSLOG_CONFIG \%}
-{% if 'rate_limit_interval' in SYSLOG_CONFIG['GLOBAL']%}
+{\% if 'rate_limit_interval' in SYSLOG_CONFIG['GLOBAL']\%}
 {\% set rate_limit_interval = SYSLOG_CONFIG['GLOBAL']['rate_limit_interval'] \%}
-{% endif %}
-{% if 'rate_limit_burst' in SYSLOG_CONFIG['GLOBAL']%}
+{\% endif \%}
+{\% if 'rate_limit_burst' in SYSLOG_CONFIG['GLOBAL']\%}
 {\% set rate_limit_burst = SYSLOG_CONFIG['GLOBAL']['rate_limit_burst'] \%}
-{% endif %}
-{% endif %}
+{\% endif \%}
+{\% endif \%}
 {\% endif \%}
 
-{% if rate_limit_interval is defined %}
+{\% if rate_limit_interval is defined \%}
 $SystemLogRateLimitInterval {{ rate_limit_interval }}
-{% endif %}
-{% if rate_limit_burst is defined %}
+{\% endif \%}
+{\% if rate_limit_burst is defined \%}
 $SystemLogRateLimitBurst {{ rate_limit_burst }}
-{% endif %}
+{\% endif \%}
 ```
 
 #### rsyslog-container.conf.j2
 
 ```
-{% if SYSLOG_CONFIG_FEATURE is defined %}
-{% if container_name in SYSLOG_CONFIG_FEATURE %}
-{% if 'rate_limit_interval' in SYSLOG_CONFIG_FEATURE[container_name]%}
+{\% if SYSLOG_CONFIG_FEATURE is defined \%}
+{\% if container_name in SYSLOG_CONFIG_FEATURE \%}
+{\% if 'rate_limit_interval' in SYSLOG_CONFIG_FEATURE[container_name]\%}
 {\% set rate_limit_interval = SYSLOG_CONFIG_FEATURE[container_name]['rate_limit_interval'] \%}
-{% endif %}
-{% if 'rate_limit_burst' in SYSLOG_CONFIG_FEATURE[container_name]%}
+{\% endif \%}
+{\% if 'rate_limit_burst' in SYSLOG_CONFIG_FEATURE[container_name]\%}
 {\% set rate_limit_burst = SYSLOG_CONFIG_FEATURE[container_name]['rate_limit_burst'] \%}
-{% endif %}
-{% endif %}
-{% endif %}
+{\% endif \%}
+{\% endif \%}
+{\% endif\%}
 
-{% if rate_limit_interval is defined %}
+{\% if rate_limit_interval is defined \%}
 $SystemLogRateLimitInterval {{ rate_limit_interval }}
-{% endif %}
-{% if rate_limit_burst is defined %}
+{\% endif \%}
+{\% if rate_limit_burst is defined \%}
 $SystemLogRateLimitBurst {{ rate_limit_burst }}
-{% endif %}
+{\% endif \%}
 ```
 
 #### docker_image_ctl.j2

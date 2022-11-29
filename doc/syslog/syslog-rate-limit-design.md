@@ -110,7 +110,7 @@ New tables shall be added to CONFIG DB to store the rate limit configuration. in
         "{{feature}}": {
             "rate_limit_interval" : "300",
             "rate_limit_burst": "20000"
-        }{%if not loop.last %},{% endif -%}
+        }{\%if not loop.last \%},{\% endif -\%}
 {\% endfor \%}
     }
 ...

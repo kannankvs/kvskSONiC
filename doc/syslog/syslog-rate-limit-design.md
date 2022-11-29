@@ -120,7 +120,7 @@ New tables shall be added to CONFIG DB to store the rate limit configuration. in
 
 ```
 {\% if SYSLOG_CONFIG is defined \%}
-{% if 'GLOBAL' in SYSLOG_CONFIG %}
+{\% if 'GLOBAL' in SYSLOG_CONFIG \%}
 {% if 'rate_limit_interval' in SYSLOG_CONFIG['GLOBAL']%}
 {\% set rate_limit_interval = SYSLOG_CONFIG['GLOBAL']['rate_limit_interval'] \%}
 {% endif %}

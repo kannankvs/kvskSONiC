@@ -113,6 +113,9 @@ New tables shall be added to CONFIG DB to store the rate limit configuration. in
         }{\%if not loop.last \%},{\% endif -\%}
 {\% endfor \%}
     }
+
+NOTE: An extra backslash is added in front of % in the above code snippet. Remove the backslash while using the actual code in SONiC.	
+	
 ...
 ```
 
@@ -136,6 +139,9 @@ $SystemLogRateLimitInterval {{ rate_limit_interval }}
 {\% if rate_limit_burst is defined \%}
 $SystemLogRateLimitBurst {{ rate_limit_burst }}
 {\% endif \%}
+
+NOTE: An extra backslash is added in front of % in the above code snippet. Remove the backslash while using the actual code in SONiC.
+
 ```
 
 #### rsyslog-container.conf.j2
@@ -158,6 +164,9 @@ $SystemLogRateLimitInterval {{ rate_limit_interval }}
 {\% if rate_limit_burst is defined \%}
 $SystemLogRateLimitBurst {{ rate_limit_burst }}
 {\% endif \%}
+
+NOTE: An extra backslash is added in front of % in the above code snippet. Remove the backslash while using the actual code in SONiC.
+
 ```
 
 #### docker_image_ctl.j2

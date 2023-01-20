@@ -74,8 +74,8 @@ Refer [HLD document](https://github.com/Junchao-Mellanox/SONiC/blob/master/doc/b
 #### Setting RIF loopback action to drop 
 IP interface loopback action is a feature that allows user to change the way router handles routed packets for which egress port equals to ingress port.
 
-	*	When loopback action is configured to drop, those packets will be dropped. Drppoed packets due to loopback action are counted in rif statistics.
-	*	When loopback action is configured to forward, those packets will be forwarded as the pipeline defined.
+	-	When loopback action is configured to drop, those packets will be dropped. Drppoed packets due to loopback action are counted in rif statistics.
+	-	When loopback action is configured to forward, those packets will be forwarded as the pipeline defined.
 
 Refer [HLD document](https://github.com/liorghub/SONiC/blob/master/doc/ip-interface/loopback-action/ip-interface-loopback-action-design.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [1006](https://github.com/sonic-net/SONiC/pull/1006); [11012](https://github.com/sonic-net/sonic-buildimage/pull/11012); [2192](https://github.com/sonic-net/sonic-utilities/pull/2192); [2307](https://github.com/sonic-net/sonic-swss/pull/2307); [5956](https://github.com/sonic-net/sonic-mgmt/pull/5956) & [5871](https://github.com/sonic-net/sonic-mgmt/pull/5871)
@@ -117,8 +117,8 @@ This feature does not change the existing SONiC architecture, while it has to ch
 
 This feature describes the design of following requirement:
 
-	*	Allow user to configure link training
-	*	Allow user to get the operational link training status
+	-	Allow user to configure link training
+	-	Allow user to get the operational link training status
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/port_link_training/port-link-training-design.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [915](https://github.com/sonic-net/SONiC/pull/925); [10025](https://github.com/sonic-net/sonic-buildimage/pull/10025); [1038](https://github.com/sonic-net/sonic-sairedis/pull/1038); [2359](https://github.com/sonic-net/sonic-swss/pull/2359); [614](https://github.com/sonic-net/sonic-swss-common/pull/614); [2071](https://github.com/sonic-net/sonic-utilities/pull/2071) &[1434](https://github.com/opencomputeproject/SAI/pull/1434)
@@ -162,16 +162,16 @@ Refer below mentioned PR's for more details.
 #### Build Time Improvement - Version cache framework
 This feature gives the Functionality and High level design of the build improvement in SONiC. This feature provides improvements in three essential areas.
 
-	*	Multi user build
-			-	Parallel build using Native docker mode.
-			-	OverlayFS to virtualize the build root.
-	*	Build time Optimization
-			-	Parallel make jobs - Passing dh '-parallel' flags to all the build targets.
-			-	Binary image build optimization
-			-	Use tmpfs and OverlayFS to speed up the build process.
-	*	Build caching
-			-	Version cache - Package cache support for build componets that are downloaded from external world.
-			-	Image cache support for installer image componets.
+	Multi user build
+		-	Parallel build using Native docker mode.
+		-	OverlayFS to virtualize the build root.
+	Build time Optimization
+		-	Parallel make jobs - Passing dh '-parallel' flags to all the build targets.
+		-	Binary image build optimization
+		-	Use tmpfs and OverlayFS to speed up the build process.
+	Build caching
+		-	Version cache - Package cache support for build componets that are downloaded from external world.
+		-	Image cache support for installer image componets.
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/sonic-build-system/build-enhancements.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [942](https://github.com/sonic-net/SONiC/pull/942); [10352](https://github.com/sonic-net/sonic-buildimage/pull/10352); [12000](https://github.com/sonic-net/sonic-buildimage/pull/12000); [12001](https://github.com/sonic-net/sonic-buildimage/pull/12001) & [12005](https://github.com/sonic-net/sonic-buildimage/pull/12005)

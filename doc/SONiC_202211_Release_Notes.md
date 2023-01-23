@@ -109,10 +109,9 @@ Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/port_aut
 #### Link Training
 This feature does not change the existing SONiC architecture, while it has to change the configuration flow for port link training which will be covered in orchagent.
 
-This feature describes the design of following requirement:
-
-	Allow user to configure link training
-	Allow user to get the operational link training status
+This feature describes the design of following requirement:<br>
+	- Allow user to configure link training<br>
+	- Allow user to get the operational link training status<br>
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/port_link_training/port-link-training-design.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [915](https://github.com/sonic-net/SONiC/pull/925); [10025](https://github.com/sonic-net/sonic-buildimage/pull/10025); [1038](https://github.com/sonic-net/sonic-sairedis/pull/1038); [2359](https://github.com/sonic-net/sonic-swss/pull/2359); [614](https://github.com/sonic-net/sonic-swss-common/pull/614); [2071](https://github.com/sonic-net/sonic-utilities/pull/2071) &[1434](https://github.com/opencomputeproject/SAI/pull/1434)

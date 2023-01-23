@@ -52,6 +52,7 @@ Note : The kernel version is migrated to the version that is mentioned in the fi
 
 # Feature List
 
+
 #### Auto Neg Enhancement
 This feature does not change the existing SONiC architecture. This feature introduces a few new CLI commands which will fit in sonic-utilities. And this feature also requires to change the configuration flow for port auto negotiation attributes which will be covered in orchagent.
 
@@ -94,21 +95,14 @@ Refer below mentioned PR's for more details.
 #### Bulk counters 
 This feature implements the design specification for bulk counter feature on SONiC. SONiC flex counter infrastructure shall utilize bulk stats API to gain better performance. This feature discusses how to integrate these two new APIs to SONiC.
 
-Refer [HLD document](https://github.com/Junchao-Mellanox/SONiC/blob/master/doc/bulk_counter/bulk_counter.md) and below mentioned PR's for more details. 
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/bulk_counter/bulk_counter.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [1009](https://github.com/sonic-net/SONiC/pull/1009) & [1094](https://github.com/sonic-net/sonic-sairedis/pull/1094)
-
-
-#### gNMI interface for config  
-This feature implements the gNMI/gNOI server interface where the client can communicate with SONiC (server) through the interface using their respective gRPC libraries based on ConfigDB/ApplDB/StateDB/CountersDB schema or SONiC Yang schema.
-
-Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/mgmt/gnmi/SONiC_GNMI_Server_Interface_Design.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : [7](https://github.com/sonic-net/sonic-gnmi/pull/7); [58](https://github.com/sonic-net/sonic-gnmi/pull/58); [59](https://github.com/sonic-net/sonic-gnmi/pull/59); [60](https://github.com/sonic-net/sonic-gnmi/pull/60); [1](https://github.com/sonic-net/sonic-host-services/pull/1); [10948](https://github.com/Azure/sonic-buildimage/pull/10948) & [12750](https://github.com/Azure/sonic-buildimage/pull/12750)
 
 
 #### Incremental port configuration update 
 This feature fix the two issues on portsyncd and portmgrd.  portsyncd and portmgrd both handle PORT table changes in CONFIG_DB and write APPL_DB according to configuration change. portmgrd handles fields including "mtu", "admin_status" and "learn_mode"; portsyncd handles all fields.
 
-Refer [HLD document](https://github.com/Junchao-Mellanox/SONiC/blob/master/doc/port_auto_neg/port-auto-negotiation-design.md) and below mentioned PR's for more details. 
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/port_auto_neg/port-auto-negotiation-design.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [985](https://github.com/sonic-net/SONiC/pull/985) & [2305](https://github.com/sonic-net/sonic-swss/pull/2305)
 
 
@@ -158,11 +152,12 @@ SONiC supports Packet I/O on Linux netdev interfaces but this does not meet some
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/pins/Packet_io.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [978](https://github.com/sonic-net/SONiC/pull/978)
 
-#### PINS Generic SAI Extensions 
-This feature allows user to configure SystemLogRateLimitInterval and SystemLogRateLimitBurst for host, containers.. There is no rate limiting configured on host side for now. The SystemLogRateLimitInterval determines the amount of time that is being measured for rate limiting. The SystemLogRateLimitBurst defines the amount of messages, that have to occur in the time limit of SystemLogRateLimitInterval, to trigger rate limiting. 
 
-Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/syslog/syslog-rate-limit-design.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : [1049](https://github.com/sonic-net/SONiC/pull/1049)
+#### PINS Generic SAI Extensions
+This feature implements, P4RT-APP and P4Orch are two new components introduced in the SONiC control plane to support PINS. P4RT-APP interfaces to a P4RT Client, reads messages from a client and produces data in APPL_DB. P4Orch subscribes to APPL_DB tables produced by P4RT-APP, translates data received from APPL_DB to respective SAI attributes and after successful cross object dependency resolution calls appropriate SAI APIs.
+
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/pins/PINS_SONiC_Design_for_SaiGenericExt.md) and below mentioned PR's for more details. 
+<br>  **Pull Requests** : [1088](https://github.com/sonic-net/SONiC/pull/1088); [704](https://github.com/sonic-net/sonic-swss-common/pull/704); [17](https://github.com/sonic-net/sonic-pins/pull/17) & [2506](https://github.com/sonic-net/sonic-swss/pull/2506)
 
 
 #### PINS Runtime Configuration 
@@ -172,27 +167,11 @@ Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/pins/p4r
 <br>  **Pull Requests** : [826](https://github.com/sonic-net/SONiC/pull/826) & [10499](https://github.com/sonic-net/sonic-buildimage/pull/10499)
 
 
-#### Platform Integration Test, aka. PIT
-This feature describes a subsystem for Platform Integration Test, aka. PIT. PIT system concentrates on standardize and automate white-box switch hardware functionalities verification, along with their driver and firmware. As a result, it will be easier to port SONiC on a new white-box platform which is PIT-verified. Current scope covers all hardware components, such as CPU, memory, SSD, power system, fan, system sensors of various kind, and logical device firmware management, BMC subsystem etc.
-
-Refer [HLD document](https://github.com/sonic-net/SONiC/blob/4c5192665dbb4a4a7c1a1d138db2f7772fbf38b4/doc/pit/Platform_Integration_Test_high_level_design.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : [12530](https://github.com/sonic-net/sonic-buildimage/pull/12530); [12514](https://github.com/sonic-net/sonic-buildimage/pull/12514), [1127](https://github.com/sonic-net/SONiC/pull/1127) & [1014](https://github.com/sonic-net/SONiC/pull/1014)
-
-
 #### RJ-45 
 This implementation is an enhancement on added support to the RJ45 port in SONiC 
 
 Refer below mentioned PR's for more details. 
 <br>  **Pull Requests** : [1030](https://github.com/sonic-net/SONiC/pull/1030), [10377](https://github.com/sonic-net/sonic-buildimage/pull/10377), [11336](https://github.com/sonic-net/sonic-buildimage/pull/11336), [11460](https://github.com/sonic-net/sonic-buildimage/pull/11460), [2112](https://github.com/sonic-net/sonic-utilities/pull/2112), [2111](https://github.com/sonic-net/sonic-utilities/pull/2111), [2110](https://github.com/sonic-net/sonic-utilities/pull/2110), [247](https://github.com/sonic-net/sonic-snmpagent/pull/247), [2249](https://github.com/sonic-net/sonic-utilities/pull/2249), [288](https://github.com/sonic-net/sonic-platform-common/pull/288) & [5927](https://github.com/sonic-net/sonic-mgmt/pull/5927)
-
-
-#### S3IP sysfs 
-SONiC is designed to be portable to a variety of network devices. Many devices share the same ASIC platform and only differ in device-specific hardware components, such as PSUs, fan modules, and environment sensors. Currently, ODM vendor provides drivers to expose the device-specific hardware through sysfs, allowing SONiC to communicate with them, as described in the Porting Guide. However, many inefficient porting works are still required for SONiC developers due to different drivers from different devices.
-
-The S3IP sysfs specification defines a unified interface to access peripheral hardware on devices from different vendors, making it easier for SONiC to support different devices and platforms.
-
-Refer [HLD document](https://github.com/sonic-net/SONiC/blob/aedf1251a2c84fd10643e5aa9351462485950a3a/doc/s3ip_sysfs/s3ip_sysfs_hld.md) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : [12386](https://github.com/sonic-net/sonic-buildimage/pull/12386); [12887](https://github.com/sonic-net/sonic-buildimage/pull/12887); [12888](https://github.com/sonic-net/sonic-buildimage/pull/12888); [12889](https://github.com/sonic-net/sonic-buildimage/pull/12889); [12890](https://github.com/sonic-net/sonic-buildimage/pull/12890); [12891](https://github.com/sonic-net/sonic-buildimage/pull/12891); [12892](https://github.com/sonic-net/sonic-buildimage/pull/12892); [12893](https://github.com/sonic-net/sonic-buildimage/pull/12893); [12894](https://github.com/sonic-net/sonic-buildimage/pull/12894); [12895](https://github.com/sonic-net/sonic-buildimage/pull/12895) & [12896](https://github.com/sonic-net/sonic-buildimage/pull/12896); 
 
 
 #### Setting RIF loopback action to drop 
@@ -201,7 +180,7 @@ IP interface loopback action is a feature that allows user to change the way rou
 When loopback action is configured to drop, those packets will be dropped. Drppoed packets due to loopback action are counted in rif statistics.
 When loopback action is configured to forward, those packets will be forwarded as the pipeline defined.
 
-Refer [HLD document](https://github.com/liorghub/SONiC/blob/master/doc/ip-interface/loopback-action/ip-interface-loopback-action-design.md) and below mentioned PR's for more details. 
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/ip-interface/loopback-action/ip-interface-loopback-action-design.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [1006](https://github.com/sonic-net/SONiC/pull/1006); [11012](https://github.com/sonic-net/sonic-buildimage/pull/11012); [2192](https://github.com/sonic-net/sonic-utilities/pull/2192); [2307](https://github.com/sonic-net/sonic-swss/pull/2307); [5956](https://github.com/sonic-net/sonic-mgmt/pull/5956) & [5871](https://github.com/sonic-net/sonic-mgmt/pull/5871)
 
 
@@ -226,13 +205,6 @@ Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/event-al
 <br>  **Pull Requests** : [11618](https://github.com/sonic-net/sonic-buildimage/pull/11618); [11639](https://github.com/sonic-net/sonic-buildimage/pull/11639); [11848](https://github.com/sonic-net/sonic-buildimage/pull/11848); [11973](https://github.com/sonic-net/sonic-buildimage/pull/11973); [12059](https://github.com/sonic-net/sonic-buildimage/pull/12059); [12270](https://github.com/sonic-net/sonic-buildimage/pull/12270); [12290](https://github.com/sonic-net/sonic-buildimage/pull/12290); [12554](https://github.com/sonic-net/sonic-buildimage/pull/12554); [12563](https://github.com/sonic-net/sonic-buildimage/pull/12563); [12659](https://github.com/sonic-net/sonic-buildimage/pull/12659); [12687](https://github.com/sonic-net/sonic-buildimage/pull/12687); [2446](https://github.com/sonic-net/sonic-swss/pull/2446); [13](https://github.com/sonic-net/sonic-gnmi/pull/13); [41](https://github.com/sonic-net/sonic-gnmi/pull/41); [43](https://github.com/sonic-net/sonic-gnmi/pull/43); [44](https://github.com/sonic-net/sonic-gnmi/pull/44); [45](https://github.com/sonic-net/sonic-gnmi/pull/45); [2449](https://github.com/sonic-net/sonic-utilities/pull/2449); [667](https://github.com/sonic-net/sonic-swss-common/pull/667) & [672](https://github.com/sonic-net/sonic-swss-common/pull/672)
 
 
-#### Switch Port Modes and VLAN CLI Enhancement
-L2 DOT1Q (802.1Q) is an IEEE standard for tunnel encapsulation to support transport of different VLAN frames on the tunnel link. This feature covers the key aspects of IEEE 802.1Q Tunneling protocol which will be implemented in the existing architecture of the SONiC. 802.1Q support is very fundamental for the forwarding of different VLANs frames on the tunnel links.
-
-Refer [HLD document](https://github.com/sonic-net/SONiC/blob/ab74bb25dc6afe6d39581c609bdbd0ce6f09f732/doc/L2_802.1q_Tunneling_Support_HLD/L2%20dot1q%20HLD.markdown) and below mentioned PR's for more details. 
-<br>  **Pull Requests** : [912](https://github.com/sonic-net/SONiC/pull/912) & [2419](https://github.com/sonic-net/sonic-utilities/pull/2419)
-
-
 #### Systemd bootchart integration    
 This document describes an integration of one of systemd tools called systemd-bootchart. This tool is a sampling based system profiler that is used to analyze boot up performance but not limited to and can be used to collect samples after the system is booted. The output produced by systemd-bootchart is an SVG image.
 
@@ -246,7 +218,7 @@ SSIP is a feature which allows user to change UDP packet source IP address. Any 
 SSIP also extends the existing syslog implementation with VRF device and server UDP port configuration support. The feature doesn't change the existing DB schema which makes it fully backward compatible.
 <br>
 
-Refer [HLD document](https://github.com/nazariig/SONiC/blob/master/doc/syslog/syslog-design.md) and below mentioned PR's for more details. 
+Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/syslog/syslog-design.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [1002](https://github.com/sonic-net/SONiC/pull/1002), [10992](https://github.com/sonic-net/sonic-buildimage/pull/10992), [11363](https://github.com/sonic-net/sonic-buildimage/pull/11363), [10991](https://github.com/sonic-net/sonic-buildimage/pull/10991), [2191](https://github.com/sonic-net/sonic-utilities/pull/2191), [5943](https://github.com/sonic-net/sonic-mgmt/pull/5943) & [5904](https://github.com/sonic-net/sonic-mgmt/pull/5904)
 
   

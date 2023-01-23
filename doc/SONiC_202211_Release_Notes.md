@@ -23,8 +23,8 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 
 |Feature                    | Version  |
 | ------------------------- | --------------- |
-| Linux kernel version      | linux_5.10.0-12-2-$(5.10.103-1)  |
-| SAI   version             | SAI v1.10.2    |
+| Linux kernel version      | linux_5.10.0-18-2-$(5.10.140)  |
+| SAI   version             | SAI v1.11.0    |
 | FRR                       | 8.2.2   |
 | LLDPD                     | 1.0.4-1    |
 | TeamD                     | 1.28-1    |
@@ -34,7 +34,7 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 | swss                      | 1.0.0    |
 | radvd                     | 2.17-2~bpo9+1    |
 | isc-dhcp                  | 4.4.1-2   |
-| sonic-telemetry           | 0.1    |
+| sonic-telemetry           | 1.1    |
 | redis-server/ redis-tools | 5.0.3-3~bpo9+2    |
 | Debian version			| Continuous to use Bullseye (Debian version 11)	|
 
@@ -43,11 +43,11 @@ Note : The kernel version is migrated to the version that is mentioned in the fi
 
 # Security Updates
 
-1. Kernel upgraded from 5.10.46-4 to 5.10.103-1 for SONiC release.<br>
-   Change log: https://tracker.debian.org/media/packages/l/linux/changelog-5.10.103-1
+1. Kernel upgraded from 5.10.103-1 to 5.10.140-1 for SONiC release.<br>
+   Change log: https://tracker.debian.org/media/packages/l/linux/changelog-5.10.140-1
 
-2. Docker upgraded from  20.10.7-debian-stretch. to 20.10.17-debian-stretch.<br>
-   Change log: https://docs.docker.com/engine/release-notes/#201017
+2. Docker upgraded from  20.10.17-debian-stretch. to 20.10.22-debian-stretch.<br>
+   Change log: https://docs.docker.com/engine/release-notes/#201022
 
 
 # Feature List
@@ -228,7 +228,7 @@ Please find the list of API's classified along the newly added SAI features. For
 
 # Contributors 
 
-SONiC community would like to thank all the contributors from various companies and the individuals who has contributed for the release. Special thanks to the major contributors - Aviz, Broadcom, Cisco, Dell, Edgecore, Google, Intel, Marvell, Microsoft, Nvidia & Target.  
+SONiC community would like to thank all the contributors from various companies and the individuals who has contributed for the release. Special thanks to the major contributors -  Alibaba, Broadcom, Cisco, Dell, Google, Intel, Microsoft, Nvidia,   
 
 <br> 
 

@@ -70,16 +70,16 @@ Refer below mentioned PR's for more details.
 #### Build Time Improvement - Version cache framework
 This feature gives the Functionality and High level design of the build improvement in SONiC. This feature provides improvements in three essential areas.
 
-Multi user build
-		- Parallel build using Native docker mode.
-		- OverlayFS to virtualize the build root.
-Build time Optimization
-		- Parallel make jobs - Passing dh '-parallel' flags to all the build targets.
-		- Binary image build optimization
-		- Use tmpfs and OverlayFS to speed up the build process.
-Build caching
-		- Version cache - Package cache support for build componets that are downloaded from external world.
-		- Image cache support for installer image componets.
+Multi user build <br>
+		- Parallel build using Native docker mode.<br>
+		- OverlayFS to virtualize the build root.<br>
+Build time Optimization<br>
+		- Parallel make jobs - Passing dh '-parallel' flags to all the build targets.<br>
+		- Binary image build optimization<br>
+		- Use tmpfs and OverlayFS to speed up the build process.<br>
+Build caching<br>
+		- Version cache - Package cache support for build componets that are downloaded from external world.<br>
+		- Image cache support for installer image componets.<br>
 
 Refer [HLD document](https://github.com/sonic-net/SONiC/blob/master/doc/sonic-build-system/build-enhancements.md) and below mentioned PR's for more details. 
 <br>  **Pull Requests** : [942](https://github.com/sonic-net/SONiC/pull/942); [10352](https://github.com/sonic-net/sonic-buildimage/pull/10352); [12000](https://github.com/sonic-net/sonic-buildimage/pull/12000); [12001](https://github.com/sonic-net/sonic-buildimage/pull/12001) & [12005](https://github.com/sonic-net/sonic-buildimage/pull/12005)

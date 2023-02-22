@@ -79,7 +79,21 @@
     </section>
     <!-- End breadcrumb -->
 
-<p>
+
+function buildStyle()
+{
+	var st = "div.rb-n, span, nobr { white-space: normal; }";
+	var dochead = document.getElementsByTagName("head")[0];
+	var stEl = document.createElement("style");
+	stEl.setAttribute("type", "text/css");
+	stEl.innerHTML = st;
+	dochead.appendChild(stEl);
+}
+
+window.addEventListener("load", function(e) {
+	buildStyle();
+}, false);
+
 
 <p><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FKolkata&src=c29uaWNmdW5kcmVhbEBnbWFpbC5jb20&color=%23EF6C00" style="text-align:center" "border:solid 1px #777"  "display: inline-table" "white-space: pre-wrap" width="1250" height="600" frameborder="0" scrolling="no"></iframe></p>
 

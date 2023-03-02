@@ -1,0 +1,16 @@
+[
+  {
+     "Serial_Num": "1",
+     "Vendor": "Accton",
+     "Platform": "P1",
+     "ASIC_Vendor": "Broadcom",
+     "PortConfig": "PortConfig1"
+  },
+  {
+     "Serial_Num": "2",
+     "Vendor": "Accton2",
+     "Platform": "P2",
+     "ASIC_Vendor": "Broadcom",
+     "PortConfig": "PortConfig2"
+  }
+]  

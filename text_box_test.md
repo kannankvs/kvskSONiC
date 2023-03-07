@@ -3,8 +3,8 @@
  
  
    +--------------------+ <br>
-   |                    | <br>
+   |&nbsp;&nbsp;&nbsp;  | <br>
    |  Text to test      | <br>
-   |                    | <br>
-   |                    | <br>
+   |&nbsp;&nbsp;&nbsp;  | <br>
+   |&nbsp;&nbsp;&nbsp;  | <br>
    +--------------------+ <br>

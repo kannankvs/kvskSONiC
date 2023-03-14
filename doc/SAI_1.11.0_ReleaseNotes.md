@@ -26,12 +26,12 @@ saiport: add support for link training ability query [PR#1434](https://github.co
 Add port FEC histogram counter support. [PR#1617](https://github.com/opencomputeproject/SAI/pull/1617) <br> 
 Add fabric port isolation attribute [PR#1498](https://github.com/opencomputeproject/SAI/pull/1498) <br> 
 Add switch api for clause 22 mdio access [PR#1507](https://github.com/opencomputeproject/SAI/pull/1507) <br>  
- <br> 
+
 Update saitam.h [PR#1496](https://github.com/opencomputeproject/SAI/pull/1496) <br> 
 Distributed HW resource management infrastructure [PR#1528](https://github.com/opencomputeproject/SAI/pull/1528) <br> 
- <br> 
+ 
 Changes for supporting some PHY Diagnostics [PR#1527](https://github.com/opencomputeproject/SAI/pull/1527) <br> 
- <br> 
+
 SAI metadata enhancements <br> 
 [meta] Add enum for global apis [PR#1456](https://github.com/opencomputeproject/SAI/pull/1456) <br> 
 [meta] Add test to verify if vendor implemented all global apis [PR#1542](https://github.com/opencomputeproject/SAI/pull/1542) <br> 

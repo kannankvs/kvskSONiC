@@ -10,18 +10,18 @@ This document explains the new SAI features as well as the enhancements and the 
 SAI GPE header files [PR#1585](https://github.com/opencomputeproject/SAI/pull/1585) <br> 
 SAI Generic Programmable Extensions proposal [PR#1551](https://github.com/opencomputeproject/SAI/pull/1551) <br> 
 Allow for CREATE_ONLY attributes in non objects [PR#1616](https://github.com/opencomputeproject/SAI/pull/1616) <br> 
- <br> 
+
 Bulk API for setting Port Attributes [PR#1460](https://github.com/opencomputeproject/SAI/pull/1460) <br> 
 Bulk API support for Neighbor entries [PR#1504](https://github.com/opencomputeproject/SAI/pull/1504) <br> 
 Add bulk create and remove for tunnel [PR#1462](https://github.com/opencomputeproject/SAI/pull/1462) <br> 
- <br> 
+
 Add hostif traps for p4runtime and gNMI protocols [PR#1436](https://github.com/opencomputeproject/SAI/pull/1436) <br> 
 Add hostif trap for NTP [PR#1453](https://github.com/opencomputeproject/SAI/pull/1453) <br> 
 ECMP Member Capability and Configuration [PR#1461](https://github.com/opencomputeproject/SAI/pull/1461) <br> 
 Add DONOTDROP packet action. [PR#1349](https://github.com/opencomputeproject/SAI/pull/1349) <br> 
 Support counters on IP MC route entries. [PR#1497](https://github.com/opencomputeproject/SAI/pull/1497) <br> 
 Tunnel UDP SRC PORT security [PR#1455](https://github.com/opencomputeproject/SAI/pull/1455) <br> 
- <br> 
+
 saiport: add support for link training ability query [PR#1434](https://github.com/opencomputeproject/SAI/pull/1434) <br> 
 Add port FEC histogram counter support. [PR#1617](https://github.com/opencomputeproject/SAI/pull/1617) <br> 
 Add fabric port isolation attribute [PR#1498](https://github.com/opencomputeproject/SAI/pull/1498) <br> 

@@ -64,6 +64,15 @@ do
 	ARTF_MRV="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/builds/'"${BUILD_MRV}"'/artifacts?artifactName=sonic-buildimage.marvell-armhf&api-version=5.1' | jq -r '.resource.downloadUrl')"
 	ARTF_NPH="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/builds/'"${BUILD_NPH}"'/artifacts?artifactName=sonic-buildimage.nephos&api-version=5.1' | jq -r '.resource.downloadUrl')"
 
+first=2
+for BRANCH in 202012   
+do
+	first=''
+	BUILD_BRCM_202012="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/builds?definitions='"${DEFID_BRCM}"'&branchName=refs/heads/'"${BRANCH}"'&$top=1&resultFilter=succeeded&api-version=6.0' | jq -r '.value[0].id')"
+	BUILD_BRCM_TS_202012="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/builds/'"${BUILD_BRCM_202012}"'?api-version=6.0' | jq -r '.queueTime')"
+
+	ARTF_BRCM_202012="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/builds/'"${BUILD_BRCM}"'/artifacts?artifactName=sonic-buildimage.broadcom&api-version=5.1' | jq -r '.resource.downloadUrl')"
+
 echo "# Supported Platforms" > supported_devices_platforms.md
 
 echo "#### Following is the list of platforms that supports SONiC." >> supported_devices_platforms.md
@@ -122,7 +131,7 @@ echo "| 50   | Dell |	S5224F 	| Broadcom 	| Trident 3.X5  |	24x25G+4x100G |	[SON
 echo "| 51   | Dell          | S5232F-ON     		| Broadcom    | Trident 3         | 32x100G                 | [SONiC-ONIE-Broadcom]($(echo "${ARTF_BRCM}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-broadcom.bin/')) |" >> supported_devices_platforms.md
 echo "| 52   | Dell          | S5248F-ON     		| Broadcom    | Trident 3-2T      | 48x25G,4x100G,2x200G   | [SONiC-ONIE-Broadcom]($(echo "${ARTF_BRCM}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-broadcom.bin/')) |" >> supported_devices_platforms.md
 echo "| 53   | Dell		   | s5296F				| Broadcom	  | Trident 3		  | 96x25G				   | [SONiC-ONIE-Broadcom]($(echo "${ARTF_BRCM}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-broadcom.bin/')) |" >> supported_devices_platforms.md
-echo "| 54   | Dell          | S6000-ON       		| Broadcom    | Trident 2         | 32x40G                  | [SONiC-ONIE-Broadcom]($(echo "${ARTF_BRCM}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-broadcom.bin/')) |" >> supported_devices_platforms.md
+echo "| 54   | Dell          | S6000-ON       		| Broadcom    | Trident 2         | 32x40G                  | [SONiC-ONIE-Broadcom]($(echo "${ARTF_BRCM_202012}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-broadcom.bin/')) |" >> supported_devices_platforms.md
 echo "| 55   | Dell          | S6100-ON       		| Broadcom    | Tomahawk          | 64x40G                  | [SONiC-ONIE-Broadcom]($(echo "${ARTF_BRCM}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-broadcom.bin/')) |" >> supported_devices_platforms.md
 echo "| 56   | Dell          | Z9100-ON      		| Broadcom    | Tomahawk          | 32x100G                 | [SONiC-ONIE-Broadcom]($(echo "${ARTF_BRCM}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-broadcom.bin/')) |" >> supported_devices_platforms.md
 echo "| 57   | Dell          | Z9264F-ON          		| Broadcom    | Tomahawk 2        | 64x100G                 | [SONiC-ONIE-Broadcom]($(echo "${ARTF_BRCM}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-broadcom.bin/')) |" >> supported_devices_platforms.md

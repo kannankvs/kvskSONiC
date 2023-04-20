@@ -5,8 +5,8 @@ Workgroups
 
 ### Testing Workgroup
 
-Join the mailing list sonic-test-workgroup@gmail.com
-Workgroup [link](https://groups.google.com/forum/#!forum/sonic-test-workgroup)
+Join the mailing list sonic-test-workgroup@gmail.com <br>
+Workgroup [link](https://groups.google.com/forum/#!forum/sonic-test-workgroup) <br>
 ***Current Status : Active***
 
 ##### Testing Workgroup Charter
@@ -16,14 +16,14 @@ Workgroup [link](https://groups.google.com/forum/#!forum/sonic-test-workgroup)
 3.  Pytest conversion from ansible test.
 4.  Specific/new tests
 5.  Visualized DUT with data plane capabilities
-6.  One(AKA, Crystalnet) integration (open source)
+6.  One(AKA, Crystalnet) integration (open source)  <br>
 For detailed SONiC test-workgroup charter click [here](https://groups.google.com/forum/#!topic/sonic-test-workgroup/OD_UhjqlZ9Y).
 
 
 ### Management Workgroup
 
-Join the mailing list sonic-mgmt-workgroup@googlegroups.com
-Workgroup [mgmt-link](https://groups.google.com/forum/#!forum/sonic-mgmt-workgroup)
+Join the mailing list sonic-mgmt-workgroup@googlegroups.com <br>
+Workgroup [mgmt-link](https://groups.google.com/forum/#!forum/sonic-mgmt-workgroup) <br>
 ***Current Status : Active***
 
 ##### Management Workgroup Charter
@@ -35,63 +35,63 @@ Workgroup [mgmt-link](https://groups.google.com/forum/#!forum/sonic-mgmt-workgro
 
 ### VRF Workgroup
 
-Join the mailing list sonic-vrf-workgroup@googlegroups.com
-Workgroup [vrf-link](https://groups.google.com/forum/#!forum/sonic-vrf-workgroup)
+Join the mailing list sonic-vrf-workgroup@googlegroups.com <br>
+Workgroup [vrf-link](https://groups.google.com/forum/#!forum/sonic-vrf-workgroup) <br>
 ***Current Status : Active***
 
 ###### VRF Workgroup Charter
 
-1\. SONiC VRF enhancement
+SONiC VRF enhancement
 *   VRF HLD 1.1 PR review, timeline.
 *   VRF CLI reconciliation.
 *   Nephos test script availability.
-*   Config DB migrator fix.
+*   Config DB migrator fix.  <br>
 **Note:** This group will converge soon with SONiC main community group. Regular sub-group meetings are completed. Users can continue to use this sub-group for future communication related to this topic.
 
 
 ### MLAG Workgroup
 
-Join the mailing list sonic-mlag-workgroup@googlegroups.com
-Workgroup [mlag-link](https://groups.google.com/forum/#!forum/sonic-mlag-workgroup)
+Join the mailing list sonic-mlag-workgroup@googlegroups.com <br>
+Workgroup [mlag-link](https://groups.google.com/forum/#!forum/sonic-mlag-workgroup) <br>
 ***Current Status : Done for now***
 
 ##### MLAG Workgroup Charter
 
 1.  To provide user options to choose a different version of MLAG to implement in the network.
 2.  Co-existence of Nephos & BRCM in SONiC code base and letting the user to choose as per their requirement.
-3.  To enable cross-functional collaboration by incorporating different MLAG control plane frameworks.
+3.  To enable cross-functional collaboration by incorporating different MLAG control plane frameworks.  <br>
 **Note:** This group will converge soon with SONiC main community group. Regular sub-group meetings are completed. Users can continue to use this sub-group for future communication related to this topic.
 
 
 ### EVPN Workgroup
 
-Join the mailing list sonic-evpn-workgroup@googlegroups.com
-Workgroup [evpn-link](https://groups.google.com/forum/#!forum/sonic-evpn-workgroup)
+Join the mailing list sonic-evpn-workgroup@googlegroups.com <br>
+Workgroup [evpn-link](https://groups.google.com/forum/#!forum/sonic-evpn-workgroup) <br>
 ***Current Status : Done for now***
 
 ##### EVPN Workgroup Charter
 
-1.  To focus on EVPN VXLAN high level design review and development of the feature.
+To focus on EVPN VXLAN high level design review and development of the feature. <br>
 **Note:** This group will converge soon with SONiC main community group.
 
 
 ### Breakout Workgroup
 
-Join the mailing list sonic-breakout-workgroup@googlegroups.com
-Workgroup [breakout-link](https://groups.google.com/forum/#!forum/sonic-breakout-workgroup)
+Join the mailing list sonic-breakout-workgroup@googlegroups.com <br>
+Workgroup [breakout-link](https://groups.google.com/forum/#!forum/sonic-breakout-workgroup) <br>
 ***Current Status : Done for now***
 
 ##### Breakout Workgroup Charter
 
 1.  To focus on dynamic port break related feature development.
-2.  This group will also work on usecase creation and testing of usecase.
+2.  This group will also work on usecase creation and testing of usecase. <br>
 **Note:** This group will converge soon with SONiC main community group.
 
 
 ### SAI L4LB workgroup
 
-Join the mailing list SAI-L4LB-workgroup@googlegroups.com
-Workgroup [SAI-L4LB-link](https://groups.google.com/forum/#!forum/sai-l4lb-workgroup)
+Join the mailing list SAI-L4LB-workgroup@googlegroups.com <br>
+Workgroup [SAI-L4LB-link](https://groups.google.com/forum/#!forum/sai-l4lb-workgroup) <br>
 ***Current Status : Done for now***
 
 ##### SAI API (Load Balancing) Workgroup Charter
@@ -100,7 +100,7 @@ To focus on SAI APIs for load balancing implementation.
 
 ### 5G SAI APIs
 
-Join the mailing list SAI-5G-workgroup@googlegroups.com
+Join the mailing list SAI-5G-workgroup@googlegroups.com <br>
 Workgroup [sai-5g](https://groups.google.com/forum/#!forum/sai-5g-workgroup)
 
 ##### SAI-5G Workgroup Charter
@@ -109,8 +109,8 @@ To focus on 5G SAI API's.
 
 ### SAI ECMP Workgroup
 
-Join the mailing list SAI-ecmp-workgroup@googlegroups.com
-Workgroup [sai-ecmp](https://groups.google.com/forum/#!forum/sai-ecmp-workshop)
+Join the mailing list SAI-ecmp-workgroup@googlegroups.com <br>
+Workgroup [sai-ecmp](https://groups.google.com/forum/#!forum/sai-ecmp-workshop) <br>
 ***Current Status : Done for now***
 
 ##### SAI ECMP Workgroup Charter
@@ -119,8 +119,8 @@ To focus on ECMP related features. The discussion would include features support
 
 ### SAI Security Workgroup
 
-Join the mailing list SAI-security-workgroup@googlegroups.com
-Workgroup [sai-security](https://groups.google.com/forum/#!forum/sai-security-workgroup )
+Join the mailing list SAI-security-workgroup@googlegroups.com <br>
+Workgroup [sai-security](https://groups.google.com/forum/#!forum/sai-security-workgroup ) <br>
 
 ##### SAI Security Workgroup Charter
 To focus on focus on security related APIs, e.g. DDOS .
@@ -128,7 +128,7 @@ To focus on focus on security related APIs, e.g. DDOS .
 
 ### SONiC Hotswap Workgroup
 
-Join the mailing list sonic-hotswap-workgroup@googlegroups.com
+Join the mailing list sonic-hotswap-workgroup@googlegroups.com <br>
 Workgroup [SONiC Hotswap Workgroup](https://groups.google.com/forum/#!forum/sonic-hotswap-workgroup)
 
 ##### SONiC Hotswap Workgroup Charter
@@ -138,8 +138,8 @@ Workgroup [SONiC Hotswap Workgroup](https://groups.google.com/forum/#!forum/soni
 
 ### SONiC Application Workgroup
 
-Join the mailing list sonic-application-workgroup@googlegroups.com
-Workgroup [SONiC Application Workgroup](https://groups.google.com/forum/#!forum/sonic-application-workgroup)
+Join the mailing list sonic-application-workgroup@googlegroups.com <br>
+Workgroup [SONiC Application Workgroup](https://groups.google.com/forum/#!forum/sonic-application-workgroup) <br>
 ***Current Status : Active***
 
 ##### SONiC Application Workgroup Charter
@@ -149,8 +149,8 @@ Workgroup [SONiC Application Workgroup](https://groups.google.com/forum/#!forum/
 
 ### SONiC Chassis Subgroup
 
-Join the mailing list sonic-chassis-subgroup@googlegroups.com
-Workgroup [SONiC Chassis Subgroup](https://groups.google.com/forum/#!forum/sonic-chassis-subgroup)
+Join the mailing list sonic-chassis-subgroup@googlegroups.com <br>
+Workgroup [SONiC Chassis Subgroup](https://groups.google.com/forum/#!forum/sonic-chassis-subgroup) <br>
 ***Current Status : Active***
 
 ##### SONiC Chassis Subgroup Charter
@@ -159,8 +159,8 @@ To focus on implementing SONiC on Chassis systems.
 
 ### SONiC Platform Workgroup
 
-Join the mailing list sonic-platform-workgroup@googlegroups.com
-Workgroup [SONiC Platform Workgroup](https://groups.google.com/forum/#!forum/sonic-platform-workgroup)
+Join the mailing list sonic-platform-workgroup@googlegroups.com <br>
+Workgroup [SONiC Platform Workgroup](https://groups.google.com/forum/#!forum/sonic-platform-workgroup) <br>
 ***Current Status : Active***
 
 ##### SONiC Platform Workgroup Charter
@@ -169,8 +169,8 @@ This sub-workgroup is to discuss the platform specific features like "Media sett
 
 ### SONiC Kubernetes Subgroup
 
-Join the mailing list sonic-kubernetes-subgroup@googlegroups.com
-Workgroup [SONiC Kubernetes Subgroup](https://groups.google.com/g/sonic-kubernetes-subgroup)
+Join the mailing list sonic-kubernetes-subgroup@googlegroups.com <br>
+Workgroup [SONiC Kubernetes Subgroup](https://groups.google.com/g/sonic-kubernetes-subgroup) <br>
 ***Current Status : Active***
 
 ##### SONiC Kubernetes Subgroup Charter
@@ -179,8 +179,8 @@ To focus on implementing SONiC Kubernetes
 
 ### SONiC MPLS Workgroup
 
-Join the mailing list sonic-MPLS-workgroup@googlegroups.com
-Workgroup [SONiC MPLS Workgroup](https://groups.google.com/forum/#!forum/sonic-MPLS-workgroup)
+Join the mailing list sonic-MPLS-workgroup@googlegroups.com <br>
+Workgroup [SONiC MPLS Workgroup](https://groups.google.com/forum/#!forum/sonic-MPLS-workgroup) <br>
 ***Current Status : Active***
 
 ##### SONiC MPLS Workgroup Charter
@@ -189,8 +189,8 @@ This group will focus on enabling SONiC to support MPLS.
 
 ### SONiC Yang Subgroup
 
-Join the mailing list sonic-yang-subgroup@googlegroups.com
-Workgroup [SONiC Yang Subgroup](https://groups.google.com/g/sonic-yang-subgroup)
+Join the mailing list sonic-yang-subgroup@googlegroups.com <br>
+Workgroup [SONiC Yang Subgroup](https://groups.google.com/g/sonic-yang-subgroup) <br>
 ***Current Status : Active***
 
 ##### SONiC Yang Subgroup Charter
@@ -199,8 +199,8 @@ To focus on implementing SONiC Yang
 
 ### SAI IPSEC Subgroup
 
-Join the mailing list sai-ipsec-subgroup@googlegroups.com
-Workgroup [SAI IPSEC Subgroup](https://groups.google.com/g/sai-ipsec-subgroup)
+Join the mailing list sai-ipsec-subgroup@googlegroups.com <br>
+Workgroup [SAI IPSEC Subgroup](https://groups.google.com/g/sai-ipsec-subgroup) <br>
 ***Current Status : Active***
 
 ##### SAI IPSEC Subgroup Charter
@@ -209,8 +209,8 @@ This subgroup is for SAI support for IPSEC.
 
 ### SONiC-Documentation-Workgroup
 
-Join the mailing list sonic-documentation-workgroup@googlegroups.com
-Workgroup [SONiC-Documentation-Workgroup](https://groups.google.com/g/sonic-documentation-workgroup)
+Join the mailing list sonic-documentation-workgroup@googlegroups.com <br>
+Workgroup [SONiC-Documentation-Workgroup](https://groups.google.com/g/sonic-documentation-workgroup) <br>
 ***Current Status : Active***
 
 ##### SONiC-Documentation-Workgroup Charter
@@ -219,8 +219,8 @@ To focus on documenting the SONiC Progress and its Updates
 
 ### SONiC-PINS Subgroup
 
-Join the mailing list sonic-pins-subgroup@googlegroups.com
-Workgroup [SONiC-PINS Subgroup](https://groups.google.com/g/sonic-pins-subgroup/)
+Join the mailing list sonic-pins-subgroup@googlegroups.com <br>
+Workgroup [SONiC-PINS Subgroup](https://groups.google.com/g/sonic-pins-subgroup/) <br>
 ***Current Status : Active***
 
 ##### SONiC-PINS Subgroup Charter
@@ -229,8 +229,8 @@ This subgroup is for PINS which extends SONiC with an Software-Defined Networkin
 
 ### SONiC-OTN Workgroup
 
-Join the mailing list sonic-wg-otn+subscribe@lists.sonicfoundation.dev
-Workgroup [SONiC-OTN Workgroup](https://lists.sonicfoundation.dev/g/sonic-wg-otn/messages)
+Join the mailing list sonic-wg-otn+subscribe@lists.sonicfoundation.dev <br>
+Workgroup [SONiC-OTN Workgroup](https://lists.sonicfoundation.dev/g/sonic-wg-otn/messages) <br>
 ***Current Status : Active***
 
 ##### SONiC-OTN-Workgroup Charter

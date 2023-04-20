@@ -1,4 +1,4 @@
-							# SONiC Workgroups                    
+# SONiC Workgroups                    
 
 Workgroups
 ----------

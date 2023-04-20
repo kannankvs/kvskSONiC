@@ -17,6 +17,7 @@ Workgroup [link](https://groups.google.com/forum/#!forum/sonic-test-workgroup) <
 4.  Specific/new tests
 5.  Visualized DUT with data plane capabilities
 6.  One(AKA, Crystalnet) integration (open source)  <br>
+
 For detailed SONiC test-workgroup charter click [here](https://groups.google.com/forum/#!topic/sonic-test-workgroup/OD_UhjqlZ9Y).
 
 
@@ -46,6 +47,7 @@ SONiC VRF enhancement
 *   VRF CLI reconciliation.
 *   Nephos test script availability.
 *   Config DB migrator fix.  <br>
+
 **Note:** This group will converge soon with SONiC main community group. Regular sub-group meetings are completed. Users can continue to use this sub-group for future communication related to this topic.
 
 
@@ -60,6 +62,7 @@ Workgroup [mlag-link](https://groups.google.com/forum/#!forum/sonic-mlag-workgro
 1.  To provide user options to choose a different version of MLAG to implement in the network.
 2.  Co-existence of Nephos & BRCM in SONiC code base and letting the user to choose as per their requirement.
 3.  To enable cross-functional collaboration by incorporating different MLAG control plane frameworks.  <br>
+
 **Note:** This group will converge soon with SONiC main community group. Regular sub-group meetings are completed. Users can continue to use this sub-group for future communication related to this topic.
 
 
@@ -72,6 +75,7 @@ Workgroup [evpn-link](https://groups.google.com/forum/#!forum/sonic-evpn-workgro
 ##### EVPN Workgroup Charter
 
 To focus on EVPN VXLAN high level design review and development of the feature. <br>
+
 **Note:** This group will converge soon with SONiC main community group.
 
 
@@ -85,6 +89,7 @@ Workgroup [breakout-link](https://groups.google.com/forum/#!forum/sonic-breakout
 
 1.  To focus on dynamic port break related feature development.
 2.  This group will also work on usecase creation and testing of usecase. <br>
+
 **Note:** This group will converge soon with SONiC main community group.
 
 

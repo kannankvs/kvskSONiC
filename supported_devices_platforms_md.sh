@@ -193,6 +193,7 @@ echo "| 116   | Wistron 	  | 6512-32r  		| Marvell     | Teralynx 7        | 32x
 echo "| 117   | Wnc           | OSW1800        	| Intel       | Tofino            | 48x25G + 6x100G         | [SONiC-ONIE-Barefoot]($(echo "${ARTF_BFT}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-barefoot.bin/')) |" >> supported_devices_platforms.md
 
 echo "#### Note- Dell S6000-ON* supports the build till 202012 release image. No other image after 202012 release works on S6000." >> supported_devices_platforms.md
+echo "#### [click here](https://sonic-build.azurewebsites.net/ui/sonic/Pipelines) for previous builds. " >> supported_devices_platforms.md
 	
 done
 

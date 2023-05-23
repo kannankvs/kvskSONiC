@@ -1,4 +1,4 @@
-##SONiC Newsletters
+## SONiC Newsletters
 
 
 [2021 December Newsletter](https://azure.github.io/SONiC/pdf/newsletters/SONiC_newsletter_2021_12.html)

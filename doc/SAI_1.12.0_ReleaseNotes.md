@@ -49,7 +49,7 @@ Add disable vlan interface ingress from ecmp test, remove pdb from test [PR#1631
 Enhance the function for getting counters in sai_adapter.py [PR#1626](https://github.com/opencomputeproject/SAI/pull/1626) <br> 
 Add uninit API support in SAI-PTF and enhance the platformhelper [PR#1636](https://github.com/opencomputeproject/SAI/pull/1636) <br> 
 Enable ptf case on BRCM platform [PR#1632](https://github.com/opencomputeproject/SAI/pull/1632) <br> 
-Add/Update ecmp coexist test [PR#1665](https://github.com/opencomputeproject/SAI/pull/1665](https://github.com/opencomputeproject/SAI/pull/1665) <br> 
+Add/Update ecmp coexist test [PR#1665](https://github.com/opencomputeproject/SAI/pull/1665) <br> 
 Disable L3 config for some vlan and fdb tests [PR#1640](https://github.com/opencomputeproject/SAI/pull/1640) <br> 
 Ipv4InIpv6 and Ipv4InIpv4 decap test [PR#1621](https://github.com/opencomputeproject/SAI/pull/1621) <br> 
 Fix failed cases [PR#1645](https://github.com/opencomputeproject/SAI/pull/1645) <br> 
@@ -90,7 +90,7 @@ Refactor stats counter in buffer and one switch case [PR#1771](https://github.co
 Refactor stats counter related method [PR#1773](https://github.com/opencomputeproject/SAI/pull/1773)  <br> 
 Tunnel cases support p2mp [PR#1772](https://github.com/opencomputeproject/SAI/pull/1772)  <br> 
 Add a route case to compare the cases structure [PR#1774](https://github.com/opencomputeproject/SAI/pull/1774)  <br> 
-API Logger - reformat arg values [PR#1696](https://github.com/opencomputeproject/SAI/pull/ [PR#1700](https://github.com/opencomputeproject/SAI/pull/1696) <br> 
+API Logger - reformat arg values [PR#1696](https://github.com/opencomputeproject/SAI/pull/1696) & [PR#1700](https://github.com/opencomputeproject/SAI/pull/1700) <br> 
 Skip test when hit expected error from sai api [PR#1699](https://github.com/opencomputeproject/SAI/pull/1699)  <br> 
 Add uninit method for warm reboot shut down [PR#1704](https://github.com/opencomputeproject/SAI/pull/1704)  <br> 
 

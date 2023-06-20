@@ -24,16 +24,16 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 |Feature                    | Version  |
 | ------------------------- | --------------- |
 | Linux kernel version      | linux_5.10.0-18-2-$(5.10.140)  |
-| SAI   version             | SAI v1.11.0    |
+| SAI   version             | SAI v1.12.0    |
 | FRR                       | 8.2.2   |
 | LLDPD                     | 1.0.4-1    |
-| TeamD                     | 1.28-1    |
-| SNMPD                     | 5.9+dfsg-3+b1    |
+| TeamD                     | 1.30-1    |
+| SNMPD                     | 5.9+dfsg-4+deb11u1    |
 | Python                    | 3.9.2-1    |
 | syncd                     | 1.0.0    |
 | swss                      | 1.0.0    |
-| radvd                     | 2.17-2~bpo9+1    |
-| isc-dhcp                  | 4.4.1-2   |
+| radvd                     | 2.18-3    |
+| isc-dhcp                  | 4.4.1-2.3   |
 | sonic-telemetry           | 1.1    |
 | redis-server/ redis-tools | 5.0.3-3~bpo9+2    |
 | Debian version			| Continuous to use Bullseye (Debian version 11)	|
@@ -46,8 +46,8 @@ Note : The kernel version is migrated to the version that is mentioned in the fi
 1. Kernel upgraded from 5.10.103-1 to 5.10.140-1 for SONiC release.<br>
    Change log: https://tracker.debian.org/media/packages/l/linux/changelog-5.10.140-1
 
-2. Docker upgraded from  20.10.17-debian-stretch. to 20.10.22-debian-stretch.<br>
-   Change log: https://docs.docker.com/engine/release-notes/#201022
+2. Docker upgraded from  20.10.22-debian-stretch. to 24.0.2-debian-stretch <br>
+   Change log: https://docs.docker.com/engine/release-notes/24.0/#201022
 
 
 # Feature List
@@ -59,7 +59,7 @@ Note : The kernel version is migrated to the version that is mentioned in the fi
 | ***Build Time Improvement Version Caching Support*** | This features enhances the build time improvement phase 2 - version caching support for python and wget  | [1177](https://github.com/sonic-net/SONiC/issues/1177), [942](https://github.com/sonic-net/SONiC/pull/942), [10352](https://github.com/sonic-net/sonic-buildimage/pull/10352), [12000](https://github.com/sonic-net/sonic-buildimage/pull/12000), [12001](https://github.com/sonic-net/sonic-uildimage/pull/12001), [12005](https://github.com/sonic-net/sonic-buildimage/pull/12005), [14612](https://github.com/sonic-et/sonic-buildimage/pull/14612) & [14613](https://github.com/sonic-net/sonic-buildimage/pull/14613)  |  |
 | ***Chassis - execute Line card cmds from Sup remotely*** | This feature not a HLD PR but issue for release tracking purpose.  | [2701](https://github.com/sonic-net/sonic-utilities/pull/2701) |  |
 | ***Collecting dump during SAI failure*** | This feature is to describe the flow to collect useful dumps during SAI failures. | [1212](https://github.com/sonic-net/SONiC/pull/1212), [2644](https://github.com/sonic-net/sonic-swss/pull/2644), [1198](https://github.com/sonic-net/sonic-sairedis/pull/1198), [2633](https://github.com/sonic-net/sonic-utilities/pull/2633) & [13533](https://github.com/sonic-net/sonic-buildimage/pull/13533)  |  |
-| ***Config Reload Enhancement*** |  | [1203](https://github.com/sonic-net/SONiC/pull/1203), [45](https://github.com/sonic-net/sonic-host-services/pull/45), [2693](https://github.com/sonic-net/sonic-utilities/pull/2693), [13969](https://github.com/sonic-net/sonic-buildimage/pull/13969) & [7558](https://github.com/sonic-net/sonic-mgmt/pull/7558) |  |
+| ***Config Reload Enhancement*** | This feature enhances config reload to sequence the services and faster system initialization. | [1203](https://github.com/sonic-net/SONiC/pull/1203), [45](https://github.com/sonic-net/sonic-host-services/pull/45), [2693](https://github.com/sonic-net/sonic-utilities/pull/2693), [13969](https://github.com/sonic-net/sonic-buildimage/pull/13969) & [7558](https://github.com/sonic-net/sonic-mgmt/pull/7558) |  |
 | ***Docker migration to Bullseye*** |  | [1242](https://github.com/sonic-net/SONiC/issues/1242) |  |
 | ***FIB Suppress Announcements of Routes Not Installed in HW*** | This feature describes a feedback mechanism that allows BGP not to advertise routes that haven't been programmed yet. | [1103](https://github.com/sonic-net/SONiC/pull/1103), [2492](https://github.com/sonic-net/sonic-swss/pull/2492), [708](https://github.com/sonic-net/sonic-swss-common/pull/708), [2511](https://github.com/sonic-net/sonic-swss/pull/2511), [2512](https://github.com/sonic-net/sonic-swss/pull/2512), [2495](https://github.com/sonic-net/sonic-utilities/pull/2495), [12852](https://github.com/sonic-net/sonic-buildimage/pull/12852), [12853](https://github.com/sonic-net/sonic-buildimage/pull/12853), [2551](https://github.com/sonic-net/sonic-swss/pull/2551), [2531](https://github.com/sonic-net/sonic-utilities/pull/2531), [7475](https://github.com/sonic-net/sonic-mgmt/pull/7475) & [7430](https://github.com/sonic-net/sonic-mgmt/pull/7430) |  |
 | ***MDIO IPC Client Library*** | This feature is an extention based on earlier HLD merged last year for add MDIO IPC Client library support. | [1230](https://github.com/sonic-net/sonic-sairedis/pull/1230) |  |

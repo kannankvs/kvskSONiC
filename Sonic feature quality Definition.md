@@ -1,4 +1,4 @@
-# Sonic feature quality Definition
+# SONiC Feature Quality Definition
 
 
 ### Feature quality definition

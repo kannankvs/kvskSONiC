@@ -42,31 +42,31 @@ Extend the SONiC Release Notes which covers already the new features added to a 
  | Feature Name | Feature Description | HLD PR / PR tracking | Maturity |
  |----------|----------|----------|----------|
 
--	If Beta/GA level maturity, ensure to provide a sonic-mgmt. PR or code as reference. 
--	If sonic-mgmt. tests comes after the Release note is released, it can still be modified.
--	Maturity to be approved by sonic test subgroup based on the availability of the test and the coverage it expects to gain.
--	Note: quality can be provided only on tests results availability, and this is out of the scope of this discussion. 
+	-	If Beta/GA level maturity, ensure to provide a sonic-mgmt. PR or code as reference. 
+	-	If sonic-mgmt. tests comes after the Release note is released, it can still be modified.
+	-	Maturity to be approved by sonic test subgroup based on the availability of the test and the coverage it expects to gain.
+	-	Note: quality can be provided only on tests results availability, and this is out of the scope of this discussion. 
 
 - What we gain?
 
--	One way to declare features quality.
--	Contribution awareness for quality guarantee and aim for GA level.
--	Clear and simple way for SONiC end users. (who are not in the details of the code itself)
+	-	One way to declare features quality.
+	-	Contribution awareness for quality guarantee and aim for GA level.
+	-	Clear and simple way for SONiC end users. (who are not in the details of the code itself)
 	
 
 ### Action items and notes
 
--	HLD template should be extended with memory consumption section,
+-	HLD template should be extended with memory consumption section, <br>
 	Notes to be taken:
 	-	No memory consumption expected when the feature is disabled via compilation. 
 	-	No growing memory consumption while feature is disabled by configuration.
-	-	Feature should be delivered with the following ON/OFF flags.
+-	Feature should be delivered with the following ON/OFF flags.
 	-	Feature can be runtime disabled/enabled via configuration. 
 	-	Disabled while work in progress and majority is not GA.
 	-	Can be enabled by default (if agreed on HLD review) only in GA level only.
-	-	202305 Release note should be aligned with the new suggestion. It will be used for sharing information on features and availability of the tests.
-	-	Once TSC approves suggestion, take to SONiC community and inform contributors to align on 202311 feature contribution.
-	-	sonic-mgmt. group to decide on quality guarantee template. Ying Xie (Microsoft) and Roy Sror (Nvidia) to lead.
+-	202305 Release note should be aligned with the new suggestion. It will be used for sharing information on features and availability of the tests.
+-	Once TSC approves suggestion, take to SONiC community and inform contributors to align on 202311 feature contribution.
+-	sonic-mgmt. group to decide on quality guarantee template. Ying Xie (Microsoft) and Roy Sror (Nvidia) to lead.
 
 
 

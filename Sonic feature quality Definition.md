@@ -42,10 +42,10 @@ Extend the SONiC Release Notes which covers already the new features added to a 
  | Feature Name | Feature Description | HLD PR / PR tracking | Maturity |
  |----------|----------|----------|----------|
 
-	-	If Beta/GA level maturity, ensure to provide a sonic-mgmt. PR or code as reference. 
-	-	If sonic-mgmt. tests comes after the Release note is released, it can still be modified.
-	-	Maturity to be approved by sonic test subgroup based on the availability of the test and the coverage it expects to gain.
-	-	Note: quality can be provided only on tests results availability, and this is out of the scope of this discussion. 
+ -	If Beta/GA level maturity, ensure to provide a sonic-mgmt. PR or code as reference. 
+ -	If sonic-mgmt. tests comes after the Release note is released, it can still be modified.
+ -	Maturity to be approved by sonic test subgroup based on the availability of the test and the coverage it expects to gain.
+ -	Note: quality can be provided only on tests results availability, and this is out of the scope of this discussion. 
 
 - What we gain?
 

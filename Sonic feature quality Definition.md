@@ -1,7 +1,7 @@
 # SONiC Feature Quality Definition
 
 
-### Feature quality definition
+### Feature Quality Definition
 
 #### Alpha level quality
 

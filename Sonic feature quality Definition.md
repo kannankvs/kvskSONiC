@@ -39,12 +39,8 @@ Extend the SONiC Release Notes which covers already the new features added to a 
 
  - Make the feature list as a table
 
-'''
-
  | Feature Name | Feature Description | HLD PR / PR tracking | Maturity |
  |----------|----------|----------|----------|
-
-'''
 
 	*	If Beta/GA level maturity, ensure to provide a sonic-mgmt. PR or code as reference. 
 	*	If sonic-mgmt. tests comes after the Release note is released, it can still be modified

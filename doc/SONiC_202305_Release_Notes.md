@@ -23,7 +23,7 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 
 |Feature                    | Version  |
 | ------------------------- | --------------- |
-| Linux kernel version      | linux_5.10.0-18-2-$(5.10.140)  |
+| Linux kernel version      | linux_5.10.0-18-2-$(5.10.136)  |
 | SAI   version             | SAI v1.12.0    |
 | FRR                       | 8.2.2   |
 | LLDPD                     | 1.0.4-1    |
@@ -43,8 +43,8 @@ Note : The kernel version is migrated to the version that is mentioned in the fi
 
 # Security Updates
 
-1. Kernel upgraded from 5.10.103-1 to 5.10.140-1 for SONiC release.<br>
-   Change log: https://tracker.debian.org/media/packages/l/linux/changelog-5.10.140-1
+1. Kernel upgraded from 5.10.103-1 to 5.10.136-1 for SONiC release.<br>
+   Change log: https://tracker.debian.org/media/packages/l/linux/changelog-5.10.136-1
 
 2. Docker upgraded from  20.10.22-debian-stretch. to 24.0.2-debian-stretch <br>
    Change log: https://docs.docker.com/engine/release-notes/24.0/#201022

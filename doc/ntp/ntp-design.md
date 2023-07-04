@@ -255,7 +255,7 @@ Here is a part of `ntp.conf.j2` template that can be used to generate configured
 **Example:**
 ```jinja
 {# Getting NTP global configuration -#}
-{% set global = (NTP | d({})).get('global', {}) -%}
+{/% set global = (NTP | d({})).get('global', {}) -/%}
 
 {# Adding NTP servers. We need to know if we have some pools, to set proper
 config -#}

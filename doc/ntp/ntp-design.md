@@ -260,9 +260,9 @@ Here is a part of `ntp.conf.j2` template that can be used to generate configured
 {# Adding NTP servers. We need to know if we have some pools, to set proper
 config -#}
 {/% set is_pools = False /%}
-{% for server in NTP_SERVER if NTP_SERVER[server].admin_state != 'disabled' and
+{/% for server in NTP_SERVER if NTP_SERVER[server].admin_state != 'disabled' and
                                NTP_SERVER[server].resolve_as and
-                               NTP_SERVER[server].association_type -%}
+                               NTP_SERVER[server].association_type -/%}
     {/% set config = NTP_SERVER[server] -/%}
     {# Server options -#}
     {/% set soptions = '' -/%}
@@ -309,20 +309,20 @@ The next part of `ntp.conf.j2` template can be used to manage ntp authentication
 
 **Example:**
 ```jinja
-{% set trusted_keys_arr = [] -%}
-{% for key in NTP_KEY -%}
-    {% set keydata = NTP_KEY[key] -%}
-    {% if keydata.trusted == 'yes' -%}
-        {% set trusted_keys_arr = trusted_keys_arr.append(key) -%}
-    {% endif -%}
-{% endfor %}
+{/% set trusted_keys_arr = [] -/%}
+{/% for key in NTP_KEY -/%}
+    {/% set keydata = NTP_KEY[key] -/%}
+    {/% if keydata.trusted == 'yes' -/%}
+        {/% set trusted_keys_arr = trusted_keys_arr.append(key) -/%}
+    {/% endif -/%}
+{/% endfor /%}
 
-{% if global.authentication == 'enabled' %}
+{/% if global.authentication == 'enabled' /%}
 keys /etc/ntp.keys
-{% if trusted_keys_arr != [] %}
+{/% if trusted_keys_arr != [] /%}
 trustedkey {{ trusted_keys_arr|join(' ') }}
-{% endif %}
-{% endif %}
+{/% endif /%}
+{/% endif /%}
 ```
 
 And for handling VRF, DHCP, and NTP feature state we need to modify `ntp-sytemd-wrapper`:
@@ -374,18 +374,18 @@ And finally authentication keys file `ntp.keys.j2` template is here:
 ###############################################################################
 
 {# We can connect only to the servers we trust. Determine those servers -#}
-{% set trusted_arr = [] -%}
-{% for server in NTP_SERVER if NTP_SERVER[server].trusted == 'yes' and 
-                               NTP_SERVER[server].resolve_as -%}
-    {% set _ = trusted_arr.append(NTP_SERVER[server].resolve_as) -%}
-{% endfor -%}
+{/% set trusted_arr = [] -/%}
+{/% for server in NTP_SERVER if NTP_SERVER[server].trusted == 'yes' and 
+                               NTP_SERVER[server].resolve_as -/%}
+    {/% set _ = trusted_arr.append(NTP_SERVER[server].resolve_as) -/%}
+{/% endfor -/%}
 
 {# Define authentication keys inventory -#}
-{% set trusted_str = ' ' ~ trusted_arr|join(',') -%}
-{% for keyid in NTP_KEY if NTP_KEY[keyid].type and NTP_KEY[keyid].value %}
-{% set keyval = NTP_KEY[keyid].value | b64decode %}
+{/% set trusted_str = ' ' ~ trusted_arr|join(',') -/%}
+{/% for keyid in NTP_KEY if NTP_KEY[keyid].type and NTP_KEY[keyid].value /%}
+{/% set keyval = NTP_KEY[keyid].value | b64decode /%}
 {{ keyid }} {{ NTP_KEY[keyid].type }} {{ keyval }}{{trusted_str}}
-{% endfor -%}
+{/% endfor -/%}
 ```
 
 ## 2.4 DB schema

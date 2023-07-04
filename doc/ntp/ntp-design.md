@@ -271,7 +271,7 @@ config -#}
 
     {# Authentication key -#}
     {/% if config.key -/%}
-        {% set soptions = soptions ~ ' key ' ~ config.key -%}
+        {/% set soptions = soptions ~ ' key ' ~ config.key -/%}
     {/% endif -/%}
 
     {# Aggressive polling -#}

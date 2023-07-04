@@ -259,48 +259,48 @@ Here is a part of `ntp.conf.j2` template that can be used to generate configured
 
 {# Adding NTP servers. We need to know if we have some pools, to set proper
 config -#}
-{% set is_pools = False %}
+{/% set is_pools = False /%}
 {% for server in NTP_SERVER if NTP_SERVER[server].admin_state != 'disabled' and
                                NTP_SERVER[server].resolve_as and
                                NTP_SERVER[server].association_type -%}
-    {% set config = NTP_SERVER[server] -%}
+    {/% set config = NTP_SERVER[server] -/%}
     {# Server options -#}
-    {% set soptions = '' -%}
+    {/% set soptions = '' -/%}
     {# Server access control options -#}
-    {% set aoptions = '' -%}
+    {/% set aoptions = '' -/%}
 
     {# Authentication key -#}
-    {% if config.key -%}
+    {/% if config.key -/%}
         {% set soptions = soptions ~ ' key ' ~ config.key -%}
-    {% endif -%}
+    {/% endif -/%}
 
     {# Aggressive polling -#}
-    {% if config.iburst -%}
-        {% set soptions = soptions ~ ' iburst' -%}
-    {% endif -%}
+    {/% if config.iburst -/%}
+        {/% set soptions = soptions ~ ' iburst' -/%}
+    {/% endif -/%}
 
     {# Protocol version -#}
-    {% if config.version -%}
-        {% set soptions = soptions ~ ' version ' ~ config.version -%}
-    {% endif -%}
+    {/% if config.version -/%}
+        {/% set soptions = soptions ~ ' version ' ~ config.version -/%}
+    {/% endif -/%}
 
     {# Check if there are any pool configured. BTW it doesn't matter what was
     configured as "resolve_as" for pools. If they were configured with FQDN they
     must remain like that -#}
-    {% set config_as = config.resolve_as -%}
-    {% if config.association_type == 'pool' -%}
-        {% set is_pools = True -%}
-        {% set config_as = server -%}
-    {% else -%}
-        {% set aoptions = aoptions ~ ' nopeer' -%}
-    {% endif -%}
+    {/% set config_as = config.resolve_as -/%}
+    {/% if config.association_type == 'pool' -/%}
+        {/% set is_pools = True -/%}
+        {/% set config_as = server -/%}
+    {/% else -/%}
+        {/% set aoptions = aoptions ~ ' nopeer' -/%}
+    {/% endif -/%}
 
 {{ config.association_type }} {{ config_as }}{{ soptions }}
-    {%- if global.server_role == 'disabled' +%}
+    {/%- if global.server_role == 'disabled' +/%}
 restrict {{ config_as }} kod limited nomodify notrap noquery{{ aoptions }}
-    {%- endif +%}
+    {/%- endif +/%}
 
-{% endfor -%}
+{/% endfor -/%}
 ```
 
 <!-- omit in toc -->

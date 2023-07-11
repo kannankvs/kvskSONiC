@@ -244,6 +244,27 @@ This group will focus on enabling SONiC to support optical transport networking 
     \- Optical line equipment such as optical amplifiers, wavelength selective switches.  
     \- Optical DWDM/Grey pluggable modules on switching/routing equipment
 
+
+### SONiC DASH Workgroup
+
+Join the mailing list sonic-dash@googlegroups.com <br>	
+Workgroup [SONiC DASH Workgroup](https://groups.google.com/g/sonic-dash) <br>
+***Current Status : Active*** 
+
+##### SONiC DASH Workgroup Charter
+This subgroup is to discuss Disaggregated APIs for SONiC Hosts (DASH), define the DASH APIs for several SDN scenarios. 
+
+
+### SONiC Working Group on Routing
+
+Join the mailing list sonic-wg-routing@lists.sonicfoundation.dev <br>
+Workgroup [SONiC Working Group on Routing](https://lists.sonicfoundation.dev/g/sonic-wg-routing/messages)  <br>
+***Current Status : Active*** 
+
+##### SONiC DASH Workgroup Charter
+This subgroup is to discuss Disaggregated APIs for SONiC Hosts (DASH), define the DASH APIs for several SDN scenarios.
+
+
 ### Workgroup Meetings
 
 1\. SONiC community Meeting - Every week on Tuesday @ 8:00am – 9:00am PST. Click [here](https://global.gotomeeting.com/join/507645837) to join the meeting.

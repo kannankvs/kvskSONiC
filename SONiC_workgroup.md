@@ -261,8 +261,8 @@ Join the mailing list sonic-wg-routing@lists.sonicfoundation.dev <br>
 Workgroup [SONiC Working Group on Routing](https://lists.sonicfoundation.dev/g/sonic-wg-routing/messages)  <br>
 ***Current Status : Active*** 
 
-##### SONiC DASH Workgroup Charter
-This subgroup is to discuss Disaggregated APIs for SONiC Hosts (DASH), define the DASH APIs for several SDN scenarios.
+##### SONiC Working Group on Routing Charter
+This group will focus on enabling working group on Routing Area -- Routing Performance/Scale etc.
 
 
 ### Workgroup Meetings

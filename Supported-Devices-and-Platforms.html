@@ -668,8 +668,8 @@ function Port_Config() {
 </tr>
 <tr>
 <td>Dell</td>
-<td>S6000-ON</td>
-<td class="asic_vendor">Broadcom_202012</td>
+<td>S6000-ON*</td>
+<td class="asic_vendor">Broadcom</td>
 <td>Trident 2</td>
 <td>32x40G</td>
 <td></td>
@@ -1139,6 +1139,14 @@ function Port_Config() {
 <td></td>
 </tr>
 <tr>
+<td>Ragile</td>
+<td>RA-B6010-48GT4X</td>
+<td class="asic_vendor">Centec</td>
+<td>Centec</td>
+<td>48x1G+4x10G</td>
+<td></td>
+</tr>
+<tr>
 <td>Tencent</td>
 <td>TCS8400-24CC8CD</td>
 <td class="asic_vendor">Broadcom</td>
@@ -1215,15 +1223,10 @@ Note:
 			d3 = branches[i];
 			all_images = Object.keys(data[branches[i]]);
 			brcm_image = data[branches[i]][all_images[0]];
-			brcm_image_202012 = data[branches[i]][all_images[3]];
 			brcm_image_url = brcm_image['url'];
-			brcm_image_url_202012 = brcm_image_202012['url'];
-			brcm_image_name = all_images[0];
-			brcm_image_name_202012 = all_images[3];
-			brcm_image_link ="<a href=\""+brcm_image_url+"\">"+brcm_image_name+"</a>";	
-			brcm_image_link_202012 ="<a href=\""+brcm_image_url_202012+"\">"+brcm_image_name_202012+"</a>";	
+			brcm_image_name = all_images[0];			
+			brcm_image_link ="<a href=\""+brcm_image_url+"\">"+brcm_image_name+"</a>";			
 			$("#master_branch").append(brcm_image_link);
-			$("#202012_branch").append(brcm_image_link_202012);
 			$("#branch").append(display_data);
 			images = Object.keys(data[branches[i]]);
 			for (let j = 0; j < images.length; j++) {
@@ -1265,8 +1268,8 @@ Note:
 			    vdata = "Mellanox";
 				
 			if (vdata == "Intel")
-			    vdata = "Barefoot";			
-		
+			    vdata = "Barefoot";	
+
 			if (vdata == "Marvell"){
 			    vdata = "Marvell-armhf";
 			}

@@ -1,4 +1,4 @@
-# SONiC 202305 Release Notes
+# SONiC 202311 Release Notes
 
 This document captures the new features added and enhancements done on existing features/sub-features for the SONiC [202311](https://github.com/orgs/sonic-net/projects/14/views/1) release.
 

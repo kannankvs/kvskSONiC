@@ -60,9 +60,9 @@ Note : The kernel version is migrated to the version that is mentioned in the fi
 | ***UMF Infra Enhancement for SONIC-YANG*** | This implements the option to import specific sonic yangs from buildimage sonic-yang-models directory into UMF & CVL enhancement to handle handle singleton tables modeled as a container instead of the usual _LIST syntax | [1397](https://github.com/sonic-net/SONiC/issues/1397) | |
 | ***Libvs Port Counter Support*** | TBD | [1398](https://github.com/sonic-net/SONiC/issues/1398) | |
 | ***RADIUS NSS Vulnerability*** | TBD | [1399](https://github.com/sonic-net/SONiC/issues/1399) | |
-| ***PDDF System Fan Enhancement*** | | | |
-| ***PDDF support for Ufispace platforms and GPIO extension*** | | | |
-| ***TACACS NSS Vulnerability*** | | | |
+| ***PDDF System Fan Enhancement*** | Current PDDF design supports only 12 individual fans (if 2 fans per tray then total of 6 fantrays). However, some platform have more fans. To support those platforms via PDDF, we added support for more fans in common fan PDDF drivers. | [15956](https://github.com/sonic-net/sonic-buildimage/pull/15956) & [1440](https://github.com/sonic-net/SONiC/issues/1440) | |
+| ***PDDF support for Ufispace platforms and GPIO extension*** | This feature adds the PDDF support on Ufispace platforms with Broadcom ASIC for S9110-32X, S8901-54XC, S7801-54XS, S6301-56ST | [16017](https://github.com/sonic-net/sonic-buildimage/pull/16017) & [1441](https://github.com/sonic-net/SONiC/issues/1441)| |
+| ***TACACS NSS Vulnerability*** | TBD | [1464](https://github.com/sonic-net/SONiC/issues/1464) | |
 | ***Multiple Spanning Tree Protocol (MSTP) HLD*** | | | |
 | ***Mac-based Vlan Assignment*** | | | |
 | ***Switchport Mode Hybrid Support*** | | | |

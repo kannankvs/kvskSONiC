@@ -54,8 +54,8 @@ Note : The kernel version is migrated to the version that is mentioned in the fi
 
 | Feature| Feature Description | HLD PR / PR tracking |	Quality |
 | ------ | ------- | -----|-----|
-| ***Fix containers deployments dependencies on boot/config_reload affecting user experience*** | | | |	
-| ***Persistent DNS address across reboots*** | | | |
+| ***Fix containers deployments dependencies on boot/config_reload affecting user experience*** | Currently hostcfgd controls the services based on the feature table. The feature table has a specific field 'has_timer' for the non essential services which needs to be delayed during the reboot flow. This field will be now replaced by new field called "delayed". These services will controlled by hostcfgd. | [1203](https://github.com/sonic-net/SONiC/pull/1203) & [1379](https://github.com/sonic-net/SONiC/issues/1379) | |	
+| ***Persistent DNS address across reboots*** | With the current implementation dynamic DNS configuration can be received from the DHCP server or static configuration can be set manually by the user. However, SONiC doesn't provide any protection for the static configuration. The configuration that is set by the user can be overwritten with the dynamic configuration at any time. The proposed solution is to add support for static DNS configuration into Config DB. To be able to choose between dynamic and static DNS configurations resolvconf package. | [1380](https://github.com/sonic-net/SONiC/issues/1380), [13834](https://github.com/sonic-net/sonic-buildimage/pull/13834), [14549](https://github.com/sonic-net/sonic-buildimage/pull/14549), [2737](https://github.com/sonic-net/sonic-utilities/pull/2737), [49](https://github.com/sonic-net/sonic-host-services/pull/49), [1322](https://github.com/sonic-net/SONiC/pull/1322), [8436](https://github.com/sonic-net/sonic-mgmt/pull/8436) & [8712](https://github.com/sonic-net/sonic-mgmt/pull/8712) | |
 | ***SSH global config*** | | | |
 | ***UMF Infra Enhancement for SONIC-YANG*** | | | |
 | ***Libvs Port Counter Support*** | | | |

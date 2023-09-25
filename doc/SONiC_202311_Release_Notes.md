@@ -143,4 +143,4 @@ SONiC community would like to thank all the contributors from various companies 
 <br> 
 
 
-NA* - Not Applicable
+

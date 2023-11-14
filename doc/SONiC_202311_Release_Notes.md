@@ -68,6 +68,7 @@ Note : The kernel version is migrated to the version that is mentioned in the fi
 | ***Sflow 800G Support*** | This feature enhances the current sFlow in sonic, with additional speed due to new ASICs support for 800G. | [1383](https://github.com/sonic-net/SONiC/issues/1383), [2799](https://github.com/sonic-net/sonic-swss/pull/2799) & [2805](https://github.com/sonic-net/sonic-swss/pull/2805) | |
 | ***TACACS NSS Vulnerability*** | TBD | [1464](https://github.com/sonic-net/SONiC/issues/1464) | |
 | ***UMF Infra Enhancement for SONIC-YANG*** | This implements the option to import specific sonic yangs from buildimage sonic-yang-models directory into UMF & CVL enhancement to handle handle singleton tables modeled as a container instead of the usual _LIST syntax | [1397](https://github.com/sonic-net/SONiC/issues/1397) | |
+| ***UMF Subscription Infra Phase 2*** | This feature implements the  SONiC Telemetry service and Translib infrastructure changes to support gNMI subscriptions and wildcard paths for YANG defined paths. |  https://github.com/sonic-net/SONiC/pull/1287; https://github.com/sonic-net/sonic-mgmt-common/pull/67; https://github.com/sonic-net/sonic-mgmt-common/pull/70; https://github.com/sonic-net/sonic-mgmt-common/pull/72; https://github.com/sonic-net/sonic-mgmt-common/pull/73; https://github.com/sonic-net/sonic-mgmt-common/pull/74; https://github.com/sonic-net/sonic-mgmt-common/pull/76; https://github.com/sonic-net/sonic-mgmt-common/pull/78; https://github.com/sonic-net/sonic-mgmt-common/pull/79; https://github.com/sonic-net/sonic-mgmt-common/pull/80; https://github.com/sonic-net/sonic-mgmt-common/pull/81; https://github.com/sonic-net/sonic-mgmt-common/pull/82; https://github.com/sonic-net/sonic-mgmt-common/pull/84; https://github.com/sonic-net/sonic-mgmt-common/pull/86; https://github.com/sonic-net/sonic-mgmt-common/pull/90; https://github.com/sonic-net/sonic-mgmt-common/pull/92; https://github.com/sonic-net/sonic-gnmi/pull/103; https://github.com/sonic-net/sonic-gnmi/pull/112 & https://github.com/sonic-net/sonic-gnmi/pull/122 | |
 | ***Upgrade hsflowd and remove dropmon build flags*** | TBD | TBD | |
 | ***Upgrade to FRR 8.5.1*** | This feature upgrades the FRR 8.5.1 to include latest fixes. | [15965](https://github.com/sonic-net/sonic-buildimage/pull/15965), [13396](https://github.com/FRRouting/frr/pull/13396) & [13757](https://github.com/FRRouting/frr/pull/13757) | |
 | ***Virtual SONiC Network Helper*** | This feature implements vsnet tool to create network of virtual sonic instances | [8459](https://github.com/sonic-net/sonic-mgmt/pull/8459) | |
@@ -82,7 +83,6 @@ Note : The kernel version is migrated to the version that is mentioned in the fi
 | ***Dual ToR heartbeat  offloading to ASIC*** | | | |
 | ***Dual ToR fast switchover via protection group - design only*** | | | |
 | ***SONiC Port Access Control*** | | | |
-| ***UMF Subscription Infra Phase 2*** | | | |
 | ***Third Party Container Management*** | | | |
 | ***UMF Query Parameter Support*** | | | |
 | ***Disaggregated Scheduled Fabric (DSF) Support for SONiC*** | | | |

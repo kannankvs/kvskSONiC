@@ -320,7 +320,7 @@ new call:
 
 
 e.g., Sensor temperature critical high
-    event_params_t params = {{"event-id", "SENSOR_TEMP_CRTICAL_HIGH"}, {"text", "Current temperature {}C, critical high threshold {}C", {"action":"RAISE_ALARM"}, {"resource":"sensor_name"}}} ;
+    event_params_t params = /{/{"event-id", "SENSOR_TEMP_CRTICAL_HIGH"}, {"text", "Current temperature {}C, critical high threshold {}C", {"action":"RAISE_ALARM"}, {"resource":"sensor_name"/}/}/} ;
     event_publish(g_events_handle, "sensor_temp_critical_high", &params);
 ### 3.1.2 Event Consumer
 The event consumer is a class in EventDB service that processes the incoming events.

@@ -23,17 +23,17 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 
 |Feature                    | Version  |
 | ------------------------- | --------------- |
-| Linux kernel version      | linux_5.10.0-18-2-$(5.10.136)  |
-| SAI   version             | SAI v1.12.0    |
-| FRR                       | 8.2.2   |
-| LLDPD                     | 1.0.4-1    |
+| Linux kernel version      | linux_5.10.0-23-2-$(5.10.179)  |
+| SAI   version             | SAI v1.13.2    |
+| FRR                       | 8.5.1   |
+| LLDPD                     | 1.0.16-1+deb12u1 |
 | TeamD                     | 1.30-1    |
 | SNMPD                     | 5.9+dfsg-4+deb11u1    |
 | Python                    | 3.9.2-1    |
 | syncd                     | 1.0.0    |
 | swss                      | 1.0.0    |
 | radvd                     | 2.18-3    |
-| isc-dhcp                  | 4.4.1-2.3   |
+| isc-dhcp                  | 4.4.1-2.3+deb11u2  |
 | sonic-telemetry           | 1.1    |
 | redis-server/ redis-tools | 5.0.3-3~bpo9+2    |
 | Debian version			| Continuous to use Bullseye (Debian version 11)	|

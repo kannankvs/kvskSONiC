@@ -315,7 +315,7 @@ current call:
     event_publish(g_events_handle, "if-state", &params);
 
 new call:
-    event_params_t params = {{"ifname",port.m_alias},{"status",isUp ? "up" : "down"}, {"resource", port.m_alias}, {"event-id", "INTERFACE_OPER_STATUS_CHANGE"}, {"text", isUp? "status:UP" : "status:DOWN"}};
+    event_params_t params = /{/{"ifname",port.m_alias},{"status",isUp ? "up" : "down"}, {"resource", port.m_alias}, {"event-id", "INTERFACE_OPER_STATUS_CHANGE"}, {"text", isUp? "status:UP" : "status:DOWN"/}/};
     event_publish(g_events_handle, "if-state", &params);
 
 

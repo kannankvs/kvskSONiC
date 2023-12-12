@@ -311,7 +311,7 @@ The following additional parameters to be given with this api:
 
 For e.g call for port down event.
 current call:
-    event_params_t params = {{"ifname",port.m_alias},{"status",isUp ? "up" : "down"}};
+    event_params_t params = /{/{"ifname",port.m_alias/},/{"status",isUp ? "up" : "down"/}/};
     event_publish(g_events_handle, "if-state", &params);
 
 new call:

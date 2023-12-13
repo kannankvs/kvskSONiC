@@ -299,7 +299,7 @@ As shown in below diff code, the template will generate config following below l
 ```
 > zebra.conf.j2
 
- {% endblock banner %}
+ {/% endblock banner /%}
  !
  {% block fpm %}
 +{% if ( ('localhost' in DEVICE_METADATA) and ('nexthop_group' in  DEVICE_METADATA['localhost']) and

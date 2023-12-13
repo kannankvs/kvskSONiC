@@ -1,6 +1,6 @@
 # SONiC Chassis Platform Management & Monitoring #
 
-### Rev 1.0 ###
+### Rev 1.1 ###
 
 # Table of Contents
 
@@ -36,6 +36,7 @@
  | Rev |     Date    |       Author                                                            | Change Description                |
  |:---:|:-----------:|:-----------------------------------------------------------------------:|-----------------------------------|
  | 1.0 |             |  Manjunath Prabhu, Sureshkannan Duraisamy, Marty Lok, Marc Snider       | Initial version                   |
+ | 1.1 | 06/18/2021  |  Vedavinayagam Ganesan                                                  | chassis_modules command change    |
 
 # About this Manual
 This document provides design requirements and interactions between platform drivers and PMON for SONiC on VOQ chassis with line-card CPUs.
@@ -218,10 +219,10 @@ Configuration will be provided to administratively bring down a line-card or fab
 
 ```
 Configuration to administratively bring down the module
-#config chassis-modules shutdown <module_name>
+#config chassis modules shutdown <module_name>
 
 Configuration to remove the adminstrative down state of module
-#config chassis-modules startup <module_name>
+#config chassis modules startup <module_name>
 ```
 #### Config-DB Schema
 The schema for CHASSIS_MODULE table in Config DB is:
@@ -234,7 +235,7 @@ admin-status                          = "up" | "down"                           
 #### Show command
 A new show command is introduced to show the status of the modules in a chassis
 
-**show chassis-modules status**
+**show chassis modules status**
 ```
         Name                      Description    Physical-Slot    Oper-Status    Admin-Status
 ------------  -------------------------------  ---------------  -------------  --------------
@@ -421,7 +422,7 @@ Thermal 5        59           68         0             N/A            N/A       
 * Update per namespace port status - The pmon processes will need to run per-asic specific functinality ina a separate thread.
 
 Two approaches were discussed as part of the design:
-* Approach-1 - Existing process and threads will connect/subscribe to all databases across per-asic namespace. This is the preferred approach and has been documented in https://github.com/Azure/SONiC/blob/master/doc/pmon/pmon_multiasic_design.md.
+* Approach-1 - Existing process and threads will connect/subscribe to all databases across per-asic namespace. This is the preferred approach and has been documented in https://github.com/sonic-net/SONiC/blob/master/doc/pmon/pmon_multiasic_design.md.
 * Approach-2 - Create separate threads per-asic and that thread will connect/subscribe to databases in per-asic namespace. Approach-2 is outlined below for the sake of completeness. However, it is not the preferred approach. The maximum number of ports seen in a multi-asic environment for fixed platform or for line-cards in a chassis would not be greater than 64. Monitoring and subscribing for events for these ports can easily be accommodated by Approach-1. Additional management of per-asic threads will also add to the complexity of the design.   
 
 #### Database Connections

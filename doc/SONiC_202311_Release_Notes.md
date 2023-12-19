@@ -46,8 +46,8 @@ Note : The kernel version is migrated to the version that is mentioned in the fi
 1. Kernel upgraded from 5.10.103-1 to 5.10.136-1 for SONiC release.<br>
    Change log: https://tracker.debian.org/media/packages/l/linux/changelog-5.10.136-1
 
-2. Docker upgraded from  20.10.22-debian-stretch. to 24.0.2-debian-stretch <br>
-   Change log: https://docs.docker.com/engine/release-notes/24.0/#201022
+2. Docker upgraded from  24.0.2-debian-stretch to 24.0.7-debian-stretch <br>
+   Change log: https://docs.docker.com/engine/release-notes/24.0/#2407
 
 
 # Feature List
@@ -55,6 +55,7 @@ Note : The kernel version is migrated to the version that is mentioned in the fi
 | Feature| Feature Description | HLD PR / PR tracking |	Quality |
 | ------ | ------- | -----|-----|
 | ***[DASH] ACL tags HLD*** | In a DASH SONiC, a service tag represents a group of IP address prefixes from a given service. The controller manages the address prefixes encompassed by the service tag and automatically updates the service tag as addresses change, minimizing the complexity of frequent updates to network security rules. Mapping a prefix to a tag can reduce the repetition of prefixes across different ACL rules and optimize memory usage. | [1427](https://github.com/sonic-net/SONiC/pull/1427) | |
+| ***AMD-Pensando ELBA SOC support*** | This patchset adds support for AMD-Pensando ELBA SOC. Elba provides a secure, controlled portal to network services, storage, and the data center control plane. This SOC is used in AMD-Pensando PCI Distributed Services Card (DSC).| [322](https://github.com/sonic-net/sonic-linux-kernel/pull/322) | |
 | ***Auto FEC*** | This feature delivers a deterministic approach when FEC and autoneg are configured together which is currently left to vendor implementation. | [1416](https://github.com/sonic-net/SONiC/pull/1416)	 | |
 | ***Banner HLD*** | This feature covers the definition, design and implementation of SONiC Banner feature and Banner CLI. |[1361](https://github.com/sonic-net/SONiC/pull/1361)| |
 | ***BGP Unnumberd- enable Multiple sessions and assign unique MAC address per port by default*** | This feature is achieved with the implementation of new FRR 8.5.1 integration | [15965](https://github.com/sonic-net/sonic-buildimage/pull/15965) | |
@@ -77,75 +78,18 @@ Note : The kernel version is migrated to the version that is mentioned in the fi
 | ***Upgrade hsflowd and remove dropmon build flags*** | TBD | TBD | |
 | ***Upgrade to FRR 8.5.1*** | This feature upgrades the FRR 8.5.1 to include latest fixes. | [15965](https://github.com/sonic-net/sonic-buildimage/pull/15965) | |
 | ***Virtual SONiC Network Helper*** | This feature implements vsnet tool to create network of virtual sonic instances | [8459](https://github.com/sonic-net/sonic-mgmt/pull/8459) | |
-| ***Multiple Spanning Tree Protocol (MSTP) HLD*** | | | |
-| ***Mac-based Vlan Assignment*** | | | |
-| ***Switchport Mode Hybrid Support*** | | | |
-| ***Smart Switch  w/ vNet-vNet/Service Tunnel/Private Link*** | | | |
-| ***Port Based DHCP Server*** | | | |
-| ***gNOI API support*** | | | |
-| ***Default value from SONiC YANG for configuration*** | | | |
-| ***MMU incremental config update*** | | | |
-| ***Dual ToR heartbeat  offloading to ASIC*** | | | |
-| ***Dual ToR fast switchover via protection group - design only*** | | | |
-| ***SONiC Port Access Control*** | | | |
-| ***Third Party Container Management*** | | | |
-| ***UMF Query Parameter Support*** | | | |
-| ***Disaggregated Scheduled Fabric (DSF) Support for SONiC*** | | | |
-| ***Virtual Router Redundancy Protocol (VRRP) enalement*** | | | |
-| ***LDAP support*** | | | |
-| ***SRv6 Performance Measurement*** | | | |
-| ***Upgrade SONiC OS (base) image to Debian 12.0*** | | | |
-| ***Voltage and Current Sensor Monitoring*** | | | |
-| ***UEFI key management in SONiC to perform secure boot key rotation, update, remove revoke etc*** | | | |
-| ***sflow_pkt_drop_notifications support for SONiC*** | | | |
-| ***TACACS Passkey encryption feature*** | | | |
-| ***Queue counter rate support*** | | | |
-| ***SONiC Hash Offset configuration support*** | | | |
-| ***ACL QOS enhancements*** | | | |
-| ***ACL based policer*** | | | |
-| ***Statistics support for VLAN*** | | | |
-| ***Fpmsyncd Next Hop Table Enhancement*** | | | |
-| ***Move chassis-app-db to global-app-db to accommodate*** | | | |
-| ***MAB (MAC Authentication Bypass)*** | | | |
-| ***VXLAN EVPN Multi-homing*** | | | |
-| ***Update Event Framework with DB Support*** | | | |
-| ***Multiple Spanning Tree Protocol*** | | | |
-| ***Add DPB (Dynamic Port Breakout) support for PHY-less chassis/boards*** | | | |
-| ***UMF: Additional Optimizations for Transformer Infrastructure*** | | | |
-| ***DHCPv4 - Specify Gateway explicitly*** | | | |
-| ***CMIS host management - Extend Port signal integrity with additional SAI attributes*** | | | |
-| ***CMIS host management - Port signal integrity per speed*** | | | |
-| ***CMIS host management - TX Ready handling*** | | | |
-| ***CLI session commands*** | | | |
-| ***Block SONiC CLI until configuration is done*** | | | |
-| ***Enable Redis ACLs*** | | | |
-| ***SONiC App extension enhance manifest to support additional networking streaming  capabilities from external container*** | | | |
-| ***Build improvements changes*** | | | |
-| ***Factory reset*** | | | |
-| ***NTP: Additional NTP configuration knobs + NTP server provisioning*** | | | |
-| ***Isis configuration support*** | | | |
-| ***ECN and WRED statistics*** | | | |
-| ***AMD-Pensando ELBA SOC support*** | | | |
-| ***Link Event Damping*** | | | |
-| ***gNMI: Save-On-Set*** | | | |
-| ***gNMI Master Arbitration*** | | | |
-| ***Ondatra*** | | | |
-| ***P4-CLI*** | | | |
-| ***Software upgrade NSF*** | | | |
-| ***NTP: minpoll/maxpoll support*** | | | |
-| ***Two-Way Active Measurement Protocol (TWAMP) Light*** | | | |
-| ***Container Hardening*** | | | |
+
 
 Note : The HLD PR's have been updated in ""HLD PR / PR tracking"" coloumn. The code PR's part of the features are mentioned within the HLD PRs. The code PRs not mentioned in HLD PRs are updated in "HLD PR / PR tracking" coloumn along with HLD PRs.
 
 # SAI APIs
 
-Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.13.1 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.13.1_ReleaseNotes.md)
+Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.13.2 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.13.2_ReleaseNotes.md)
 
 
 # Contributors 
 
-SONiC community would like to thank all the contributors from various companies and the individuals who has contributed for the release. Special thanks to the major contributors - AvizNetworks, Broadcom, Celestica, Cisco, Dell, Edge-core, Google, Innovium, Intel, Marvell, Microsoft, Nvidia, xFlow Research Inc.    
+SONiC community would like to thank all the contributors from various companies and the individuals who has contributed for the release. Special thanks to the major contributors - Accton, AMD, Broadcom, Dell, Google, Marvell, Microsoft, Nvidia, Ufispace, xFlow Research Inc.    
 
 <br> 
 

@@ -10,6 +10,7 @@ This document captures the new features added and enhancements done on existing 
  * [Dependency Version](#dependency-version)
  * [Security Updates](#security-updates)
  * [Feature List](#feature-list)
+ * [Known Issue](#Known-Issue)
  * [SAI APIs](#sai-apis)
  * [Contributors](#contributors)
 

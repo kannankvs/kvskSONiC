@@ -24,7 +24,7 @@ Image  : https://sonic-build.azurewebsites.net/ui/sonic/pipelines  (Example - Im
 |Feature                    | Version  |
 | ------------------------- | --------------- |
 | Linux kernel version      | linux_5.10.0-23-2-$(5.10.179)  |
-| SAI   version             | SAI v1.13.2    |
+| SAI   version             | SAI v1.13.3    |
 | FRR                       | 8.5.1   |
 | LLDPD                     | 1.0.16-1+deb12u1 |
 | TeamD                     | 1.30-1    |
@@ -84,7 +84,7 @@ Note : The HLD PR's have been updated in ""HLD PR / PR tracking"" coloumn. The c
 
 # SAI APIs
 
-Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.13.2 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.13.2_ReleaseNotes.md)
+Please find the list of API's classified along the newly added SAI features. For further details on SAI API please refer [SAI_1.13.3 Release Notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.13.3_ReleaseNotes.md)
 
 
 # Contributors 

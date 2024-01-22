@@ -13,142 +13,18 @@
 | [SAI ECMP Workgroup](https://groups.google.com/forum/#!forum/sai-ecmp-workshop)  | SAI-ecmp-workgroup@googlegroups.com  | Done for now   | To focus on ECMP related features. The discussion would include features supporting ecmp like ecmp hashing, related SAI APIs, etc..  |   
 | [SAI Security Workgroup](https://groups.google.com/forum/#!forum/sai-security-workgroup)  | SAI-security-workgroup@googlegroups.com   |    | To focus on focus on security related APIs, e.g. DDOS .  |   
 | [SONiC Hotswap Workgroup](https://groups.google.com/forum/#!forum/sonic-hotswap-workgroup)  | sonic-hotswap-workgroup@googlegroups.com  |    | **Note:** This group will converge soon with SONiC main community group. Regular sub-group meetings are completed. Users can continue to use this sub-group for future communication related to this topic.  |   
-|   |    |    |   |   
-|   |    |    |   |   
-
-
-### 
-
-Join the mailing list  <br>
-Workgroup [SONiC Hotswap Workgroup](https://groups.google.com/forum/#!forum/sonic-hotswap-workgroup)
-
-##### SONiC Hotswap Workgroup Charter
-
-
-
-
-### SONiC Application Workgroup
-
-Join the mailing list sonic-application-workgroup@googlegroups.com <br>
-Workgroup [SONiC Application Workgroup](https://groups.google.com/forum/#!forum/sonic-application-workgroup) <br>
-***Current Status : Active***
-
-##### SONiC Application Workgroup Charter
-
-**Note:** This group will converge soon with SONiC main community group. Regular sub-group meetings are completed. Users can continue to use this sub-group for future communication related to this topic.
-
-
-### SONiC Chassis Subgroup
-
-Join the mailing list sonic-chassis-subgroup@googlegroups.com <br>
-Workgroup [SONiC Chassis Subgroup](https://groups.google.com/forum/#!forum/sonic-chassis-subgroup) <br>
-***Current Status : Active***
-
-##### SONiC Chassis Subgroup Charter
-To focus on implementing SONiC on Chassis systems.
-
-
-### SONiC Platform Workgroup
-
-Join the mailing list sonic-platform-workgroup@googlegroups.com <br>
-Workgroup [SONiC Platform Workgroup](https://groups.google.com/forum/#!forum/sonic-platform-workgroup) <br>
-***Current Status : Active***
-
-##### SONiC Platform Workgroup Charter
-This sub-workgroup is to discuss the platform specific features like "Media settings enhancements" in SONiC.
-
-
-### SONiC Kubernetes Subgroup
-
-Join the mailing list sonic-kubernetes-subgroup@googlegroups.com <br>
-Workgroup [SONiC Kubernetes Subgroup](https://groups.google.com/g/sonic-kubernetes-subgroup) <br>
-***Current Status : Active***
-
-##### SONiC Kubernetes Subgroup Charter
-To focus on implementing SONiC Kubernetes
-
-
-### SONiC MPLS Workgroup
-
-Join the mailing list sonic-MPLS-workgroup@googlegroups.com <br>
-Workgroup [SONiC MPLS Workgroup](https://groups.google.com/forum/#!forum/sonic-MPLS-workgroup) <br>
-***Current Status : Active***
-
-##### SONiC MPLS Workgroup Charter
-This group will focus on enabling SONiC to support MPLS.
-
-
-### SONiC Yang Subgroup
-
-Join the mailing list sonic-yang-subgroup@googlegroups.com <br>
-Workgroup [SONiC Yang Subgroup](https://groups.google.com/g/sonic-yang-subgroup) <br>
-***Current Status : Active***
-
-##### SONiC Yang Subgroup Charter
-To focus on implementing SONiC Yang
-
-
-### SAI IPSEC Subgroup
-
-Join the mailing list sai-ipsec-subgroup@googlegroups.com <br>
-Workgroup [SAI IPSEC Subgroup](https://groups.google.com/g/sai-ipsec-subgroup) <br>
-***Current Status : Active***
-
-##### SAI IPSEC Subgroup Charter
-This subgroup is for SAI support for IPSEC.
-
-
-### SONiC-Documentation-Workgroup
-
-Join the mailing list sonic-documentation-workgroup@googlegroups.com <br>
-Workgroup [SONiC-Documentation-Workgroup](https://groups.google.com/g/sonic-documentation-workgroup) <br>
-***Current Status : Active***
-
-##### SONiC-Documentation-Workgroup Charter
-To focus on documenting the SONiC Progress and its Updates
-
-
-### SONiC-PINS Subgroup
-
-Join the mailing list sonic-pins-subgroup@googlegroups.com <br>
-Workgroup [SONiC-PINS Subgroup](https://groups.google.com/g/sonic-pins-subgroup/) <br>
-***Current Status : Active***
-
-##### SONiC-PINS Subgroup Charter
-This subgroup is for PINS which extends SONiC with an Software-Defined Networking (SDN) interface and P4 programmable pipeline.
-
-
-### SONiC-OTN Workgroup
-
-Join the mailing list sonic-wg-otn+subscribe@lists.sonicfoundation.dev <br>
-Workgroup [SONiC-OTN Workgroup](https://lists.sonicfoundation.dev/g/sonic-wg-otn/messages) <br>
-***Current Status : Active***
-
-##### SONiC-OTN-Workgroup Charter
-This group will focus on enabling SONiC to support optical transport networking equipment, including  
-    \- Optical transponders/muxponders  
-    \- Optical line equipment such as optical amplifiers, wavelength selective switches.  
-    \- Optical DWDM/Grey pluggable modules on switching/routing equipment
-
-
-### SONiC DASH Workgroup
-
-Join the mailing list sonic-dash@googlegroups.com <br>	
-Workgroup [SONiC DASH Workgroup](https://groups.google.com/g/sonic-dash) <br>
-***Current Status : Active*** 
-
-##### SONiC DASH Workgroup Charter
-This subgroup is to discuss Disaggregated APIs for SONiC Hosts (DASH), define the DASH APIs for several SDN scenarios. 
-
-
-### SONiC Working Group on Routing
-
-Join the mailing list sonic-wg-routing@lists.sonicfoundation.dev <br>
-Workgroup [SONiC Working Group on Routing](https://lists.sonicfoundation.dev/g/sonic-wg-routing/messages)  <br>
-***Current Status : Active*** 
-
-##### SONiC Working Group on Routing Charter
-This group will focus on enabling working group on Routing Area -- Routing Performance/Scale etc.
+| [SONiC Application Workgroup](https://groups.google.com/forum/#!forum/sonic-application-workgroup)  | sonic-application-workgroup@googlegroups.com | Active | **Note:** This group will converge soon with SONiC main community group. Regular sub-group meetings are completed. Users can continue to use this sub-group for future communication related to this topic.  |   
+| [SONiC Chassis Subgroup](https://groups.google.com/forum/#!forum/sonic-chassis-subgroup)  | sonic-chassis-subgroup@googlegroups.com | Active | To focus on implementing SONiC on Chassis systems.  |   
+| [SONiC Platform Workgroup](https://groups.google.com/forum/#!forum/sonic-platform-workgroup) | sonic-platform-workgroup@googlegroups.com | Active | This sub-workgroup is to discuss the platform specific features like "Media settings enhancements" in SONiC. |
+| [SONiC Kubernetes Subgroup](https://groups.google.com/g/sonic-kubernetes-subgroup) | sonic-kubernetes-subgroup@googlegroups.com | Active | To focus on implementing SONiC Kubernetes |
+| [SONiC MPLS Workgroup](https://groups.google.com/forum/#!forum/sonic-MPLS-workgroup) | sonic-MPLS-workgroup@googlegroups.com | Active | This group will focus on enabling SONiC to support MPLS. |
+| [SONiC Yang Subgroup](https://groups.google.com/g/sonic-yang-subgroup)    | sonic-yang-subgroup@googlegroups.com | Active | To focus on implementing SONiC Yang |
+| [SAI IPSEC Subgroup](https://groups.google.com/g/sai-ipsec-subgroup)    | sai-ipsec-subgroup@googlegroups.com | Active | This subgroup is for SAI support for IPSEC.|
+| [SONiC-Documentation-Workgroup](https://groups.google.com/g/sonic-documentation-workgroup) | sonic-documentation-workgroup@googlegroups.com | Active | To focus on documenting the SONiC Progress and its Updates |
+| [SONiC-PINS Subgroup](https://groups.google.com/g/sonic-pins-subgroup/) | sonic-pins-subgroup@googlegroups.com | Active | This subgroup is for PINS which extends SONiC with an Software-Defined Networking (SDN) interface and P4 programmable pipeline. |
+| [SONiC-OTN Workgroup](https://lists.sonicfoundation.dev/g/sonic-wg-otn/messages) | sonic-wg-otn+subscribe@lists.sonicfoundation.dev | Active | This group will focus on enabling SONiC to support optical transport networking equipment, including  <br> \- Optical transponders/muxponders  <br>  \- Optical line equipment such as optical amplifiers, wavelength selective switches. \- Optical DWDM/Grey pluggable modules on switching/routing equipment    |
+| [SONiC DASH Workgroup](https://groups.google.com/g/sonic-dash) | sonic-dash@googlegroups.com | Active | This subgroup is to discuss Disaggregated APIs for SONiC Hosts (DASH), define the DASH APIs for several SDN scenarios. |
+| [SONiC Working Group on Routing](https://lists.sonicfoundation.dev/g/sonic-wg-routing/messages)    | sonic-wg-routing@lists.sonicfoundation.dev | Active | This group will focus on enabling working group on Routing Area -- Routing Performance/Scale etc.  |
 
 
 ### Workgroup Meetings

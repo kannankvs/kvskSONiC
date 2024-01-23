@@ -43,5 +43,5 @@ PCS data-path select attribute added - [1816](https://github.com/opencomputeproj
 Refactor saithriftv2 Makefile - [1881](https://github.com/opencomputeproject/SAI/pull/1881) <br> 
 Fix permissions on executable and non executable files - [1884](https://github.com/opencomputeproject/SAI/pull/1884) <br> 
 Revert "Tunnel Term Attributes validation fixed for all MP2P and MP2MP attributes" - [1890](https://github.com/opencomputeproject/SAI/pull/1890) <br> 
-Allow null on SAI_PORT_ATTR_PORT_SERDES_ID - [1914](https://github.com/opencomputeproject/SAI/pull/1914) 
+Allow null on SAI_PORT_ATTR_PORT_SERDES_ID - [1914](https://github.com/opencomputeproject/SAI/pull/1914) <br> 
 Added saithrift support to return sai_object_id for a given system_port_id and read VOQ counters for system port - [1931](https://github.com/opencomputeproject/SAI/pull/1931)

@@ -27,7 +27,7 @@ Tunnel Term Attributes validation fixed for all MP2P and MP2MP attributes - [PR#
 Update .gitignore - [PR#1835](https://github.com/opencomputeproject/SAI/pull/1835) <br> 
 support independent module - [PR#1824](https://github.com/opencomputeproject/SAI/pull/1824) <br> 
 Add inner src and dst mac fields to ACL - [PR#1828](https://github.com/opencomputeproject/SAI/pull/1828) <br> 
-Tunnel Term Types - [PR#](fixed the description for types and validity checks for mask attributes - [PR#1848](https://github.com/opencomputeproject/SAI/pull/1848) <br> 
+Tunnel Term Types - fixed the description for types and validity checks for mask attributes - [PR#1848](https://github.com/opencomputeproject/SAI/pull/1848) <br> 
 Add Priority for Tunnel Term Table Entries - [PR#1849](https://github.com/opencomputeproject/SAI/pull/1849) <br> 
 SAI attributes for path tracing for midpoint node . - [PR#1841](https://github.com/opencomputeproject/SAI/pull/1841) <br> 
 Support for reading RX_FREQUENCY_OFFSET_PPM, RX_SNR and FEC_CORRECTED_BITS with SAI - [PR#1847](https://github.com/opencomputeproject/SAI/pull/1847) <br> 

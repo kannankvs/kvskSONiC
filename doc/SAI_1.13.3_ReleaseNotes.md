@@ -1,6 +1,6 @@
-# SAI 1.13.2 Release Notes
+# SAI 1.13.3 Release Notes
 
-The Switch Abstraction Interface(SAI) defines the APIs to provide a vendor-independent way of controlling forwarding elements, such as a switching ASIC, an NPU or a software switch in a uniform manner. This release document covers the SAI API changes from SAI tag 1.12.0 to SAI tag 1.13.2. The previous release notes corresponding to SAI tag 1.12.0 is available at [SAI 1.12.0 release notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.12.0_ReleaseNotes.md) 
+The Switch Abstraction Interface(SAI) defines the APIs to provide a vendor-independent way of controlling forwarding elements, such as a switching ASIC, an NPU or a software switch in a uniform manner. This release document covers the SAI API changes from SAI tag 1.12.0 to SAI tag 1.13.3. The previous release notes corresponding to SAI tag 1.12.0 is available at [SAI 1.12.0 release notes](https://github.com/opencomputeproject/SAI/blob/master/doc/SAI_1.12.0_ReleaseNotes.md) 
 
 This document explains the new SAI features as well as the enhancements and the bug fixes on existing features. 
 
@@ -44,3 +44,4 @@ Refactor saithriftv2 Makefile - [1881](https://github.com/opencomputeproject/SAI
 Fix permissions on executable and non executable files - [1884](https://github.com/opencomputeproject/SAI/pull/1884) <br> 
 Revert "Tunnel Term Attributes validation fixed for all MP2P and MP2MP attributes" - [1890](https://github.com/opencomputeproject/SAI/pull/1890) <br> 
 Allow null on SAI_PORT_ATTR_PORT_SERDES_ID - [1914](https://github.com/opencomputeproject/SAI/pull/1914) 
+Added saithrift support to return sai_object_id for a given system_port_id and read VOQ counters for system port - [1931](https://github.com/opencomputeproject/SAI/pull/1931)

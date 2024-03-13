@@ -116,8 +116,8 @@ docker_image_ctl.j2 file
 	{%- if install_debug_image == "y" %}
 		-v /src:/src:ro -v /debug:/debug:rw \
 	{%- endif %}
-	{%- if '--log-driver=json-file' in docker_image_run_opt or '--log-driver' not in docker_image_run_opt %}
-		--log-opt max-size=2M --log-opt max-file=5 \
+	{%- if '/--log-driver=json-file' in docker_image_run_opt or '/--log-driver' not in docker_image_run_opt %}
+		/--log-opt max-size=2M /--log-opt max-file=5 \
 	{%- endif %}
 
 This will cause the docker file to be altered in the following manner:

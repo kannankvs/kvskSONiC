@@ -110,7 +110,7 @@
 "sonic-mellanox.bin": {
   "url": "https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzYyNzUxNi9hcnRpZmFjdE5hbWUvc29uaWMtYnVpbGRpbWFnZS5tZWxsYW5veA2/content?format=file&subpath=/target/sonic-mellanox.bin",
   "build-url": "https://dev.azure.com/mssonic/build/_build/results?buildId=627516&view=results",
- "diff": "https://github.com/Azure/sonic-buildimage/compare/dc8711294cd8f15618589af7a77a8171f05c52b0...dc8711294cd8f15618589af7a77a8171f05c52b0",
+ "diff": "https://github.com/Azure/sonic-buildimage/compare/dc8711294cd8f15618589af7a77a8171f05c52b0...",
   "build": "627516",
   "date": "2024-08-25T08:00:18.8415597Z"
  },

@@ -61,7 +61,7 @@
   "build-url": "https://dev.azure.com/mssonic/build/_build/results?buildId=628260&view=results",
  "diff": "https://github.com/Azure/sonic-buildimage/compare/10f0fe8d8c22f41ae24a264a6e0298864c8eb755...10f0fe8d8c22f41ae24a264a6e0298864c8eb755",
   "build": "628260",
-  "date": "2024-08-26T08:00:38.7903467Z"
+  "date": ""
  },
 "sonic-generic.bin": {
   "url": "https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzYyODI0Ny9hcnRpZmFjdE5hbWUvc29uaWMtYnVpbGRpbWFnZS5nZW5lcmlj0/content?format=file&subpath=/target/sonic-generic.bin",
@@ -161,14 +161,14 @@
   "build-url": "https://dev.azure.com/mssonic/build/_build/results?buildId=628219&view=results",
  "diff": "https://github.com/Azure/sonic-buildimage/compare/dc8711294cd8f15618589af7a77a8171f05c52b0...dc8711294cd8f15618589af7a77a8171f05c52b0",
   "build": "628219",
-  "date": "2024-08-26T08:00:22.3522071Z"
+  "date": ""
  },
 "sonic-generic-dbg.bin": {
   "url": "https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzYyODIxOS9hcnRpZmFjdE5hbWUvc29uaWMtYnVpbGRpbWFnZS5nZW5lcmlj0/content?format=file&subpath=/target/sonic-generic-dbg.bin",
   "build-url": "https://dev.azure.com/mssonic/build/_build/results?buildId=628219&view=results",
  "diff": "https://github.com/Azure/sonic-buildimage/compare/dc8711294cd8f15618589af7a77a8171f05c52b0...dc8711294cd8f15618589af7a77a8171f05c52b0",
   "build": "628219",
-  "date": "2024-08-26T08:00:22.3522071Z"
+  "date": ""
  },
 "sonic-marvell-armhf.bin": {
   "url": "https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzYyODI2NS9hcnRpZmFjdE5hbWUvc29uaWMtYnVpbGRpbWFnZS5tYXJ2ZWxsLWFybWhm0/content?format=file&subpath=/target/sonic-marvell-armhf.bin",

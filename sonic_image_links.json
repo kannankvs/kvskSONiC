@@ -208,7 +208,7 @@
   "date": "2024-09-13T08:00:18.952645Z"
  },
 "sonic-vs.img.gz": {
-  "url": "https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzU5NjQyOS9hcnRpZmFjdE5hbWUvc29uaWMtYnVpbGRpbWFnZS52cw2/content?format=file&subpath=/target/sonic-vs.img.gz",
+  "url": "null",
   "build-url": "https://dev.azure.com/mssonic/build/_build/results?buildId=596429&view=results",
  "diff": "https://github.com/Azure/sonic-buildimage/compare/null...d264b5e3049b1ba0b9be323368bb67c4e0d54a30",
   "build": "596429",

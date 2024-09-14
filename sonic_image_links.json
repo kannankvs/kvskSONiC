@@ -208,11 +208,11 @@
   "date": "2024-09-14T08:00:30.5180534Z"
  },
 "sonic-vs.img.gz": {
-  "url": "null",
-  "build-url": "https://dev.azure.com/mssonic/build/_build/results?buildId=596429&view=results",
- "diff": "https://github.com/Azure/sonic-buildimage/compare/null...d264b5e3049b1ba0b9be323368bb67c4e0d54a30",
-  "build": "596429",
-  "date": "2024-07-16T08:00:15.0278288Z"
+  "url": "",
+  "build-url": "https://dev.azure.com/mssonic/build/_build/results?buildId=null&view=results",
+ "diff": "https://github.com/Azure/sonic-buildimage/compare/null...null",
+  "build": "null",
+  "date": ""
  },
 "sonic-innovium.bin": {
   "url": "",

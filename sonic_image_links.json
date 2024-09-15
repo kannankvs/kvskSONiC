@@ -433,7 +433,7 @@
   "build-url": "https://dev.azure.com/mssonic/build/_build/results?buildId=644526&view=results",
  "diff": "https://github.com/Azure/sonic-buildimage/compare/4570365762089357d5eff6ff579c56327f5f7103...4570365762089357d5eff6ff579c56327f5f7103",
   "build": "644526",
-  "date": "2024-09-15T08:00:38.8406862Z"
+  "date": ""
  },
 "sonic-generic.bin": {
   "url": "",
